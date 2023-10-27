@@ -7,12 +7,25 @@
 [Recording](https://www.youtube.com/watch?v=nVMeu65qnc4),
 [Repository](https://github.com/hgonzago/DevSummit-presentations/tree/gh-pages/Dev-Summit-2017/Dev-debug-tips)
 
-- Nice coverage of Overview, Code Editor
-- Dated of course
-- Demos don't do enough to show how bug was detected - jump straight to error
-- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error"
-- Heather is pretty disorganized and not conscientious. Tabs should be opened
-  ahead of time and everything setup
+Impressions:
+
+- The introductions in the 2017, 2018, and 2019 sessions are nice - would like
+  to copy that structure
+- Dated of course, but still good video
+- Demos don't do enough to show how bug was detected - jump straight to error.
+  Of course, there is time presume, but should be able to do better
+- Heather is pretty disorganized and not conscientious. Tabs should be opened.
+  Before the session, make sure to have everything opened and located
+  conveniently
+- Zoom in to increase font size, console size, window size (maybe change display
+  settings to reduce pixel size - will make everything look larger)
+- Create separate VS Code profile for presenting - larger font size, less noise,
+  ...
+
+Material:
+
+- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error" ahead
+  of time and everything setup
 - Show off local overrides or editing local folder or web browser inside of ide
 - A lot of DevTools tips to show
   - Snippets
@@ -20,15 +33,23 @@
   - Console
   - Network Traffic
   - Lighthouse - Accessibility! axe?
-- Zoom in to increase font size, console size, window size
-- Remote debugging - ios and android
-- CanIUse.com
-- Link to other sessions worth seeing
-- Include more things that weren't shown last years
+- Would be cool to mention remote debugging - iOS and Android
+- Mention CanIUse.com
+- Link to other sessions worth seeing (both this year and past years)
+
+Ideas:
+
 - Try to join several features together into a single flow? i.e create a story
-  that feels natural rather than jump from feature to feature. Tthough jumping
-  from thing to thin, and telling but not showing is quicker. A compromise -
-  post links and research futher topics?
+  that feels natural rather than jump from feature to feature - create a mini
+  app during the demo, and in the process of making the app, show off as many
+  development tools and debug tools as you can. Though jumping from thing to
+  thin, and telling but not showing is quicker. A compromise - post links and
+  research further topics?
+
+Todos:
+
+- Brainstorm things that were't shown in recent years, but would still be useful
+  to both new and intermediate developers
 
 ### 2018
 
@@ -36,44 +57,62 @@
 [Repository](https://github.com/hgonzago/DevSummit-presentations/tree/gh-pages/Dev-Summit-2018/Dev-debug-tips),
 [Repository 2](https://github.com/kellyhutchins/DS2018-TipsAndTricks)
 
-- First few minutes - copy that structure (or 2019, or 2017)
-- LiveServer extension for VS Code
+Material:
+
+- LiveServer extension for VS Code. And web browser inside of VS Code (simple
+  web browser, or entire Edge with DevTools)
 - jsapi-resources repository
 - ESLint flat config, Calcite rules
 - Prettier!!!
+- mention `debugger;`. show how to blackbox a script (from context menu, not
+  though typing out file url like in the recording). stop on (un)caught
+  exceptions
+- Suggest learning devtools well - will be very helful in the long term
+  - Official docs are long, but very comprehensive and super helpful -
+    https://developer.chrome.com/docs/devtools/
+  - Based on those docs, I have shorter
+    [notes with DevTools features I found useful](https://github.com/maxxxxxdlp/code_share/blob/main/misc/notes/Chrome%20DevTools.md).
+    Maybe mention some of them?
+- DevTools mobile emulation. Throttling. Sensors
+  - But was mentioned a lot previously so maybe just mention briefly that this
+    exists
+
+Todos:
+
 - how do we switch between displays when presenting? one person has slides and
   another demos? or all from single laptop?
-- debugger; blackbox a script. stop on (un)caugh exceptions
-- format my devtools README
-- DevTools mobile emulation. Throttling. Sensors
 
 ### 2019
 
 [Recording](https://www.youtube.com/watch?v=o30MBicJmNo),
 [Repository](https://github.com/hgonzago/DevSummit-presentations/tree/gh-pages/Dev-Summit-2019/Dev-debug-tips)
 
+Material:
+
 - Instead of JSON viewer extension, could copy paste into devtools
-- Hold refresh button - empty cash and hard reload (useful tip)
+- Hold refresh button - empty cash and hard reload
 - Network tab
-- Suggest learning devtools well - will be very helful in the long term
 - DevTools - color picker (change color, color contrast). toggle class names,
   edit styles
-- Consider leaving footnotes with more links on each slider for people to go
-  over afterward (or in sepate file, but they may be too lazy to open that)
-- Check release notes. Update regularly. dependabot?
+- suggest people check release notes. Update regularly. Use dependabot?
 - Web-component specific debugging (i.e shadow dom)
   - The Properties tab in devtools
-- We need to improve the error message for geolocation to help devs with
-  http/https errors - no point in pointing this out 4 years in a row without
-  improving DX
+
+Ideas:
+
+- Consider leaving footnotes with more links on each slide for people to go over
+  afterward (or in spate file, but they may be too lazy to open that)
+- We need to improve the error message for geolocation when not on https to help
+  Devs with http/https errors - no point in pointing this out at dev summit 4
+  years in a row without improving DX
 
 ### 2020
 
 [Repository](https://github.com/hgonzago/tips-tricks-webinar),
 [Repository 2](https://github.com/hgonzago/DevSummit-presentations/tree/gh-pages/Dev-Summit-2020/Dev-debug-tips)
 
-- Look over my chrome extensions, vs code extensions, vs code settings, and
-  other useful things I use often
+Material:
+
 - https://github.com/odoe/jsapi-cli-template-app - something like this as a base
   - newer example -
     https://developers.arcgis.com/javascript/latest/typescript-setup/
@@ -85,8 +124,16 @@
   - Is the issue on the client (API) or server?
   - Is there a performance issue?
   - Is the issue with the data?
-- Embeed lots of small videos in slides so that don't have to do as many things
+
+Ideas:
+
+- Embed lots of small videos in slides so that don't have to do as many things
   live?
+
+Todos:
+
+- Look over my chrome extensions, vs code extensions, vs code settings, and
+  other useful things I use often
 
 ### 2020 (2)
 
@@ -96,6 +143,8 @@
 
 [Recording](https://www.youtube.com/watch?v=5_NQ_dSKp8w),
 [Repository](https://github.com/hgonzago/DevSummit-presentations/tree/gh-pages/Dev-Summit-2021/Debugging-tips-tricks)
+
+Material:
 
 - odoe.net
 - esri community - get help, send help, feedback
@@ -111,11 +160,15 @@
 
 [Repository](https://github.com/banuelosj/DevSummit-presentation/tree/main/2023/debugging-tips-and-tricks)
 
+Ideas:
+
 - Have slides url at the bottom of each slide?
 
 ## TODOs
 
-- https://github.com/Esri/reveal.js
+- [ ] Go over repositories and slides from previous years more and see what can
+      be reused or improved
+- [ ] https://github.com/Esri/reveal.js
 
 ---
 
