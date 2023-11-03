@@ -1,13 +1,5 @@
 # ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
-## TODOs
-
-- [ ] Go over repositories and slides from previous years more and see what can
-      be reused or improved
-- [ ] https://github.com/Esri/reveal.js
-
----
-
 Presenters: [Max Patiiuk](https://github.com/maxxxxxdlp) &
 [Noah Sager](https://github.com/NoashX)
 
@@ -15,7 +7,7 @@ Length: 45 minutes
 
 ---
 
-[![Debugging Tips and Tricks Title Slide](./header-slide.png)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[![Debugging Tips and Tricks Title Slide](./header-slide.jpg)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
 [Download Slides](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 

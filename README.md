@@ -21,7 +21,7 @@ will offer you actionable insights to take your projects to the next level.
 Presenters: [Max Patiiuk](https://github.com/maxxxxxdlp) &
 [Noah Sager](https://github.com/NoashX)
 
-![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/header-slide.png)
+![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/header-slide.jpg)
 
 Learn how to quickly and easily find and fix problems in your web mapping
 applications. You will learn how to setup your dev environment to use plug-ins
