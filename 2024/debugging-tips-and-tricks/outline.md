@@ -37,7 +37,6 @@ it down to fit into 45 minutes.
 - Prettier
 - EsLint
 - GitLens
-- GitHub Copilot, IntelliSence
 
 ![](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
 
@@ -50,15 +49,40 @@ it down to fit into 45 minutes.
 - Build tools, e.g. Webpack
 - OAuth Callback
 
+## Good advise
+
+- Check Maps SDK release notes
+- Update to new version regularly
+- Use GitHub Dependabot to receive alerts of new versions and security fixes
+
 ## TypeScript/Vite
 
 - Code assist
 - ES6
 - Webpack/Vite/Rollup/ESBuild
 - [TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+  - Use TypeScript to catch typos, and have better autocomplete, and
+    maintainable apps - would be useful down the line too
 - [ArcGIS API JS Template App](https://github.com/odoe/jsapi-cli-template-app)
 
+## ESLint
+
+- ESLint flat config
+- Calcite rules
+- React/Vue/Jest/etc rules
+
+## VS Code Live Server
+
+LiveServer extension for VS Code. And web browser inside of VS Code (simple web
+browser, or entire Edge with DevTools)
+
 ## Dev Tools Intro
+
+> speaker notes:
+>
+> Suggest learning devtools well - will be very helpful in the long term
+>
+> Official docs are long, but very comprehensive and super helpful
 
 Debugging tools === Productive programmers
 
@@ -67,6 +91,8 @@ more.
 
 - Firefox Developer Edition
 - Chrome and/or Chrome Canary
+  - [Comprehensive Official Documentation](https://developer.chrome.com/docs/devtools/)
+  - [Summary of advanced, lesser-known tools and tips](https://github.com/maxxxxxdlp/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
 - Edge
 - Safari
 
@@ -84,13 +110,15 @@ more.
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/debugger.png)
 
 - Various ways to pause code
-- Debugger
-- Blackboxing
+- `debugger;`
+- Blackboxing (from context menu)
+- stop on (un)caught exceptions
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/breakpoints.gif)
 
 ## Debugging: Network requests
 
+- Tip: Hold refresh button - empty cash and hard reload
 - Records all network requests
 - Inspect network traffic, e.g.
   - Search widget not displaying properly
@@ -104,10 +132,11 @@ more.
 
 - ChatGPT
 - VS Code Chat ("Explain this error")
-- GitHub Copilot
+- GitHub Copilot/InteliiSence
 
 ## Console
 
+- Tip: can copy-paste into console to pretty-print JSON
 - Log diagnostic info
 - Execute JavaScript
 - Check values of objects at an app breakpoint
@@ -151,9 +180,16 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 ## CSS: Inspect Styles
 
 - Inspect element css
-- View classes applied to selected element
+- View/toggle classes
+- Edit styles applies to element
+- Color picker (change color, color contrast)
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/computed-css.png)
+
+### Devtools: Inspect Web Component
+
+- Web-component specific debugging (i.e shadow dom)
+  - The Properties tab in devtools
 
 ## ArcGIS API for JavaScript - next
 
@@ -190,12 +226,15 @@ CDN:
 
 ## Debugging: Philosophy
 
-- Narrow the problem down
+Narrow down the issue:
 
-  - App specific
-  - API specific
-  - Server-side issue
-  - Are any 3rd party resources involved?
+- App specific
+- API specific
+- Server-side issue
+- Are any 3rd party resources involved?
+
+When debugging, isolate the issue to smaller and smaller reproducible case until
+figured out what is the cause
 
 - Is the problem with how the code is written?
 - Is the issue on the client (API) or server?
