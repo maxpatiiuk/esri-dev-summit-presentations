@@ -1,0 +1,3 @@
+[submodule "2024/reveal.js"]
+  path = 2024/reveal.js
+  url = https://github.com/Esri/reveal.js
