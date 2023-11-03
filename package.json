@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "@maxxxxxdlp/prettier-config": "^1.0.4"
+  },
+  "prettier": "@maxxxxxdlp/prettier-config"
+}
