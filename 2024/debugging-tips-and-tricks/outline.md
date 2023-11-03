@@ -13,7 +13,7 @@ it down to fit into 45 minutes.
 - JS Api resources and tips
 - AI-based tools and helpers
 
-## Code Editor or IDE
+## Code Editor
 
 > speaker notes:
 >
@@ -32,28 +32,30 @@ it down to fit into 45 minutes.
 
 [Demo](https://www.slant.co/topics/1686/~javascript-ides-or-editors)
 
-## Extensions
-
-- Prettier
-- EsLint
-- GitLens
+## Code Editor: Prettier
 
 ![](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
+
+## Code Editor: ESLint
+
+- ESLint flat config
+- Calcite rules
+- React/Vue/Jest/etc rules
+
+## VS Code Live Server
+
+LiveServer extension for VS Code. And web browser inside of VS Code (simple web
+browser, or entire Edge with DevTools)
+
+## Code Editor: GitLens
 
 ## Maps SDK Resources
 
 [![JS API Resources](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/jsapiResources.png)](https://github.com/Esri/jsapi-resources)
 
-- ESLint file
 - TypeScript definition file
 - Build tools, e.g. Webpack
 - OAuth Callback
-
-## Good advise
-
-- Check Maps SDK release notes
-- Update to new version regularly
-- Use GitHub Dependabot to receive alerts of new versions and security fixes
 
 ## TypeScript/Vite
 
@@ -65,18 +67,34 @@ it down to fit into 45 minutes.
     maintainable apps - would be useful down the line too
 - [ArcGIS API JS Template App](https://github.com/odoe/jsapi-cli-template-app)
 
-## ESLint
+## Good practice
 
-- ESLint flat config
-- Calcite rules
-- React/Vue/Jest/etc rules
+- Check Maps SDK release notes
+- Update to new version regularly
+- Use GitHub Dependabot to receive alerts of new versions and security fixes
 
-## VS Code Live Server
+## ArcGIS API for JavaScript - next
 
-LiveServer extension for VS Code. And web browser inside of VS Code (simple web
-browser, or entire Edge with DevTools)
+Github repo for feedback:
+[Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
 
-## Dev Tools Intro
+Npm:
+
+```sh
+ npm install --save arcgis-js-api@next
+```
+
+CDN:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://js.arcgis.com/next/esri/themes/light/main.css"
+/>
+<script src="https://js.arcgis.com/next/"></script>
+```
+
+## Dev Tools
 
 > speaker notes:
 >
@@ -96,7 +114,7 @@ more.
 - Edge
 - Safari
 
-## Dev Tools
+## Dev Tools: Outline
 
 - Console
 - Breakpoints
@@ -163,7 +181,7 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 [![](https://hgonzago.github.io/tips-tricks-webinar/images/consoleerror.png)](https://hgonzago.github.io/tips-tricks-webinar/Demos/js-demo/index.html)
 
-## Custom formatters
+## Console: Custom formatters
 
 [Controls how object values display](https://github.com/ycabon/arcgis-js-api-devtools)
 
@@ -186,31 +204,10 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/computed-css.png)
 
-### Devtools: Inspect Web Component
+## Elements: Inspect Web Component
 
 - Web-component specific debugging (i.e shadow dom)
   - The Properties tab in devtools
-
-## ArcGIS API for JavaScript - next
-
-Github repo for feedback:
-[Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
-
-Npm:
-
-```sh
- npm install --save arcgis-js-api@next
-```
-
-CDN:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://js.arcgis.com/next/esri/themes/light/main.css"
-/>
-<script src="https://js.arcgis.com/next/"></script>
-```
 
 ## Network
 
@@ -243,37 +240,28 @@ figured out what is the cause
 
 ![](https://hgonzago.github.io/tips-tricks-webinar/images/onion.jpg)
 
-## CSS
-
-- View and edit CSS
-
-[CSS](https://developers.arcgis.com/javascript/)
-
 ## Application
 
 - Cookies
 - Local Storage
 - App Cache
 
-[Resources](http://html5demos.com/storage)
+## Emulation: Sensors
 
-## Responsive
+- Modify current location and locale
 
-- Emulate
-- Geolocation and touch overrides
-- Debug remotely
+[![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
 
-[Resources](http://html5demos.com/storage)
-
-## Mobile emulation
+## Emulation: Mobile
 
 - Mobile emulation
 - Throttling
-- Sensors - geolocation
 
 ![screen capture](https://github.com/hgonzago/DevSummit-presentations/blob/gh-pages/Dev-Summit-2017/Dev-debug-tips/images/screencapture.png?raw=true)
 
-- Remote debugging - iOS and Android
+## Remote Debugging - iOS and Android
+
+More accurate, but requires physical device
 
 ## Lighthouse
 
@@ -297,13 +285,18 @@ TODO
 
 ## Constrain visible extent
 
-- Use constraint geometry to
+> notes: go over this quickly as it was mentioned recently
+
+Use constraint geometry to
+
 - Restrict map area
 - Limit search results
 
 [Demo](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/demos/restrict_extent.html)
 
 ## Request interceptor
+
+> notes: go over this quickly as it was mentioned recently
 
 - [RequestInterceptor](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor)
   - Add headers
@@ -324,12 +317,6 @@ TODO
 - Get coordinates as you navigate the map
 
 ![Code snippet to get lat and long](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/live-expression.png)
-
-## Sensors
-
-- Modify current location and locale
-
-[![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
 
 ## Other Sessions Worth Seeing
 
