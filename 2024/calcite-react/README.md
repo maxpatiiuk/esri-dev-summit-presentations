@@ -37,6 +37,8 @@ Ideas:
 - Embed lots of small videos in slides so that don't have to do as many things
   live?
 - Have slides url at the bottom of each slide?
+- Use light mode in IDE as it is easier to read on a Projector (based on user
+  feedback)
 
 ## TODOs
 
@@ -53,7 +55,7 @@ Ideas:
 Presenters: [Ryan Libed](https://github.com/rslibed) &
 [Max Patiiuk](https://github.com/maxxxxxdlp)
 
-Length: ??? minutes
+Length: 60 minutes
 
 ---
 
