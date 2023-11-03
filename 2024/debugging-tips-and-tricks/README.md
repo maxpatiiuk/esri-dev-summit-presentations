@@ -45,6 +45,8 @@ Ideas:
   development tools and debug tools as you can. Though jumping from thing to
   thin, and telling but not showing is quicker. A compromise - post links and
   research further topics?
+- Use light IDE theme as it's easier to read off projector (based on user
+  feedback)
 
 Todos:
 
@@ -172,8 +174,8 @@ Ideas:
 
 ---
 
-Presenters: [Noah Sager](https://github.com/NoashX) &
-[Max Patiiuk](https://github.com/maxxxxxdlp)
+Presenters: [Max Patiiuk](https://github.com/maxxxxxdlp) &
+[Noah Sager](https://github.com/NoashX)
 
 Length: 45 minutes
 
