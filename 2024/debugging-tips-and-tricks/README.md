@@ -13,6 +13,7 @@ it down to fit into 45 minutes.
   - Dev tools intro
   - Tips & Tricks
 - JS Api resources and tips
+- AI-based tools and helpers
 
 ### Code Editor or IDE
 
@@ -42,7 +43,7 @@ it down to fit into 45 minutes.
 
 ![](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
 
-### **JSAPI Resources**
+### JSAPI Resources
 
 [![JS API Resources](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/jsapiResources.png)](https://github.com/Esri/jsapi-resources)
 
@@ -51,7 +52,7 @@ it down to fit into 45 minutes.
 - Build tools, e.g. Webpack
 - OAuth Callback
 
-### TypeScript/Babel
+### TypeScript/Vite
 
 - Code assist
 - ES6
@@ -74,9 +75,11 @@ more.
 ### Dev Tools
 
 - Console
-- Debugging
-- Network traffic
-- Css inspection ... and much more
+- Breakpoints
+- CSS inspection
+- Snippets
+- Network Traffic
+- and much more!
 
 ### Debugging: Breakpoints
 
@@ -98,6 +101,12 @@ more.
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/network.png)
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/network.png)
+
+### Debugging: AI helpers
+
+- ChatGPT
+- VS Code Chat ("Explain this error")
+- GitHub Copilot
 
 ### Console
 
@@ -123,7 +132,7 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 ### Console: Log Messages
 
 - Log your own messages
-- Warning message logged by JSAPI
+- Warning message logged by Maps SDK
 
 [![](https://hgonzago.github.io/tips-tricks-webinar/images/consoleerror.png)](https://hgonzago.github.io/tips-tricks-webinar/Demos/js-demo/index.html)
 
@@ -227,8 +236,13 @@ CDN:
 
 ![screen capture](https://github.com/hgonzago/DevSummit-presentations/blob/gh-pages/Dev-Summit-2017/Dev-debug-tips/images/screencapture.png?raw=true)
 
-### Accessibility
+- Remote debugging - iOS and Android
 
+### Lighthouse
+
+### Lighthouse: Accessibility
+
+- axe
 - Audits
 - Color Contrast
 - Extensions
@@ -290,6 +304,7 @@ TODO
 - [https://developers.arcgis.com/javascript/latest/guide/typescript-setup/](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
 - [odoenet (Rene's blog)](https://odoe.net/blog)
 - [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
+- Mention CanIUse.com
 
 ### Please take our survey
 
