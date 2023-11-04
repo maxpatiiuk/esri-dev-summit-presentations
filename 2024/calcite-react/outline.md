@@ -123,10 +123,6 @@ Empower your web apps with geospatial web technology
 - Write Unit tests and other types of tests for your code - will give you
   confidence that changes to the app in one place didn't break something else
 
-## ArcGIS Instant Apps
-
-Portfolio
-
 ## Development Environment Setup
 
 Installation:
@@ -164,7 +160,20 @@ Add copy script and build scripts:
 
 ## Layout + Feature
 
+TODO: what kind of app are we looking to build? (Purpose, Features,
+Functionality)
+
+> speaker notes:
+>
+> Highlight differences between Calcite Components and Calcite Components React.
+> Why should React Apps use Calcite Components React instead?
+
 ## Adding Custom Widgets to the View
+
+> speaker notes:
+>
+> Demonstrate usage of Calcite Components within React Components and showcase
+> app as it's being built
 
 ## Other Sessions Worth Seeing
 
