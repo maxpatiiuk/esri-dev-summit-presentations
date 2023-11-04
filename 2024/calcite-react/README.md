@@ -1,4 +1,4 @@
-# Building web apps with Calcite Design System and React
+# Building Web Apps with Calcite Design System and React
 
 Presenters: [Ryan Libed](https://github.com/rslibed) &
 [Max Patiiuk](https://github.com/maxxxxxdlp)
