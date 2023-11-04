@@ -1,5 +1,11 @@
 {
   "private": true,
+  "scripts": {
+    "postinstall": "fetchSubmodules && installRevealJs",
+    "fetchSubmodules": "git submodule update --init --recursive",
+    "installRevealJs": "(cd 2024/reveal.js && npm install)",
+    "start": "cd 2024/reveal.js && npx gulp --cwd ../../ --gulpfile ./gulpfile.js serve"
+  },
   "devDependencies": {
     "prettier": "^3.0.3",
     "@maxxxxxdlp/prettier-config": "^1.0.4"
