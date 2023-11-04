@@ -15,6 +15,7 @@ Benefits:
 
    ```sh
    git clone https://github.com/maxxxxxdlp/esri-dev-summit-presentations/
+   cd esri-dev-summit-presentations
    ```
 
 2. Install the dependencies
@@ -29,7 +30,7 @@ Benefits:
    npm start
    ```
 
-4. Open a url for the corresponding session in your browser. For example,
+4. Open the URL for the corresponding session in your browser. For example,
    http://localhost:8000/2024/debugging-tips-and-tricks/
 
 5. Edit the `index.md` and `index.html` file in the directory for the

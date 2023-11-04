@@ -9,17 +9,21 @@ function watchFiles() {
     stdio: 'inherit',
     shell: true,
   });
+
+  /**
+   * A hacky workaround for submodule's gulp not watching subdirectories.
+   *
+   * @see https://github.com/Esri/reveal.js/issues/25
+   */
   gulp.watch(
     ['2024/**/*.html', '2024/**/*.md', '!node_modules/**'],
-    gulp.series(triggerUpdate),
+    gulp.series((done) => {
+      const triggerFile = './trigger.html';
+      fs.writeFileSync(triggerFile, triggerFile);
+      setTimeout(() => fs.unlink(triggerFile, () => {}), 100);
+      done(); // Signal completion
+    }),
   );
-}
-
-function triggerUpdate(done) {
-  const triggerFile = './trigger.html';
-  fs.writeFileSync(triggerFile, triggerFile);
-  setTimeout(() => fs.unlink(triggerFile, () => {}), 100);
-  done(); // Signal completion
 }
 
 // Export the serve task

@@ -2,7 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "fetchSubmodules && installRevealJs",
+    "postinstall": "npm run fetchSubmodules && npm run installRevealJs",
     "fetchSubmodules": "git submodule update --init --recursive",
     "installRevealJs": "(cd 2024/reveal.js && npm install)",
     "start": "gulp serve"
