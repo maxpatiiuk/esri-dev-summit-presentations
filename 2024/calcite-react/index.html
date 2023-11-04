@@ -68,18 +68,11 @@
 
         <!-- CONTENT: -->
         <section
-          data-markdown
+          data-markdown="outline.md"
+          data-separator="\n#"
+          data-separator-notes="^> speaker notes:"
           data-background="../reveal.js/img/2023/uc/esri/02.png"
-        >
-          <h2>Overview</h2>
-
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </section>
+        ></section>
 
         <section
           data-markdown
@@ -104,6 +97,7 @@
         <section
           data-markdown
           data-background="../reveal.js/img/2023/uc/esri/03.png"
+          data-visibility="hidden"
         >
           <script type="text/template">
             ## Content Headline
@@ -172,7 +166,6 @@
         showSlideNumber: 'speaker',
         hashOneBasedIndex: true,
         hash: true,
-        showNotes: true,
         width: 1920,
         height: 1080,
         transition: 'fade',

@@ -7,7 +7,7 @@ Length: 60 minutes
 
 ---
 
-[![](./TODO.png)](SLIDE)
+[![Building web Apps with Calcite header slide](header-slide.jpg)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
 [Download Slides](TODO)
 
