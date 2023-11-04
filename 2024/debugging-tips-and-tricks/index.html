@@ -69,18 +69,11 @@
 
         <!-- CONTENT: -->
         <section
-          data-markdown
+          data-markdown="outline.md"
+          data-separator="\n#"
+          data-separator-notes="^> speaker notes:"
           data-background="../reveal.js/img/2023/uc/esri/02.png"
-        >
-          <h2>Overview</h2>
-
-          <ul>
-            <li>Setting up your dev environment</li>
-            <li>Dev tools intro</li>
-            <li>Common gotchas</li>
-            <li>Dev tools tips</li>
-          </ul>
-        </section>
+        ></section>
 
         <section
           data-markdown
@@ -94,6 +87,8 @@
             - Try out embedding videos
             - Try out highlighting steps in code blocks
             - Trt out class="fragment"
+            - Try out RevealLiveCode - https://github.com/lucienimmink/RevealLiveCode
+            - Try out Attribution plugin for footnotes - https://github.com/rschmehl/reveal-plugins/tree/main/attribution
             - consider adding animations - https://revealjs.com/auto-animate/
               for example, https://revealjs.com/auto-animate/#example%3A-animating-between-code-blocks
             - After slides are complete, convert to PDF and upload to the repository? - https://revealjs.com/pdf-export/#instructions
@@ -105,6 +100,7 @@
         <section
           data-markdown
           data-background="../reveal.js/img/2023/uc/esri/03.png"
+          data-visibility="hidden"
         >
           <script type="text/template">
             ## Content Headline
@@ -173,7 +169,6 @@
         showSlideNumber: 'speaker',
         hashOneBasedIndex: true,
         hash: true,
-        showNotes: true,
         width: 1920,
         height: 1080,
         transition: 'fade',
