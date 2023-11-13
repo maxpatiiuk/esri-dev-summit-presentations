@@ -14,7 +14,7 @@ Impressions:
 - Dated of course, but still good video
 - Demos don't do enough to show how bug was detected - jump straight to error.
   Of course, there is time presume, but should be able to do better
-- Heather is pretty disorganized and not conscientious. Tabs should be opened.
+- Little disorganized. Tabs should be opened.
   Before the session, make sure to have everything opened and located
   conveniently
 - Zoom in to increase font size, console size, window size (maybe change display
