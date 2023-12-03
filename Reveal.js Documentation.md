@@ -14,7 +14,7 @@ Benefits:
 1. Clone this repository
 
    ```sh
-   git clone https://github.com/maxxxxxdlp/esri-dev-summit-presentations/
+   git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations/
    cd esri-dev-summit-presentations
    ```
 

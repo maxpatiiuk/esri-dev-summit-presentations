@@ -1,6 +1,6 @@
 # ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
-Presenters: [Max Patiiuk](https://github.com/maxxxxxdlp) &
+Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Noah Sager](https://github.com/NoashX)
 
 Length: 45 minutes

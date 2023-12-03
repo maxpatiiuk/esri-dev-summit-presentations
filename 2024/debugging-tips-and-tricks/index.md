@@ -118,7 +118,7 @@ more.
 - Firefox Developer Edition
 - Chrome and/or Chrome Canary
   - [Comprehensive Official Documentation](https://developer.chrome.com/docs/devtools/)
-  - [Summary of advanced, lesser-known tools and tips](https://github.com/maxxxxxdlp/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
+  - [Summary of advanced, lesser-known tools and tips](https://github.com/maxpatiiuk/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
 - Edge
 - Safari
 

@@ -16,7 +16,7 @@ Whether you're new to Calcite or seeking to deepen your skills, this session
 will offer you actionable insights to take your projects to the next level.
 
 Presenters: [Ryan Libed](https://github.com/rslibed) &
-[Max Patiiuk](https://github.com/maxxxxxdlp)
+[Max Patiiuk](https://github.com/maxpatiiuk)
 
 ### ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
@@ -31,5 +31,5 @@ the power of browser-based debugging tools to debug, style, and optimize your
 apps. We will also cover how to resolve common issues you may run into when
 working with the ArcGIS Maps SDK for JavaScript.
 
-Presenters: [Max Patiiuk](https://github.com/maxxxxxdlp) &
+Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Noah Sager](https://github.com/NoashX)

@@ -1,7 +1,7 @@
 # Building Web Apps with Calcite Design System and React
 
 Presenters: [Ryan Libed](https://github.com/rslibed) &
-[Max Patiiuk](https://github.com/maxxxxxdlp)
+[Max Patiiuk](https://github.com/maxpatiiuk)
 
 Length: 60 minutes
 

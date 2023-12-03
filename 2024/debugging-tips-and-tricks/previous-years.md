@@ -73,7 +73,7 @@ Material:
   - Official docs are long, but very comprehensive and super helpful -
     https://developer.chrome.com/docs/devtools/
   - Based on those docs, I have shorter
-    [notes with DevTools features I found useful](https://github.com/maxxxxxdlp/code_share/blob/main/misc/notes/Chrome%20DevTools.md).
+    [notes with DevTools features I found useful](https://github.com/maxpatiiuk/code_share/blob/main/misc/notes/Chrome%20DevTools.md).
     Maybe mention some of them?
 - DevTools mobile emulation. Throttling. Sensors
   - But was mentioned a lot previously so maybe just mention briefly that this
