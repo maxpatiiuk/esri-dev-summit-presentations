@@ -5,11 +5,10 @@
     "postinstall": "npm run fetchSubmodules && npm run installRevealJs",
     "fetchSubmodules": "git submodule update --init --recursive",
     "installRevealJs": "(cd 2024/reveal.js && npm install)",
-    "start": "gulp serve"
+    "start": "(cd 2024/reveal.js && npx gulp --cwd ../../ --gulpfile ./gulpfile.js serve)"
   },
   "devDependencies": {
     "@maxxxxxdlp/prettier-config": "^1.0.4",
-    "gulp": "^4.0.2",
     "prettier": "^3.0.3"
   },
   "prettier": "@maxxxxxdlp/prettier-config"
