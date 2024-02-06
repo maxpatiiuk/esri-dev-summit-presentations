@@ -14,9 +14,8 @@ Impressions:
 - Dated of course, but still good video
 - Demos don't do enough to show how bug was detected - jump straight to error.
   Of course, there is time presume, but should be able to do better
-- Little disorganized. Tabs should be opened.
-  Before the session, make sure to have everything opened and located
-  conveniently
+- Little disorganized. Tabs should be opened ahead of time. Before the session,
+  make sure to have everything opened and located conveniently
 - Zoom in to increase font size, console size, window size (maybe change display
   settings to reduce pixel size - will make everything look larger)
 - Create separate VS Code profile for presenting - larger font size, less noise,
@@ -24,9 +23,8 @@ Impressions:
 
 Material:
 
-- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error" ahead
-  of time and everything setup
-- Show off local overrides or editing local folder or web browser inside of ide
+- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error"
+- Show off local overrides or editing local folder or web browser inside of IDE
 - A lot of DevTools tips to show
   - Snippets
   - Breakpoints
@@ -48,7 +46,7 @@ Ideas:
 - Use light IDE theme as it's easier to read off projector (based on user
   feedback)
 
-Todos:
+TODOs:
 
 - Brainstorm things that were't shown in recent years, but would still be useful
   to both new and intermediate developers
@@ -69,7 +67,7 @@ Material:
 - mention `debugger;`. show how to blackbox a script (from context menu, not
   though typing out file url like in the recording). stop on (un)caught
   exceptions
-- Suggest learning devtools well - will be very helful in the long term
+- Suggest learning devtools well - will be very helpful in the long term
   - Official docs are long, but very comprehensive and super helpful -
     https://developer.chrome.com/docs/devtools/
   - Based on those docs, I have shorter
@@ -79,7 +77,7 @@ Material:
   - But was mentioned a lot previously so maybe just mention briefly that this
     exists
 
-Todos:
+TODOs:
 
 - how do we switch between displays when presenting? one person has slides and
   another demos? or all from single laptop?

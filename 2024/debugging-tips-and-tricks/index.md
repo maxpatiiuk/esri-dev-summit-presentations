@@ -1,18 +1,26 @@
-# Outline
+# Overview
 
-- [x] Extracted material from all previous years into a single outline to see a
-      one page view of everything.
-- [x] Add new ideas to outline
-- [ ] Trim it down to fit into 45 minutes.
-
-## Overview
-
-- Setting up your dev environment
-- Troubleshoot web application
-  - Dev tools intro
-  - Tips & Tricks
+- Setting up your dev environment 🧑‍💻
+- Troubleshoot web applications 💥
+  - DevTools intro
   - AI-based tools and helpers
-- Maps SDK resources
+  - Tips & Tricks
+- Maps SDK resources 📍
+
+> speaker notes:
+>
+> TODO: trim it down to 45 minutes
+>
+> (Max) We will begin this session with a guide to setting up your development
+> environment for productivity.
+>
+> Then, would dive deep into Developer Tools available in the browser, try out
+> debugging an application and examine helpful AI-based tools.
+>
+> Finally, we would conclude with a list of resources available for the Maps SDK
+> for JavaScript for further learning.
+>
+> (Noah) There is a lot to cover today, so let's get started.
 
 ## Code Editor
 
@@ -23,19 +31,28 @@
   - Theming
   - Task integration
 
-[Demo](https://www.slant.co/topics/1686/~javascript-ides-or-editors)
-
 > speaker notes:
 >
-> If you already know which code editor or IDE you like, that is great! If you
-> are just getting started and aren't sure, VS Code is a great start and a very
-> popular choice
+> (Noah) As a developer, you would be spending a lot of time in the code editor.
 >
-> a code editor provides the following nice features
+> If you already know which code editor or IDE you prefer, that is awesome! If
+> you are just getting started and aren't sure, VS Code is a great choice.
+>
+> Lets look at some useful tools that a good editor provides:
 
 ## Code Editor: Prettier
 
-![](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
+![Prettier takes care of formatting code consistently automatically](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
+
+[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+
+> speaker notes:
+>
+> (Noah) The most helpful tool for improving developer productivity, is a code
+> formatter. Prettier is the most popular choice and comes installed by default
+> in many editors. If you have a formatter configured to run on save, you can
+> write code without worrying about formatting, and Prettier will take care of
+> making the code look good for you.
 
 ## Code Editor: ESLint
 
@@ -43,6 +60,13 @@
 - Calcite rules
 - React/Vue/Jest/etc rules
 - LintLens VS Code extensions
+
+> speaker notes:
+>
+> (Noah) Code Quality becomes very important as the project grows. Good code is
+> hard to define, but in general it makes it easier for your teammates and the
+> future you to understand what the code is doing, and to make modifications as
+> necessary.
 
 ## VS Code Live Server
 
@@ -52,6 +76,10 @@ VS Code extensions:
 - LiveServer
 - entire Edge browser with DevTools inside of VS Code
 
+> speaker notes:
+>
+> (Noah)
+
 ## Code Editor: GitLens
 
 VS Code extensions:
@@ -59,13 +87,9 @@ VS Code extensions:
 - Github Pull Requests & Issues
 - GitLens
 
-## Maps SDK Resources
-
-[![Maps SDK Resources](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/jsapiResources.png)](https://github.com/Esri/jsapi-resources)
-
-- TypeScript definition file
-- Build tools, e.g. Webpack
-- OAuth Callback
+> speaker notes:
+>
+> (Noah)
 
 ## TypeScript/Vite
 
@@ -79,6 +103,10 @@ VS Code extensions:
 - VS Code extension:
   - Pretty TypeScript Errors
 
+> speaker notes:
+>
+> (Max)
+
 ## Good practice
 
 - Check Maps SDK release notes
@@ -87,28 +115,11 @@ VS Code extensions:
 - Write Unit tests and other types of tests for your code - will give you
   confidence that changes to the app in one place didn't break something else
 
-## ArcGIS API for JavaScript - next
+> speaker notes:
+>
+> (Max)
 
-Github repository for feedback:
-[Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
-
-Npm:
-
-```sh
- npm install arcgis-js-api@next
-```
-
-CDN:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://js.arcgis.com/next/esri/themes/light/main.css"
-/>
-<script src="https://js.arcgis.com/next/"></script>
-```
-
-## Dev Tools
+## DevTools
 
 Debugging tools === Productive programmers
 
@@ -124,11 +135,11 @@ more.
 
 > speaker notes:
 >
-> Suggest learning devtools well - will be very helpful in the long term
+> (Max) Suggest learning devtools well - will be very helpful in the long term
 >
 > Official docs are long, but very comprehensive and super helpful
 
-## Dev Tools: Outline
+## DevTools: Outline
 
 - Console
 - Breakpoints
@@ -136,6 +147,10 @@ more.
 - Snippets
 - Network Traffic
 - and much more!
+
+> speaker notes:
+>
+> (Max)
 
 ## Debugging: Breakpoints
 
@@ -148,6 +163,10 @@ more.
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/breakpoints.gif)
 [Debugging demo](https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-3d/live/index.html)
+
+> speaker notes:
+>
+> (Max)
 
 ## Debugging: Network requests
 
@@ -162,6 +181,10 @@ more.
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/network.png)
 
 [Network demo](https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-3d/live/index.html)
+
+> speaker notes:
+>
+> (Max)
 
 ## Debugging: Philosophy
 
@@ -186,6 +209,12 @@ Use version control like Git, and make regular small commits to see a history of
 changes. This also allows to see what needs to be rolled back if things broke
 suddenly.
 
+[Detailed guide](https://ntietz.com/blog/how-i-debug-2023/)
+
+> speaker notes:
+>
+> (Max)
+
 ## Debugging: AI helpers and extensions
 
 - ChatGPT/Bard/Bing AI/Claude
@@ -198,6 +227,10 @@ suddenly.
   - Webpack
   - Vite
   - React
+
+> speaker notes:
+>
+> (Max)
 
 ## Console
 
@@ -222,6 +255,10 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/latlong.png)
 
+> speaker notes:
+>
+> (Noah)
+
 ## Console: Log Messages
 
 - Log your own messages
@@ -229,11 +266,19 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 [![](https://hgonzago.github.io/tips-tricks-webinar/images/consoleerror.png)](https://hgonzago.github.io/tips-tricks-webinar/Demos/js-demo/index.html)
 
+> speaker notes:
+>
+> (Noah)
+
 ## Console: Custom formatters
 
 [Controls how object values display](https://github.com/ycabon/arcgis-js-api-devtools)
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/formatters.png)
+
+> speaker notes:
+>
+> (Noah)
 
 ## CSS: Color Themes
 
@@ -242,6 +287,10 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 - Emulate via dev tools
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/theme-prefs.png)
+
+> speaker notes:
+>
+> (Noah)
 
 ## CSS: Inspect Styles
 
@@ -252,10 +301,18 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/computed-css.png)
 
+> speaker notes:
+>
+> (Noah)
+
 ## Elements: Inspect Web Component
 
 - Web-component specific debugging (i.e shadow dom)
   - The Properties tab in devtools
+
+> speaker notes:
+>
+> (Noah)
 
 ## Application
 
@@ -263,11 +320,19 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 - Local Storage
 - App Cache
 
+> speaker notes:
+>
+> (Noah)
+
 ## Emulation: Sensors
 
 - Modify current location and locale
 
 [![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
+
+> speaker notes:
+>
+> (Noah)
 
 ## Emulation: Mobile
 
@@ -276,13 +341,25 @@ require(['esri/geometry/support/webMercatorUtils'], function (
 
 ![screen capture](https://github.com/hgonzago/DevSummit-presentations/blob/gh-pages/Dev-Summit-2017/Dev-debug-tips/images/screencapture.png?raw=true)
 
+> speaker notes:
+>
+> (Noah)
+
 ## Remote Debugging - iOS and Android
 
 More accurate, but requires physical device
 
+> speaker notes:
+>
+> (Max)
+
 ## Lighthouse
 
 TODO
+
+> speaker notes:
+>
+> (Max)
 
 ## Lighthouse: Accessibility
 
@@ -297,13 +374,19 @@ TODO
 - Other Dev Summit sessions on accessibility:
   - TODO
 
-> speaker notes: mention importance of Accessibility
+> speaker notes:
+>
+> (Max) mention importance of Accessibility
 
 ## View events
 
 - [Handling Events](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#events)
 
 [![event explorer](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/event-explorer.png)](hhttps://developers.arcgis.com/javascript/latest/sample-code/event-explorer/)
+
+> speaker notes:
+>
+> (Max)
 
 ## Constrain visible extent
 
@@ -314,7 +397,9 @@ Use constraint geometry to
 
 [Demo](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/demos/restrict_extent.html)
 
-> speaker notes: go over this quickly as it was mentioned recently
+> speaker notes:
+>
+> (Max) go over this quickly as it was mentioned recently
 
 ## Request interceptor
 
@@ -326,7 +411,9 @@ Use constraint geometry to
 
 [Real World Example](https://community.esri.com/t5/arcgis-api-for-javascript/how-to-use-a-key-in-an-esrirequest-call/m-p/298401)
 
-> speaker notes: go over this quickly as it was mentioned recently
+> speaker notes:
+>
+> (Max) go over this quickly as it was mentioned recently
 
 ## Snippet
 
@@ -334,22 +421,75 @@ Use constraint geometry to
 
 ![Code snippet to get lat and long](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/coords-snippet.png)
 
+> speaker notes:
+>
+> (Max)
+
 ## Create Live Expression
 
 - Get coordinates as you navigate the map
 
 ![Code snippet to get lat and long](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/live-expression.png)
 
+> speaker notes:
+>
+> (Max)
+
+## Maps SDK Resources
+
+[![Maps SDK Resources](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/jsapiResources.png)](https://github.com/Esri/jsapi-resources)
+
+- TypeScript definition file
+- Build tools, e.g. Webpack
+- OAuth Callback
+
+> speaker notes:
+>
+> (Max)
+
+## ArcGIS API for JavaScript - next
+
+Github repository for feedback:
+[Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
+
+Npm:
+
+```sh
+npm install arcgis-js-api@next
+```
+
+CDN:
+
+```html
+<link
+  rel="stylesheet"
+  href="https://js.arcgis.com/next/esri/themes/light/main.css"
+/>
+<script src="https://js.arcgis.com/next/"></script>
+```
+
+> speaker notes:
+>
+> (Noah)
+
 ## Other Sessions Worth Seeing
 
 TODO
 
+> speaker notes:
+>
+> (Noah)
+
 ## Questions?
 
-- [Documentation & Samples](https://developers.arcgis.com/javascript/)
 - Slides & Notes:
   [https://bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
+- [Documentation & Samples](https://developers.arcgis.com/javascript/)
 - [https://developers.arcgis.com/javascript/latest/guide/typescript-setup/](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
 - [odoenet (Rene's blog)](https://odoe.net/blog)
 - [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
 - https://caniuse.com/
+
+> speaker notes:
+>
+> (Noah)
