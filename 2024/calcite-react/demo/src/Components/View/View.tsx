@@ -10,7 +10,7 @@ interface ViewProps {
 }
 
 export const View = (props: ViewProps) => {
-    const viewRef = useRef(null) as React.RefObject<HTMLDivElement>;
+    const viewRef = useRef<HTMLDivElement | null>(null);
     const [ view, setView ] = useState<__esri.MapView | null>(null);
 
     useEffect(() => {
