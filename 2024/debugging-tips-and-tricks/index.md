@@ -482,14 +482,12 @@ TODO
 
 ## Questions?
 
-- Slides & Notes:
-  [https://bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
-- [Documentation & Samples](https://developers.arcgis.com/javascript/)
-- [https://developers.arcgis.com/javascript/latest/guide/typescript-setup/](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
-- [odoenet (Rene's blog)](https://odoe.net/blog)
-- [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
-- https://caniuse.com/
+Slides & Notes:
+[bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
+
+![](./qr-code.svg)
 
 > speaker notes:
 >
-> (Noah)
+> If you wish to dive deeper, you can find our slides and additional resources
+> at the URL above, or you can scan the QR code.
