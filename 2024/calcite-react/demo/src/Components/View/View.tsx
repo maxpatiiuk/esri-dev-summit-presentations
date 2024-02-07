@@ -34,7 +34,7 @@ export const View = (props: ViewProps) => {
         });
 
         setView(view);
-
+    return () => view?.destroy();
     }, []);
 
     useEffect(() => {
