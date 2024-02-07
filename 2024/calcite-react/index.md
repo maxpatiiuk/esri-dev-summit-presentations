@@ -7,6 +7,13 @@
 
 > speaker notes:
 >
+> (Ryan) We will begin this session with a quick introduction to the main
+> technologies used for building web mapping applications. We will cover React,
+> TypeScript, Calcite, ArcGIS Maps SDK for JavaScript, and then show how all of
+> these are utilized together using a demo application.
+>
+> (Max) There is a lot to cover today, so let's get started.
+>
 > TODOs:
 >
 > - [x] Extracted material from all previous years into a single outline to see
@@ -29,6 +36,10 @@ JavaScript library for building user-interfaces
 - One-way data binding
   - Data is transferred from top to bottom
 
+> speaker notes:
+>
+> (Max)
+
 ## TypeScript
 
 Javascript with syntax for types
@@ -41,6 +52,10 @@ Javascript with syntax for types
 - [TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
   - Use TypeScript to catch typos, have better autocomplete, and build more
     maintainable apps
+
+> speaker notes:
+>
+> (Max)
 
 ## Calcite Design System
 
@@ -61,9 +76,10 @@ Javascript with syntax for types
 
 > speaker notes:
 >
-> Calcite Design System is a set of reusable web components with implementation
-> guidance that can be used to build on-brand and accessible web applications.
-> Along with web components it includes a UI kit, icons, and color schemes.
+> (Max) Calcite Design System is a set of reusable web components with
+> implementation guidance that can be used to build on-brand and accessible web
+> applications. Along with web components it includes a UI kit, icons, and color
+> schemes.
 >
 > Calcite Components are framework-agnostic, so it can web components built with
 > StencilJS. Stencil is a compiler that generates custom elements using
@@ -85,6 +101,10 @@ Javascript with syntax for types
 - Reduce effort & cost; speed up updates
 - Improve accessibility (WCAG 2.1 AA); comply with web-standards
 
+> speaker notes:
+>
+> (Max)
+
 ## ArcGIS Maps SDK for JavaScript
 
 Empower your web apps with geospatial web technology
@@ -105,10 +125,10 @@ Empower your web apps with geospatial web technology
 
 > speaker notes:
 >
-> ArcGIS API for JS is a web API that allows users to create apps that unlock
-> your data’s potential with interactive user experiences. The Portal API allows
-> developers to work with users, groups, and content that’s hosted within ArcGIS
-> Online or ArcGIS Enterprise.
+> (Max) ArcGIS API for JS is a web API that allows users to create apps that
+> unlock your data’s potential with interactive user experiences. The Portal API
+> allows developers to work with users, groups, and content that’s hosted within
+> ArcGIS Online or ArcGIS Enterprise.
 >
 > There’s also out-of-the-box widgets that developers can use to enrich their
 > user’s experience. Along with that developers can use the Widget class to
@@ -126,6 +146,10 @@ Empower your web apps with geospatial web technology
 - Use GitHub Dependabot to receive alerts of new versions and security fixes
 - Write Unit tests and other types of tests for your code - will give you
   confidence that changes to the app in one place didn't break something else
+
+> speaker notes:
+>
+> (Max)
 
 ## Development Environment Setup
 
@@ -150,8 +174,8 @@ Add copy script and build scripts:
 
 > speaker notes:
 >
-> To start, create the app using the React builder of your choice. For this
-> example here, we’re using create-react-app and starting off with the
+> (Ryan) To start, create the app using the React builder of your choice. For
+> this example here, we’re using create-react-app and starting off with the
 > TypeScript template.
 >
 > Next, install calcite-components-react. We don’t need to install
@@ -169,15 +193,15 @@ Functionality)
 
 > speaker notes:
 >
-> Highlight differences between Calcite Components and Calcite Components React.
-> Why should React Apps use Calcite Components React instead?
+> (Ryan) Highlight differences between Calcite Components and Calcite Components
+> React. Why should React Apps use Calcite Components React instead?
 
 ## Adding Custom Widgets to the View
 
 > speaker notes:
 >
-> Demonstrate usage of Calcite Components within React Components and showcase
-> app as it's being built
+> (Ryan) Demonstrate usage of Calcite Components within React Components and
+> showcase app as it's being built
 
 ## Other Sessions Worth Seeing
 
@@ -187,6 +211,8 @@ Functionality)
 - [Esri's Design System: Build Beautiful, Consistent Web Apps Faster](https://www.youtube.com/watch?v=UNkjECNnB-Q)
 
 > speaker notes:
+>
+> (Max)
 >
 > TODO: update with 2024 sessions
 
@@ -199,5 +225,5 @@ Slides and Demo app:
 
 > speaker notes:
 >
-> If you wish to dive deeper, you can find our slides, demo application and
-> additional resources at the URL above, or you can scan the QR code.
+> (Max) If you wish to dive deeper, you can find our slides, demo application
+> and additional resources at the URL above, or you can scan the QR code.
