@@ -17,8 +17,7 @@ Impressions:
 
 Material:
 
-- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error" ahead
-  of time and everything setup
+- Suggest using ChatGPT today. Also VS Code Chat, and "Explain this error"
 - Link to other sessions worth seeing (both this year and past years)
 - ESLint flat config, Calcite rules
 - Prettier!!!
@@ -46,4 +45,4 @@ Ideas:
       be reused or improved
 - [ ] How do we switch between displays when presenting? one person has slides
       and another demos? or all from single laptop?
-- [ ] https://github.com/Esri/reveal.js
+- [x] https://github.com/Esri/reveal.js

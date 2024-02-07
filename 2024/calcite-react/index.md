@@ -1,10 +1,3 @@
-# Outline
-
-- [x] Extracted material from all previous years into a single outline to see a
-      one page view of everything.
-- [x] Add new ideas to the outline
-- [ ] Trim it down to fit into 60 minutes.
-
 ## Overview
 
 - React
@@ -12,14 +5,24 @@
 - Calcite
 - ArcGIS Maps SDK for JavaScript
 
+> speaker notes:
+>
+> TODOs:
+>
+> - [x] Extracted material from all previous years into a single outline to see
+>       a one page view of everything.
+> - [x] Add new ideas to the outline
+> - [ ] Trim it down to fit into 25 minutes
+> - [ ] Add QR Code with link to slides?
+
 ## React
 
 JavaScript library for building user-interfaces
 
 - Virtual DOM (Document Object Model)
   - Copy of real DOM
-  - If there's a change, VDOM will update, compare differences between the real
-    DOM and virtual DOM, then only the part of the DOM that is changed will
+  - If there's a change, VDOM will re-render, compare differences between the
+    real DOM and virtual DOM, then only the part of the DOM that is changed will
     update, rather than the entire DOM
 - JSX (JavaScript Syntax Extension)
   - JavaScript code in HTML-like syntax
@@ -69,7 +72,7 @@ Javascript with syntax for types
 > Calcite Components React is a wrapper for calcite components. When using with
 > TypeScript it gives you type safety. The reason why you would use this instead
 > of using calcite components directly is that custom events are connected for
-> you instead of having to access the Dom node and adding event listeners to a
+> you instead of having to access the DOM node and adding event listeners to a
 > ref.
 >
 > Walk through documentation:
@@ -87,7 +90,7 @@ Javascript with syntax for types
 Empower your web apps with geospatial web technology
 
 - Features include, but aren't limited to:
-  - Portal set up
+  - ArcGIS Portal set up
   - Load and display geographic information in 2D and 3D
   - Out-of-the-box widgets
   - Create custom widgets with Widget Development Framework
@@ -98,6 +101,7 @@ Empower your web apps with geospatial web technology
 - [Maps SDK Resources](https://github.com/Esri/jsapi-resources)
   - [React sample app](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-react)
   - [TypeScript sample app](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)
+  - [React + Web Components sample app](https://github.com/Esri/arcgis-maps-sdk-javascript-samples-beta/tree/main/packages/map-components)
 
 > speaker notes:
 >
@@ -177,30 +181,23 @@ Functionality)
 
 ## Other Sessions Worth Seeing
 
-TODO: update with 2024 sessions
-
 - [Building Web Apps with ArcGIS API for JavaScript and Calcite Design System](https://mediaspace.esri.com/media/t/1_6eotmuhb/244321192)
 - [Calcite Design System: Design & Build Web Apps](https://mediaspace.esri.com/media/t/1_a5nli0bn/244321192)
 - [Esri's Design System: Build Compelling Web Apps Faster Using the New Web Component Library](https://www.youtube.com/watch?v=R-J_xsYGRKg)
 - [Esri's Design System: Build Beautiful, Consistent Web Apps Faster](https://www.youtube.com/watch?v=UNkjECNnB-Q)
 
+> speaker notes:
+>
+> TODO: update with 2024 sessions
+
 ## Questions?
 
-Information and documentation
+Slides and Demo app:
+[bit.ly/esri-2024-calcite-react](https://bit.ly/esri-2024-calcite-react)
 
-- Slides & Notes:
-  [https://bit.ly/esri-2024-calcite-react](https://bit.ly/esri-2024-calcite-react)
-- [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
-- Calcite Design System
-  - Documentation: https://developers.arcgis.com/calcite-design-system
-  - GitHub: https://github.com/Esri/calcite-components
-  - Calcite Components
-    React: https://www.npmjs.com/package/@esri/calcite-components-react
-- ArcGIS API for JavaScript
-  - Documentation: https://developers.arcgis.com/javascript
-  - TypeScript setup:
-    https://developers.arcgis.com/javascript/latest/guide/typescript-setup/
-  - [odoenet (Rene's blog)](https://odoe.net/blog)
-- React: https://reactjs.org/
-- TypeScript: https://www.typescriptlang.org
-- Demo App: https://github.com/rslibed/2022-ds-react-ts-calcite-components
+![](./qr-code.svg)
+
+> speaker notes:
+>
+> If you wish to dive deeper, you can find our slides, demo application and
+> additional resources at the URL above, or you can scan the QR code.

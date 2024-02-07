@@ -7,9 +7,9 @@ Length: 45 minutes
 
 ---
 
-[![Debugging Tips and Tricks Title Slide](./header-slide.jpg)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[![Debugging Tips and Tricks Title Slide](./header-slide.webp)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
-[Download Slides](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[Slides](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
 Learn how to quickly and easily find and fix problems in your web mapping
 applications. You will learn how to setup your dev environment to use plug-ins

@@ -4,7 +4,7 @@
 
 ### Building web apps with Calcite Design System and React
 
-[![Building web Apps with Calcite header slide](2024/calcite-react/header-slide.jpg)](./2024/calcite-react/)
+[![Building web Apps with Calcite header slide](2024/calcite-react/header-slide.webp)](./2024/calcite-react/)
 
 [Slides and Notes](./2024/calcite-react/)
 
@@ -20,7 +20,7 @@ Presenters: [Ryan Libed](https://github.com/rslibed) &
 
 ### ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
-[![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/header-slide.jpg)](./2024//debugging-tips-and-tricks/)
+[![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/header-slide.webp)](./2024//debugging-tips-and-tricks/)
 
 [Slides and Notes](./2024/debugging-tips-and-tricks/)
 
