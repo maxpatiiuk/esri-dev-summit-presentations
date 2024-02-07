@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
+import  { useEffect, useRef, useState } from "react"
 
 import WebMap from "@arcgis/core/WebMap";
 import MapView from "@arcgis/core/views/MapView";
 
-import "./View.scss";
+import "./View.css";
 
 interface ViewProps {
     webmap: string;
