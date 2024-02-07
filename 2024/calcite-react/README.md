@@ -7,9 +7,9 @@ Length: 60 minutes
 
 ---
 
-[![Building web Apps with Calcite header slide](header-slide.jpg)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[![Building web Apps with Calcite header slide](header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/calcite-react/)
 
-[Download Slides](TODO)
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/calcite-react/)
 
 Looking to enrich your spatially-enabled React Apps? Join us to discover the
 power of integrating Calcite Components and React to craft a superior user
