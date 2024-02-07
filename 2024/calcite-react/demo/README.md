@@ -16,7 +16,7 @@ Description: TODO
 3. `yarn install`
 4. `yarn start`
 
-Note: yarn and git is required run the above commands. 
+Note: yarn and git is required to run the above commands.
 
 Demo app will be hosted at `http://localhost:5173`.
 
