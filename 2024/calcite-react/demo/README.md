@@ -13,8 +13,8 @@ Description: TODO
 
 1. `git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations.git`
 2. `cd esri-dev-summit-presentations/2024/calcite-react/demo`
-3. `yarn install`
-4. `yarn start`
+3. `npm install`
+4. `npm start`
 
 Note: yarn and git is required to run the above commands.
 

@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 
-import "./index.scss";
-import './App.scss';
+import "./index.css";
+import './App.css';
 
 import { setAssetPath } from "@esri/calcite-components/dist/components";
 setAssetPath("https://cdn.jsdelivr.net/npm/@esri/calcite-components/dist/calcite/assets");

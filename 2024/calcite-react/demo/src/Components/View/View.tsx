@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 
 import WebMap from "@arcgis/core/WebMap";
 import MapView from "@arcgis/core/views/MapView";
@@ -14,12 +14,6 @@ export const View = (props: ViewProps) => {
     const [ view, setView ] = useState<__esri.MapView | null>(null);
 
     useEffect(() => {
-        return () => {
-            view?.destroy();
-        }
-    }, [])
-    
-    useEffect(() => {
         if (!viewRef?.current) return;
 
         const map = new WebMap({
@@ -34,7 +28,7 @@ export const View = (props: ViewProps) => {
         });
 
         setView(view);
-    return () => view?.destroy();
+        return () => view?.destroy();
     }, []);
 
     useEffect(() => {
