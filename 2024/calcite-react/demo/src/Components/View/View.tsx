@@ -35,7 +35,7 @@ export const View = (props: ViewProps) => {
 
         setView(view);
 
-    }, [viewRef]);
+    }, []);
 
     useEffect(() => {
         console.log("View: ", view);
