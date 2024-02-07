@@ -14,7 +14,7 @@ Where: Oasis 1-2 | PSCC
 Presenters: [Ryan Libed](https://github.com/rslibed) &
 [Max Patiiuk](https://github.com/maxpatiiuk)
 
-To be presented at [Esri Developer Summit 2024](http://www.esri.com/events/devsummit).
+To be presented at [Esri Developer Summit 2024](https://registration.esri.com/flow/esri/24epcdev/deveventportal/page/detailed-agenda/session/1699142656142001V31a).
 
 ---
 
