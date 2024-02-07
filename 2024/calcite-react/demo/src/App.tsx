@@ -12,7 +12,6 @@ import { Panel } from "./Components/Panel/Panel";
 
 esriConfig.portalUrl = config.portalUrl;
 
-
 function App() {
   return (
     <CalciteShell>
