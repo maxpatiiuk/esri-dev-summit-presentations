@@ -7,7 +7,7 @@ Length: 60 minutes
 
 ---
 
-[![Building web Apps with Calcite header slide](header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/calcite-react/)
+[![](header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/calcite-react/)
 
 [Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/calcite-react/)
 
@@ -18,6 +18,18 @@ showing you how to seamlessly incorporate web mapping into your applications.
 Whether you're new to Calcite or seeking to deepen your skills, this session
 will offer you actionable insights to take your projects to the next level.
 
-# Demo Live Links:
+## Additional Resources
 
-- TODO
+- Calcite Design System
+  - Documentation: https://developers.arcgis.com/calcite-design-system
+  - GitHub: https://github.com/Esri/calcite-components
+  - Calcite Components
+    React: https://www.npmjs.com/package/@esri/calcite-components-react
+  - [Esri Community](https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system)
+- ArcGIS API for JavaScript
+  - Documentation: https://developers.arcgis.com/javascript
+  - TypeScript setup:
+    https://developers.arcgis.com/javascript/latest/guide/typescript-setup/
+  - [odoenet (Rene's blog)](https://odoe.net/blog)
+- React: https://reactjs.org/
+- TypeScript: https://www.typescriptlang.org
