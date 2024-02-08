@@ -1,31 +1,62 @@
-import "@esri/calcite-components/dist/components/calcite-shell";
-import "@esri/calcite-components/dist/components/calcite-shell-panel";
-import "@esri/calcite-components/dist/components/calcite-panel";
+import { useEffect, useRef, useState } from "react";
 
-import { CalcitePanel, CalciteShell, CalciteShellPanel } from '@esri/calcite-components-react';
+import "@esri/calcite-components/dist/components/calcite-shell";
+import { CalciteShell } from '@esri/calcite-components-react';
+
+import WebMap from "@arcgis/core/WebMap";
+import MapView from "@arcgis/core/views/MapView";
+
+import { Header } from "./Components/Header/Header";
+import { Panel } from "./Components/Panel/Panel";
 import { View } from "./Components/View/View";
 
-import config from "./config/application.json";
+interface AppProps {
+  webmap: string;
+  title: string;
+  panelHeading: string;
+}
 
-import esriConfig from "@arcgis/core/config";
-import { Panel } from "./Components/Panel/Panel";
+function App({ webmap, title, panelHeading }: AppProps) {
+  const viewRef = useRef(null) as React.RefObject<HTMLDivElement>;
+  
+  const [view, setView] = useState<MapView | null>(null);
 
-esriConfig.portalUrl = config.portalUrl;
+  const createView = async (map: __esri.WebMap, container: HTMLDivElement) => {
+    try {
+        const loadedMap = await map.load();
+        const view = new MapView({
+            container,
+            map: loadedMap,
+            popupEnabled: false
+        });
+        return Promise.resolve(view);
+    } catch(err) {
+        console.error("ERROR: ", err);
+        return Promise.reject(null);
+    }
+}
 
-function App() {
+useEffect(() => {
+    const container = viewRef?.current;
+    if (!container) return;
+
+    const map = new WebMap({
+        portalItem: {
+            id: webmap
+        }
+    });
+
+    createView(map, container).then(res => setView(res)).catch();
+
+    return () => view?.destroy();
+}, []);
+
+
   return (
     <CalciteShell>
-      <header slot="header">
-        <h1>
-          2024 Esri Developer Summit: Building Web Apps with Calcite Design System and React
-        </h1>
-      </header>
-      <CalciteShellPanel slot="panel-start">
-        <CalcitePanel>
-          <Panel />
-        </CalcitePanel>
-      </CalciteShellPanel>
-      <View webmap={config.webmap} />
+      <Header title={title} />
+      <Panel view={view} panelHeading={panelHeading} />
+      <View viewRef={viewRef} />
     </CalciteShell>
   )
 }
