@@ -1,33 +1,53 @@
-import "@esri/calcite-components/dist/components/calcite-shell";
-import "@esri/calcite-components/dist/components/calcite-shell-panel";
-import "@esri/calcite-components/dist/components/calcite-panel";
+import { useEffect, useRef, useState } from 'react';
 
-import { CalcitePanel, CalciteShell, CalciteShellPanel } from '@esri/calcite-components-react';
-import { View } from "./Components/View/View";
+import '@esri/calcite-components/dist/components/calcite-shell';
+import { CalciteShell } from '@esri/calcite-components-react';
 
-import config from "./config/application.json";
+import WebMap from '@arcgis/core/WebMap';
+import MapView from '@arcgis/core/views/MapView';
 
-import esriConfig from "@arcgis/core/config";
-import { Panel } from "./Components/Panel/Panel";
+import { Header } from './Components/Header/Header';
+import { Panel } from './Components/Panel/Panel';
+import { View } from './Components/View/View';
 
-esriConfig.portalUrl = config.portalUrl;
-
-function App() {
-  return (
-    <CalciteShell>
-      <header slot="header">
-        <h1>
-          2024 Esri Developer Summit: Building Web Apps with Calcite Design System and React
-        </h1>
-      </header>
-      <CalciteShellPanel slot="panel-start">
-        <CalcitePanel>
-          <Panel />
-        </CalcitePanel>
-      </CalciteShellPanel>
-      <View webmap={config.webmap} />
-    </CalciteShell>
-  )
+interface AppProps {
+  webmap: string;
+  title: string;
+  panelHeading: string;
 }
 
-export default App
+function App({ webmap, title, panelHeading }: AppProps) {
+  const viewRef = useRef<HTMLDivElement | null>(null);
+
+  const [view, setView] = useState<MapView | null>(null);
+
+  useEffect(() => {
+    const container = viewRef?.current;
+    if (!container) return;
+
+    const map = new WebMap({
+      portalItem: {
+        id: webmap,
+      },
+    });
+
+    const view = new MapView({
+      container,
+      map,
+      popupEnabled: false,
+    });
+
+    setView(view);
+    return () => view?.destroy();
+  }, []);
+
+  return (
+    <CalciteShell>
+      <Header title={title} />
+      <Panel view={view} panelHeading={panelHeading} />
+      <View viewRef={viewRef} />
+    </CalciteShell>
+  );
+}
+
+export default App;
