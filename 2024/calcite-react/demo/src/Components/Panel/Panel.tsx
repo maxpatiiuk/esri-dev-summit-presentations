@@ -11,7 +11,6 @@ import {
 } from '@esri/calcite-components-react';
 
 import Features from '@arcgis/core/widgets/Features';
-import Handles from '@arcgis/core/core/Handles';
 import { on } from '@arcgis/core/core/reactiveUtils';
 
 interface PanelProps {
@@ -20,46 +19,40 @@ interface PanelProps {
 }
 
 export const Panel = ({ view, panelHeading }: PanelProps) => {
-  const handles = new Handles();
   const featuresRef = useRef<HTMLDivElement | null>(null);
 
-  const [featuresWidget, setFeaturesWidget] = useState<__esri.Features | null>(
-    null,
-  );
+  const [featuresWidget, setFeaturesWidget] = useState<Features | null>(null);
 
   useEffect(() => {
+    if (!view) return;
+
+    if (!featuresWidget) {
+      const container = featuresRef?.current as HTMLDivElement;
+      const features = new Features({
+        container,
+        view,
+      });
+      setFeaturesWidget(features);
+    }
+
     return () => featuresWidget?.destroy();
-  }, []);
-
-  useEffect(() => {
-    if (!view || featuresWidget) return;
-    const container = featuresRef?.current as HTMLDivElement;
-    const features = new Features({
-      container,
-      view: view as __esri.MapView,
-    });
-    setFeaturesWidget(features);
   }, [view]);
 
   useEffect(() => {
     if (!featuresWidget || !view) return;
 
-    const handlesKey = 'clickHandles';
-    if (handles.has(handlesKey)) return;
-
-    handles.add(
-      on(
-        () => view,
-        'click',
-        (event) => {
-          featuresWidget.open({
-            location: event.mapPoint,
-            fetchFeatures: true,
-          });
-        },
-      ),
-      handlesKey,
+    const clickHandle = on(
+      () => view,
+      'click',
+      (event) => {
+        featuresWidget.open({
+          location: event.mapPoint,
+          fetchFeatures: true,
+        });
+      },
     );
+
+    return () => clickHandle.remove();
   }, [view, featuresWidget]);
 
   return (

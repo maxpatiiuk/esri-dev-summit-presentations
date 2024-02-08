@@ -17,24 +17,9 @@ interface AppProps {
 }
 
 function App({ webmap, title, panelHeading }: AppProps) {
-  const viewRef = useRef(null) as React.RefObject<HTMLDivElement>;
+  const viewRef = useRef<HTMLDivElement | null>(null);
 
   const [view, setView] = useState<MapView | null>(null);
-
-  const createView = async (map: __esri.WebMap, container: HTMLDivElement) => {
-    try {
-      const loadedMap = await map.load();
-      const view = new MapView({
-        container,
-        map: loadedMap,
-        popupEnabled: false,
-      });
-      return Promise.resolve(view);
-    } catch (err) {
-      console.error('ERROR: ', err);
-      return Promise.reject(null);
-    }
-  };
 
   useEffect(() => {
     const container = viewRef?.current;
@@ -46,10 +31,13 @@ function App({ webmap, title, panelHeading }: AppProps) {
       },
     });
 
-    createView(map, container)
-      .then((res) => setView(res))
-      .catch();
+    const view = new MapView({
+      container,
+      map,
+      popupEnabled: false,
+    });
 
+    setView(view);
     return () => view?.destroy();
   }, []);
 
