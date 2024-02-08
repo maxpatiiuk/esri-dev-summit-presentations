@@ -1,11 +1,9 @@
-import "./View.css";
+import './View.css';
 
 interface ViewProps {
-    viewRef: React.RefObject<HTMLDivElement>;
+  viewRef: React.RefObject<HTMLDivElement>;
 }
 
 export const View = ({ viewRef }: ViewProps) => {
-    return (
-         <div ref={viewRef} id="viewDiv" />
-    )
-}
+  return <div ref={viewRef} id="viewDiv" />;
+};

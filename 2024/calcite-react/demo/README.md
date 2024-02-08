@@ -3,6 +3,7 @@
 Description: TODO
 
 ## Technologies used:
+
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
 - [React](https://react.dev/)
@@ -19,7 +20,3 @@ Description: TODO
 Note: yarn and git is required to run the above commands.
 
 Demo app will be hosted at `http://localhost:5173`.
-
-
-
-

@@ -1,15 +1,13 @@
-import "./Header.css";
+import './Header.css';
 
 interface HeaderProps {
-    title: string;
+  title: string;
 }
 
 export const Header = ({ title }: HeaderProps) => {
-    return (
-      <header slot="header">
-        <h1>
-          {title}
-        </h1>
-      </header>
-    )
-}
+  return (
+    <header slot="header">
+      <h1>{title}</h1>
+    </header>
+  );
+};
