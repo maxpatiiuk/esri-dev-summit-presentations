@@ -19,11 +19,37 @@ To be presented at
 
 ---
 
-[![](./header-slide.webp)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[![](./assets/header-slide.webp)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
 [Slides](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
 
 ## Additional Resources
+
+- [ESLint Demo](./demos/eslint)
+- [Prettier Demo](./demos/eslint)
+- "Hot reload" VS Code extensions:
+
+  - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+  - [Browser Lite](https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite)
+  - [Full Microsoft Edge Browser inside of VS Code](https://learn.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)
+
+- Git integration in VS Code:
+
+  - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  - [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+
+- TypeScript
+
+  - [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+  - [Sample App](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)
+  - [TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+  - VS Code extension:
+    - [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
+
+- Browser DevTools
+
+  - [Comprehensive Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/)
+  - [Summary of advanced, lesser-known tools and tips](https://github.com/maxpatiiuk/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
 
 - [Documentation & Samples](https://developers.arcgis.com/javascript/)
 - [https://developers.arcgis.com/javascript/latest/guide/typescript-setup/](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)

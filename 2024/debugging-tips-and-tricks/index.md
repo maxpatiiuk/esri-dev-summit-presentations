@@ -20,31 +20,36 @@
 > Finally, we would conclude with a list of resources available for the Maps SDK
 > for JavaScript for further learning.
 >
-> (Noah) There is a lot to cover today, so let's get started.
+> (Noah) There's a wealth of knowledge we're eager to share, so let's get
+> started.
 
 ## Code Editor
 
 - VS Code
-  - Syntax highlighting
-  - Code Hinting
-  - Git integration
-  - Theming
-  - Task integration
+  - Syntax highlighting 🏳️‍🌈
+  - Code Hinting 💬
+  - Git integration 🌳
+  - Theming 😎
+  - Task integration ⛑️
 
 > speaker notes:
 >
-> (Noah) As a developer, you would be spending a lot of time in the code editor.
+> (Noah) As a developer, you would be spending a lot of time in the code editor,
+> so picking the right one and configuring it to your liking can save you hours
+> down the road.
 >
 > If you already know which code editor or IDE you prefer, that is awesome! If
 > you are just getting started and aren't sure, VS Code is a great choice.
 >
-> Lets look at some useful tools that a good editor provides:
+> Lets look at some useful tools that a good editor provides: (read the slide)
 
 ## Code Editor: Prettier
 
-![Prettier takes care of formatting code consistently automatically](https://hgonzago.github.io/tips-tricks-webinar/images/pretty.gif)
+![Prettier takes care of formatting code consistently automatically. Before Prettier, you might have an unformatted HTML code snippet with inconsistent spacing and alignment](./demos/prettier/prettier-pre.webp)
 
-[VS Code Extension](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+▼
+
+![After running Prettier, the same HTML code snippet is now uniformly formatted with consistent spacing and alignment](./demos/prettier/prettier-post.webp)
 
 > speaker notes:
 >
@@ -53,13 +58,13 @@
 > in many editors. If you have a formatter configured to run on save, you can
 > write code without worrying about formatting, and Prettier will take care of
 > making the code look good for you.
+>
+> Take a look at these before and after images to show how much clear formatting
+> helps, and Prettier can do that for you automatically.
 
 ## Code Editor: ESLint
 
-- ESLint flat config
-- Calcite rules
-- React/Vue/Jest/etc rules
-- LintLens VS Code extensions
+![](./demos/eslint/eslint.webp)
 
 > speaker notes:
 >
@@ -67,8 +72,17 @@
 > hard to define, but in general it makes it easier for your teammates and the
 > future you to understand what the code is doing, and to make modifications as
 > necessary.
+>
+> ESLint is a popular choice for enforcing code quality. It's like having an
+> experienced developer behind your back, reviewing every line you type, giving
+> you advice and mentoring you on how to improve the code.
+>
+> In this small example, ESLint suggests we define our variable as "const"
+> rather than "let" given that we don't modify it anywhere else in the code.
+> Later, ESLint also notices that we are comparing the variable to itself, which
+> is a potential bug.
 
-## VS Code Live Server
+## Code Editor: Live reload
 
 VS Code extensions:
 
@@ -78,88 +92,94 @@ VS Code extensions:
 
 > speaker notes:
 >
-> (Noah)
+> TODO: these tools serve a similar purpose, but with different levels of
+> complexity. Should we simplify to mention just one? Edge browser inside of VS
+> Code is definitely the most powerful, though also more complex to setup.
+>
+> (Noah) While developing your app, you probably are making a lot of small
+> changes, checking if the app works, and changing things again if it doesn't.
+> Normally, you would have to reload the page after every change to see the
+> effect, but there are several tools that can apply your changes as soon as you
+> typed them, without reloading the page - that saves a lot of time.
+>
+> There are several VS Code extensions for that, as well as command line
+> utilities. On this slide you can see 3 recommended extensions.
 
-## Code Editor: GitLens
+## Code Editor: Git
 
-VS Code extensions:
+VS Code extensions: GitLens, Github Pull Requests & Issues
 
-- Github Pull Requests & Issues
-- GitLens
+![](./assets/gitlens.webp)
 
 > speaker notes:
 >
-> (Noah)
+> (Noah) Whether you are working alone, or in a group of developers, tracking
+> the code changes is important as that makes it easy to see who changed what,
+> when, and why. It also makes it easy to roll back changes if something goes
+> wrong. And even more importantly, it prevents you from accidentally loosing
+> your work.
+>
+> Git is the most popular version control system, paired with GitHub for hosting
+> Git repositories. However, using Git from the command line is not the most
+> approachable for beginners. Fortunately, VS Code comes with two great
+> extensions for Git built in.
+>
+> The image on this slide shows GitLens in action. It visualizes the recent Git
+> commit history, and summarizes the changes from you and your peers.
 
-## TypeScript/Vite
+## TypeScript
 
-- Code assist
-- ES6
-- Webpack/Vite/Rollup/ESBuild
-- [TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
-  - Use TypeScript to catch typos, and have better autocomplete, and
-    maintainable apps - would be useful down the line too
-- [ArcGIS API JS Template App](https://github.com/odoe/jsapi-cli-template-app)
-- VS Code extension:
-  - Pretty TypeScript Errors
+> TypeScript: catch your bugs before your users do
+
+- Helps with refactoring
+- Self-documenting code
+- Better autocomplete
 
 > speaker notes:
 >
-> (Max)
-
-## Good practice
-
-- Check Maps SDK release notes
-- Update to new version regularly
-- Use GitHub Dependabot to receive alerts of new versions and security fixes
-- Write Unit tests and other types of tests for your code - will give you
-  confidence that changes to the app in one place didn't break something else
-
-> speaker notes:
+> (Max) As soon as you start working on a larger application, you will find
+> TypeScript very helpful for keeping the app maintainable. It's a superset of
+> JavaScript that introduces type-safety into the code.
 >
-> (Max)
+> This helps with catching typos and other errors before the user does. It also
+> makes refactoring apps much easier as TypeScript will point out if a new
+> feature you added requires code changes in other parts of the app.
+>
+> Finally, TypeScript gives the editor more understanding of how your app works,
+> which in turns makes for much better autocomplete when typing.
+>
+> ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
+> as sample apps
 
 ## DevTools
 
-Debugging tools === Productive programmers
+> Debugging tools === Productive programmers
 
-Browser based tools to track down issues, inspect css, analyze performance and
-more.
-
-- Firefox Developer Edition
-- Chrome and/or Chrome Canary
-  - [Comprehensive Official Documentation](https://developer.chrome.com/docs/devtools/)
-  - [Summary of advanced, lesser-known tools and tips](https://github.com/maxpatiiuk/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
-- Edge
-- Safari
+- Breakpoints 🔴
+- Network Traffic 🌐
+- Console 📃
+- CSS inspection 💎
+- and much more! 🛠️
 
 > speaker notes:
 >
-> (Max) Suggest learning devtools well - will be very helpful in the long term
+> (Max) Each browser ships with extremely powerful debugging and inspector
+> tools. These should be developer's best friend as they help you diagnose even
+> complex issues quickly.
 >
-> Official docs are long, but very comprehensive and super helpful
-
-## DevTools: Outline
-
-- Console
-- Breakpoints
-- CSS inspection
-- Snippets
-- Network Traffic
-- and much more!
-
-> speaker notes:
->
-> (Max)
+> Browser based tools allow you to debug the application, inspect page styles,
+> monitor network traffic, test accessibility and many more. In the next section
+> of this presentation we will go over some of the most important capabilities
+> of DevTools.
 
 ## Debugging: Breakpoints
-
-![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/debugger.png)
 
 - Various ways to pause code
 - `debugger;`
 - Blackboxing (from context menu)
 - stop on (un)caught exceptions
+
+![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/debugger.png)
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/breakpoints.gif)
 [Debugging demo](https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-3d/live/index.html)
@@ -447,6 +467,35 @@ Use constraint geometry to
 >
 > (Max)
 
+## Good practices
+
+- Check Maps SDK release notes
+- Update to new version regularly
+- Use GitHub Dependabot to receive alerts of new versions and security fixes
+- Write Unit tests and other types of tests for your code - will give you
+  confidence that changes to the app in one place didn't break something else
+
+> speaker notes:
+>
+> (Max) A few final words of advice:
+>
+> - We introduce many cool features with every Maps SDK release, and you don't
+>   want to miss out on them. So update to the newest version regularly and
+>   check the release notes for each version.
+> - For apps that deal with sensitive data, it's especially important to keep
+>   all dependencies of your project up to date. Security vulnerabilities are
+>   discovered and fixed all the time, and it's hard to keep up with all of
+>   them. Fortunately, GitHub has a tool called Dependabot that updates your
+>   dependencies automatically and opens a Pull Request for you to review.
+> - Finally, as soon as your app is more than a single page, changes in one part
+>   of the app could have unexpected consequences on a different page. Verifying
+>   that everything works correctly in every possibly scenario is very time
+>   consuming and error prone. That is why it's an industry best practice to
+>   write automated tests for your applications. These could be as simple as
+>   making sure your function does some computation correctly, to some as
+>   complex as clicking though your app with a virtual mouse, while taking
+>   screenshots in the process and comparing them to the expected result.
+
 ## ArcGIS API for JavaScript - next
 
 Github repository for feedback:
@@ -485,7 +534,7 @@ TODO
 Slides & Notes:
 [bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
 
-![](./qr-code.svg)
+![](./assets/qr-code.svg)
 
 > speaker notes:
 >
