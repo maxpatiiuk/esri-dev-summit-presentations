@@ -37,6 +37,51 @@
 
         color-scheme: white only;
       }
+
+      /* Prevent images overflowing outside the slide */
+      .reveal img {
+        max-width: max(88rem, 50vw);
+        max-height: max(52rem, 50vh);
+      }
+
+      /* Left-align slide content */
+      .reveal .slides {
+        display: flex;
+        justify-content: center;
+      }
+      .reveal section {
+        width: auto !important;
+        text-align: left;
+      }
+
+      /* Default styling for quotes is ugly */
+      .reveal blockquote {
+        margin: 2rem 0;
+        border-left: 5px #fff solid;
+        background: #fff2;
+        padding-left: 2rem;
+        width: 100%;
+      }
+
+      /* Makes code blocks a bit more distinct from regular text */
+      .reveal code {
+        background: #0005;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+
+      /* Add more white space between lines */
+      .reveal .slides {
+        line-height: 1.5;
+      }
+      .reveal li {
+        padding-bottom: 0.5rem;
+      }
+
+      /* Fix code samples being too small */
+      .reveal pre {
+        font-size: inherit;
+      }
     </style>
 
     <!-- Theme used for syntax highlighted code -->
@@ -81,9 +126,17 @@
               JavaScript team. I mostly work with Widgets and Web Components.
             </p>
             <p>
-              (Ryan) Today we will show you have to enrich your React apps with
-              the power of Calcite Components to create a superior user
-              experience.
+              (Ryan) Calcite Design System makes it easy for developers like you
+              to build great looking web mapping applications with ease, while
+              also providing good user experience and accessibility. Calcite
+              empowers developers to focus on what is important - the content of
+              your application, taking care of many design decisions for you.
+            </p>
+            <p>
+              That is why we are excited to see how you utilize Calcite in your
+              applications. And to get you started, in this presentation we will
+              show how to add Calcite Components to your React applications with
+              just a few lines of code.
             </p>
           </aside>
         </section>
