@@ -37,6 +37,31 @@
 
         color-scheme: white only;
       }
+
+      /* Prevent images overflowing outside the slide */
+      .reveal img {
+        max-width: max(88rem, 50vw);
+        max-height: max(52rem, 50vh);
+      }
+
+      /* Left-align slide content */
+      .slides {
+        display: flex;
+        justify-content: center;
+      }
+      section {
+        width: auto !important;
+        text-align: left;
+      }
+
+      /* Default styling for quotes is ugly */
+      .reveal blockquote {
+        margin: 2rem 0;
+        border-left: 5px #fff solid;
+        background: #fff2;
+        padding-left: 2rem;
+        width: 100%;
+      }
     </style>
 
     <!-- Theme used for syntax highlighted code -->
