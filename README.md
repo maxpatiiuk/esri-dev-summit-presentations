@@ -4,7 +4,7 @@
 
 ### Building web apps with Calcite Design System and React
 
-[![Building web Apps with Calcite header slide](2024/calcite-react/header-slide.webp)](./2024/calcite-react/)
+[![Building web Apps with Calcite header slide](2024/calcite-react/assets/header-slide.webp)](./2024/calcite-react/)
 
 [Slides and Notes](./2024/calcite-react/)
 
