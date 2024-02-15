@@ -29,7 +29,7 @@ To be presented at
 - Calcite Design System
   - [Documentation](https://developers.arcgis.com/calcite-design-system)
   - [GitHub](https://github.com/Esri/calcite-components)
-  - [Calcite ComponentsReact](https://www.npmjs.com/package/@esri/calcite-components-react)
+  - [Calcite Components React](https://www.npmjs.com/package/@esri/calcite-components-react)
   - [Esri Community](https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system)
 - ArcGIS Maps SDK for JavaScript
   - [Documentation](https://developers.arcgis.com/javascript)
