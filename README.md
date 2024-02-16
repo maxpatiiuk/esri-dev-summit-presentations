@@ -20,9 +20,9 @@ Presenters: [Ryan Libed](https://github.com/rslibed) &
 
 ### ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
-[![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/header-slide.webp)](./2024//debugging-tips-and-tricks/)
+[![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/assets/header-slide.webp)](./2024/debugging-tips-and-tricks)
 
-[Slides and Notes](./2024/debugging-tips-and-tricks/)
+[Slides and Notes](./2024/debugging-tips-and-tricks)
 
 Learn how to quickly and easily find and fix problems in your web mapping
 applications. You will learn how to setup your dev environment to use plug-ins

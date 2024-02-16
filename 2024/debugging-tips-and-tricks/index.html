@@ -37,6 +37,31 @@
 
         color-scheme: white only;
       }
+
+      /* Prevent images overflowing outside the slide */
+      .reveal img {
+        max-width: max(88rem, 50vw);
+        max-height: max(52rem, 50vh);
+      }
+
+      /* Left-align slide content */
+      .slides {
+        display: flex;
+        justify-content: center;
+      }
+      section {
+        width: auto !important;
+        text-align: left;
+      }
+
+      /* Default styling for quotes is ugly */
+      .reveal blockquote {
+        margin: 2rem 0;
+        border-left: 5px #fff solid;
+        background: #fff2;
+        padding-left: 2rem;
+        width: 100%;
+      }
     </style>
 
     <!-- Theme used for syntax highlighted code -->
@@ -62,7 +87,7 @@
             <a href="https://github.com/NoashX">Noah Sager</a>
           </p>
           <p style="text-align: left; font-size: 30px">
-            Slides & Notes:
+            Slides & Helpful Resources:
             <a href="https://bit.ly/esri-2024-debugging-tips-and-tricks">
               <code>https://bit.ly/esri-2024-debugging-tips-and-tricks</code>
             </a>
@@ -84,20 +109,24 @@
               a few major ones. 
             </p>
             <p>
-              (Max) Today we will provide you with tips and tricks for
-              developing and debugging the apps you build.
+              (Max) We have seen many developers create amazing applications
+              with the power of the ArcGIS Maps SDK for JavaScript. The goal of
+              this presentation is to give you great introductory resources and
+              to set you on the path to creating impactful web mapping
+              applications.
             </p>
             <p>
-              This session contains important introductory material for those
-              who are just getting started with developing mapping applications.
+              Today we will focus on the programming related aspects of creating
+              applications with Maps SDK. We will cover many tips, tricks, and
+              guides to debugging the apps you build.
             </p>
             <p>
-              Throughout the presentation we will be linking to a number of
+              Throughout the presentation we will be mentioning a number of
               external resources that provide supplemental information for those
-              who wish to dive deeper. You can go over all of these resources by
-              taking a look at our slides after the presentation. The link to
-              our slides and resources is on the screen, and we will share it
-              again at the end of the presentation.
+              who wish to dive deeper. There are too many of them to list here,
+              so instead we compiled them in a nice list. This list, along with
+              our slides are available behind the link you see on the screen..
+              We will share this link again at the end of the presentation.
             </p>
           </aside>
         </section>
