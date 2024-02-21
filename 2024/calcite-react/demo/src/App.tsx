@@ -28,9 +28,9 @@ function App({ webmap, title, panelHeading }: AppProps) {
       <Panel view={view} panelHeading={panelHeading} />
       {/* Default content slot */}
       <ArcgisMap
-        item-id={webmap}
+        itemId={webmap}
         onViewReady={(e) => {
-          const view = e.detail.view;
+          const { view } = e.detail;
           view.popupEnabled = false;
           setView(view);
         }}

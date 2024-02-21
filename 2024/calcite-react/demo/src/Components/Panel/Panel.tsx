@@ -13,10 +13,10 @@ import {
   CalcitePanel,
 } from '@esri/calcite-components-react';
 
-//  Import Features widget
-import { on } from '@arcgis/core/core/reactiveUtils';
 import '@arcgis/map-components/dist/components/arcgis-features';
 import { ArcgisFeatures } from '@arcgis/map-components-react';
+
+import { on } from '@arcgis/core/core/reactiveUtils';
 
 interface PanelProps {
   view: __esri.MapView | null;
