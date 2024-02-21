@@ -1,17 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
+// Import calcite components -  Shell Panel, Block, and Panel
 import '@esri/calcite-components/dist/components/calcite-block';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 import '@esri/calcite-components/dist/components/calcite-panel';
 
+//  Import Calcite Component react wrappers
+// At React 19, we are expecting React to fully support web components which will eliminate the need of web component wrappers, but as of now we will use these.
 import {
   CalciteBlock,
   CalciteShellPanel,
   CalcitePanel,
 } from '@esri/calcite-components-react';
 
-import Features from '@arcgis/core/widgets/Features';
+//  Import Features widget
 import { on } from '@arcgis/core/core/reactiveUtils';
+import '@arcgis/map-components/dist/components/arcgis-features';
+import { ArcgisFeatures } from '@arcgis/map-components-react';
 
 interface PanelProps {
   view: __esri.MapView | null;
@@ -19,28 +24,12 @@ interface PanelProps {
 }
 
 export const Panel = ({ view, panelHeading }: PanelProps) => {
-  const featuresRef = useRef<HTMLDivElement | null>(null);
-
-  const [featuresWidget, setFeaturesWidget] = useState<Features | null>(null);
-
-  useEffect(() => {
-    if (!view) return;
-
-    if (!featuresWidget) {
-      const container = featuresRef?.current as HTMLDivElement;
-      const features = new Features({
-        container,
-        view,
-      });
-      setFeaturesWidget(features);
-    }
-
-    return () => featuresWidget?.destroy();
-  }, [view]);
+  const [featuresWidget, setFeaturesWidget] = useState<__esri.Features | null>(
+    null,
+  );
 
   useEffect(() => {
     if (!featuresWidget || !view) return;
-
     const clickHandle = on(
       () => view,
       'click',
@@ -51,15 +40,24 @@ export const Panel = ({ view, panelHeading }: PanelProps) => {
         });
       },
     );
-
-    return () => clickHandle.remove();
+    return () => {
+      featuresWidget?.destroy();
+      clickHandle.remove();
+    };
   }, [view, featuresWidget]);
 
   return (
     <CalciteShellPanel slot="panel-start">
+      {/* Block to render panel heading  */}
       <CalciteBlock heading={panelHeading}></CalciteBlock>
+      {/* Panel to render features widget container node */}
       <CalcitePanel>
-        <div ref={featuresRef} id="panel" />
+        {view ? (
+          <ArcgisFeatures
+            view={view}
+            onWidgetReady={(e) => setFeaturesWidget(e.detail.widget)}
+          />
+        ) : null}
       </CalcitePanel>
     </CalciteShellPanel>
   );
