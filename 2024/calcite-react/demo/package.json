@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arcgis/map-components": "^4.28.0-beta.40",
     "@arcgis/map-components-react": "^4.28.0-beta.40",
     "@esri/calcite-components-react": "^2.5.1",
     "react": "^18.2.0",

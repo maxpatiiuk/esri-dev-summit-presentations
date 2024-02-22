@@ -1,8 +1,12 @@
 import { useState } from 'react';
 
+// Step 6: Import Calcite Shell
 import '@esri/calcite-components/dist/components/calcite-shell';
+
+// Please note: At React 19, we are expecting React to fully support web components which will eliminate the need of web component wrappers, but as of now we will use these.
 import { CalciteShell } from '@esri/calcite-components-react';
 
+// Step 7: Import ArcGIS Maps SDK for JavaScript
 import '@arcgis/map-components/dist/components/arcgis-map';
 import { ArcgisMap } from '@arcgis/map-components-react';
 
@@ -16,9 +20,10 @@ interface AppProps {
 }
 
 function App({ webmap, title, panelHeading }: AppProps) {
+  // Step 8: Set up state to store view to pass into other components (Panel)
   const [view, setView] = useState<__esri.MapView | null>(null);
 
-  // Render app layout: Calcite Shell
+  // Step 9: Render app layout: Calcite shell, along with header, panel, and map
   // Calcite Components Documentation: https://developers.arcgis.com/calcite-design-system/components/shell
   return (
     <CalciteShell>
@@ -29,9 +34,12 @@ function App({ webmap, title, panelHeading }: AppProps) {
       {/* Default content slot */}
       <ArcgisMap
         itemId={webmap}
+        // Step 9: Listen for on view ready
         onViewReady={(e) => {
           const { view } = e.detail;
+          // Disable popup for features widget as feature information will be rendered in side panel
           view.popupEnabled = false;
+          // Store view in state, and pass that into panel
           setView(view);
         }}
       />
