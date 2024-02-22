@@ -34,7 +34,7 @@ function App({ webmap, title, panelHeading }: AppProps) {
       {/* Default content slot */}
       <ArcgisMap
         itemId={webmap}
-        // Step 9: Listen for on view ready
+        // Step 10: Listen for on view ready
         onViewReady={(e) => {
           const { view } = e.detail;
           // Store view in state, and pass that into panel
