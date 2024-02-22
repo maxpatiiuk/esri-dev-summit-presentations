@@ -1,3 +1,4 @@
+/* Step 2: Import Calcite Components and ArcGIS Maps SDK for JS CSS */
 @import '@esri/calcite-components/dist/calcite/calcite.css';
 @import '@arcgis/core/assets/esri/themes/light/main.css';
 

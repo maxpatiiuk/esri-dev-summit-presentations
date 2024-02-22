@@ -1,22 +1,21 @@
 import { useEffect, useState } from 'react';
 
-// Import calcite components - Panel, Shell Panel, and Block
+// Step 11: Panel, Shell Panel, and Block and the associated react wrappers
 import '@esri/calcite-components/dist/components/calcite-block';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 import '@esri/calcite-components/dist/components/calcite-panel';
 
-//  Import Calcite Component react wrappers
-// At React 19, we are expecting React to fully support web components which will eliminate the need of web component wrappers, but as of now we will use these.
 import {
   CalciteBlock,
   CalciteShellPanel,
   CalcitePanel,
 } from '@esri/calcite-components-react';
 
-// Import Features components
+// Step 12: Import Features components
 import '@arcgis/map-components/dist/components/arcgis-features';
 import { ArcgisFeatures } from '@arcgis/map-components-react';
 
+// Step 13: Import reactiveUtils.on to listen for view click
 import { on } from '@arcgis/core/core/reactiveUtils';
 
 interface PanelProps {
@@ -25,12 +24,19 @@ interface PanelProps {
 }
 
 export const Panel = ({ view, panelHeading }: PanelProps) => {
+  // Step 14: Set up state to store features component - to eventually set up click handle
   const [featuresWidget, setFeaturesWidget] = useState<__esri.Features | null>(
     null,
   );
 
+  // Step 15: useEffect - when features component and view is available, set up click handle
+  // On click, open the clicked feature if any
   useEffect(() => {
     if (!featuresWidget || !view) return;
+
+    // Disable popup for features widget as feature information will be rendered in side panel
+    view.popupEnabled = false;
+
     const clickHandle = on(
       () => view,
       'click',
@@ -44,15 +50,18 @@ export const Panel = ({ view, panelHeading }: PanelProps) => {
     return () => clickHandle.remove();
   }, [view, featuresWidget]);
 
+  // Step 16: Render shell panel, containing features component
   return (
     <CalciteShellPanel slot="panel-start">
       {/* Block to render panel heading  */}
-      <CalciteBlock heading={panelHeading}></CalciteBlock>
+      <CalciteBlock heading={panelHeading} />
       {/* Panel to render features widget container node */}
       <CalcitePanel>
         {view ? (
+          // Step 17: Render Features component to display feature information in side panel on click
           <ArcgisFeatures
             view={view}
+            // Step 18: Listen for on widget ready to store features component in react component's state
             onWidgetReady={(e) => setFeaturesWidget(e.detail.widget)}
           />
         ) : null}

@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
+import esriConfig from '@arcgis/core/config';
+
 import App from './App.tsx';
 
-// Import CSS
+// Step 1: Import CSS
 import './index.css';
 
-// JSON containing values to configure app
+// Step 3 (optional): JSON containing values to configure app
 import {
   portalUrl,
   webmap,
@@ -14,15 +16,14 @@ import {
   panelHeading,
 } from './config/application.json';
 
-// Calcite Components Assets (Recommended to use CDN based on documentation)
+// Step 4: Calcite Components Assets (Recommended to use CDN based on documentation)
 // Please note: You can also manage assets locally by copying assets directly from Calcite Components in your project.
 import { setAssetPath } from '@esri/calcite-components/dist/components/index';
 setAssetPath(
   'https://cdn.jsdelivr.net/npm/@esri/calcite-components/dist/calcite/assets',
 );
 
-// Set portal URL to work with content from within ArcGIS Online or ArcGIS Enterprise Portal
-import esriConfig from '@arcgis/core/config';
+// Step 5: Set portal URL to work with content from within ArcGIS Online or ArcGIS Enterprise Portal
 esriConfig.portalUrl = portalUrl;
 
 document.title = title;
