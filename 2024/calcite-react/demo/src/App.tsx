@@ -3,7 +3,7 @@ import { useState } from 'react';
 // Step 6: Import Calcite Shell
 import '@esri/calcite-components/dist/components/calcite-shell';
 
-// Please note: At React 19, we are expecting React to fully support web components which will eliminate the need of web component wrappers, but as of now we will use these.
+// Please note: At React 19, we are expecting React to fully support web components which will eliminate the need for web component wrappers, but as of now we will use these.
 import { CalciteShell } from '@esri/calcite-components-react';
 
 // Step 7: Import ArcGIS Maps SDK for JavaScript
