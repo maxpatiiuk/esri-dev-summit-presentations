@@ -33,6 +33,10 @@ export const Panel = ({ view, panelHeading }: PanelProps) => {
   // On click, open the clicked feature if any
   useEffect(() => {
     if (!featuresWidget || !view) return;
+
+    // Disable popup for features widget as feature information will be rendered in side panel
+    view.popupEnabled = false;
+
     const clickHandle = on(
       () => view,
       'click',

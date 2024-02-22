@@ -37,8 +37,6 @@ function App({ webmap, title, panelHeading }: AppProps) {
         // Step 9: Listen for on view ready
         onViewReady={(e) => {
           const { view } = e.detail;
-          // Disable popup for features widget as feature information will be rendered in side panel
-          view.popupEnabled = false;
           // Store view in state, and pass that into panel
           setView(view);
         }}
