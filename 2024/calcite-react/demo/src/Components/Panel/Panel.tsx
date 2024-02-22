@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// Import calcite components -  Shell Panel, Block, and Panel
+// Import calcite components - Panel, Shell Panel, and Block
 import '@esri/calcite-components/dist/components/calcite-block';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 import '@esri/calcite-components/dist/components/calcite-panel';
@@ -13,6 +13,7 @@ import {
   CalcitePanel,
 } from '@esri/calcite-components-react';
 
+// Import Features components
 import '@arcgis/map-components/dist/components/arcgis-features';
 import { ArcgisFeatures } from '@arcgis/map-components-react';
 
@@ -40,10 +41,7 @@ export const Panel = ({ view, panelHeading }: PanelProps) => {
         });
       },
     );
-    return () => {
-      featuresWidget?.destroy();
-      clickHandle.remove();
-    };
+    return () => clickHandle.remove();
   }, [view, featuresWidget]);
 
   return (
