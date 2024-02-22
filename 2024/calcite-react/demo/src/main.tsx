@@ -8,7 +8,7 @@ import App from './App.tsx';
 // Step 1: Import CSS
 import './index.css';
 
-// Step 3 (OPTIONAL): JSON containing values to configure app
+// Step 3 (optional): JSON containing values to configure app
 import {
   portalUrl,
   webmap,
