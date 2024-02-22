@@ -31,6 +31,11 @@ To be presented at
   - [GitHub](https://github.com/Esri/calcite-components)
   - [Calcite Components React](https://www.npmjs.com/package/@esri/calcite-components-react)
   - [Esri Community](https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system)
+  - Great sessions about Calcite from previous years:
+    - [Building Web Apps with ArcGIS API for JavaScript and Calcite Design System](https://mediaspace.esri.com/media/t/1_6eotmuhb/244321192)
+    - [Calcite Design System: Design & Build Web Apps](https://mediaspace.esri.com/media/t/1_a5nli0bn/244321192)
+    - [Esri's Design System: Build Compelling Web Apps Faster Using the New Web Component Library](https://www.youtube.com/watch?v=R-J_xsYGRKg)
+    - [Esri's Design System: Build Beautiful, Consistent Web Apps Faster](https://www.youtube.com/watch?v=UNkjECNnB-Q)
 - ArcGIS Maps SDK for JavaScript
   - [Documentation](https://developers.arcgis.com/javascript)
   - [odoenet (Rene's blog)](https://odoe.net/blog)
@@ -39,6 +44,7 @@ To be presented at
   - [TypeScript sample app](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)
   - [React + Web Components sample app](https://github.com/Esri/arcgis-maps-sdk-javascript-samples-beta/tree/main/packages/map-components)
 - [React](https://reactjs.org/)
+  - [Why React needs Web Component wrappers](https://lit.dev/docs/frameworks/react/#why-are-wrappers-needed)
 - [TypeScript](https://www.typescriptlang.org)
   - [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
   - [Sample App](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)

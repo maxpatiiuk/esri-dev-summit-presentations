@@ -78,9 +78,9 @@
 > Finally, TypeScript gives the editor more understanding of how your app works,
 > which in turns makes for much better autocomplete when typing. For example,
 > when requesting data from a database, TypeScript can autocomplete field names
-> based on your database schema, and then ensure that when you get the data
-> back, your code correctly handles each data type, be it a string, number or a
-> more complex object.
+> based on your database schema, and then ensure that what data you write to the
+> database, matches the data types in your database schema, be it a string
+> number or a more complex object.
 >
 > ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
 > as sample apps. We will post a link to these and other resources at the end of
@@ -110,12 +110,12 @@
 > Calcite Components are built on Web Components - a web standard for reusable
 > UI elements.
 >
-> Web Components are still a relatively new technology, and the community is
-> excited about the potential they bring. They work out of the box in many tech
-> stacks. However, using Calcite Components in React requires a tiny wrapper
-> library. This library is there to improve integration with the React coding
-> patterns - React team is working on supporting web components out of the box,
-> like all other major frameworks do, and they are expected to release full
+> Web Components are still a relatively new technology, but the community is
+> already excited about the potential they bring. They work out of the box in
+> many tech stacks. However, using Calcite Components in React requires a tiny
+> wrapper library - this library is there to improve integration with the React
+> coding patterns. React team is working on supporting web components out of the
+> box, like all other major frameworks do, and they are expected to release full
 > support in the next major release. Until then, Calcite team ships a Calcite
 > Component React library, which we would be using it today's demo.
 
@@ -157,19 +157,20 @@
 > Experience, and makes it easier for you to comply with the law.
 >
 > As you can see, there are a lot of completing reasons to try out Calcite
-> Design System. I would encourage you to try building a small app using Calcite
+> Design System. We adapted Calcite widely inside Esri, and it's been of great
+> benefit to us. I would encourage you to try building a small app using Calcite
 > Components and see how it works for you.
 
 ## ArcGIS Maps SDK for JavaScript 📍
 
 > Empower your web apps with geospatial web technology
 
-- 50+ Widgets. **New:** now available as Web Components ✨
 - 2D and 3D
 - Extensive API for working with geographic data
 - Geometry engine, utility networks, spatial analysis, and more
 - Great developer experience with TypeScript; supports both CDN and ESM
 - Extensive documentation
+- 50+ Widgets. **New:** now available as Web Components ✨
 
 ```html
 <arcgis-map item-id="d5dda743788a4b0688fe48f43ae7beb9">
@@ -204,7 +205,6 @@ Installation:
 npx create-react-app my-app --template typescript
 npm install @esri/calcite-components-react
 npm install @arcgis/core
-npm install ncp
 ```
 
 Add copy script and build scripts:
@@ -213,7 +213,6 @@ Add copy script and build scripts:
   "scripts": {
     "start": "npm run copy && vite",
     "build": "npm run copy && vite build",
-    "copy": "ncp node_modules/@esri/calcite-components/dist/calcite/assets/* ./public/assets/"
   },
 ```
 
@@ -232,9 +231,6 @@ Add copy script and build scripts:
 > icon to show and the date picker to be properly translated.
 
 ## Layout + Feature
-
-TODO: what kind of app are we looking to build? (Purpose, Features,
-Functionality)
 
 > speaker notes:
 >
@@ -275,24 +271,12 @@ Functionality)
 > - Finally, as soon as your app is more than a single page, changes in one part
 >   of the app could have unexpected consequences on a different page. Verifying
 >   that everything works correctly in every possibly scenario is very time
->   consuming and error prone. That is why it's an industry best practice to
->   write automated tests for your applications. These could be as simple as
->   making sure your function does some computation correctly, to some as
->   complex as clicking though your app with a virtual mouse, while taking
->   screenshots in the process and comparing them to the expected result.
-
-## Other Sessions Worth Seeing
-
-- [Building Web Apps with ArcGIS API for JavaScript and Calcite Design System](https://mediaspace.esri.com/media/t/1_6eotmuhb/244321192)
-- [Calcite Design System: Design & Build Web Apps](https://mediaspace.esri.com/media/t/1_a5nli0bn/244321192)
-- [Esri's Design System: Build Compelling Web Apps Faster Using the New Web Component Library](https://www.youtube.com/watch?v=R-J_xsYGRKg)
-- [Esri's Design System: Build Beautiful, Consistent Web Apps Faster](https://www.youtube.com/watch?v=UNkjECNnB-Q)
-
-> speaker notes:
->
-> (Max)
->
-> TODO: update with 2024 sessions
+>   consuming and error prone, and frankly, not very fun. That is why it's an
+>   industry best practice to write automated tests for your applications. These
+>   could be as simple as making sure your function does some computation
+>   correctly, to some as complex as clicking though your app with a virtual
+>   mouse, while taking screenshots in the process and comparing them to the
+>   expected result.
 
 ## Questions?
 
@@ -302,6 +286,13 @@ Slides and Demo app:
 ![](./assets/qr-code.svg)
 
 > speaker notes:
+>
+> TODO: mention where we are at the expo
+>
+> NOTE: remember to repeat the question
+>
+> NOTE: remember to admit if you don't know the answer - instead point to people
+> who know the answer
 >
 > (Max) If you wish to dive deeper, you can find our slides, demo application
 > and additional resources at the URL above, or you can scan the QR code.
