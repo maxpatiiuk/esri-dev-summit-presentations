@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import '@esri/calcite-components/dist/components/calcite-shell';
 import { CalciteShell } from '@esri/calcite-components-react';
 
-import WebMap from '@arcgis/core/WebMap';
-import MapView from '@arcgis/core/views/MapView';
+import '@arcgis/map-components/dist/components/arcgis-map';
+import { ArcgisMap } from '@arcgis/map-components-react';
 
 import { Header } from './Components/Header/Header';
 import { Panel } from './Components/Panel/Panel';
-import { View } from './Components/View/View';
 
 interface AppProps {
   webmap: string;
@@ -17,35 +16,25 @@ interface AppProps {
 }
 
 function App({ webmap, title, panelHeading }: AppProps) {
-  const viewRef = useRef<HTMLDivElement | null>(null);
+  const [view, setView] = useState<__esri.MapView | null>(null);
 
-  const [view, setView] = useState<MapView | null>(null);
-
-  useEffect(() => {
-    const container = viewRef?.current;
-    if (!container) return;
-
-    const map = new WebMap({
-      portalItem: {
-        id: webmap,
-      },
-    });
-
-    const view = new MapView({
-      container,
-      map,
-      popupEnabled: false,
-    });
-
-    setView(view);
-    return () => view?.destroy();
-  }, []);
-
+  // Render app layout: Calcite Shell
+  // Calcite Components Documentation: https://developers.arcgis.com/calcite-design-system/components/shell
   return (
     <CalciteShell>
+      {/* Header slot */}
       <Header title={title} />
+      {/* Panel Start slot */}
       <Panel view={view} panelHeading={panelHeading} />
-      <View viewRef={viewRef} />
+      {/* Default content slot */}
+      <ArcgisMap
+        itemId={webmap}
+        onViewReady={(e) => {
+          const { view } = e.detail;
+          view.popupEnabled = false;
+          setView(view);
+        }}
+      />
     </CalciteShell>
   );
 }
