@@ -1,10 +1,12 @@
 # Overview
 
 - Setting up your dev environment 🧑‍💻
+
 - Troubleshoot web applications 💥
   - DevTools intro
   - AI-based tools and helpers
   - Tips & Tricks
+
 - Maps SDK resources 📍
 
 > speaker notes:
@@ -23,9 +25,11 @@
 > (Noah) There's a wealth of knowledge we're eager to share, so let's get
 > started.
 
+## Setting up your dev environment
+
 ## Code Editor
 
-- VS Code
+VS Code (other options available)
   - Syntax highlighting 🏳️‍🌈
   - Code Hinting 💬
   - Git integration 🌳
@@ -34,7 +38,7 @@
 
 > speaker notes:
 >
-> (Noah) As a developer, you would be spending a lot of time in the code editor,
+> (Max) As a developer, you would be spending a lot of time in the code editor,
 > so picking the right one and configuring it to your liking can save you hours
 > down the road.
 >
@@ -53,7 +57,7 @@
 
 > speaker notes:
 >
-> (Noah) The most helpful tool for improving developer productivity, is a code
+> (Max) The most helpful tool for improving developer productivity, is a code
 > formatter. Prettier is the most popular choice and comes installed by default
 > in many editors. If you have a formatter configured to run on save, you can
 > write code without worrying about formatting, and Prettier will take care of
@@ -68,7 +72,7 @@
 
 > speaker notes:
 >
-> (Noah) Code Quality becomes very important as the project grows. Good code is
+> (Max) Code Quality becomes very important as the project grows. Good code is
 > hard to define, but in general it makes it easier for your teammates and the
 > future you to understand what the code is doing, and to make modifications as
 > necessary.
@@ -150,6 +154,8 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 >
 > ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
 > as sample apps
+
+## Troubleshoot web applications
 
 ## DevTools
 
@@ -454,6 +460,8 @@ Use constraint geometry to
 > speaker notes:
 >
 > (Max)
+
+## Maps SDK Resources
 
 ## Maps SDK Resources
 
