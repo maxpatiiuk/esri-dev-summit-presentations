@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Breakpoints Demo | Intro to PopupTemplate | Sample | ArcGIS Maps SDK for
+      JavaScript 4.29
+    </title>
+    <style>
+      html,
+      body {
+        background-color: var(--calcite-ui-foreground-2);
+        padding: 0;
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+    </style>
+    <!-- Load the ArcGIS Maps SDK for JavaScript -->
+    <link
+      rel="stylesheet"
+      href="https://js.arcgis.com/4.29/esri/themes/light/main.css"
+    />
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+    <!-- Load the Map Components -->
+    <script
+      type="module"
+      src="https://js.arcgis.com/map-components/4.29/arcgis-map-components.esm.js"
+    ></script>
+  </head>
+  <body>
+    <arcgis-map basemap="gray-vector" center="-73.95,40.702" zoom="10">
+      <arcgis-expand position="top-right">
+        <arcgis-search></arcgis-search>
+      </arcgis-expand>
+      <arcgis-legend position="bottom-left"></arcgis-legend>
+    </arcgis-map>
+    <script>
+      const map = document.querySelector('arcgis-map');
+
+      // This function is called when map view becomes ready:
+      map.addEventListener('arcgisViewReadyChange', async () => {
+        const FeatureLayer = await $arcgis.import('esri/layers/FeatureLayer');
+        const FieldsContent = await $arcgis.import(
+          'esri/popup/content/FieldsContent',
+        );
+
+        /*************************************************************
+         * The PopupTemplate content is the text that appears inside the
+         * popup. {fieldName} can be used to reference the value of an
+         * attribute of the selected feature. HTML elements can be used
+         * to provide structure and styles within the content. The
+         * fieldInfos property is an array of objects (each object representing
+         * a field) that is use to format number fields and customize field
+         * aliases in the popup and legend.
+         **************************************************************/
+
+        const featureLayer = new FeatureLayer({
+          url: 'https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/ACS_Marital_Status_Boundaries/FeatureServer/2',
+          popupTemplate: {
+            title: '{NAME} in {COUNTY}',
+            outFields: [
+              'B12001_calc_pctMarriedE',
+              'B12001_calc_numMarriedE',
+              'B12001_calc_numNeverE',
+              'B12001_calc_numDivorcedE',
+            ],
+            content: popupTemplateContent,
+          },
+        });
+        // This function is called for every feature you clicked on
+        function popupTemplateContent(feature) {
+          return [
+            new FieldsContent({
+              fieldInfos: [
+                {
+                  fieldName: 'B12001_calc_pctMarriedE',
+                  label: 'Married %',
+                },
+                {
+                  fieldName: 'B12001_calc_numMarriedE',
+                  label: 'People Married',
+                  format: {
+                    digitSeparator: true,
+                    places: 5,
+                  },
+                },
+                {
+                  fieldName: 'B12001_calc_numNeverE',
+                  label: 'People that Never Married',
+                  format: {
+                    digitSeparator: true,
+                    places: 5,
+                  },
+                },
+                {
+                  fieldName: 'B12001_calc_numDivorcedE',
+                  label: 'People Divorced',
+                  format: {
+                    digitSeparator: true,
+                    places: 5,
+                  },
+                },
+              ],
+            }),
+          ];
+        }
+        map.view.map.add(featureLayer);
+      });
+    </script>
+  </body>
+</html>
