@@ -499,15 +499,26 @@ Use constraint geometry to
 
 ## Maps SDK Resources
 
-[![Maps SDK Resources](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2018/Dev-debug-tips/images/jsapiResources.png)](https://github.com/Esri/jsapi-resources)
+![](./assets/jsapi-resources2.webp)
+
+A collection of resources for developers using the ArcGIS Maps SDK for JavaScript
+[https://github.com/Esri/jsapi-resources](https://github.com/Esri/jsapi-resources)
+
+> speaker notes:
+>
+> (Max)
+
+## Maps SDK Resources
+
+![](./assets/Blogs.webp)
+
+[https://developers.arcgis.com/javascript/latest/blogs/](https://developers.arcgis.com/javascript/latest/blogs/)
+
+## Maps SDK Resources
 
 - TypeScript definition file
 - Build tools, e.g. Webpack
 - OAuth Callback
-
-> speaker notes:
->
-> (Noah)
 
 ## Good practices
 
