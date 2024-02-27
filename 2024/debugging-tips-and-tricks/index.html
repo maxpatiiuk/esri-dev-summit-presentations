@@ -40,16 +40,17 @@
 
       /* Prevent images overflowing outside the slide */
       .reveal img {
-        max-width: max(88rem, 50vw);
-        max-height: max(52rem, 50vh);
+        width: 100%;
+        object-fit: contain;
+        max-height: max(52rem, 45vh);
       }
 
       /* Left-align slide content */
-      .slides {
+      .reveal .slides {
         display: flex;
         justify-content: center;
       }
-      section {
+      .reveal section {
         width: auto !important;
         text-align: left;
       }
@@ -61,6 +62,26 @@
         background: #fff2;
         padding-left: 2rem;
         width: 100%;
+      }
+
+      /* Makes code blocks a bit more distinct from regular text */
+      .reveal code {
+        background: #0005;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+
+      /* Add more white space between lines */
+      .reveal .slides {
+        line-height: 1.5;
+      }
+      .reveal li {
+        padding-bottom: 0.5rem;
+      }
+
+      /* Fix code samples being too small */
+      .reveal pre {
+        font-size: inherit;
       }
     </style>
 
@@ -89,7 +110,7 @@
           <p style="text-align: left; font-size: 30px">
             Slides & Helpful Resources:
             <a href="https://bit.ly/esri-2024-debugging-tips-and-tricks">
-              <code>https://bit.ly/esri-2024-debugging-tips-and-tricks</code>
+              https://bit.ly/esri-2024-debugging-tips-and-tricks
             </a>
           </p>
 
@@ -104,9 +125,9 @@
               with my colleague Noah Sager.
             </p>
             <p>
-              Thanks Max. Hi everyone! My name is Noah Sager. I'm a Product Engineer
-              on the JavaScript team. I work on several minor areas of the API, and
-              a few major ones. 
+              (Noah) Thanks Max. Hi everyone! My name is Noah Sager. I'm a
+              Product Engineer on the JavaScript team. I work on several minor
+              areas of the API, and a few major ones.
             </p>
             <p>
               (Max) We have seen many developers create amazing applications
@@ -119,14 +140,6 @@
               Today we will focus on the programming related aspects of creating
               applications with Maps SDK. We will cover many tips, tricks, and
               guides to debugging the apps you build.
-            </p>
-            <p>
-              Throughout the presentation we will be mentioning a number of
-              external resources that provide supplemental information for those
-              who wish to dive deeper. There are too many of them to list here,
-              so instead we compiled them in a nice list. This list, along with
-              our slides are available behind the link you see on the screen..
-              We will share this link again at the end of the presentation.
             </p>
           </aside>
         </section>

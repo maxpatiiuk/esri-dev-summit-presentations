@@ -25,20 +25,22 @@ To be presented at
 
 ## Additional Resources
 
-- [ESLint Demo](./demos/eslint)
-- [Prettier Demo](./demos/eslint)
-- "Hot reload" VS Code extensions:
+- Setting up developer environment
 
-  - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-  - [Browser Lite](https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite)
-  - [Full Microsoft Edge Browser inside of VS Code](https://learn.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)
+  - [ESLint Demo](./demos/eslint)
+  - [Prettier Demo](./demos/eslint)
+  - "Hot reload" VS Code extensions:
 
-- Git integration in VS Code:
+    - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+    - [Browser Lite](https://marketplace.visualstudio.com/items?itemName=antfu.browse-lite)
+    - [Full Microsoft Edge Browser inside of VS Code](https://learn.microsoft.com/en-us/microsoft-edge/visual-studio-code/microsoft-edge-devtools-extension)
 
-  - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-  - [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+  - Git integration in VS Code:
 
-- TypeScript
+    - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+    - [GitHub Pull Requests and Issues](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
+
+- [TypeScript](https://www.typescriptlang.org)
 
   - [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
   - [Sample App](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)
@@ -51,8 +53,16 @@ To be presented at
   - [Comprehensive Chrome DevTools Documentation](https://developer.chrome.com/docs/devtools/)
   - [Summary of advanced, lesser-known tools and tips](https://github.com/maxpatiiuk/code_share/blob/main/misc/notes/Chrome%20DevTools.md)
 
-- [Documentation & Samples](https://developers.arcgis.com/javascript/)
-- [https://developers.arcgis.com/javascript/latest/guide/typescript-setup/](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
-- [odoenet (Rene's blog)](https://odoe.net/blog)
-- [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
-- https://caniuse.com/
+- ArcGIS Maps SDK for JavaScript
+  - [Documentation](https://developers.arcgis.com/javascript)
+  - [odoenet (Rene's blog)](https://odoe.net/blog)
+  - [Maps SDK Resources](https://github.com/Esri/jsapi-resources)
+  - [React sample app](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-react)
+  - [TypeScript sample app](https://github.com/Esri/jsapi-resources/tree/main/esm-samples/jsapi-vite-ts)
+  - [React + Web Components sample app](https://github.com/Esri/arcgis-maps-sdk-javascript-samples-beta/tree/main/packages/map-components)
+  - [Esri Community](https://community.esri.com/t5/arcgis-api-for-javascript/ct-p/arcgis-api-for-javascript)
+
+General resources:
+
+- [Check if a given new feature is ready to be used in browsers](https://caniuse.com/)
+- [Debugging philosophy: detailed guide](https://ntietz.com/blog/how-i-debug-2023/)
