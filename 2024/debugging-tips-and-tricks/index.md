@@ -504,16 +504,16 @@ Use constraint geometry to
 >   complex as clicking though your app with a virtual mouse, while taking
 >   screenshots in the process and comparing them to the expected result.
 
-## ArcGIS API for JavaScript - next
+## Github repository for testing & feedback
 
-Github repository for feedback:
-[Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
+[https://github.com/Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
 
-Npm:
+![](./demos/images/Next.png)
 
-```sh
-npm install arcgis-js-api@next
-```
+## ArcGIS Maps SDK for JavaScript - next
+
+[https://github.com/Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
+
 
 CDN:
 
@@ -525,13 +525,22 @@ CDN:
 <script src="https://js.arcgis.com/next/"></script>
 ```
 
+
+NPM:
+
+```sh
+npm install arcgis-js-api@next
+```
+
 > speaker notes:
 >
 > (Noah)
 
-## Other Sessions Worth Seeing
+## Related Sessions
 
-TODO
+![](./demos/images/BuildingApps.png)
+
+![](./demos/images/Performance.png)
 
 > speaker notes:
 >
