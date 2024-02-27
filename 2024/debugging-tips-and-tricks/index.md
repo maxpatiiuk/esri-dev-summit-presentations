@@ -543,7 +543,7 @@ Use constraint geometry to
 
 [https://github.com/Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
 
-![](./demos/images/Next.png)
+![](./assets/arcgis-next.webp)
 
 ## ArcGIS Maps SDK for JavaScript - next
 
@@ -571,9 +571,9 @@ npm install arcgis-js-api@next
 
 ## Related Sessions
 
-![](./demos/images/BuildingApps.png)
+![](./assets/building-apps.webp)
 
-![](./demos/images/Performance.png)
+![](./assets/performance.webp)
 
 > speaker notes:
 >
