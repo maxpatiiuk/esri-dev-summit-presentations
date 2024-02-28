@@ -442,58 +442,57 @@ TODO
 - Mobile emulation
 - Throttling
 
-![screen capture](https://github.com/hgonzago/DevSummit-presentations/blob/gh-pages/Dev-Summit-2017/Dev-debug-tips/images/screencapture.png?raw=true)
+![screen capture](./assets/throttle.webp)
 
-> speaker notes:
->
-> (Noah)
+## Emulation: Mobile
+
+![screen capture](./assets/toggle.webp)
+
+![screen capture](./assets/emulation.webp)
 
 ## View events
 
 - [Handling Events](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#events)
 
-[![event explorer](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/event-explorer.png)](hhttps://developers.arcgis.com/javascript/latest/sample-code/event-explorer/)
+[![event explorer](./assets/events.webp)](https://developers.arcgis.com/javascript/latest/sample-code/event-explorer/)
 
 > speaker notes:
 >
 > (Noah)
-
-## Constrain visible extent
-
-Use constraint geometry to
-
-- Restrict map area
-- Limit search results
-
-[Demo](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/demos/restrict_extent.html)
-
-> speaker notes:
->
-> (Noah) go over this quickly as it was mentioned recently
 
 ## Request interceptor
 
-- [RequestInterceptor](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor)
   - Add headers
-  - Changes before request is sent
-  - Changes after request is sent but before returned to caller
+  - Make changes before request is sent
+  - Make changes after request is sent, but before returned to caller
   - Log error info for specfic layer errors
 
-[Real World Example](https://community.esri.com/t5/arcgis-api-for-javascript/how-to-use-a-key-in-an-esrirequest-call/m-p/298401)
+[https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor)
 
-> speaker notes:
->
-> (Noah) go over this quickly as it was mentioned recently
+## Request interceptor
+
+```js
+esriConfig.request.interceptors.push({
+  urls: featureLayerUrl,
+  before: function(params) {
+    if (params.requestOptions.query.maxAllowableOffset) {
+      params.requestOptions.query.maxAllowableOffset = 0;
+    }
+  }
+});
+```
 
 ## Create Live Expression
 
-- Get coordinates as you navigate the map
+Example: get coordinates as you navigate the map
 
-![Code snippet to get lat and long](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/live-expression.png)
+![](./assets/liveExpression.webp)
 
 > speaker notes:
 >
 > (Noah)
+> - require("esri/views/View").views.items[0].extent.center.latitude
+> - require("esri/views/View").views.items[0].extent.center.longitude
 
 ## Maps SDK Resources
 
