@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>Esri DevSummit 2024</title>
+
+    <link rel="stylesheet" href="../reveal.js/dist/reset.css" />
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="../reveal.js/dist/theme/black.css" />
+
+    <!-- Override the Reveal theme variables: -->
+    <!-- https://github.com/hakimel/reveal.js/blob/master/css/theme/template/exposer.scss -->
+    <style type="text/css">
+      :root {
+        /* Color from slides */
+        --r-background-color: #000;
+
+        /* Main text color */
+        --r-main-color: #fff;
+
+        /* Arial font is recommended */
+        --r-heading-font: Arial, Helvetica Neue, Helvetica, sans-serif;
+        --r-main-font: Arial, Helvetica Neue, Helvetica, sans-serif;
+
+        /* For consistency with the template: */
+        --r-heading-font-weight: normal;
+        --r-heading-text-transform: none;
+        --r-heading-text-shadow: none;
+
+        /* Section subheader color per theme */
+        --r-section-subhead-color: #c3e3f7;
+
+        color-scheme: white only;
+      }
+
+      /* Prevent images overflowing outside the slide */
+      .reveal img {
+        max-width: max(88rem, 50vw);
+        max-height: max(52rem, 50vh);
+      }
+
+      /* Left-align slide content */
+      .reveal .slides {
+        display: flex;
+        justify-content: center;
+      }
+      .reveal section {
+        width: auto !important;
+        text-align: left;
+      }
+
+      /* Default styling for quotes is ugly */
+      .reveal blockquote {
+        margin: 2rem 0;
+        border-left: 5px #fff solid;
+        background: #fff2;
+        padding-left: 2rem;
+        width: 100%;
+      }
+
+      /* Makes code blocks a bit more distinct from regular text */
+      .reveal code {
+        background: #0005;
+        border-radius: 1rem;
+        padding: 0 1rem;
+      }
+
+      /* Add more white space between lines */
+      .reveal .slides {
+        line-height: 1.5;
+      }
+      .reveal li {
+        padding-bottom: 0.5rem;
+      }
+
+      /* Fix code samples being too small */
+      .reveal pre {
+        font-size: inherit;
+      }
+    </style>
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- TITLE SLIDE: -->
+        <section data-background="../reveal.js/img/2024/devsummit/1.jpg">
+          <h1 style="text-align: left; font-size: 60px">
+            Gaming with ArcGIS Maps SDK for JavaScript - 3D Tetris Game
+          </h1>
+          <p
+            style="
+              text-align: left;
+              font-size: 30px;
+              color: var(--r-section-subhead-color);
+            "
+          >
+            Presenter:
+            <a href="https://github.com/maxpatiiuk">Max Patiiuk</a>
+          </p>
+          <p style="text-align: left; font-size: 30px">
+            Trailer, source code & live demo:
+            <a href="https://bit.ly/esri-2024-tetris">
+              https://bit.ly/esri-2024-tetris
+            </a>
+          </p>
+        </section>
+
+        <!-- CONTENT: -->
+        <section
+          data-markdown="index.md"
+          data-separator="\n#"
+          data-separator-notes="^> speaker notes:"
+          data-background="../reveal.js/img/2024/devsummit/2.jpg"
+        ></section>
+
+        <!-- ESRI LOGO SLIDE: -->
+        <section
+          data-markdown
+          data-background="../reveal.js/img/2024/devsummit/8.jpg"
+          data-visibility="uncounted"
+        ></section>
+      </div>
+    </div>
+
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script>
+      const searchParams = new URL(location.href).searchParams;
+      if (searchParams.has('light'))
+        document.documentElement.style.colorScheme = 'light only';
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        controls: searchParams.get('controls') !== 'false',
+        controlsTutorial: false,
+        slideNumber: true,
+        showSlideNumber: 'speaker',
+        hashOneBasedIndex: true,
+        hash: true,
+        width: 1920,
+        height: 1080,
+        transition: 'fade',
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

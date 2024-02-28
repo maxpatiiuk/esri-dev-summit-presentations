@@ -1,8 +1,8 @@
-# DevSummit-presentation
+# Esri DevSummit Presentations
 
 ## 2024
 
-### Building web apps with Calcite Design System and React
+### [Building web apps with Calcite Design System and React](./2024/debugging-tips-and-tricks)
 
 [![Building web Apps with Calcite header slide](2024/calcite-react/assets/header-slide.webp)](./2024/calcite-react/)
 
@@ -18,7 +18,7 @@ will offer you actionable insights to take your projects to the next level.
 Presenters: [Ryan Libed](https://github.com/rslibed) &
 [Max Patiiuk](https://github.com/maxpatiiuk)
 
-### ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
+### [ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps](./2024/debugging-tips-and-tricks)
 
 [![Debugging Tips and Tricks Title Slide](2024/debugging-tips-and-tricks/assets/header-slide.webp)](./2024/debugging-tips-and-tricks)
 
@@ -33,3 +33,22 @@ working with the ArcGIS Maps SDK for JavaScript.
 
 Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Noah Sager](https://github.com/NoashX)
+
+### [Gaming with ArcGIS Maps SDK for JavaScript - 3D Tetris Game](./2024/tetris-react)
+
+[Trailer](https://youtu.be/LlDgH-NZ3KE) ∙
+[Play online](https://maxpatiiuk.github.io/tetris-react/) ∙
+[Source code](https://github.com/maxpatiiuk/tetris-react)
+
+Dive into how ArcGIS Maps SDK for JavaScript can be (mis)used for creating a 3D
+Tetris Game. Powerful geo-rendering capabilities of the Maps SDK allow for
+creative applications in unintended areas, showing it's versatility.
+
+When: Tuesday, March 12th | 5:00 PM - 6:00 PM PDT
+
+Where: Renaissance Hotel (connected to the Palm Springs Convention Center) in
+the Santa Rosa/San Jacinto room
+
+Presenter: [Max Patiiuk](https://github.com/maxpatiiuk)
+
+[![](https://github.com/maxpatiiuk/tetris-react/raw/main/docs/scenery-world.jpg)](./2024/tetris-react)
