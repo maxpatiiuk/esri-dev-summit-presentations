@@ -516,39 +516,15 @@ A collection of resources for developers using the ArcGIS Maps SDK for JavaScrip
 
 ## Maps SDK Resources
 
-- TypeScript definition file
-- Build tools, e.g. Webpack
-- OAuth Callback
+![](./assets/Compare.webp)
 
-## Good practices
+[https://developers.arcgis.com/javascript/latest/tooling-intro/](https://developers.arcgis.com/javascript/latest/tooling-intro/)
 
-- Check Maps SDK release notes
-- Update to new version regularly
-- Use GitHub Dependabot to receive alerts of new versions and security fixes
-- Write Unit tests and other types of tests for your code - will give you
-  confidence that changes to the app in one place didn't break something else
+## Maps SDK Resources
 
-> speaker notes:
->
-> (Noah) A few final words of advice:
->
-> - We introduce many cool features with every Maps SDK release, and you don't
->   want to miss out on them. So update to the newest version regularly and
->   check the release notes for each version.
-> - For apps that deal with sensitive data, it's especially important to keep
->   all dependencies of your project up to date. Security vulnerabilities are
->   discovered and fixed all the time, and it's hard to keep up with all of
->   them. Fortunately, GitHub has a tool called Dependabot that updates your
->   dependencies automatically and opens a Pull Request for you to review.
-> - Finally, as soon as your app is more than a single page, changes in one part
->   of the app could have unexpected consequences on a different page. Verifying
->   that everything works correctly in every possibly scenario is very time
->   consuming and error prone, and frankly, not very fun. That is why it's an
->   industry best practice to write automated tests for your applications. These
->   could be as simple as making sure your function does some computation
->   correctly, to some as complex as clicking though your app with a virtual
->   mouse, while taking screenshots in the process and comparing them to the
->   expected result.
+![](./assets/Additional.webp)
+
+[https://developers.arcgis.com/javascript/latest/community/](https://developers.arcgis.com/javascript/latest/community/)
 
 ## Github repository for testing & feedback
 
