@@ -310,11 +310,23 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > Now I will hand it over to my colleague, Noah, to give you even more helpful
 > tips and tricks for debugging your applications.
 
+## Console: Log Messages
+
+- Log your own messages
+- Warning and error messages logged by Maps SDK
+
+[![](https://hgonzago.github.io/tips-tricks-webinar/images/consoleerror.png)](https://hgonzago.github.io/tips-tricks-webinar/Demos/js-demo/index.html)
+
+> speaker notes:
+>
+> (Noah)
+
 ## Console
 
 - Log diagnostic info
 - Execute JavaScript
 - Check values of objects at an app breakpoint
+- Create _live expression_
 - Tip: to pretty-print JSON, paste it into the console, then right-click on it
   and press "Copy object"
 
@@ -327,26 +339,23 @@ const geoExtent = webMercatorUtils.webMercatorToGeographic(extent);
 console.log(JSON.stringify(geoExtent));
 ```
 
-[Console demo](https://github.com/hgonzago/DevSummit-presentations/blob/gh-pages/Dev-Summit-2017/Dev-debug-tips/Demos/dev-tools-demos/console.html)
-
-[Debug Demo](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/live/index.html)
-
-![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/latlong.png)
+[Demo](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/live/index.html)
 
 > speaker notes:
 >
 > (Noah)
 
-## Console: Log Messages
+## Create Live Expression
 
-- Log your own messages
-- Warning message logged by Maps SDK
+Example: get coordinates as you navigate the map
 
-[![](https://hgonzago.github.io/tips-tricks-webinar/images/consoleerror.png)](https://hgonzago.github.io/tips-tricks-webinar/Demos/js-demo/index.html)
+![](./assets/liveExpression.webp)
 
 > speaker notes:
 >
 > (Noah)
+> - require("esri/views/View").views.items[0].extent.center.latitude
+> - require("esri/views/View").views.items[0].extent.center.longitude
 
 ## CSS: Color Themes
 
@@ -481,18 +490,6 @@ esriConfig.request.interceptors.push({
   }
 });
 ```
-
-## Create Live Expression
-
-Example: get coordinates as you navigate the map
-
-![](./assets/liveExpression.webp)
-
-> speaker notes:
->
-> (Noah)
-> - require("esri/views/View").views.items[0].extent.center.latitude
-> - require("esri/views/View").views.items[0].extent.center.longitude
 
 ## Maps SDK Resources
 
