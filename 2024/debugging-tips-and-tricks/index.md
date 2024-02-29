@@ -361,7 +361,7 @@ Example: get coordinates as you navigate the map
 
 - Detect user color scheme preferences
   - CSS media feature (light, dark, no-preference)
-- Emulate via dev tools
+- Emulate (Dev tools --> More tools --> Rendering)
 
 ![](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2020/Dev-debug-tips/images/theme-prefs.png)
 
@@ -382,15 +382,6 @@ Example: get coordinates as you navigate the map
 >
 > (Noah)
 
-## Elements: Inspect Web Component
-
-- Web-component specific debugging (i.e shadow dom)
-  - The Properties tab in devtools
-
-> speaker notes:
->
-> (Noah)
-
 ## Application
 
 - Cookies
@@ -401,38 +392,29 @@ Example: get coordinates as you navigate the map
 >
 > (Noah)
 
-## Remote Debugging - iOS and Android
+## Accessibility
 
-More accurate, but requires physical device
+Making content usable for everyone regardless of abilities
+<br></br>
+Lighthouse
 
-> speaker notes:
->
-> (Noah)
+[https://developer.chrome.com/docs/lighthouse/overview](https://developer.chrome.com/docs/lighthouse/overview)
 
-## Lighthouse
+WAVE
 
-TODO
+[https://wave.webaim.org/](https://wave.webaim.org/)
 
-> speaker notes:
->
-> (Noah)
+## Accessibility
 
-## Lighthouse: Accessibility
+![screen capture](./assets/wave1.webp)
 
-- axe
-- Audits
-- Color Contrast
-- Extensions
-- Axe Coconut (similar to Chrome Canary or Firefox nightly)
-- Axe a11y extension
-- ChromeVox screen reader
+## Accessibility
 
-- Other Dev Summit sessions on accessibility:
-  - TODO
+![screen capture](./assets/wave2.webp)
 
-> speaker notes:
->
-> (Noah) mention importance of Accessibility
+## Accessibility
+
+![screen capture](./assets/wave3.webp)
 
 ## Maps SDK Tips & Tricks
 
@@ -442,9 +424,9 @@ TODO
 
 [![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
 
-> speaker notes:
->
-> (Noah)
+## Remote Debugging - iOS and Android
+
+More accurate, but requires physical device
 
 ## Emulation: Mobile
 
