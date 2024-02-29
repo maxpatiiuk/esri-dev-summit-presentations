@@ -310,7 +310,7 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > Now I will hand it over to my colleague, Noah, to give you even more helpful
 > tips and tricks for debugging your applications.
 
-## Console: Log Messages
+## Console
 
 - Log your own messages
 - Warning and error messages logged by Maps SDK
