@@ -11,8 +11,6 @@
 
 > speaker notes:
 >
-> TODO: trim it down to 45 minutes
->
 > (Max) We will begin this session with a guide to setting up your development
 > environment for productivity.
 >
@@ -59,16 +57,16 @@ VS Code (other options available)
 
 > speaker notes:
 >
-> TODO: mention wc
->
 > (Max) The most helpful tool for improving developer productivity, is a code
 > formatter. Prettier is the most popular choice and comes installed by default
 > in many editors. If you have a formatter configured to run on save, you can
 > write code without worrying about formatting, and Prettier will take care of
 > making the code look good for you.
 >
-> Take a look at these before and after images to show how much clear formatting
-> helps, and Prettier can do that for you automatically.
+> Take a look at these code samples. In both cases, I am using the newly
+> released mapping components. But, after running Prettier, indentation is
+> improved and the code becomes much more readable - isn't it awesome that it
+> can do all of that for you automatically?
 
 ## Code Editor: ESLint 🚩
 
@@ -94,11 +92,9 @@ VS Code (other options available)
 
 LiveServer VS Code extension:
 
-![LiveServer for live-reloading an HTML file](./assets/live-server.webp)
+![LiveServer for live-reloading an HTML file](./assets/liveserver.webp)
 
 > speaker notes:
->
-> TODO: replace video with images
 >
 > (Max) While developing your app, you probably are making a lot of small
 > changes, checking if the app works, and changing things again if it doesn't.
@@ -145,21 +141,33 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
-> TODO: update speaker notes
->
 > (Max) As soon as you start working on a larger application, you will find
-> TypeScript very helpful for keeping the app maintainable. It's a superset of
-> JavaScript that introduces type-safety into the code.
+> TypeScript very helpful for keeping the app maintainable. TypeScript
+> introduces optional type-annotations and additional type-safety into
+> JavaScript.
 >
-> This helps with catching typos and other errors before the user does. It also
-> makes refactoring apps much easier as TypeScript will point out if a new
-> feature you added requires code changes in other parts of the app.
+> The best way to describe the main benefit of TypeScript is that it catches
+> your bugs before your users do.
 >
-> Finally, TypeScript gives the editor more understanding of how your app works,
-> which in turns makes for much better autocomplete when typing.
+> For an example of TypeScript in action, let's say you have a function that
+> accepts some arguments and returns some data. TypeScript is going to make sure
+> that everywhere where this function is used, all the required arguments were
+> provided, and in correct order. It's also going to check that you are using
+> the function return correctly - for example, it will make sure that you are
+> not trying to access a property that doesn't exist on the returned object or
+> don't try to treat string as a number.
 >
-> ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
-> as sample apps
+> Besides helping you catch typos and other errors, TypeScript is awesome for
+> giving you extra confidence when you do code refactoring. As, on any changes,
+> to the function, TypeScript will make sure that everywhere you use this
+> function, you updated the code as appropriate if necessary. Needless to say,
+> that is great for catching mistakes and for giving you greater confidence when
+> refactoring code.
+>
+> In fact, ArcGIS Maps SDK for JavaScript itself is written in TypeScript, so it
+> provides a great developer experience for TypeScript users. And, we have great
+> quick start guides and sample apps. We will share those with you at the end of
+> the presentation.
 
 ## Troubleshoot web applications
 
@@ -242,9 +250,11 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
-> TODO: point out disabled cache TODO: demo on the network tab? TODO: request
-> that fails successfully TODO: extend my section to 20min TODO: find a way to
-> make code snippet fit
+> TODO: demo on the network tab?
+>
+> TODO: request that fails successfully
+>
+> TODO: extend my section to 20min
 >
 > (Max) Any web application relies on a back-end service to provide data and
 > power features like search and querying. The Network tab in DevTools is
@@ -255,6 +265,12 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 >
 > This is also useful for diagnosing performance issues, as you can see how long
 > each request took to complete.
+>
+> While we are on the topic of network requests, it's important to mention the
+> "Disable cache" checkbox available here. This is great for temporary telling
+> the browser to not cache any data, but to make a fresh network requests every
+> time. This is useful for diagnosing issues caused by browser cache getting out
+> of date.
 
 ## Debugging: Philosophy 🤔
 
@@ -346,7 +362,7 @@ const webMercatorUtils = await $arcgis.import(
 );
 const extent = this.view.extent;
 const geoExtent = webMercatorUtils.webMercatorToGeographic(extent);
-console.log(JSON.stringify(geoExtent));
+console.log(geoExtent);
 ```
 
 [Demo](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/live/index.html)
