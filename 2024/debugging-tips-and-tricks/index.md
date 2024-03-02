@@ -59,6 +59,8 @@ VS Code (other options available)
 
 > speaker notes:
 >
+> TODO: mention wc
+>
 > (Max) The most helpful tool for improving developer productivity, is a code
 > formatter. Prettier is the most popular choice and comes installed by default
 > in many editors. If you have a formatter configured to run on save, you can
@@ -95,6 +97,8 @@ LiveServer VS Code extension:
 ![LiveServer for live-reloading an HTML file](./assets/live-server.webp)
 
 > speaker notes:
+>
+> TODO: replace video with images
 >
 > (Max) While developing your app, you probably are making a lot of small
 > changes, checking if the app works, and changing things again if it doesn't.
@@ -140,6 +144,8 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 - Better autocomplete
 
 > speaker notes:
+>
+> TODO: update speaker notes
 >
 > (Max) As soon as you start working on a larger application, you will find
 > TypeScript very helpful for keeping the app maintainable. It's a superset of
@@ -236,6 +242,10 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
+> TODO: point out disabled cache TODO: demo on the network tab? TODO: request
+> that fails successfully TODO: extend my section to 20min TODO: find a way to
+> make code snippet fit
+>
 > (Max) Any web application relies on a back-end service to provide data and
 > power features like search and querying. The Network tab in DevTools is
 > perfect for inspecting network requests like that. In this example, I put
@@ -250,9 +260,9 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 - **Initial Assessment:** Determine if the issue is app-specific, API-specific,
   server-side, or involves third-party resources.
-- **Isolation Techniques:** Narrow down the issue by isolating it to a smallest
-  reproducible case:
-  - Is the problem with how the code is written?
+- **Isolation Techniques:** Narrow down the issue by isolating it to the
+  smallest reproducible case:
+  - Is the problem with the code?
   - Is the issue on the client (API) or server?
   - Is there a performance issue?
   - Is the issue with the data?
@@ -285,9 +295,9 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 ## Debugging: AI helpers and extensions
 
-- ChatGPT / Bard / Bing AI / Claude
+- ChatGPT / Gemini / Bing AI / Claude
 - VS Code Chat ("Explain this error")
-- GitHub Copilot/InteliiSence/Tabnine AI
+- GitHub Copilot / InteliiSence / Tabnine AI
 - Code Spell Checker (helps catch typos)
 - Whatever tool / library you use, search for VS Code extensions that could
   improve integration with it:
@@ -354,6 +364,7 @@ Example: get coordinates as you navigate the map
 > speaker notes:
 >
 > (Noah)
+>
 > - require("esri/views/View").views.items[0].extent.center.latitude
 > - require("esri/views/View").views.items[0].extent.center.longitude
 
@@ -394,9 +405,7 @@ Example: get coordinates as you navigate the map
 
 ## Accessibility
 
-Making content usable for everyone regardless of abilities
-<br></br>
-Lighthouse
+Making content usable for everyone regardless of abilities <br></br> Lighthouse
 
 [https://developer.chrome.com/docs/lighthouse/overview](https://developer.chrome.com/docs/lighthouse/overview)
 
@@ -415,8 +424,6 @@ WAVE
 ## Accessibility
 
 ![screen capture](./assets/wave3.webp)
-
-## Maps SDK Tips & Tricks
 
 ## Emulation: Sensors
 
@@ -441,6 +448,8 @@ More accurate, but requires physical device
 
 ![screen capture](./assets/emulation.webp)
 
+## Maps SDK Tips & Tricks
+
 ## View events
 
 - [Handling Events](https://developers.arcgis.com/javascript/latest/api-reference/esri-views-MapView.html#events)
@@ -453,10 +462,10 @@ More accurate, but requires physical device
 
 ## Request interceptor
 
-  - Add headers
-  - Make changes before request is sent
-  - Make changes after request is sent, but before returned to caller
-  - Log error info for specfic layer errors
+- Add headers
+- Make changes before request is sent
+- Make changes after request is sent, but before returned to caller
+- Log error info for specfic layer errors
 
 [https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor)
 
@@ -465,11 +474,11 @@ More accurate, but requires physical device
 ```js
 esriConfig.request.interceptors.push({
   urls: featureLayerUrl,
-  before: function(params) {
+  before: function (params) {
     if (params.requestOptions.query.maxAllowableOffset) {
       params.requestOptions.query.maxAllowableOffset = 0;
     }
-  }
+  },
 });
 ```
 
@@ -479,7 +488,8 @@ esriConfig.request.interceptors.push({
 
 ![](./assets/jsapi-resources2.webp)
 
-A collection of resources for developers using the ArcGIS Maps SDK for JavaScript
+A collection of resources for developers using the ArcGIS Maps SDK for
+JavaScript
 [https://github.com/Esri/jsapi-resources](https://github.com/Esri/jsapi-resources)
 
 > speaker notes:
