@@ -52,8 +52,9 @@
 > to understand and maintain.
 >
 > React also introduces JSX - which is an optional syntax that bridges the gap
-> between HTML and JavaScript, taking the best of both - the readability and
-> simplicity of HTML, combined with the power and flexibility of JavaScript.
+> between HTML and JavaScript, taking the best of both - the **readability** and
+> **simplicity** of HTML, combined with the **power** and **flexibility** of
+> JavaScript.
 
 ## TypeScript 🦾
 
