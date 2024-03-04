@@ -382,15 +382,28 @@ Example: get coordinates as you navigate the map
 >
 > (Noah)
 
-## Application
+## Emulation: Sensors
 
-- Cookies
-- Local Storage
-- App Cache
+- Modify current location and locale
 
-> speaker notes:
->
-> (Noah)
+[![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
+
+## Remote Debugging - iOS and Android
+
+More accurate, but requires physical device
+
+## Emulation: Mobile
+
+- Mobile emulation
+- Throttling
+
+![screen capture](./assets/throttle.webp)
+
+## Emulation: Mobile
+
+![screen capture](./assets/toggle.webp)
+
+![screen capture](./assets/emulation.webp)
 
 ## Accessibility
 
@@ -417,29 +430,6 @@ WAVE
 ![screen capture](./assets/wave3.webp)
 
 ## Maps SDK Tips & Tricks
-
-## Emulation: Sensors
-
-- Modify current location and locale
-
-[![View map in japanese](https://hgonzago.github.io/DevSummit-presentations/Dev-Summit-2021/Debugging-tips-tricks/images/map-locale.png)](https://www.arcgis.com/apps/instant/media/index.html?appid=6df7442815404def91d9196515fa0768)
-
-## Remote Debugging - iOS and Android
-
-More accurate, but requires physical device
-
-## Emulation: Mobile
-
-- Mobile emulation
-- Throttling
-
-![screen capture](./assets/throttle.webp)
-
-## Emulation: Mobile
-
-![screen capture](./assets/toggle.webp)
-
-![screen capture](./assets/emulation.webp)
 
 ## View events
 
