@@ -11,8 +11,6 @@
 
 > speaker notes:
 >
-> TODO: trim it down to 45 minutes
->
 > (Max) We will begin this session with a guide to setting up your development
 > environment for productivity.
 >
@@ -27,8 +25,6 @@
 > resources at the end of the presentation.
 >
 > There's a wealth of knowledge we're eager to share, so let's get started.
-
-## Setting up your dev environment
 
 ## Setting up your dev environment
 
@@ -65,8 +61,10 @@ VS Code (other options available)
 > write code without worrying about formatting, and Prettier will take care of
 > making the code look good for you.
 >
-> Take a look at these before and after images to show how much clear formatting
-> helps, and Prettier can do that for you automatically.
+> Take a look at these code samples. In both cases, I am using the newly
+> released mapping components. But, after running Prettier, indentation is
+> improved and the code becomes much more readable - isn't it awesome that it
+> can do all of that for you automatically?
 
 ## Code Editor: ESLint 🚩
 
@@ -87,12 +85,15 @@ VS Code (other options available)
 > rather than "let" given that we don't modify it anywhere else in the code.
 > Later, ESLint also notices that we are comparing the variable to itself, which
 > is a potential bug.
+>
+> The especially cool part is that many ESLint warnings are auto-fixable, so
+> ESLint can improve your code for you.
 
 ## Code Editor: Live reload
 
 LiveServer VS Code extension:
 
-![LiveServer for live-reloading an HTML file](./assets/live-server.webp)
+![LiveServer for live-reloading an HTML file](./assets/liveserver.webp)
 
 > speaker notes:
 >
@@ -138,22 +139,37 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 - Helps with refactoring
 - Self-documenting code
 - Better autocomplete
+- Great starting resources
 
 > speaker notes:
 >
 > (Max) As soon as you start working on a larger application, you will find
-> TypeScript very helpful for keeping the app maintainable. It's a superset of
-> JavaScript that introduces type-safety into the code.
+> TypeScript very helpful for keeping the app maintainable. TypeScript
+> introduces optional type-annotations and additional type-safety into
+> JavaScript.
 >
-> This helps with catching typos and other errors before the user does. It also
-> makes refactoring apps much easier as TypeScript will point out if a new
-> feature you added requires code changes in other parts of the app.
+> The best way to describe the main benefit of TypeScript is that it catches
+> your bugs before your users do.
 >
-> Finally, TypeScript gives the editor more understanding of how your app works,
-> which in turns makes for much better autocomplete when typing.
+> For an example of TypeScript in action, let's say you have a function that
+> accepts some arguments and returns some data. TypeScript is going to make sure
+> that everywhere where this function is used, all the required arguments were
+> provided, and in correct order. It's also going to check that you are using
+> the function return correctly - for example, it will make sure that you are
+> not trying to access a property that doesn't exist on the returned object or
+> don't try to treat string as a number.
 >
-> ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
-> as sample apps
+> Besides helping you catch typos and other errors, TypeScript is awesome for
+> giving you extra confidence when you do code refactoring. As, on any changes,
+> to the function, TypeScript will make sure that everywhere you use this
+> function, you updated the code as appropriate if necessary. Needless to say,
+> that is great for catching mistakes and for giving you greater confidence when
+> refactoring code.
+>
+> In fact, ArcGIS Maps SDK for JavaScript itself is written in TypeScript, so it
+> provides a great developer experience for TypeScript users. And, we have great
+> quick start guides and sample apps. We will share those with you at the end of
+> the presentation.
 
 ## Troubleshoot web applications
 
@@ -236,6 +252,14 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
+> TODO: split this slide into 5
+>
+> TODO: demo on the network tab?
+>
+> TODO: request that fails successfully
+>
+> TODO: extend my section to 20min
+>
 > (Max) Any web application relies on a back-end service to provide data and
 > power features like search and querying. The Network tab in DevTools is
 > perfect for inspecting network requests like that. In this example, I put
@@ -245,14 +269,20 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 >
 > This is also useful for diagnosing performance issues, as you can see how long
 > each request took to complete.
+>
+> While we are on the topic of network requests, it's important to mention the
+> "Disable cache" checkbox available here. This is great for temporary telling
+> the browser to not cache any data, but to make a fresh network requests every
+> time. This is useful for diagnosing issues caused by browser cache getting out
+> of date.
 
 ## Debugging: Philosophy 🤔
 
 - **Initial Assessment:** Determine if the issue is app-specific, API-specific,
   server-side, or involves third-party resources.
-- **Isolation Techniques:** Narrow down the issue by isolating it to a smallest
-  reproducible case:
-  - Is the problem with how the code is written?
+- **Isolation Techniques:** Narrow down the issue by isolating it to the
+  smallest reproducible case:
+  - Is the problem with the code?
   - Is the issue on the client (API) or server?
   - Is there a performance issue?
   - Is the issue with the data?
@@ -285,16 +315,10 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 ## Debugging: AI helpers and extensions
 
-- ChatGPT / Bard / Bing AI / Claude
+- ChatGPT / Gemini / Bing AI / Claude
 - VS Code Chat ("Explain this error")
-- GitHub Copilot/InteliiSence/Tabnine AI
+- GitHub Copilot / InteliiSence / Tabnine AI
 - Code Spell Checker (helps catch typos)
-- Whatever tool / library you use, search for VS Code extensions that could
-  improve integration with it:
-  - Jest
-  - Webpack
-  - Vite
-  - React
 
 > speaker notes:
 >
@@ -302,8 +326,20 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > helpers. These are great for explaining errors and suggesting solutions. If
 > your organization permits these, you should definitely give them a try as they
 > can enhance your productivity and abilities.
+
+## Debugging: Nice to have
+
+Whatever tool / library you use, search for VS Code extensions that could
+improve integration with it:
+
+- Jest
+- Webpack
+- Vite
+- React
+
+> speaker notes:
 >
-> Similarly, there are extensions for VS Code and other IDEs for better
+> (Max) Similarly, there are extensions for VS Code and other IDEs for better
 > integration with development toolkits and libraries. These would improve
 > developer experience and productivity.
 >
@@ -336,7 +372,7 @@ const webMercatorUtils = await $arcgis.import(
 );
 const extent = this.view.extent;
 const geoExtent = webMercatorUtils.webMercatorToGeographic(extent);
-console.log(JSON.stringify(geoExtent));
+console.log(geoExtent);
 ```
 
 [Demo](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/live/index.html)
@@ -354,6 +390,7 @@ Example: get coordinates as you navigate the map
 > speaker notes:
 >
 > (Noah)
+>
 > - require("esri/views/View").views.items[0].extent.center.latitude
 > - require("esri/views/View").views.items[0].extent.center.longitude
 
@@ -407,9 +444,7 @@ More accurate, but requires physical device
 
 ## Accessibility
 
-Making content usable for everyone regardless of abilities
-<br></br>
-Lighthouse
+Making content usable for everyone regardless of abilities <br></br> Lighthouse
 
 [https://developer.chrome.com/docs/lighthouse/overview](https://developer.chrome.com/docs/lighthouse/overview)
 
@@ -443,10 +478,10 @@ WAVE
 
 ## Request interceptor
 
-  - Add headers
-  - Make changes before request is sent
-  - Make changes after request is sent, but before returned to caller
-  - Log error info for specfic layer errors
+- Add headers
+- Make changes before request is sent
+- Make changes after request is sent, but before returned to caller
+- Log error info for specfic layer errors
 
 [https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor](https://developers.arcgis.com/javascript/latest/api-reference/esri-config.html#RequestInterceptor)
 
@@ -455,11 +490,11 @@ WAVE
 ```js
 esriConfig.request.interceptors.push({
   urls: featureLayerUrl,
-  before: function(params) {
+  before: function (params) {
     if (params.requestOptions.query.maxAllowableOffset) {
       params.requestOptions.query.maxAllowableOffset = 0;
     }
-  }
+  },
 });
 ```
 
@@ -469,7 +504,8 @@ esriConfig.request.interceptors.push({
 
 ![](./assets/jsapi-resources2.webp)
 
-A collection of resources for developers using the ArcGIS Maps SDK for JavaScript
+A collection of resources for developers using the ArcGIS Maps SDK for
+JavaScript
 [https://github.com/Esri/jsapi-resources](https://github.com/Esri/jsapi-resources)
 
 > speaker notes:
