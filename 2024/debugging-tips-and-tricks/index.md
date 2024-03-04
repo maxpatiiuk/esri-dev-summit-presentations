@@ -28,8 +28,6 @@
 
 ## Setting up your dev environment
 
-## Setting up your dev environment
-
 ## Code Editor
 
 VS Code (other options available)
@@ -87,6 +85,9 @@ VS Code (other options available)
 > rather than "let" given that we don't modify it anywhere else in the code.
 > Later, ESLint also notices that we are comparing the variable to itself, which
 > is a potential bug.
+>
+> The especially cool part is that many ESLint warnings are auto-fixable, so
+> ESLint can improve your code for you.
 
 ## Code Editor: Live reload
 
@@ -138,6 +139,7 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 - Helps with refactoring
 - Self-documenting code
 - Better autocomplete
+- Great starting resources
 
 > speaker notes:
 >
@@ -250,6 +252,8 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
+> TODO: split this slide into 5
+>
 > TODO: demo on the network tab?
 >
 > TODO: request that fails successfully
@@ -315,12 +319,6 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 - VS Code Chat ("Explain this error")
 - GitHub Copilot / InteliiSence / Tabnine AI
 - Code Spell Checker (helps catch typos)
-- Whatever tool / library you use, search for VS Code extensions that could
-  improve integration with it:
-  - Jest
-  - Webpack
-  - Vite
-  - React
 
 > speaker notes:
 >
@@ -328,8 +326,20 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > helpers. These are great for explaining errors and suggesting solutions. If
 > your organization permits these, you should definitely give them a try as they
 > can enhance your productivity and abilities.
+
+## Debugging: Nice to have
+
+Whatever tool / library you use, search for VS Code extensions that could
+improve integration with it:
+
+- Jest
+- Webpack
+- Vite
+- React
+
+> speaker notes:
 >
-> Similarly, there are extensions for VS Code and other IDEs for better
+> (Max) Similarly, there are extensions for VS Code and other IDEs for better
 > integration with development toolkits and libraries. These would improve
 > developer experience and productivity.
 >

@@ -19,9 +19,9 @@ To be presented at
 
 ---
 
-[![](./assets/header-slide.webp)](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[![](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/debugging-tips-and-tricks/)
 
-[Slides](https://github.com/banuelosj/DevSummit-presentation/blob/main/2024/debugging-tips-and-tricks/slides.pdf?raw=true)
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/debugging-tips-and-tricks/)
 
 ## Additional Resources
 
