@@ -375,8 +375,6 @@ const geoExtent = webMercatorUtils.webMercatorToGeographic(extent);
 console.log(geoExtent);
 ```
 
-[Demo](https://developers.arcgis.com/javascript/latest/sample-code/webmap-basic/live/index.html)
-
 > speaker notes:
 >
 > (Noah)
