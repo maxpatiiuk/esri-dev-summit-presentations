@@ -551,28 +551,6 @@ A collection of resources for developers using the ArcGIS Maps SDK for
 JavaScript
 [https://github.com/Esri/jsapi-resources](https://github.com/Esri/jsapi-resources)
 
-> speaker notes:
->
-> (Max)
-
-## Maps SDK Resources
-
-![](./assets/Blogs.webp)
-
-[https://developers.arcgis.com/javascript/latest/blogs/](https://developers.arcgis.com/javascript/latest/blogs/)
-
-## Maps SDK Resources
-
-![](./assets/Compare.webp)
-
-[https://developers.arcgis.com/javascript/latest/tooling-intro/](https://developers.arcgis.com/javascript/latest/tooling-intro/)
-
-## Maps SDK Resources
-
-![](./assets/Additional.webp)
-
-[https://developers.arcgis.com/javascript/latest/community/](https://developers.arcgis.com/javascript/latest/community/)
-
 ## Github repository for testing & feedback
 
 [https://github.com/Esri/feedback-js-api-next](https://github.com/Esri/feedback-js-api-next)
@@ -599,9 +577,23 @@ NPM:
 npm install arcgis-js-api@next
 ```
 
-> speaker notes:
->
-> (Noah)
+## Maps SDK Resources
+
+![](./assets/Blogs.webp)
+
+[https://developers.arcgis.com/javascript/latest/blogs/](https://developers.arcgis.com/javascript/latest/blogs/)
+
+## Maps SDK Resources
+
+![](./assets/Compare.webp)
+
+[https://developers.arcgis.com/javascript/latest/tooling-intro/](https://developers.arcgis.com/javascript/latest/tooling-intro/)
+
+## Maps SDK Resources
+
+![](./assets/Additional.webp)
+
+[https://developers.arcgis.com/javascript/latest/community/](https://developers.arcgis.com/javascript/latest/community/)
 
 ## Related Sessions
 
@@ -609,11 +601,9 @@ npm install arcgis-js-api@next
 
 ![](./assets/performance.webp)
 
-> speaker notes:
->
-> (Noah)
-
 ## Questions?
+
+ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
 
 Slides & Notes:
 [bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
