@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig.json",
+  "include": ["**/*.ts", "**/*.tsx"],
+  "compilerOptions": {
+    /* Type Checking */
+    "allowUnreachableCode": false,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    /* Modules */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+
+    /* Emit */
+    "declaration": true,
+    "newLine": "lf",
+    "noEmitHelpers": true,
+    "noEmitOnError": true,
+
+    /* JavaScript Support */
+    "allowJs": false,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+
+    /* Language and Environment */
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ESNext",
+
+    /* Completeness */
+    "skipLibCheck": true
+  }
+}

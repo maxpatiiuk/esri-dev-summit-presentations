@@ -11,6 +11,9 @@
 
 > speaker notes:
 >
+> The content we will cover today is applicable to web development in general,
+> but we will tell it in the context of the ArcGIS Maps SDK for JavaScript
+>
 > (Max) We will begin this session with a guide to setting up your development
 > environment for productivity.
 >
@@ -156,26 +159,64 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 >
 > The best way to describe the main benefit of TypeScript is that it catches
 > your bugs before your users do.
+
+## TypeScript 🦾
+
+![Small TypeScript sample](./demos/typescript/typescript.webp)
+
+> speaker notes:
 >
-> For an example of TypeScript in action, let's say you have a function that
-> accepts some arguments and returns some data. TypeScript is going to make sure
-> that everywhere where this function is used, all the required arguments were
-> provided, and in correct order. It's also going to check that you are using
-> the function return correctly - for example, it will make sure that you are
-> not trying to access a property that doesn't exist on the returned object or
-> don't try to treat string as a number.
+> (Max) For an example of TypeScript in action, let's say you have a function
+> that takes map parameters and returns a map view. TypeScript will make sure
+> that where this function is used, all the required arguments are provided, and
+> in correct order.
 >
-> Besides helping you catch typos and other errors, TypeScript is awesome for
-> giving you extra confidence when you do code refactoring. As, on any changes,
-> to the function, TypeScript will make sure that everywhere you use this
-> function, you updated the code as appropriate if necessary. Needless to say,
-> that is great for catching mistakes and for giving you greater confidence when
-> refactoring code.
+> It's also going to check that you are using the value that the function
+> returned correctly - for example, it will make sure that you treating a string
+> as a number, or that you are not trying to access an unknown property or the
+> value that your function returned.
+
+## TypeScript 🦾
+
+![TypeScript catching a typo](./demos/typescript/typescript-typo.webp)
+
+> speaker notes:
 >
-> In fact, ArcGIS Maps SDK for JavaScript itself is written in TypeScript, so it
-> provides a great developer experience for TypeScript users. And, we have great
-> quick start guides and sample apps. We will share those with you at the end of
-> the presentation.
+> (Max) For example, see this case where I made a typo in the when method.
+> TypeScript not only discovers the issue, but suggests that we likely meant to
+> type "when" instead
+
+## TypeScript 🦾
+
+![TypeScript helping with refactoring](./demos/typescript/typescript-refactoring.webp)
+
+> speaker notes:
+>
+> (Max) Besides helping you catch typos and data handling errors, TypeScript is
+> awesome for giving you extra confidence when you do code refactoring. As, on
+> any changes, to the function, TypeScript will make sure that everywhere you
+> use this function, you updated the code as appropriate if necessary. For
+> example, if I reorder the arguments in my `createMap` function, TypeScript
+> will remind me to also update all the places were I call this function.
+
+## TypeScript 🦾
+
+![TypeScript providing better autocomplete](./demos/typescript/typescript-autocomplete.webp)
+
+> speaker notes:
+>
+> (Max) Even better, since TypeScript knows so much about your application, like
+> your function signatures, and what properties your objects have, it can
+> provide much better autocomplete suggestions. See how it suggests `when`
+> method in this case based on all methods that map view has.
+>
+> Needless to say, TypeScript will help you catch a lot of bugs, and improve the
+> developer experience a lot.
+>
+> Speaking of developer experience, ArcGIS Maps SDK for JavaScript itself is
+> written in TypeScript, so it provides a great developer experience for
+> TypeScript users. And, we have great quick start guides and sample apps. We
+> will share those with you at the end of the presentation.
 
 ## Troubleshoot web applications
 
@@ -218,19 +259,57 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 ## Debugging: Logpoints
 
-![Logpoint prints result of a small statement upon reaching the breakpoint](./demos/breakpoints/logpoint.webp)
+![Logpoint prints result of a small statement upon reaching the breakpoint](./demos/breakpoints/logpoint-initial.webp)
 
 > speaker notes:
 >
-> (Max) After creating a simple breakpoint, you can turn it into a logpoint like
-> on this video. Then, you enter some small statement, and that statement will
-> be printed to the console automatically when the code behind the breakpoint
-> executes. In this sample, the logpoint is inside a function that computes
-> popup content for a given feature, and logpoint tells us what feature was
-> clicked on.
+> (Max) Besides regular breakpoints, we have logpoints, which are like
+> `console.log`, but better in several ways.
+>
+> If you have a regular breakpoint, you can convert it into a logpoint by
+> right-clicking on it to open the context menu.
+
+## Debugging: Logpoints
+
+![To create a logpoint, pick "Edit breakpoint" from context menu](./demos/breakpoints/logpoint-context.webp)
+
+> speaker notes:
+>
+> (Max) In the list of options, pick "Edit breakpoint"
+
+## Debugging: Logpoints
+
+![To create a logpoint, change type to "Logpoint"](./demos/breakpoints/logpoint-type.webp)
+
+> speaker notes:
+>
+> (Max) Then change the breakpoint type to "Logpoint"
+
+## Debugging: Logpoints
+
+![Enter an expression to log on each logpoint hit](./demos/breakpoints/logpoint-create.webp)
+
+> speaker notes:
+>
+> (Max) And that gives us an input to enter logpoint value. Whatever expression
+> we put in there, that value would be logged to the console each time the
+> logpoint is hit.
+>
+> In our example, the logpoint is inside a function that defines the popup
+> content for a given feature, so let's log the feature name in the logpoint
+
+## Debugging: Logpoints
+
+![Enter an expression to log on each logpoint hit](./demos/breakpoints/logpoint-console.webp)
+
+> speaker notes:
+>
+> (Max) Now that logpoint is created, every time you click on some feature on
+> the map, the logpoint will log to console the name of the feature we clicked
+> on.
 >
 > This is like adding `console.log` statements in your code, except you can add
-> and modify these on the fly, without modifying code or reloading the page.
+> and logpoints on the fly, without modifying code or reloading the page.
 
 ## Debugging: Conditional Breakpoints
 
@@ -380,11 +459,11 @@ improve integration with it:
 - Jest
 - Webpack
 - Vite
-- React
+- React (React DevTools)
 
 > speaker notes:
 >
-> (Max) Similarly, there are extensions for VS Code and other IDEs for better
+> (Max) Similarly, there are extensions for browsers and IDEs for better
 > integration with development toolkits and libraries. These would improve
 > developer experience and productivity.
 >
@@ -601,23 +680,6 @@ npm install arcgis-js-api@next
 
 ![](./assets/performance.webp)
 
-## Questions?
-
-ArcGIS Maps SDK for JavaScript: Tips and Tricks for Developing and Debugging Apps
-
-Slides & Notes:
-[bit.ly/esri-2024-debugging-tips-and-tricks](https://bit.ly/esri-2024-debugging-tips-and-tricks)
-
-![](./assets/qr-code.svg)
-
 > speaker notes:
 >
-> TODO: mention where we are at the expo
->
-> NOTE: remember to repeat the question
->
-> NOTE: remember to admit if you don't know the answer - instead point to people
-> who know the answer
->
-> (Noah) If you wish to dive deeper, you can find our slides and additional
-> resources at the URL above, or you can scan the QR code.
+> (Noah)

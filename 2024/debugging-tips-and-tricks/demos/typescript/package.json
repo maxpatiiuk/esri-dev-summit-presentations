@@ -1,0 +1,21 @@
+{
+  "name": "typescript-demo",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@arcgis/core": "^4.29.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "files": [
+    "dist/"
+  ],
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "prepublish": "npm run build"
+  }
+}
