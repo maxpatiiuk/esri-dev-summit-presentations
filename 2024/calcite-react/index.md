@@ -58,34 +58,81 @@
 
 ## TypeScript 🦾
 
-> TypeScript: catches your bugs before your users do
+> TypeScript: catch your bugs before your users do
 
 - Helps with refactoring
 - Self-documenting code
 - Better autocomplete
-- [TypeScript setup](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+- Great starting resources
 
 > speaker notes:
 >
 > (Max) After React, the next core technology of a modern tech stack is
 > TypeScript. As soon as you start working on a larger application, you will
-> find TypeScript very helpful for keeping the app maintainable. It's a superset
-> of JavaScript that introduces type-safety into the code.
+> find TypeScript very helpful for keeping the app maintainable. TypeScript
+> introduces optional type-annotations and additional type-safety into
+> JavaScript.
 >
-> This helps with catching typos and other errors before the user does. It also
-> makes refactoring apps much easier as TypeScript will point out if a new
-> feature you added requires code changes in other parts of the app.
+> The best way to describe the main benefit of TypeScript is that it catches
+> your bugs before your users do.
+
+## TypeScript 🦾
+
+![Small TypeScript sample](../debugging-tips-and-tricks/demos/typescript/typescript.webp)
+
+> speaker notes:
 >
-> Finally, TypeScript gives the editor more understanding of how your app works,
-> which in turns makes for much better autocomplete when typing. For example,
-> when requesting data from a database, TypeScript can autocomplete field names
-> based on your database schema, and then ensure that what data you write to the
-> database, matches the data types in your database schema, be it a string
-> number or a more complex object.
+> (Max) For an example of TypeScript in action, let's say you have a function
+> that takes map parameters and returns a map view. TypeScript will make sure
+> that where this function is used, all the required arguments are provided, and
+> in correct order.
 >
-> ArcGIS Maps SDK for JavaScript has quick start guides for TypeScript, as well
-> as sample apps. We will post a link to these and other resources at the end of
-> this presentation.
+> It's also going to check that you are using the value that the function
+> returned correctly - for example, it will make sure that you treating a string
+> as a number, or that you are not trying to access an unknown property or the
+> value that your function returned.
+
+## TypeScript 🦾
+
+![TypeScript catching a typo](../debugging-tips-and-tricks/demos/typescript/typescript-typo.webp)
+
+> speaker notes:
+>
+> (Max) For example, see this case where I made a typo in the when method.
+> TypeScript not only discovers the issue, but suggests that we likely meant to
+> type "when" instead
+
+## TypeScript 🦾
+
+![TypeScript helping with refactoring](../debugging-tips-and-tricks/demos/typescript/typescript-refactoring.webp)
+
+> speaker notes:
+>
+> (Max) Besides helping you catch typos and data handling errors, TypeScript is
+> awesome for giving you extra confidence when you do code refactoring. As, on
+> any changes, to the function, TypeScript will make sure that everywhere you
+> use this function, you updated the code as appropriate if necessary. For
+> example, if I reorder the arguments in my `createMap` function, TypeScript
+> will remind me to also update all the places were I call this function.
+
+## TypeScript 🦾
+
+![TypeScript providing better autocomplete](../debugging-tips-and-tricks/demos/typescript/typescript-autocomplete.webp)
+
+> speaker notes:
+>
+> (Max) Even better, since TypeScript knows so much about your application, like
+> your function signatures, and what properties your objects have, it can
+> provide much better autocomplete suggestions. See how it suggests `when`
+> method in this case based on all methods that map view has.
+>
+> Needless to say, TypeScript will help you catch a lot of bugs, and improve the
+> developer experience a lot.
+>
+> Speaking of developer experience, ArcGIS Maps SDK for JavaScript itself is
+> written in TypeScript, so it provides a great developer experience for
+> TypeScript users. And, we have great quick start guides and sample apps. We
+> will share those with you at the end of the presentation.
 
 ## Calcite Design System 💎
 
