@@ -121,6 +121,12 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > And even more importantly, it prevents you from accidentally loosing your
 > work.
 >
+> I remember working on an e-commerce website 6 years ago. I didn't use version
+> control system, and I accidentally deleted two weeks worth of work. The
+> deadline for the project was approaching, and so I had to spend two whole days
+> morning till late evening to try to recreate the code from memory. From that
+> point on, I use version control on every project.
+>
 > Git is the most popular version control system. And it's often paired with
 > GitHub for hosting Git repositories. However, using Git from the command line
 > is not the most approachable for beginners. Fortunately, VS Code comes with
@@ -248,33 +254,69 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 ## Debugging: Network requests 🌐
 
-![Network](./assets/network.webp)
+![List of network requests](./assets/network-list.webp)
 
 > speaker notes:
 >
-> TODO: split this slide into 5
->
-> TODO: demo on the network tab?
->
-> TODO: request that fails successfully
->
-> TODO: extend my section to 20min
->
 > (Max) Any web application relies on a back-end service to provide data and
 > power features like search and querying. The Network tab in DevTools is
-> perfect for inspecting network requests like that. In this example, I put
-> "query" in the search box, letting me see all the network requests that
-> contained query in the URL, and I can inspect what parameters the browser sent
-> and what response it got back.
+> perfect for inspecting network requests like that.
 >
-> This is also useful for diagnosing performance issues, as you can see how long
-> each request took to complete.
+> For example, let's inspect requests to a feature service query endpoint. As
+> you can see, we have a lot of requests in this case, so let's use the search
+> box to narrow it down to just requests that contain "query" in the URL.
+
+## Debugging: Network requests 🌐
+
+![Filtering requests to those containing "query" in the URL](./assets/network-filtered.webp)
+
+> speaker notes:
 >
-> While we are on the topic of network requests, it's important to mention the
-> "Disable cache" checkbox available here. This is great for temporary telling
-> the browser to not cache any data, but to make a fresh network requests every
-> time. This is useful for diagnosing issues caused by browser cache getting out
-> of date.
+> (Max) Now we see all requests that contain "query" in the URL. Let's click on
+> any of these requests to see more details
+
+## Debugging: Network requests 🌐
+
+![Inspecting request and response data for one request](./assets/network-request.webp)
+
+> speaker notes:
+>
+> (Max) On the "request" tab, you can see what data your browser sent to the
+> server. And on the neighboring "response" tab, you can see what data the
+> server sent back. This way, we can verify that what data browser sent to the
+> server, and what we got back looks good.
+
+## Debugging: Network requests 🌐
+
+![Listing the requests that took the longest to complete](./assets/network-large.webp)
+
+> speaker notes:
+>
+> (Max) The network tab in DevTools is also useful for diagnosing performance
+> issues, as you can see how long each request took to complete.
+
+## Debugging: Network requests 🌐
+
+!["Disable cache" checkbox](./assets/network-cached.webp)
+
+> speaker notes:
+>
+> (Max) To improve performance, especially for commonly requested resources,
+> browsers will commonly cache the network request. This means they will save a
+> local copy of the network request and use it instead of making a fresh
+> network, resulting in much better performance.
+>
+> However, this can cause issues in some cases. For example, if the resources on
+> the server modified recently, this can cause issues as the browser may use an
+> outdated resource.
+>
+> Similarly, if you wish to test load performance of your application, requests
+> being cached may not give you an accurate picture of the performance compared
+> to a user who is visiting your site for the first time, as they likely don't
+> have any of your resources cached.
+>
+> For these cases, a "Disable cache" checkbox exists in the network tab. It
+> let's you temporary bypass caching of network requests.
 
 ## Debugging: Philosophy 🤔
 
@@ -326,6 +368,9 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > helpers. These are great for explaining errors and suggesting solutions. If
 > your organization permits these, you should definitely give them a try as they
 > can enhance your productivity and abilities.
+>
+> And as these tools are expected to only get more powerful, getting experience
+> with these tools will prepare you for the work environment of the future.
 
 ## Debugging: Nice to have
 
