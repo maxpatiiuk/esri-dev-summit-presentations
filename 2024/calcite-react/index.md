@@ -173,6 +173,7 @@
 - Clear direction for designers and developers; follows best practices
 - Reduce effort & cost; speed up updates
 - Improve accessibility (WCAG 2.1 AA); comply with web-standards
+- Completely free to use!
 
 ![Calcite advices to use state colors to quickly convey meaning. They advice against using state colors haphazardly or as backgrounds](./assets/calcite-guidelines.webp)
 
@@ -326,21 +327,4 @@ Add copy script and build scripts:
 >   mouse, while taking screenshots in the process and comparing them to the
 >   expected result.
 
-## Questions?
-
-Slides and Demo app:
-[bit.ly/esri-2024-calcite-react](https://bit.ly/esri-2024-calcite-react)
-
-![](./assets/qr-code.svg)
-
-> speaker notes:
->
-> TODO: mention where we are at the expo
->
-> NOTE: remember to repeat the question
->
-> NOTE: remember to admit if you don't know the answer - instead point to people
-> who know the answer
->
-> (Max) If you wish to dive deeper, you can find our slides, demo application
-> and additional resources at the URL above, or you can scan the QR code.
+TODO: mention where we are at the expo

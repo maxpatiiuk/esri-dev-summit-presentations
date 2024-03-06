@@ -31,6 +31,7 @@ To be presented at
   - [GitHub](https://github.com/Esri/calcite-components)
   - [Calcite Components React](https://www.npmjs.com/package/@esri/calcite-components-react)
   - [Esri Community](https://community.esri.com/t5/calcite-design-system/ct-p/calcite-design-system)
+  - [Custom Calcite themes](https://esrips.github.io/calcite-theme-editor/#theme)
   - Great sessions about Calcite from previous years:
     - [Building Web Apps with ArcGIS API for JavaScript and Calcite Design System](https://mediaspace.esri.com/media/t/1_6eotmuhb/244321192)
     - [Calcite Design System: Design & Build Web Apps](https://mediaspace.esri.com/media/t/1_a5nli0bn/244321192)
