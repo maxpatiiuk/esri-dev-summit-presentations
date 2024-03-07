@@ -453,13 +453,13 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 ## Debugging: Nice to have
 
-Whatever tool / library you use, search for VS Code extensions that could
-improve integration with it:
+Whatever tool / library you use, search for Browser and IDE extensions that
+could improve integration with it:
 
+- React (React DevTools)
 - Jest
 - Webpack
 - Vite
-- React (React DevTools)
 
 > speaker notes:
 >
@@ -683,3 +683,5 @@ npm install arcgis-js-api@next
 > speaker notes:
 >
 > (Noah)
+
+TODO: mention where we are at the expo
