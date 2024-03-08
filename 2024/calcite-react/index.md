@@ -251,7 +251,7 @@
 Installation:
 
 ```sh
-npx create-react-app my-app --template typescript
+npm vite@latest
 npm install @esri/calcite-components-react
 npm install @arcgis/core
 ```
@@ -268,8 +268,8 @@ Add copy script and build scripts:
 > speaker notes:
 >
 > (Ryan) To start, create the app using the React builder of your choice. For
-> this example here, we’re using create-react-app and starting off with the
-> TypeScript template.
+> this example here, we’re using Vite's CLI to create a TypeScript React
+> application.
 >
 > Next, install calcite-components-react. We don’t need to install
 > calcite-components because it’s a dependency of this package.
@@ -284,13 +284,6 @@ Add copy script and build scripts:
 > speaker notes:
 >
 > (Ryan)
-
-## Adding Custom Widgets to the View
-
-> speaker notes:
->
-> (Ryan) Demonstrate usage of Calcite Components within React Components and
-> showcase app as it's being built
 
 ## Good practices
 
