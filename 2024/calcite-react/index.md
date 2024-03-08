@@ -26,7 +26,6 @@
     real DOM and virtual DOM, then only the part of the DOM that is changed will
     update, rather than the entire DOM
 - Build anything out of small Components
-  -
   - Data is transferred from top to bottom
 - JSX (JavaScript Syntax Extension).
   - `return <h1>Hello World! 👋</h1>;`

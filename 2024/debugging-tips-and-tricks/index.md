@@ -11,9 +11,6 @@
 
 > speaker notes:
 >
-> The content we will cover today is applicable to web development in general,
-> but we will tell it in the context of the ArcGIS Maps SDK for JavaScript
->
 > (Max) We will begin this session with a guide to setting up your development
 > environment for productivity.
 >
