@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 
-// Step 11: Panel, Shell Panel, and Block and the associated react wrappers
-import '@esri/calcite-components/dist/components/calcite-block';
-import '@esri/calcite-components/dist/components/calcite-shell-panel';
-import '@esri/calcite-components/dist/components/calcite-panel';
-
+// Step 11: Import CalciteBlock, CalciteShellPanel, and CalcitePanel
 import {
   CalciteBlock,
   CalciteShellPanel,
