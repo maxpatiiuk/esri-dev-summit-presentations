@@ -248,7 +248,7 @@
 
 ## Development Environment Setup
 
-Installation:
+Reat application setup:
 
 ```sh
 npm vite@latest
