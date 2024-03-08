@@ -21,7 +21,7 @@ interface AppProps {
 
 function App({ webmap, title, panelHeading }: AppProps) {
   // Step 8: Set up state to store view to pass into other components (Panel)
-  const [view, setView] = useState<__esri.MapView | null>(null);
+  const [map, setMap] = useState<HTMLArcgisMapElement | null>(null);
 
   // Step 9: Render app layout: Calcite shell, along with header, panel, and map
   // Calcite Components Documentation: https://developers.arcgis.com/calcite-design-system/components/shell
@@ -30,16 +30,12 @@ function App({ webmap, title, panelHeading }: AppProps) {
       {/* Header slot */}
       <Header title={title} />
       {/* Panel Start slot */}
-      <Panel view={view} panelHeading={panelHeading} />
+      <Panel map={map} panelHeading={panelHeading} />
       {/* Default content slot */}
       <ArcgisMap
         itemId={webmap}
-        // Step 10: Listen for on view ready
-        onViewReady={(e) => {
-          const { view } = e.detail;
-          // Store view in state, and pass that into panel
-          setView(view);
-        }}
+        // Step 10: Use onArcgisViewReadyChange to store map in state to pass into panel
+        onArcgisViewReadyChange={(e) => setMap(e.target)}
       />
     </CalciteShell>
   );

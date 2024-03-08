@@ -15,55 +15,51 @@ import {
 import '@arcgis/map-components/dist/components/arcgis-features';
 import { ArcgisFeatures } from '@arcgis/map-components-react';
 
-// Step 13: Import reactiveUtils.on to listen for view click
-import { on } from '@arcgis/core/core/reactiveUtils';
-
 interface PanelProps {
-  view: __esri.MapView | null;
+  map: HTMLArcgisMapElement | null;
   panelHeading: string;
 }
 
-export const Panel = ({ view, panelHeading }: PanelProps) => {
-  // Step 14: Set up state to store features component - to eventually set up click handle
+export const Panel = ({ map, panelHeading }: PanelProps) => {
+  // Step 13: Set up state to store features component - to eventually set up click handle
   const [featuresComponent, setFeaturesComponent] =
-    useState<__esri.Features | null>(null);
+    useState<HTMLArcgisFeaturesElement | null>(null);
 
-  // Step 15: useEffect - when features component and view is available, set up click handle
+  // Step 14: useEffect - when features component and view is available, set up click handle
   // On click, open the clicked feature if any
   useEffect(() => {
-    if (!featuresComponent || !view) return;
+    if (!featuresComponent || !map) return;
 
-    // Disable popup for features widget as feature information will be rendered in side panel
-    view.popupEnabled = false;
+    // Step 15
+    //   15a. Set view on features component
+    //   15b. disable popup for features widget as feature information will be rendered in side panel
+    featuresComponent.view = map.view;
+    map.view.popupEnabled = false;
 
-    const clickHandle = on(
-      () => view,
-      'click',
-      (event) => {
-        featuresComponent.open({
-          location: event.mapPoint,
-          fetchFeatures: true,
-        });
-      },
-    );
-    return () => clickHandle.remove();
-  }, [view, featuresComponent]);
+    const handle = map.view.on('click', (event) => {
+      featuresComponent.open({
+        location: event.mapPoint,
+        fetchFeatures: true,
+      });
+    });
+
+    return () => handle.remove();
+  }, [featuresComponent, map]);
 
   // Step 16: Render shell panel, containing features component
   return (
     <CalciteShellPanel slot="panel-start">
       {/* Block to render panel heading  */}
       <CalciteBlock heading={panelHeading} />
+
       {/* Panel to render features widget container node */}
       <CalcitePanel>
-        {view ? (
-          // Step 17: Render Features component to display feature information in side panel on click
-          <ArcgisFeatures
-            view={view}
-            // Step 18: Listen for on widget ready to store features component in react component's state
-            onWidgetReady={(e) => setFeaturesComponent(e.detail.widget)}
-          />
-        ) : null}
+        {/* Step 17: Render Features component to display feature information in
+        side panel on click */}
+        <ArcgisFeatures
+          // Step 18: Use onArcgisFeaturesReady to store ArcgisFeatures in react component's state
+          onArcgisFeaturesReady={(e) => setFeaturesComponent(e.target)}
+        />
       </CalcitePanel>
     </CalciteShellPanel>
   );
