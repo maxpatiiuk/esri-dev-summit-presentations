@@ -279,7 +279,7 @@ Add copy script and build scripts:
 > Note that installing both of these packages will install
 > @esri/calcite-components and @arcgis/core as peer dependencies
 
-## Layout + Feature
+## Demo app
 
 > speaker notes:
 >
