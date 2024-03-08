@@ -13,9 +13,12 @@ Description: TODO
 ## Commands to create vite react app
 
 1. npm create vite@latest
+
+   a. Use Vite's CLI to create a TypeScript React app
+
 2. npm i @arcgis/map-components-react @esri/calcite-components-react
 
-   2a. Note: @arcgis/core @esri/calcite-components will be installed as peer
+   Note: @arcgis/core @esri/calcite-components will be installed as peer
    dependencies
 
 ## Steps to run web app locally, in terminal, run:
