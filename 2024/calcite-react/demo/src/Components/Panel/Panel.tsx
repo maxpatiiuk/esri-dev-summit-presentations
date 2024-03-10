@@ -25,7 +25,7 @@ export const Panel = ({ map, panelHeading, mapId }: PanelProps) => {
   // Step 14: useEffect - when features component and view is available, set up click handle
   // On click, open the clicked feature if any
   useEffect(() => {
-    if (!featuresComponent || !map?.view) return;
+    if (!featuresComponent || map == null) return;
 
     // Step 15: disable popup for features widget as feature information will be rendered in side panel
     map.view.popupEnabled = false;
@@ -46,7 +46,7 @@ export const Panel = ({ map, panelHeading, mapId }: PanelProps) => {
       {/* Block to render panel heading  */}
       <CalciteBlock heading={panelHeading} />
       {/* Panel to render features widget container node */}
-      <CalcitePanel loading={!map?.view ? true : false}>
+      <CalcitePanel loading={map == null}>
         {/* Step 17: Render Features component to display feature information in
         side panel on click */}
         <ArcgisFeatures
