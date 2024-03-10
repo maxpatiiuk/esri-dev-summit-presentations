@@ -14,9 +14,10 @@ import { ArcgisFeatures } from '@arcgis/map-components-react';
 interface PanelProps {
   map: HTMLArcgisMapElement | null;
   panelHeading: string;
+  mapId: string;
 }
 
-export const Panel = ({ map, panelHeading }: PanelProps) => {
+export const Panel = ({ map, panelHeading, mapId }: PanelProps) => {
   // Step 13: Set up state to store features component - to eventually set up click handle
   const [featuresComponent, setFeaturesComponent] =
     useState<HTMLArcgisFeaturesElement | null>(null);
@@ -26,10 +27,7 @@ export const Panel = ({ map, panelHeading }: PanelProps) => {
   useEffect(() => {
     if (!featuresComponent || !map?.view) return;
 
-    // Step 15
-    //   15a. Set view on features component
-    //   15b. disable popup for features widget as feature information will be rendered in side panel
-    featuresComponent.view = map.view;
+    // Step 15: disable popup for features widget as feature information will be rendered in side panel
     map.view.popupEnabled = false;
 
     const handle = map.view.on('click', (event) => {
@@ -52,7 +50,9 @@ export const Panel = ({ map, panelHeading }: PanelProps) => {
         {/* Step 17: Render Features component to display feature information in
         side panel on click */}
         <ArcgisFeatures
-          // Step 18: Use onArcgisFeaturesReady to store ArcgisFeatures in react component's state
+          // Step 18: Because ArcgisFeatures is displayed outside the map, we need to pass a reference to the map
+          referenceElement={mapId}
+          // Step 19: Use onArcgisFeaturesReady to store ArcgisFeatures in react component's state
           onArcgisFeaturesReady={(e) => setFeaturesComponent(e.target)}
         />
       </CalcitePanel>
