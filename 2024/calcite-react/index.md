@@ -248,12 +248,12 @@
 
 ## Development Environment Setup
 
-Installation:
+Reat application setup:
 
 ```sh
-npx create-react-app my-app --template typescript
+npm vite@latest
 npm install @esri/calcite-components-react
-npm install @arcgis/core
+npm install @arcgis/map-components-react
 ```
 
 Add copy script and build scripts:
@@ -268,29 +268,22 @@ Add copy script and build scripts:
 > speaker notes:
 >
 > (Ryan) To start, create the app using the React builder of your choice. For
-> this example here, we’re using create-react-app and starting off with the
-> TypeScript template.
+> this example here, we’re using Vite's CLI to create a TypeScript React
+> application.
 >
 > Next, install calcite-components-react. We don’t need to install
 > calcite-components because it’s a dependency of this package.
 >
-> Install the ES module build of ArcGIS API for JS
+> Install the map-components-react package
 >
-> And finally, install ncp. We'll use that to copy the assets over. This allows
-> icon to show and the date picker to be properly translated.
+> Note that installing both of these packages will install
+> @esri/calcite-components and @arcgis/core as peer dependencies
 
-## Layout + Feature
+## Demo app
 
 > speaker notes:
 >
 > (Ryan)
-
-## Adding Custom Widgets to the View
-
-> speaker notes:
->
-> (Ryan) Demonstrate usage of Calcite Components within React Components and
-> showcase app as it's being built
 
 ## Good practices
 

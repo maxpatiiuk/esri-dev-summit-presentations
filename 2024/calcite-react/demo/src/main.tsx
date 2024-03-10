@@ -16,12 +16,12 @@ import {
   panelHeading,
 } from './config/application.json';
 
-// Step 4: Calcite Components Assets (Recommended to use CDN based on documentation)
-// Please note: You can also manage assets locally by copying assets directly from Calcite Components in your project.
-import { setAssetPath } from '@esri/calcite-components/dist/components/index';
-setAssetPath(
-  'https://cdn.jsdelivr.net/npm/@esri/calcite-components/dist/calcite/assets',
-);
+// Step 4: Calcite Components: Use defineCustomElements to load calcite components into the app
+import { defineCustomElements } from '@esri/calcite-components/dist/loader';
+// CDN hosted assets
+defineCustomElements(window, {
+  resourcesUrl: 'https://js.arcgis.com/calcite-components/2.6.0/assets',
+});
 
 // Step 5: Set portal URL to work with content from within ArcGIS Online or ArcGIS Enterprise Portal
 esriConfig.portalUrl = portalUrl;
