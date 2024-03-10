@@ -31,9 +31,9 @@ function App({ webmap, title, panelHeading }: AppProps) {
       <Panel map={map} panelHeading={panelHeading} />
       {/* Default content slot */}
       <ArcgisMap
-        itemId={webmap}
-        // Step 10: Use onArcgisViewReadyChange to store map in state to pass into panel
+        // Step 10: setMap on Arcgis ViewReadyChange
         onArcgisViewReadyChange={(e) => setMap(e.target)}
+        itemId={webmap}
       />
     </CalciteShell>
   );
