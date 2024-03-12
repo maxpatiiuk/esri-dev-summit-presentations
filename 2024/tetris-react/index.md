@@ -36,4 +36,6 @@
 Trailer, source code, and online demo:
 [bit.ly/esri-2024-tetris](https://bit.ly/esri-2024-tetris)
 
+![](./assets/qr-code.svg)
+
 > speaker notes:
