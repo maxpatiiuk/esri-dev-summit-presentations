@@ -45,11 +45,23 @@
 > while removing the need for developer to write bug prone imperative code.
 >
 > React is also keen on keeping your apps maintainable as it grows. It does that
-> by encouraging you to build the application out of small components, composing
-> them together into larger blocks, and then connecting these blocks to each
-> other using one-way flow of data from top components to the bottom ones. This
-> might seem like a restriction, but it actually makes the codebase much easier
-> to understand and maintain.
+> by encouraging you to build the application out of small components. Small
+> components are great because they are:
+>
+> - easier to reason about
+> - easier to test
+> - easier for JS engines to optimize
+> - more reusable
+>
+> then, you can combine these components together into larger and larger blocks,
+> like LEGO bricks, until your entire application is one powerful component at
+> the top level.
+>
+> Between components, React encourages one-way data flow - data going from
+> parent components to children only. This might seem like a restriction, but it
+> actually makes the codebase much easier to understand and maintain, because
+> when you are wondering where a certain prop value is coming from, it's really
+> simple - you just look at the parent component.
 >
 > React also introduces JSX - which is an optional syntax that bridges the gap
 > between HTML and JavaScript, taking the best of both - the **readability** and
@@ -198,12 +210,13 @@
 > application. By using a library of pre-designed components, you can speed up
 > development and push updates faster. This directly translates to cost savings
 > and allows your team to focus on what really matters - the content of your
-> application, rather than reinventing Buttons and Dialogs over and over again.
+> application, rather than reinventing Buttons and Dialogs over and over again -
+> because Calcite takes care of that for you.
 >
-> Finally, but not least important, Calcite team has several accessibility
-> experts on their team, and they ensure that all components are accessible and
-> compliant with applicable standards. This directly improves the User
-> Experience, and makes it easier for you to comply with the law.
+> Finally, but not least important, Calcite has several accessibility experts on
+> their team, and they ensure that all components are accessible and compliant
+> with applicable standards. This directly improves the User Experience, and
+> makes it easier for you to comply with the law.
 >
 > As you can see, there are a lot of completing reasons to try out Calcite
 > Design System. We adapted Calcite widely inside Esri, and it's been of great
@@ -302,11 +315,12 @@ Add copy script and build scripts:
 > - We introduce many cool features with every Maps SDK release, and you don't
 >   want to miss out on them. So update to the newest version regularly and
 >   check the release notes for each version.
-> - For apps that deal with sensitive data, it's especially important to keep
->   all dependencies of your project up to date. Security vulnerabilities are
->   discovered and fixed all the time, and it's hard to keep up with all of
->   them. Fortunately, GitHub has a tool called Dependabot that updates your
->   dependencies automatically and opens a Pull Request for you to review.
+> - Kind of related to that, you should keep all of your dependencies up to
+>   date, especially if your app deals with sensitive data because security
+>   vulnerabilities are discovered and fixed all the time, and it's hard to keep
+>   up with all of them. Fortunately, GitHub has a tool called Dependabot that
+>   updates your dependencies automatically and opens a Pull Request for you to
+>   review.
 > - Next, you should learn the tools you use often very well. Mastering your IDE
 >   and Browser DevTools would make you much more productive and extend your
 >   capabilities greatly.
