@@ -149,10 +149,10 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
-> (Max) As soon as you start working on a larger application, you will find
-> TypeScript very helpful for keeping the app maintainable. TypeScript
-> introduces optional type-annotations and additional type-safety into
-> JavaScript.
+> (Max) Now comes my favorite part, and that's TypeScript. As soon as you start
+> working on a larger application, you will find TypeScript very helpful for
+> keeping the app maintainable. TypeScript introduces optional type-annotations
+> and additional type-safety into JavaScript.
 >
 > The best way to describe the main benefit of TypeScript is that it catches
 > your bugs before your users do.
@@ -337,30 +337,6 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > (Max) Any web application relies on a back-end service to provide data and
 > power features like search and querying. The Network tab in DevTools is
 > perfect for inspecting network requests like that.
->
-> For example, let's inspect requests to a feature service query endpoint. As
-> you can see, we have a lot of requests in this case, so let's use the search
-> box to narrow it down to just requests that contain "query" in the URL.
-
-## Debugging: Network requests 🌐
-
-![Filtering requests to those containing "query" in the URL](./assets/network-filtered.webp)
-
-> speaker notes:
->
-> (Max) Now we see all requests that contain "query" in the URL. Let's click on
-> any of these requests to see more details
-
-## Debugging: Network requests 🌐
-
-![Inspecting request and response data for one request](./assets/network-request.webp)
-
-> speaker notes:
->
-> (Max) On the "request" tab, you can see what data your browser sent to the
-> server. And on the neighboring "response" tab, you can see what data the
-> server sent back. This way, we can verify that what data browser sent to the
-> server, and what we got back looks good.
 
 ## Debugging: Network requests 🌐
 
@@ -368,8 +344,9 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 > speaker notes:
 >
-> (Max) The network tab in DevTools is also useful for diagnosing performance
-> issues, as you can see how long each request took to complete.
+> (Max) You can use it to diagnose performance issues as it clearly shows you
+> how long each network request took to complete. In this case, all requests
+> completed in under half a second, so there are not visible issues.
 
 ## Debugging: Network requests 🌐
 
@@ -394,6 +371,47 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > For these cases, a "Disable cache" checkbox exists in the network tab. It
 > let's you temporary bypass caching of network requests.
 
+## Debugging: Network requests 🌐
+
+![List of network requests](./assets/network-list.webp)
+
+> speaker notes:
+>
+> (Max) The network tab in DevTools is also great for inspecting individual
+> requests. In this sample application, the page makes 115 requests, so let's
+> filter it down a bit using the search box. For example, let's inspect the
+> requests to my query endpoint, so I will type "query" in the search box.
+
+## Debugging: Network requests 🌐
+
+![Filtering requests to those containing "query" in the URL](./assets/network-filtered.webp)
+
+> speaker notes:
+>
+> (Max) Now we see all requests that contain "query" in the URL. Let's click on
+> any of these requests to see more details
+
+## Debugging: Network requests 🌐
+
+![Inspecting request and response data for one request](./assets/network-request.webp)
+
+> speaker notes:
+>
+> (Max) On the "request" tab, you can see what data your browser sent to the
+> server. By that I mean the data that either your HTML or your JavaScript file
+> sent. And on the neighboring "response" tab, you can see what data the server
+> sent back.
+>
+> This is perfect for making sure that the data your browser sends to the server
+> and what you get back is looking good. Let's say you were trying to diagnose
+> an issue, and you noticed that the data your browser sent to the server was
+> incorrect. For example, regardless of what search query the user types, the
+> network request is always sending the same search query to the server.
+>
+> And just like that, you are able to narrow down the scope for where the issue
+> is occurring in half - because now you know that the issue is somewhere on the
+> front-end side of your application, not on the server.
+
 ## Debugging: Philosophy 🤔
 
 - **Initial Assessment:** Determine if the issue is app-specific, API-specific,
@@ -414,11 +432,6 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 > on among many moving parts. That's why, ruling out possible causes one by one
 > get's you closer to the solution. And not just any solution, but a solution
 > where you understand what went wrong and what's the best way to fix it.
->
-> Like I mentioned on the previous slide, you can inspect network requests to
-> see if the issue is with your browser sending wrong data, or the server
-> responding with bad data - just like that, you narrowed down the scope of
-> possibilities in half.
 >
 > For other errors, like state management, or performance issues, you can also
 > try temporary disabling some parts of your application so that they don't
