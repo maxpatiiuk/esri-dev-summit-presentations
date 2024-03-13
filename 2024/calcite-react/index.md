@@ -264,7 +264,7 @@
 Reat application setup:
 
 ```sh
-npm vite@latest
+npm create vite@latest
 npm install @esri/calcite-components-react
 npm install @arcgis/map-components-react
 ```
