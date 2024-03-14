@@ -7,8 +7,6 @@
 
 > speaker notes:
 >
-> TODO: Trim content down to 25 minutes
->
 > (Ryan) The plan for today is to give you small introduction to the main
 > technologies used in building modern web mapping applications. We will cover
 > React, TypeScript, Calcite, ArcGIS Maps SDK for JavaScript, and then show how
