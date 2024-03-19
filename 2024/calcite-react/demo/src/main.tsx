@@ -16,7 +16,8 @@ import {
   panelHeading,
 } from './config/application.json';
 
-// Step 4: Calcite Components: Use defineCustomElements to load calcite components into the app
+// Step 4: Calcite Components: Use defineCustomElements registers calcite components into the app.
+// Lazy loaded: Initialization of the components are deferred until it's actually needed
 import { defineCustomElements } from '@esri/calcite-components/dist/loader';
 // CDN hosted assets
 defineCustomElements(window, {

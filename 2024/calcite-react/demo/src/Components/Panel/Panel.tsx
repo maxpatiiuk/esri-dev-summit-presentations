@@ -14,10 +14,10 @@ import { ArcgisFeatures } from '@arcgis/map-components-react';
 interface PanelProps {
   map: HTMLArcgisMapElement | null;
   panelHeading: string;
-  mapId: string;
+  referenceElement: string;
 }
 
-export const Panel = ({ map, panelHeading, mapId }: PanelProps) => {
+export const Panel = ({ map, referenceElement, panelHeading }: PanelProps) => {
   // Step 13: Set up state to store features component - to eventually set up click handle
   const [featuresComponent, setFeaturesComponent] =
     useState<HTMLArcgisFeaturesElement | null>(null);
@@ -51,7 +51,7 @@ export const Panel = ({ map, panelHeading, mapId }: PanelProps) => {
         side panel on click */}
         <ArcgisFeatures
           // Step 18: Because ArcgisFeatures is displayed outside the map, we need to pass a reference to the map
-          referenceElement={mapId}
+          referenceElement={referenceElement}
           // Step 19: Use onArcgisFeaturesReady to store ArcgisFeatures in react component's state
           onArcgisFeaturesReady={(e) => setFeaturesComponent(e.target)}
         />
