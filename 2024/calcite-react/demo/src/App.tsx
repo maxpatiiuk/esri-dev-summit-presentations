@@ -6,7 +6,13 @@ import { CalciteShell } from '@esri/calcite-components-react';
 
 // Step 7: Import ArcgisMap from map-components
 import '@arcgis/map-components/dist/components/arcgis-map';
-import { ArcgisMap } from '@arcgis/map-components-react';
+import '@arcgis/map-components/dist/components/arcgis-legend';
+import '@arcgis/map-components/dist/components/arcgis-expand';
+import {
+  ArcgisMap,
+  ArcgisExpand,
+  ArcgisLegend,
+} from '@arcgis/map-components-react';
 
 import { Header } from './Components/Header/Header';
 import { Panel } from './Components/Panel/Panel';
@@ -18,7 +24,7 @@ interface AppProps {
 }
 
 function App({ webmap, title, panelHeading }: AppProps) {
-  // Step 8: Set up state to store view to pass into other components (Panel)
+  // Step 8: Set up state to store map to pass into other components (ArcgisFeatures in Panel)
   const [map, setMap] = useState<HTMLArcgisMapElement | null>(null);
   const mapId = 'arcgis-map';
 
@@ -26,17 +32,22 @@ function App({ webmap, title, panelHeading }: AppProps) {
   // Calcite Components Documentation: https://developers.arcgis.com/calcite-design-system/components/shell
   return (
     <CalciteShell>
-      {/* Header slot */}
       <Header title={title} />
-      {/* Panel Start slot */}
-      <Panel map={map} panelHeading={panelHeading} mapId={mapId} />
-      {/* Default content slot */}
+      <Panel
+        map={map}
+        panelHeading={panelHeading}
+        referenceElement={`#${mapId}`}
+      />
       <ArcgisMap
         id={mapId}
         // Step 10: setMap on Arcgis ViewReadyChange
         onArcgisViewReadyChange={(e) => setMap(e.target)}
         itemId={webmap}
-      />
+      >
+        <ArcgisExpand position="bottom-right" expanded>
+          <ArcgisLegend />
+        </ArcgisExpand>
+      </ArcgisMap>
     </CalciteShell>
   );
 }
