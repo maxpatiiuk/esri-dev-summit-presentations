@@ -14,12 +14,14 @@ Where: Pasadena/Sierra/Ventura | Renaissance Hotel
 Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Noah Sager](https://github.com/NoashX)
 
-To be presented at
+Presented at
 [Esri Developer Summit 2024](https://registration.esri.com/flow/esri/24epcdev/deveventportal/page/detailed-agenda/session/1699140833904001GY0R).
 
 ---
 
-[![](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/debugging-tips-and-tricks/)
+[![](./assets/header-slide.webp)](https://mediaspace.esri.com/media/t/1_fef9p2ep/325483122)
+
+[Recording](https://mediaspace.esri.com/media/t/1_fef9p2ep/325483122)
 
 [Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2024/debugging-tips-and-tricks/)
 
