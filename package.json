@@ -1,15 +1,14 @@
 {
   "private": true,
   "type": "module",
-  "scripts": {
-    "postinstall": "npm run fetchSubmodules && npm run installRevealJs",
-    "fetchSubmodules": "git submodule update --init --recursive",
-    "installRevealJs": "(cd 2024/reveal.js && npm install)",
-    "start": "(cd 2024/reveal.js && npx gulp --cwd ../../ --gulpfile ./gulpfile.js serve)"
+  "scripts": {},
+  "dependencies": {
+    "@slidev/cli": "^0.50.0-beta.6",
+    "@slidev/theme-default": "latest",
+    "vue": "^3.5.12"
   },
   "devDependencies": {
     "@maxxxxxdlp/prettier-config": "^1.0.4",
     "prettier": "^3.0.3"
-  },
-  "prettier": "@maxxxxxdlp/prettier-config"
+  }
 }

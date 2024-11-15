@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "slidev build",
+    "start": "slidev --open",
+    "export": "slidev export"
+  }
+}
