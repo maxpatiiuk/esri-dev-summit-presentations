@@ -22,12 +22,14 @@ Benefits:
 
    ```sh
    npm install
+   git submodule update --init --recursive
+   (cd 2024/reveal.js && npm install)
    ```
 
 3. Start the development server:
 
    ```sh
-   npm start
+   (cd 2024/reveal.js && npx gulp --cwd ../../ --gulpfile ./gulpfile.js serve)
    ```
 
 4. Open the URL for the corresponding session in your browser. For example,
