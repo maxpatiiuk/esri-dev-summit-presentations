@@ -1,0 +1,12 @@
+#page-root {
+  color: white;
+  font-family: Arial;
+}
+
+.slidev-layout.cover {
+  padding-left: 4.5rem;
+}
+
+.slidev-layout:is(.cover, .intro) p {
+  color: #ffad29;
+}
