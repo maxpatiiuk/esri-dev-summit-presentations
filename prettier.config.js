@@ -1,4 +1,4 @@
-import config from '@maxxxxxdlp/prettier-config';
+import config from '@maxpatiiuk/prettier-config';
 
 export default {
   ...config,
