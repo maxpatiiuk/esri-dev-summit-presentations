@@ -5,3 +5,4 @@ dist
 .remote-assets
 components.d.ts
 .slidev/
+slides-export.pdf
