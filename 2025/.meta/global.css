@@ -10,3 +10,7 @@
 .slidev-layout:is(.cover, .intro) p {
   color: #ffad29;
 }
+
+#slide-content > img {
+  position: absolute;
+}
