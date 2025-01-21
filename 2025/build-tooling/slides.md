@@ -38,22 +38,5 @@ Slide content
 
 
 ---
-is: intro
----
-
-# Questions
-
-
----
-is: feedback
----
-
-
----
-is: social
----
-
-
----
-is: esri
+src: ../.meta/footer.md
 ---

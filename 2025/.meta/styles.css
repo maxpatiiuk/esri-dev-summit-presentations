@@ -7,7 +7,7 @@
   padding-left: 4.5rem;
 }
 
-.slidev-layout:is(.cover, .intro) p {
+.slidev-layout:is(.cover, .intro, [is="social"]) p {
   color: #ffad29;
 }
 
