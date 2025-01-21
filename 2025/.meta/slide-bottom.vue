@@ -1,3 +1,4 @@
+
 <template>
   <img
     alt=""
@@ -11,25 +12,25 @@
   <img
     alt=""
     src="https://github.com/Esri/reveal.js/blob/dev-summit-2025/img/2025/dev/4.png?raw=true"
-    v-show="$nav.currentSlideRoute.meta.slide.frontmatter.is === 'intro'"
+    v-show="$frontmatter.layout === 'intro'"
   />
   <img
     alt=""
     src="https://github.com/Esri/reveal.js/blob/dev-summit-2025/img/2025/dev/6.png?raw=true"
-    v-show="$nav.currentSlideRoute.meta.slide.frontmatter.is === 'feedback'"
+    v-show="$frontmatter.is === 'feedback'"
   />
   <img
     alt=""
     src="https://github.com/Esri/reveal.js/blob/dev-summit-2025/img/2025/dev/7.png?raw=true"
-    v-show="$nav.currentSlideRoute.meta.slide.frontmatter.is === 'social'"
+    v-show="$frontmatter.is === 'social'"
   />
   <img
     alt=""
     src="https://github.com/Esri/reveal.js/blob/dev-summit-2025/img/2025/dev/8.png?raw=true"
-    v-show="$nav.currentSlideRoute.meta.slide.frontmatter.is === 'esri'"
+    v-show="$frontmatter.is === 'esri'"
   />
 </template>
 
 <style>
-@import './global.css';
+@import './styles.css';
 </style>

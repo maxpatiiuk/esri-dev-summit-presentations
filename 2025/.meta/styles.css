@@ -11,6 +11,7 @@
   color: #ffad29;
 }
 
-#slide-content > img {
+.slidev-page > img {
   position: absolute;
+  z-index: -1;;
 }

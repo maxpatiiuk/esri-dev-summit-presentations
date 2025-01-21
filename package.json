@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@maxpatiiuk/prettier-config": "^2.0.0",
+    "playwright-chromium": "^1.49.1",
     "prettier": "^3.0.3"
   }
 }
