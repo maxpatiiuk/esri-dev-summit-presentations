@@ -11,6 +11,10 @@
   color: #ffad29;
 }
 
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
 .slidev-page > img {
   position: absolute;
   z-index: -1;;
