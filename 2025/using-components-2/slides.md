@@ -42,7 +42,7 @@ layout: intro
 
 ---
 
-# Why bundlers + frameworks are useful for larger apps
+# Why bundlers are useful for larger apps
 
 but as app grows, adding a bundler can help. benefits:
 
