@@ -25,7 +25,6 @@ and
 
 ## TODO
 
-- Create presentation outline
 - Create slides with speaker nodes
 - Practice
 - Add slide links to README.md
