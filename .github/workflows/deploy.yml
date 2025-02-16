@@ -38,6 +38,11 @@ jobs:
         run: |
           npx slidev build --base /${{github.event.repository.name}}/2025/using-components-2/ --out ../../dist/2025/using-components-2/
 
+      - name: Build Slides > 2025 > geo-io
+        working-directory: 2025/geo-io
+        run: |
+          npx slidev build --base /${{github.event.repository.name}}/2025/geo-io --out ../../dist/2025/geo-io
+
       - name: Collect build outputs
         run: |
           mv -f 2024 dist/2024
