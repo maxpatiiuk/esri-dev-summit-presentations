@@ -1,0 +1,23 @@
+{
+  "include": ["src","*.ts"],
+  "compilerOptions": {
+    "allowUnreachableCode": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "declaration": true,
+    "noEmit": true,
+    "newLine": "lf",
+    "noEmitOnError": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "skipLibCheck": true
+  }
+}

@@ -28,3 +28,4 @@ and
 - Create slides with speaker nodes
 - Practice
 - Add slide links to README.md
+- Update "Additional Resources" section (borrow from previous year too)
