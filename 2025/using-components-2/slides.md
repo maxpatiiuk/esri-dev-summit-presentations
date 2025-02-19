@@ -51,14 +51,20 @@ but as app grows, adding a bundler can help. benefits:
 - better performance - minification and bundle splitting
 - Can use modern JS syntax, which will get downcompiled as neede
 - Can do complete offline apps with local assets
-- TypeScript, IntelliSence
+- TypeScript, IntelliSense
   - Can borrow material from my previous year's TypeScript Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#typescript-
   - show example of bugs TypeScript can easily catch?
   - or show autocomplete for Maps SDK APIs?
 - more customizability, control, support for advanced use cases
 
 
-> reduce, or split into multiple slides. Show TypeScript IntelliSence demo/screenshot in action
+> reduce, or split into multiple slides. Show TypeScript IntelliSense demo/screenshot in action
+
+
+---
+
+# DEMO: vanilla JS app with Vite
+
 
 ---
 
@@ -98,12 +104,19 @@ React is most popular - will use them in this presentation. Angular and Vue also
 
 # React demo
 
-Either convert Vite+ESM+TypeScript into React
+Either convert Vite+ESM into React
 
 OR, take React starter app from jsapi-resources and walk over
-main differences from Vite+ESM+TypeScript
+main differences from Vite+ES
 
 > Have code and browser side by side, showcasing HMR feature in Vite+React
+
+
+---
+
+# TypeScript demo
+
+Add TypeScript to React app. Highlight web component name and prop autocomplete
 
 
 ---

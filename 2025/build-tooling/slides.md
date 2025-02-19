@@ -41,7 +41,7 @@ TODO: create agenda based on the presentation outline
 - Better performance - minification and bundle splitting
 - Can use modern JS syntax, which will get downcompiled as needed
 - Can build complete offline apps with local assets
-- TypeScript, IntelliSence
+- TypeScript, IntelliSense
   - TODO: Can borrow material from my previous year's TypeScript Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#typescript-
   - show example of bugs TypeScript can easily catch?
   - or show autocomplete for Maps SDK APIs?
