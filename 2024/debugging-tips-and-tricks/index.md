@@ -448,7 +448,7 @@ VS Code extensions: GitLens, Github Pull Requests & Issues
 
 - ChatGPT / Gemini / Bing AI / Claude
 - VS Code Chat ("Explain this error")
-- GitHub Copilot / InteliiSence / Tabnine AI
+- GitHub Copilot / IntelliSense / Tabnine AI
 - Code Spell Checker (helps catch typos)
 
 > speaker notes:
