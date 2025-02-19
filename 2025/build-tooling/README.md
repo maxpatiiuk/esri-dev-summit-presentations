@@ -22,3 +22,9 @@ Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 - Create slides with speaker nodes
 - Practice
 - Add slide links to README.md
+- Update "Additional Resources" section (borrow from previous year too)
+
+
+## Additional Resources
+
+[Calcite demo samples](https://github.com/EsriDevEvents/dev-tech-summit-demo-templates)
