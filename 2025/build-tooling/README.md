@@ -20,5 +20,6 @@ Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 
 - Create presentation outline
 - Create slides with speaker nodes
+- Add slide layouts to more closely match PPT
 - Practice
 - Add slide links to README.md
