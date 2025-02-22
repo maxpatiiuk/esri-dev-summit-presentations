@@ -4,10 +4,6 @@ import globals from "globals";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
-import { fileURLToPath } from "node:url";
-import { dirname } from "node:path";
-
-const cwd = dirname(fileURLToPath(import.meta.url));
 
 export default [
   eslint.configs.recommended,
@@ -21,7 +17,7 @@ export default [
       },
     },
   },
-  react.configs.flat['jsx-runtime'],
+  react.configs.flat["jsx-runtime"],
   reactHooks.configs["recommended-latest"],
   reactRefresh.configs.recommended,
   {
@@ -33,8 +29,7 @@ export default [
 
     languageOptions: {
       parserOptions: {
-        project: ["./tsconfig.json"],
-        tsconfigRootDir: cwd,
+        projectService: true,
       },
       globals: {
         ...globals.browser,
