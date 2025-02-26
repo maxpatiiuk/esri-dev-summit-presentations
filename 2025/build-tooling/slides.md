@@ -18,8 +18,8 @@ is: feedback
 
 # Are you looking to...
 
+- Learn bout build tool capabilities?
 - Add a build step to your app?
-- Learn more about build tool capabilities?
 - Learn how Esri teams are leveraging modern build tools?
 
 Then this presentation is for you!
@@ -43,19 +43,30 @@ Then this presentation is for you!
 
 # What are build tools?
 
-Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows. Examples: Vite, Parcel, Webpack...
+> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
+> (Thanks Copilot)
 
-(Thanks Copilot)
+---
+
+# What are build tools?
+
+> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
+> (Thanks Copilot)
+
+Examples: 
+* Vite
+* Parcel
+* Webpack
 
 ---
 
 # Build tool benefits
 
-- Improve development experience with live reload and hot module replacement
-- Enable modern JavaScript syntax features and dependencies
-- Automate bundling, minifying, and transpiling source code
-- Optimize performance by splitting bundles and reducing file sizes
-- Add plugins for additional capabilities, like tests
+- Improve development experience (live updates...)
+- Enable modern syntax features and dependencies
+- Automate transpiling, bundling, and testing code
+- Optimize performance (reduce file sizes, split bundles...)
+- Allow extending capabilities with plugins
 
 ---
 
@@ -82,7 +93,7 @@ Build tools automate tasks like bundling and optimizing source code, help manage
 # Demo summary
 
 - Quick to get started
-- Live reload and hot module replacement -> fast feedback loop
+- Live updates -> fast feedback loop
 
 ---
 
