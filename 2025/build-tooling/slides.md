@@ -18,7 +18,7 @@ is: feedback
 
 # Are you looking to...
 
-- Learn bout build tool capabilities?
+- Learn about build tool capabilities?
 - Add a build step to your app?
 - Learn how Esri teams are leveraging modern build tools?
 
