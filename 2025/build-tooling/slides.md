@@ -7,7 +7,7 @@ colorSchema: dark
 
 ## ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
 
-Max Payson, Max Patiiuk
+Max Patiiuk, Max Payson
 
 ---
 is: feedback
@@ -16,61 +16,70 @@ is: feedback
 
 ---
 
-# Audience
+# Are you looking to...
 
-- Developers looking to add build step to their apps
-- Developers looking to learn more about the capabilities of the build tools
-- Developers interested in how Esri's teams are leveraging modern build tools
+- Learn about build tool capabilities?
+- Add a build step to your app?
+- Learn how Esri teams are leveraging modern build tools?
+
+Then this presentation is for you!
 
 
 ---
 
 # Agenda
 
-TODO: create agenda based on the presentation outline
-
-
-
----
-
-# Benefits of using build tools
-
-- Ease of using external libraries
-- Can import/export between files
-- Live reload
-- Better performance - minification and bundle splitting
-- Can use modern JS syntax, which will get downcompiled as needed
-- Can build complete offline apps with local assets
-- TypeScript, IntelliSense
-  - TODO: Can borrow material from my previous year's TypeScript Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#typescript-
-  - show example of bugs TypeScript can easily catch?
-  - or show autocomplete for Maps SDK APIs?
-- more customizability, control, support for advanced use cases
-
-TODO: split into multiple slides or reduce. Move TypeScript out further down?
-
+- Overview
+- Demos
+  - Get started with Vite
+  - Add dependencies
+  - Use TypeScript and modern features
+  - Lazy load source bundles
+  - Publish the app
+  - Add tests with Vitest
+  - Add custom plugins
 
 ---
 
-# Disadvantages of build tools
+# What are build tools?
 
-- More complexity to set them up and get going
-  - But, build tools are getting easier and easier to use - the barrier have never been lower
+> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
+> (Thanks Copilot)
 
+---
+
+# What are build tools?
+
+> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
+> (Thanks Copilot)
+
+Examples: 
+* Vite
+* Parcel
+* Webpack
+
+---
+
+# Build tool benefits
+
+- Improve development experience (live updates...)
+- Enable modern syntax features and dependencies
+- Automate transpiling, bundling, and testing code
+- Optimize performance (reduce file sizes, split bundles...)
+- Allow extending capabilities with plugins
 
 ---
 
 # Vite
 
 - Most popular build tool today
-- Used in many Esri's teams
-- Has great developer experience
-- Has large community, and is still growing rapidly
-
+- Great developer experience
+- Large and rapidly growing community
+- Used by many Esri teams
 
 ---
 
-# DEMO: Using Vite starter
+# Demo: Get started with Vite
 
 - Create a Vite starter project
 - Start the dev server and show how simple it is to use
@@ -79,6 +88,12 @@ TODO: split into multiple slides or reduce. Move TypeScript out further down?
     - Replace CDN script tags with NPM imports
     - Link to map-components NPM get started
 
+---
+
+# Demo summary
+
+- Quick to get started
+- Live updates -> fast feedback loop
 
 ---
 
@@ -101,6 +116,14 @@ TODO: split into multiple slides or reduce. Move TypeScript out further down?
 - Show adding general ESLint config, as well as typescript-eslint and React
   - Don't actually write the config - just copy paste it and include in the starter we distribute
 
+---
+
+# Demo summary
+
+- Easily add new dependencies
+- Enable modern JavaScript syntax features
+- Linting and TypeScript -> minimize programming errors
+- Auto complete -> faster development
 
 ---
 
@@ -123,6 +146,13 @@ TODO: split into multiple slides or reduce. Move TypeScript out further down?
 
 ---
 
+# Demo summary
+
+- Optimize performance by splitting bundles
+- Quickly preview or debug builds, before they are deployed
+
+---
+
 # DEMO: Add Vitest
 
 - Vitest inherits Vite config - things "just work"
@@ -131,10 +161,18 @@ TODO: split into multiple slides or reduce. Move TypeScript out further down?
 
 ---
 
-# Summary
+# DEMO: Add custom plugins
 
-- Build tools, like Vite and frameworks like React help your app grow and stay maintainable
-- They offer plenty of control, and developer experience enhancements
+- Add JS API build plugin
+- Add chaos monkey development plugin
+
+
+---
+
+# In conclusion...
+
+- Build tools like Vite help your app grow and stay maintainable
+- They offer plenty of control and developer experience enhancements
 - They pair well with testing tools like Vitest to ensure your app is production-ready
 
 
