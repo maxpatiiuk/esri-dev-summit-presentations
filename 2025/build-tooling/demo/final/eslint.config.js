@@ -7,7 +7,7 @@ import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
   eslint.configs.recommended,
-  ...tsEslint.configs.recommendedTypeChecked,
+  ...tsEslint.configs.recommended,
   ...tsEslint.configs.stylisticTypeChecked,
   {
     ...react.configs.flat.recommended,
