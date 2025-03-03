@@ -40,7 +40,7 @@ const schoolSymbol = new WebStyleSymbol({
   styleName: "Esri2DPointSymbolsStyle",
 });
 
-export function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
+function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
   const [mapElement, setMapElement] = useState<Nil<HTMLArcgisMapElement>>();
   const [selectedFeature, setSelectedFeature] = useState<Nil<Graphic>>();
@@ -192,3 +192,5 @@ export function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
     </calcite-shell>
   );
 }
+
+export default App;
