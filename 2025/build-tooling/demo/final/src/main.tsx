@@ -9,9 +9,7 @@ const Splash = React.lazy(() => import("./Splash"));
 
 const serviceInfo = {
   authentication: ApiKeyManager.fromKey(import.meta.env.VITE_API_KEY),
-  endpoint: import.meta.env.DEV
-    ? "/arcgis/rest/services/places-service/v1/places/near-point"
-    : undefined,
+  endpoint: import.meta.env.VITE_API_ENDPOINT,
 };
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

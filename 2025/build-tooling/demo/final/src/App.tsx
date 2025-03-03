@@ -1,4 +1,4 @@
-import { useCallback, useState, useMemo, useRef } from "react";
+import { useCallback, useState, useRef } from "react";
 import "@esri/calcite-components/components/calcite-alert";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-shell-panel";
@@ -18,22 +18,16 @@ import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol";
 import Point from "@arcgis/core/geometry/Point";
 import Collection from "@arcgis/core/core/Collection";
 import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils";
-
-import type { ApiKeyManager } from "@esri/arcgis-rest-request";
 import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
+import { Nil, Result, ServiceInfo } from "./interfaces";
 
-type Nil<T> = T | null | undefined;
-
-interface Result<T> {
-  result?: T;
-  error?: Error;
-  loading?: true;
-}
-
-interface ServiceInfo {
-  authentication: ApiKeyManager;
-  endpoint?: string;
-}
+const featureActions = new Collection([
+  {
+    title: "Load nearby schools",
+    id: "load-schools",
+    icon: "education",
+  },
+]);
 
 const schoolSymbol = new WebStyleSymbol({
   name: "school",
@@ -46,18 +40,6 @@ function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
   const [selectedFeature, setSelectedFeature] = useState<Nil<Graphic>>();
   const [schoolResults, setSchoolResults] =
     useState<Result<Collection<Graphic>>>();
-
-  const featureActions = useMemo<HTMLArcgisFeaturesElement["actions"]>(
-    () =>
-      new Collection([
-        {
-          title: "Load nearby schools",
-          id: "load-schools",
-          icon: "education",
-        },
-      ]),
-    [],
-  );
 
   const onMapClick = useCallback(
     (event: HTMLArcgisMapElement["arcgisViewClick"]) => {
@@ -123,7 +105,7 @@ function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
 
   return (
     <calcite-shell>
-      <calcite-shell-panel slot="panel-start">
+      <calcite-shell-panel slot="panel-start" resizable>
         <calcite-panel
           heading="NY Educational Attainment"
           description={
