@@ -22,7 +22,7 @@ export default defineConfig({
           {
             apiUrl: API_URL,
             delay: 400,
-            chaosRatio: 1,
+            chaosRatio: 0.1,
             // https://developers.arcgis.com/rest/places/near-point-get/#response
             chaosErrors: [400, 401, 403, 500],
           },
