@@ -1,3 +1,15 @@
 @import "@esri/calcite-components/calcite/calcite.css";
 @import "@arcgis/map-components/arcgis-map-components/arcgis-map-components.css";
 @import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/light/main.css";
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}

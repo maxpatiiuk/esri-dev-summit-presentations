@@ -5,12 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:chaos": "CHAOS=true vite",
     "build": "tsc && vite build",
     "lint": "prettier --write . && eslint --fix",
     "preview": "vite preview"
   },
   "dependencies": {
     "@arcgis/map-components": "^4.32.0-next.140",
+    "@esri/arcgis-rest-places": "^1.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
