@@ -29,7 +29,7 @@
     "eslint-plugin-react-hooks": "^5.2.0-canary-8a7b487e-20250218",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
-    "jsdom": "^26.0.0",
+    "happy-dom": "^17.1.8",
     "prettier": "^3.5.1",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1",
