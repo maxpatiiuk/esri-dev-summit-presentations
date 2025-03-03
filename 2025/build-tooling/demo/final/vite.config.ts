@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import chaosMonkey from "./support/chaosMonkey.js";
@@ -27,4 +28,7 @@ export default defineConfig({
         ])
       : undefined,
   ],
+  test: {
+    environment: "happy-dom",
+  },
 });
