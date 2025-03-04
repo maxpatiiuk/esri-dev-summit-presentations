@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
+import react from "@vitejs/plugin-react";
 import chaosMonkey from "./support/chaosMonkey.js";
 
 // https://vitejs.dev/config/
@@ -20,7 +20,7 @@ export default defineConfig({
       ? chaosMonkey([
           {
             apiUrl: "/arcgis",
-            delay: 400,
+            delay: 3000,
             chaosRatio: 0.1,
             // https://developers.arcgis.com/rest/places/near-point-get/#response
             chaosErrors: [400, 401, 403, 500],
@@ -29,6 +29,11 @@ export default defineConfig({
       : undefined,
   ],
   test: {
-    environment: "happy-dom",
+    browser: {
+      enabled: true,
+      provider: "playwright",
+      // https://vitest.dev/guide/browser/playwright
+      instances: [{ browser: "chromium" }],
+    },
   },
 });

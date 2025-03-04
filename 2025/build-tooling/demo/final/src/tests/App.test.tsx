@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render } from "vitest-browser-react";
 import { ApiKeyManager } from "@esri/arcgis-rest-request";
 import { it, expect } from "vitest";
 import App from "../App";
@@ -10,6 +10,6 @@ const serviceInfo = {
 
 it("renders", () => {
   render(<App serviceInfo={serviceInfo} />);
-  const map = document.querySelector("arcgis-map");
-  expect(map).toBeTruthy();
+  const map = document.querySelector("arcgis-map")!;
+  expect(map).toBeInTheDocument();
 });
