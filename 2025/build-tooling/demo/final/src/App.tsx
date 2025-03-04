@@ -36,7 +36,7 @@ const schoolSymbol = new WebStyleSymbol({
   styleName: "Esri2DPointSymbolsStyle",
 });
 
-function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
+function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
   const abortController = useRef<AbortController>(undefined);
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
   const [mapElement, setMapElement] = useState<Nil<HTMLArcgisMapElement>>();
@@ -86,8 +86,8 @@ function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
           y: latLngCenter.y,
           radius: 1600 * 5, // 5 miles in meters
           categoryIds: ["4d4b7105d754a06372d81259"], // Schools
-          authentication: serviceInfo.authentication,
-          endpoint: serviceInfo.endpoint,
+          authentication: placesServiceInfo.authentication,
+          endpoint: placesServiceInfo.endpoint,
           signal: abortController.current.signal,
         });
       } catch (error) {
@@ -108,7 +108,7 @@ function App({ serviceInfo }: { serviceInfo: ServiceInfo }) {
       });
       setSchoolResults({ result: new Collection(graphics) });
     },
-    [selectedFeature, serviceInfo],
+    [selectedFeature, placesServiceInfo],
   );
 
   return (
