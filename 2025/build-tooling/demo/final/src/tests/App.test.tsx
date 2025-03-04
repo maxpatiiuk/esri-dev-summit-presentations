@@ -10,13 +10,13 @@ import App from "../App";
 /**********************************
  * Mock service setup.
  **********************************/
-const serviceInfo = {
+const placesServiceInfo = {
   authentication: ApiKeyManager.fromKey("stub-api-key"),
   endpoint: "/arcgis/rest/services/places-service/v1/places/near-point",
 };
 
 const worker = setupWorker(
-  http.get(serviceInfo.endpoint, () => {
+  http.get(placesServiceInfo.endpoint, () => {
     return HttpResponse.json(nearbySchoolsStub);
   }),
   http.get("*", () => {
@@ -49,7 +49,7 @@ let map: HTMLArcgisMapElement;
 let results: ReturnType<typeof render>;
 
 beforeEach(async () => {
-  results = render(<App serviceInfo={serviceInfo} />);
+  results = render(<App placesServiceInfo={placesServiceInfo} />);
   map = results.container.querySelector("arcgis-map")!;
   await vi.waitFor(() => expect(map.updating).toEqual(false), {
     timeout: 15000,
@@ -99,7 +99,7 @@ it("loads nearby schools for the selected feature", async () => {
 it("shows an error when loading schools fails", async () => {
   const { container } = results;
   worker.use(
-    http.get(serviceInfo.endpoint, () => {
+    http.get(placesServiceInfo.endpoint, () => {
       return HttpResponse.json({ error: "error" }, { status: 500 });
     }),
   );

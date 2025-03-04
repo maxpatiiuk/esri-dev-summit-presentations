@@ -20,8 +20,6 @@ import Collection from "@arcgis/core/core/Collection";
 import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils";
 import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
 import { Nil, Result, ServiceInfo } from "./interfaces";
-// TODO: How to inject the root styles for all tests?
-import "./index.css";
 
 const featureActions = new Collection([
   {

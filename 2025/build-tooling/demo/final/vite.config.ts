@@ -1,6 +1,6 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import chaosMonkey from "./support/chaosMonkey.js";
 
 // https://vitejs.dev/config/
@@ -29,6 +29,7 @@ export default defineConfig({
       : undefined,
   ],
   test: {
+    setupFiles: "./src/setupTests.ts",
     browser: {
       enabled: true,
       provider: "playwright",
