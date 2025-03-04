@@ -29,34 +29,24 @@ Then this presentation is for you!
 
 # Agenda
 
-- Overview
-- Demos
+- Introduction to build tools
+- Building an app
   - Get started with Vite
   - Add dependencies
-  - Use TypeScript and modern features
-  - Lazy load source bundles
+  - Use TypeScript and ESLint
   - Publish the app
+- Enhance the app
+  - Lazy load parts of the application
   - Add tests with Vitest
   - Add custom plugins
 
----
-
-# What are build tools?
-
-> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
-> (Thanks Copilot)
 
 ---
 
 # What are build tools?
 
-> Build tools automate tasks like bundling and optimizing source code, help manage dependencies, and enhance development workflows.\
-> (Thanks Copilot)
+Build tools transform the code that is easiest for developers to write into code that is most performant for the browser to run.
 
-Examples: 
-* Vite
-* Parcel
-* Webpack
 
 ---
 
@@ -64,29 +54,45 @@ Examples:
 
 - Improve development experience (live updates...)
 - Enable modern syntax features and dependencies
-- Automate transpiling, bundling, and testing code
+- Make testing code simpler
 - Optimize performance (reduce file sizes, split bundles...)
 - Allow extending capabilities with plugins
+
+
+---
+
+# Examples of build tools
+
+* Vite
+* Parcel
+* Webpack
 
 ---
 
 # Vite
 
 - Most popular build tool today
+- Used by many Esri teams
 - Great developer experience
 - Large and rapidly growing community
-- Used by many Esri teams
+
 
 ---
 
 # Demo: Get started with Vite
 
+```sh
+npm create vite
+```
+
+<!--
 - Create a Vite starter project
 - Start the dev server and show how simple it is to use
 - Walk through thw most important files
-  - In the process explain how to convert a no-build step spp to Vite
+  - In the process explain how to convert a no-build step app to Vite
     - Replace CDN script tags with NPM imports
     - Link to map-components NPM get started
+-->
 
 ---
 
@@ -127,15 +133,6 @@ Examples:
 
 ---
 
-# DEMO: Add react-router
-
-- Show landing page with a link that loads the map page
-- Map is loaded lazily
-- Throughout, have code editor and dev server side by side to show off hot module replacement
-
-
----
-
 # DEMO: Publishing
 
 - Show build & preview
@@ -143,6 +140,16 @@ Examples:
 - The output is index.html and static files - same as no-build-step apps
 - Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
 - Vite guide: [vite.dev/guide/static-deploy](https://vite.dev/guide/static-deploy)
+
+
+---
+
+# DEMO: Add react-router
+
+- Show landing page with a link that loads the map page
+- Map is loaded lazily
+- Throughout, have code editor and dev server side by side to show off hot module replacement
+
 
 ---
 

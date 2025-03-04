@@ -22,11 +22,6 @@ export default [
   reactRefresh.configs.recommended,
   {
     files: ["**/*.ts", "**/*.tsx"],
-
-    linterOptions: {
-      reportUnusedDisableDirectives: "error",
-    },
-
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -34,16 +29,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.jest,
       },
-
-      ecmaVersion: "latest",
-      sourceType: "module",
     },
-  },
-  {
-    // Don't do type-aware linting for untyped files
-    files: ["**/*.js"],
-    ...tsEslint.configs.disableTypeChecked,
   },
 ];
