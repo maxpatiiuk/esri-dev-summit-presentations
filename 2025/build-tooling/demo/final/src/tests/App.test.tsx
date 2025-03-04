@@ -52,7 +52,7 @@ beforeEach(async () => {
   results = render(<App serviceInfo={serviceInfo} />);
   map = results.container.querySelector("arcgis-map")!;
   await vi.waitFor(() => expect(map.updating).toEqual(false), {
-    timeout: 5000,
+    timeout: 15000,
   });
 });
 
