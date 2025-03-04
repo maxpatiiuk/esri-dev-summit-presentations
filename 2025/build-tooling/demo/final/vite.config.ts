@@ -20,7 +20,7 @@ export default defineConfig({
       ? chaosMonkey([
           {
             apiUrl: "/arcgis",
-            delay: 3000,
+            delay: 400,
             chaosRatio: 0.1,
             // https://developers.arcgis.com/rest/places/near-point-get/#response
             chaosErrors: [400, 401, 403, 500],
