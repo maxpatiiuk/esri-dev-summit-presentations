@@ -90,6 +90,7 @@ npm create vite
 <!--
 - Create a Vite starter project
 - Show index.html, main.js, Splash.js, package.json
+  - Similar to no-build-step apps
 - Start the dev server and show how simple it is to use
 - Show live update
   - Image blinked during update - will fix in next step
@@ -152,11 +153,41 @@ npm install react react-dom
 npm install -D @vitejs/plugin-react-swc
 ```
 
-- Show adding dependencies to use calcite and map-components
-- Walk through thw most important files
-  - In the process explain how to convert a no-build step app to Vite
-    - Replace CDN script tags with NPM imports
-    - Link to map-components NPM get started
+---
+
+# Demo: Add basic React 19: summary
+
+- React is a powerful tool for building dynamic user interfaces
+- It makes it easy to do complex things in a maintainable way
+
+
+---
+
+# Demo: Add Calcite Design System and Map Components
+
+Add dependencies:
+
+```sh
+npm install @esri/calcite-components @arcgis/map-components
+```
+
+<!--
+Calcite Design System - library of 50 reusable web components
+Consistent and accessible UI made easy
+Works with any framework - will show in React
+
+Map Components - ArcGIS Maps SDK for JavaScript but with an easier to use API
+thanks to web components
+-->
+
+
+---
+
+# Demo: Add Calcite Design System and Map Components: summary
+
+- Calcite is eay to use and accessible
+- Map components will be shown a bit later
+
 
 ---
 
@@ -180,6 +211,8 @@ npm install -D @vitejs/plugin-react-swc
 - Enable modern JavaScript syntax features
 - Linting and TypeScript -> minimize programming errors
 - Auto complete -> faster development
+
+- Link to map-components NPM get started
 
 ---
 
