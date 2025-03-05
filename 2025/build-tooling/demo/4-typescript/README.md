@@ -7,6 +7,7 @@
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
 - [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
 
 ## Installation
@@ -34,11 +35,26 @@
 
 For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).
 
-## Key changes from [2-react](../2-react)
+## Key changes from [3-web-components](../3-web-components)
 
-- Add Calcite Design System and Map Components dependencies to the project:
+- Add TypeScript dependency and React type annotations to the project:
+
   ```sh
-  npm install @esri/calcite-components @arcgis/map-components
+  npm install -D typescript @types/react @types/react-dom
   ```
-- Import their styles in [src/index.css](./src/index.css)
-- import `<calcite-link` and use it in [src/Splash.jsx](./src/Splash.jsx)
+
+  - TIP: if a dependency require special TypeScript instructions, it will usually point that out in its documentation or it may publish a separate package to NPM for types (usually named `@types/dependency-name`)
+
+- Create a [tsconfig.json](./tsconfig.json) file
+- Tell TypeScript to use React-specific autocomplete for Calcite and Map Components to [src/vite-env.d.ts](./src/vite-env.d.ts):
+
+  ```ts
+  /// <reference types="@esri/calcite-components/types/react" />
+  /// <reference types="@arcgis/map-components/types/react" />
+  ```
+
+- Rename .js and .jsx files to .ts and .tsx
+- Profit!
+
+> TypeScript does not change the way your code runs - it just adds extra checks
+> during development.

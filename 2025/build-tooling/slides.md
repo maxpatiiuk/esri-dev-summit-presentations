@@ -191,17 +191,63 @@ thanks to web components
 
 ---
 
-# DEMO: TypeScript
+## TypeScript 🦾
 
-- Show adding TypeScript
+> TypeScript: catch your bugs before your users do
+
+- Auto-magically provides Better autocomplete and inline documentation
+- Helps with code refactoring
+- Encourages self-documenting code
+
+> speaker notes:
+>
+> (Max) You can get far with the technologies we already mentioned:
+> Vite, React, Calcite and Map Components. But most developers see great benefit
+> from adding TypeScript to their projects.
+>
+> ...
+>
+> That's a lot of promises - let's see TypeScript in action by adding it to our
+> project.
 
 
 ---
 
-# DEMO: ESLint
+# Demo: TypeScript
 
-- Show adding general ESLint config, as well as typescript-eslint and React
-  - Don't actually write the config - just copy paste it and include in the starter we distribute
+Add TypeScript dependency and React type annotations to the project:
+
+```sh
+npm install -D typescript @types/react @types/react-dom
+```
+
+- TIP: if a dependency require special TypeScript instructions, it will usually
+  point that out in its documentation or it may publish a separate package to
+  NPM for types (usually named `@types/dependency-name`)
+
+
+---
+
+# Demo: TypeScript: summary
+
+- TypeScript helps catch bugs before they reach production
+- It provides better autocomplete and inline documentation
+- It is an essential part of every ArcGIS Online app at Esri
+- To get the most out of TypeScript, you need to add type annotations to your
+  code and make sure your dependencies have types available (most do nowadays)
+
+---
+
+# Demo: ESLint
+
+- Enforce consistent code style on your team
+- Catch some issues that TypeScript can't (like bad coding patterns)
+- Autofix some issues for you
+
+<!--
+Final new tech I will show before handing it back to Max is ESLint.
+not essential, but very helpful on projects with multiple developers. 
+-->
 
 ---
 
@@ -212,7 +258,7 @@ thanks to web components
 - Linting and TypeScript -> minimize programming errors
 - Auto complete -> faster development
 
-- Link to map-components NPM get started
+- Link to map-components NPM get started. provide references and qr code
 
 ---
 
