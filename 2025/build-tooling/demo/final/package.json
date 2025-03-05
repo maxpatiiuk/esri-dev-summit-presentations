@@ -8,6 +8,7 @@
     "dev:chaos": "CHAOS=true vite",
     "build": "tsc && vite build",
     "lint": "prettier --write . && eslint --fix",
+    "test-pre": "npx playwright install --with-deps chromium",
     "test": "vitest",
     "preview": "vite preview"
   },
