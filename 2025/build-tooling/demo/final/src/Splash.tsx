@@ -10,12 +10,10 @@ function Splash() {
   //const value3 = !x == null;
   return (
     <div className="splash-content">
-      <h1>
-        Welcome to our demo!{" "}
-        <calcite-link href={href} onClick={handleClick}>
-          Open app
-        </calcite-link>
-      </h1>
+      <h1>Welcome to our demo!</h1>
+      <calcite-link href={href} onClick={handleClick}>
+        Open app
+      </calcite-link>
       <img src={globie} alt="Globie" />
     </div>
   );
