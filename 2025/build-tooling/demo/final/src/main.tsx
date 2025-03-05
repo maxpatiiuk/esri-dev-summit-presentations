@@ -16,12 +16,20 @@ const placesServiceInfo = {
       : undefined,
 };
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const root = document.getElementById("root");
+if (!root) {
+  throw new Error("No root element found");
+}
+
+ReactDOM.createRoot(root).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Splash />} />
-        <Route path="/app" element={<App placesServiceInfo={placesServiceInfo} />} />
+        <Route
+          path="/app"
+          element={<App placesServiceInfo={placesServiceInfo} />}
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
