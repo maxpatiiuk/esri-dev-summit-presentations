@@ -264,26 +264,66 @@ npm install -D @eslint/js typescript-eslint globals eslint-plugin-react eslint-p
 - TIP: these are all dev-dependencies - they are for use during development
   only - they won't slow down your app in production
 
----
-
-# Demo summary
-
-- Easily add new dependencies
-- Enable modern JavaScript syntax features
-- Linting and TypeScript -> minimize programming errors
-- Auto complete -> faster development
-
-- Link to map-components NPM get started. provide references and qr code
 
 ---
 
-# DEMO: Publishing
+# Demo: ESLint: summary
 
-- Show build & preview
-  - Vite team working on 4x speed up (using Rolldown)
+- ESLint can help enforce consistent code style on your team, catch some issues
+  and automatically resolve some of them
+
+
+---
+
+# Publishing
+
+- You learned Vite, React, Calcite, Map Components, TypeScript, ESLint - now what?
+- Let's publish the app!
+
+<!--
+That's it for the main tools Esri teams use to build their apps
+Now comes the question - how do you get your app out there?
+-->
+
+---
+
+# Demo: Publishing
+
+Do a production build:
+
+```sh
+npm run build
+```
+
+Outputs static files that can be published to any hosting provider (GitHub
+Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
+
+<!--
+- Vite team working on 4x speed up (using Rolldown)
 - The output is index.html and static files - same as no-build-step apps
 - Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
 - Vite guide: [vite.dev/guide/static-deploy](https://vite.dev/guide/static-deploy)
+-->
+
+Fun fact: these slides are built with Vite and hosted on GitHub Pages! ✨
+
+---
+
+# Summary of demos
+
+- Easily add new dependencies
+- Linting and TypeScript -> minimize programming errors
+- Auto complete -> faster development
+
+- TODO: Link to map-components NPM get started. provide references and qr code
+
+
+
+---
+layout: intro
+---
+
+# Enhance the app
 
 
 ---

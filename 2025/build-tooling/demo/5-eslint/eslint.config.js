@@ -38,5 +38,11 @@ export default [
         ...globals.node,
       },
     },
+
+    // An example of overriding default rule configuration
+    // See rule documentation at https://typescript-eslint.io/rules/consistent-type-definitions
+    // rules: {
+    // "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    // },
   },
 ];
