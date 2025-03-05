@@ -19,7 +19,7 @@ import Point from "@arcgis/core/geometry/Point";
 import Collection from "@arcgis/core/core/Collection";
 import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils";
 import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
-import { Nil, Result, ServiceInfo } from "./interfaces";
+import { Result, ServiceInfo } from "./interfaces";
 
 const featureActions = new Collection([
   {
@@ -35,9 +35,14 @@ const schoolSymbol = new WebStyleSymbol({
 });
 
 function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
+  const abortController = useRef<AbortController>(undefined);
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
-  const [mapElement, setMapElement] = useState<Nil<HTMLArcgisMapElement>>();
-  const [selectedFeature, setSelectedFeature] = useState<Nil<Graphic>>();
+  const [mapElement, setMapElement] = useState<
+    HTMLArcgisMapElement | null | undefined
+  >();
+  const [selectedFeature, setSelectedFeature] = useState<
+    Graphic | null | undefined
+  >();
   const [schoolResults, setSchoolResults] =
     useState<Result<Collection<Graphic>>>();
 
@@ -66,6 +71,10 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
       const { action } = event.detail;
       if (action.id !== "load-schools" || !selectedFeature?.geometry) return;
 
+      // Abort any existing requests
+      abortController.current?.abort();
+      abortController.current = new AbortController();
+
       // Convert the selected feature's geometry to lat/long
       const latLngGeometry = webMercatorToGeographic(selectedFeature.geometry);
       const latLngCenter = (latLngGeometry as Polygon).centroid!;
@@ -81,9 +90,10 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
           categoryIds: ["4d4b7105d754a06372d81259"], // Schools
           authentication: placesServiceInfo.authentication,
           endpoint: placesServiceInfo.endpoint,
+          signal: abortController.current.signal,
         });
       } catch (error) {
-        if (error instanceof Error) {
+        if (error instanceof Error && error.name !== "AbortError") {
           setSchoolResults({ error });
         }
         return;

@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import chaosMonkey from "./support/chaosMonkey.js";
@@ -27,4 +28,17 @@ export default defineConfig({
         ])
       : undefined,
   ],
+  test: {
+    setupFiles: "./src/setupTests.ts",
+    browser: {
+      enabled: true,
+      provider: "playwright",
+      // https://vitest.dev/guide/browser/playwright
+      instances: [{ browser: "chromium" }],
+    },
+    onConsoleLog: (msg) => {
+      const ignores = [/^Lit is in dev mode/, /^Using Calcite Components/];
+      return !ignores.some((re) => re.test(msg));
+    },
+  },
 });
