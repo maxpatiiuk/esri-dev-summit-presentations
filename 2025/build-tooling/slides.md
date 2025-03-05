@@ -81,32 +81,82 @@ Build tools transform the code that is easiest for developers to write into code
 
 # Demo: Get started with Vite
 
+Run the following command to bootstrap a new Vite project:
+
 ```sh
 npm create vite
 ```
 
 <!--
 - Create a Vite starter project
+- Show index.html, main.js, Splash.js, package.json
 - Start the dev server and show how simple it is to use
-- Walk through thw most important files
-  - In the process explain how to convert a no-build step app to Vite
-    - Replace CDN script tags with NPM imports
-    - Link to map-components NPM get started
+- Show live update
+  - Image blinked during update - will fix in next step
 -->
+
 
 ---
 
-# Demo summary
+# Demo: Get started with Vite: summary
 
 - Quick to get started
 - Live updates -> fast feedback loop
 
+<!--
+This will get you pretty far, but as your app grows and interface becomes more
+complex, you will likely benefit from more structure. That's where user interface
+libraries come in.
+-->
+
+
 ---
 
-# DEMO: Add basic React 19
+## React ⚛️
+
+> A JavaScript library for building dynamic user-interfaces
+
+- Build anything out of small Components
+- JSX (JavaScript Syntax Extension).
+  - `return <h1>Hello World! 👋</h1>;`
+  - JavaScript code in HTML-like syntax
+
+<!--
+Many different libraries are used at Esri. But React is the most popular in the world.
+
+> Many of your may already be familiar with React. It isn't just a
+> JavaScript library, but a powerful tool for building highly dynamic
+> applications, while keeping the codebase maintainable and scalable.
+>
+> React is keen on keeping your app maintainable as it grows. It does that
+> by encouraging you to build the application out of small components. Small
+> components are great because they are easier to reason about and easier to reuse.
+>
+> React also introduces JSX - which is an optional syntax that bridges the gap
+> between HTML and JavaScript, taking the best of both - the **readability** and
+> **simplicity** of HTML, combined with the **power** and **flexibility** of
+> JavaScript.
+
+-->
+
+
+---
+
+# Demo: Add basic React 19
+
+Add React dependencies to the project:
+
+```sh
+npm install react react-dom
+# Install the Vite React plugin:
+npm install -D @vitejs/plugin-react-swc
+```
 
 - Show adding dependencies to use calcite and map-components
-
+- Walk through thw most important files
+  - In the process explain how to convert a no-build step app to Vite
+    - Replace CDN script tags with NPM imports
+    - Link to map-components NPM get started
 
 ---
 
