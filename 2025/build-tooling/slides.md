@@ -236,9 +236,10 @@ npm install -D typescript @types/react @types/react-dom
 - To get the most out of TypeScript, you need to add type annotations to your
   code and make sure your dependencies have types available (most do nowadays)
 
+
 ---
 
-# Demo: ESLint
+# ESLint
 
 - Enforce consistent code style on your team
 - Catch some issues that TypeScript can't (like bad coding patterns)
@@ -246,8 +247,22 @@ npm install -D typescript @types/react @types/react-dom
 
 <!--
 Final new tech I will show before handing it back to Max is ESLint.
-not essential, but very helpful on projects with multiple developers. 
+Not essential, but very helpful on projects with multiple developers. 
 -->
+
+
+---
+
+# Demo: ESLint
+
+Add ESLint and ESlint rules for React and TypeScript to the project:
+
+```sh
+npm install -D @eslint/js typescript-eslint globals eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
+```
+
+- TIP: these are all dev-dependencies - they are for use during development
+  only - they won't slow down your app in production
 
 ---
 
