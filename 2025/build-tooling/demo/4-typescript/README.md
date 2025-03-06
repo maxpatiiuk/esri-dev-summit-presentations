@@ -2,6 +2,35 @@
 
 [Session Description](../..)
 
+## Key changes from [3-web-components](../3-web-components)
+
+- Add TypeScript dependency and React type annotations to the project:
+
+  ```sh
+  npm install -D typescript @types/react @types/react-dom
+  ```
+
+- Create a [tsconfig.json](./tsconfig.json) file
+- Tell TypeScript to use React-specific autocomplete for Calcite and Map Components to [src/vite-env.d.ts](./src/vite-env.d.ts):
+
+  ```ts
+  /// <reference types="@esri/calcite-components/types/react" />
+  /// <reference types="@arcgis/map-components/types/react" />
+  ```
+
+- Rename .js and .jsx files to .ts and .tsx
+- Profit!
+
+Tips:
+
+- If a dependency require special TypeScript instructions, it will usually point
+  that out in its documentation or it may publish a separate package to NPM for
+  types (usually named `@types/dependency-name`)
+- To get the most out of TypeScript, you need to add type annotations to your
+  code and make sure your dependencies have types available (most do nowadays)
+- TypeScript does not change the way your code runs - it just adds extra checks
+  during development.
+
 ## Technologies used:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
@@ -34,27 +63,3 @@
    ```
 
 For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).
-
-## Key changes from [3-web-components](../3-web-components)
-
-- Add TypeScript dependency and React type annotations to the project:
-
-  ```sh
-  npm install -D typescript @types/react @types/react-dom
-  ```
-
-  - TIP: if a dependency require special TypeScript instructions, it will usually point that out in its documentation or it may publish a separate package to NPM for types (usually named `@types/dependency-name`)
-
-- Create a [tsconfig.json](./tsconfig.json) file
-- Tell TypeScript to use React-specific autocomplete for Calcite and Map Components to [src/vite-env.d.ts](./src/vite-env.d.ts):
-
-  ```ts
-  /// <reference types="@esri/calcite-components/types/react" />
-  /// <reference types="@arcgis/map-components/types/react" />
-  ```
-
-- Rename .js and .jsx files to .ts and .tsx
-- Profit!
-
-> TypeScript does not change the way your code runs - it just adds extra checks
-> during development.

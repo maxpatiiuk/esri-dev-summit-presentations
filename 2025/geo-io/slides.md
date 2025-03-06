@@ -146,4 +146,4 @@ layout: center
 Trailer, source code, and online demo:
 [bit.ly/esri-2025-geo-io](https://bit.ly/esri-2025-geo-io)
 
-![](./assets/qr-code.svg)
+<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">

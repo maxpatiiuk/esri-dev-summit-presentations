@@ -1,6 +1,6 @@
 # ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling (Demo App)
 
-[Session Description](..)
+[Session Description](../..)
 
 ## Technologies used:
 

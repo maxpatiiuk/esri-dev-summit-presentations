@@ -4,7 +4,7 @@ import globie from "./resources/globie.png";
 // Define that component accepts an optional appName prop
 function Splash({ appName }: SplashProps) {
   // Incorrect code - ESLint will catch this:
-  // const showHeading = !name == null;
+  // const showHeading = !appName == null;
   // Correct:
   const showHeading = appName != null;
   return (
