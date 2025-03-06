@@ -5,9 +5,9 @@ mdc: true
 colorSchema: dark
 ---
 
-## ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks
+## ArcGIS Maps SDK for JavaScript:<br>App Development with Components<br>part 2: Using Frameworks
 
-Omar Kawach, Max Patiiuk
+Omar Kawach, Max Patiiuk, Nick Romano
 
 ---
 is: feedback
@@ -16,13 +16,37 @@ is: feedback
 
 ---
 
-# 2nd session in a 3-part series
+# Previous session (yesterday)
 
-- Brief description of previous session (web components in simple CDN no-build apps)
-- Detail on current session's agenda (using web components with frameworks and bundlers)
-- Brief description of next session & date&time
+App Development with Components Part 1: Core Patterns
 
-> If you missed the previous session, we have a recording. watch them in order - they build on top of each other
+> Join us for the third session in our three-part series on building applications with the ArcGIS Maps SDK for JavaScript. This session is focused on building the user experience in your web app with the SDK's components and Calcite Design System. Calcite provides a library of patterns, icons, and user-friendly, configurable web components that enable developers to easily build responsive, accessible web applications. We'll demonstrate how the components can be used together to build intuitive yet powerful experiences in your apps.
+
+If you missed the previous session, we have a recording. They build on top of each other
+
+
+---
+
+# Today's session
+
+2nd in a 3-part series
+
+---
+
+# Calcite Design System 💎
+
+- Library of 50 reusable web components
+- Provides consistent and accessible UI out of the box
+- Works with any framework
+- Will be covered in more detail in the 3rd session in this series
+
+
+---
+
+# JS Maps SDK components 📍
+
+- The most powerful Web GIS mapping library
+- Now simpler to use than ever thanks to web components
 
 
 ---
@@ -42,38 +66,81 @@ layout: intro
 
 ---
 
-# Why bundlers are useful for larger apps
 
-but as app grows, adding a bundler can help. benefits:
+# What are bundlers?
 
-- can import/export between files
-- live reload
-- better performance - minification and bundle splitting
-- Can use modern JS syntax, which will get downcompiled as neede
-- Can do complete offline apps with local assets
-- TypeScript, IntelliSense
-  - Can borrow material from my previous year's TypeScript Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#typescript-
-  - show example of bugs TypeScript can easily catch?
-  - or show autocomplete for Maps SDK APIs?
-- more customizability, control, support for advanced use cases
-
-
-> reduce, or split into multiple slides. Show TypeScript IntelliSense demo/screenshot in action
+Bundlers transform the code that is easiest for developers to write into code that is most performant for the browser to run.
 
 
 ---
 
-# DEMO: vanilla JS app with Vite
+# Bundler benefits
+
+- Improve development experience (live updates...)
+- Enable modern syntax features and dependencies
+- Make testing code simpler
+- Optimize performance (reduce file sizes, split bundles...)
+- Allow extending capabilities with plugins
 
 
 ---
 
-# Modern bundlers are simple to use and have great DX
+# Examples of bundlers
 
-Either demo transforming index.html into Vite, ESM, TypeScript
+* Vite
+* Parcel
+* Webpack
 
-OR, take Vite,ESM,TypeScript starter app from jsapi-resources and walk over
-main differences from index.html
+---
+
+# Vite
+
+- Most popular bundler today
+- Used by many Esri teams
+- Great developer experience
+- Large and rapidly growing community
+
+
+---
+layout: center
+---
+
+# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/1-javascript)
+
+
+<!--
+- Show converting index.html app to Vite
+  - use jsapi-resources starter app
+- Start the dev server and show how simple it is to use
+- Show package.json - discuss dependencies and semver
+- Show index.html, main.js
+- Show live update
+-->
+
+
+---
+
+# Publishing
+
+1. Run the build command: `npm run build`
+2. Deploy the `dist` folder anywhere!
+   - any hosting provider (GitHub Pages, Vercel)
+   - or local server (NGINX, Microsoft IIS, Apache)
+
+<!--
+- The output is index.html and static files - same as no-build-step apps
+  - Show off single minified JavaScript file
+- Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
+- Mention assets can be made fully self-hosted
+-->
+
+---
+
+# Fun fact
+
+These slides are built with Vite and hosted on GitHub Pages! ✨
+
+(with help from [Slidev](https://sli.dev/))
 
 
 ---
@@ -124,15 +191,6 @@ layout: intro
 ---
 
 # Other component<br>packages
-
-
----
-
-# Calcite components
-
-> Briefly mention why Calcite. Can borrow material from my previous year's Calcite Benefits list: https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#calcite-design-system-
-
-Demo how easy it is to build a good app with our web components
 
 
 ---

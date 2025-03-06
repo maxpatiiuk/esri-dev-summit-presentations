@@ -5,7 +5,7 @@ mdc: true
 colorSchema: dark
 ---
 
-## ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
+## ArcGIS Maps SDK for JavaScript:<br>Fast Development and Build Tooling
 
 Max Patiiuk, Max Payson
 
@@ -79,7 +79,6 @@ layout: center
 - Show index.html, main.js, Splash.js, package.json
   - Similar to no-build-step apps
 - Show live update
-  - Image blinked during update - will fix in next step
 -->
 
 

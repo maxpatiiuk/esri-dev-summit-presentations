@@ -14,7 +14,7 @@ When: Wednesday, March 12 | 1:00 PM - 2:00 PM PDT
 Where: Primrose B | Palm Springs Convention Center
 
 Presenters: [Omar Kawach](https://github.com/omarkawach) &
-[Max Patiiuk](https://github.com/maxpatiiuk)
+[Max Patiiuk](https://github.com/maxpatiiuk) & [Nicholas Romano](https://github.com/nick-romano)
 
 Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 
