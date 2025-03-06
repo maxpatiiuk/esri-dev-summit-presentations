@@ -2,6 +2,19 @@
 
 [Session Description](../..)
 
+## Key changes from [1-javascript](../1-javascript)
+
+- Add React dependencies to the project:
+  ```sh
+  npm install react react-dom
+  # Install the Vite React plugin:
+  npm install -D @vitejs/plugin-react-swc
+  ```
+- Add react plugin to [vite.config.ts](./vite.config.ts)
+- Rename .js files to .jsx
+- Render Splash screen using React in [src/main.jsx](./src/main.jsx)
+- Use JSX syntax in [src/Splash.jsx](./src/Splash.jsx)
+
 ## Technologies used:
 
 - [Vite](https://vitejs.dev/)
@@ -31,16 +44,3 @@
    ```
 
 For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).
-
-## Key changes from [1-javascript](../1-javascript)
-
-- Add React dependencies to the project:
-  ```sh
-  npm install react react-dom
-  # Install the Vite React plugin:
-  npm install -D @vitejs/plugin-react-swc
-  ```
-- Add react plugin to [vite.config.ts](./vite.config.ts)
-- Rename .js files to .jsx
-- Render Splash screen using React in [src/main.jsx](./src/main.jsx)
-- Use JSX syntax in [src/Splash.jsx](./src/Splash.jsx)

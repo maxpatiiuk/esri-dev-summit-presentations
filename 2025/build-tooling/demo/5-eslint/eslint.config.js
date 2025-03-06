@@ -42,7 +42,9 @@ export default [
     // An example of overriding default rule configuration
     // See rule documentation at https://typescript-eslint.io/rules/consistent-type-definitions
     // rules: {
-    // "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
+    //  // Turn rule into a warning instead of an error
+    //  // And make in prefer type aliases over interfaces
+    //  "@typescript-eslint/consistent-type-definitions": ["warn", "type"],
     // },
   },
 ];

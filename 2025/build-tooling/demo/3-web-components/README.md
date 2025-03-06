@@ -2,6 +2,17 @@
 
 [Session Description](../..)
 
+## Key changes from [2-react](../2-react)
+
+Based on [Calcite get started](https://developers.arcgis.com/calcite-design-system/get-started/#use-the-npm-package) and [Map Components get started](https://developers.arcgis.com/javascript/latest/guide/get-started-npm/):
+
+- Add Calcite Design System and Map Components dependencies to the project:
+  ```sh
+  npm install @esri/calcite-components @arcgis/map-components
+  ```
+- Import their styles in [src/index.css](./src/index.css)
+- import `<calcite-link` and use it in [src/Splash.jsx](./src/Splash.jsx)
+
 ## Technologies used:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
@@ -33,12 +44,3 @@
    ```
 
 For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).
-
-## Key changes from [2-react](../2-react)
-
-- Add Calcite Design System and Map Components dependencies to the project:
-  ```sh
-  npm install @esri/calcite-components @arcgis/map-components
-  ```
-- Import their styles in [src/index.css](./src/index.css)
-- import `<calcite-link` and use it in [src/Splash.jsx](./src/Splash.jsx)

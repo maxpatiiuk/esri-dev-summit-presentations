@@ -1,11 +1,4 @@
 ---
-layout: intro
----
-
-# Questions
-
-
----
 is: feedback
 ---
 

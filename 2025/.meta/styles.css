@@ -1,4 +1,6 @@
 #page-root {
+  --slidev-code-background: #1118;
+
   color: white;
   font-family: Arial;
 }
