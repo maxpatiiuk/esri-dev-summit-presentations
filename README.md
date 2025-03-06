@@ -1,5 +1,37 @@
 # Esri DevSummit Presentations
 
+
+## 2025
+
+### [ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling](./2025/build-tooling)
+
+[![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](2025/build-tooling/assets/header-slide.webp)](./2025/build-tooling)
+
+[Slides and Demos](./2025/build-tooling)
+
+Learn how Esri's development teams are leveraging modern tools like Vite to
+build fast, dynamic Web GIS applications. With features such as lazy loading,
+client-side routing, hot module replacement, and lightning-fast builds, Vite
+streamlines the entire development workflow from bundling to deployment. Paired
+with Vitest for testing, these tools help ensure that your apps are both
+high-performing and production-ready.
+
+Presenters: [Max Payson](https://github.com/mpayson) &
+[Max Patiiuk](https://github.com/maxpatiiuk)
+
+### [Gaming with ArcGIS Maps SDK for JavaScript - geo-io](./2025/geo-io)
+
+[![Gaming with ArcGIS Maps SDK for JavaScript - geo-io](https://github.com/maxpatiiuk/geo-io/raw/main/docs/screenshot.webp)](./2025/geo-io)
+
+[Slides and Demo](./2025/geo-io)
+
+Dive into how ArcGIS Maps SDK for JavaScript can be (mis)used for creating a
+video game. Presenting to you: geo-io - like Agar.io, but more mappy! Powerful
+geo-rendering capabilities of the Maps SDK allow for creative applications in
+unintended areas, showing it's versatility.
+
+Presenter: [Max Patiiuk](https://github.com/maxpatiiuk)
+
 ## 2024
 
 ### [Building web apps with Calcite Design System and React](./2024/calcite-react)
@@ -43,11 +75,6 @@ Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 Dive into how ArcGIS Maps SDK for JavaScript can be (mis)used for creating a 3D
 Tetris Game. Powerful geo-rendering capabilities of the Maps SDK allow for
 creative applications in unintended areas, showing it's versatility.
-
-When: Tuesday, March 12th | 5:00 PM - 6:00 PM PDT
-
-Where: Renaissance Hotel (connected to the Palm Springs Convention Center) in
-the Santa Rosa/San Jacinto room
 
 Presenter: [Max Patiiuk](https://github.com/maxpatiiuk)
 

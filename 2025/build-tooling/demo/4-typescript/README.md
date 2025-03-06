@@ -4,6 +4,8 @@
 
 ## Key changes from [3-web-components](../3-web-components)
 
+Based on [Calcite TypeScript guide](https://developers.arcgis.com/calcite-design-system/resources/frameworks/#typescript) and [Map Components TypeScript guide](https://developers.arcgis.com/javascript/latest/get-started-react/#bonus-typescript):
+
 - Add TypeScript dependency and React type annotations to the project:
 
   ```sh
@@ -11,7 +13,7 @@
   ```
 
 - Create a [tsconfig.json](./tsconfig.json) file
-- Tell TypeScript to use React-specific autocomplete for Calcite and Map Components to [src/vite-env.d.ts](./src/vite-env.d.ts):
+- Tell TypeScript to use React-specific autocomplete for Calcite and Map Components from [src/vite-env.d.ts](./src/vite-env.d.ts):
 
   ```ts
   /// <reference types="@esri/calcite-components/types/react" />
@@ -23,7 +25,7 @@
 
 Tips:
 
-- If a dependency require special TypeScript instructions, it will usually point
+- If a dependency requires special TypeScript instructions, it will usually point
   that out in its documentation or it may publish a separate package to NPM for
   types (usually named `@types/dependency-name`)
 - To get the most out of TypeScript, you need to add type annotations to your

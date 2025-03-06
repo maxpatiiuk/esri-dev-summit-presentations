@@ -1,4 +1,4 @@
-# 2025 Esri Developer Summit: Gaming with ArcGIS Maps SDK for JavaScript - geo-io
+# Gaming with ArcGIS Maps SDK for JavaScript - geo-io
 
 [Trailer](https://www.youtube.com/watch?v=Vp-_1FW4nd0) ∙
 [Play online](https://maxpatiiuk.github.io/geo-io/) ∙
