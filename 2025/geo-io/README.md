@@ -2,7 +2,8 @@
 
 [Trailer](https://www.youtube.com/watch?v=Vp-_1FW4nd0) ∙
 [Play online](https://maxpatiiuk.github.io/geo-io/) ∙
-[Source code](https://github.com/maxpatiiuk/geo-io)
+[Source code](https://github.com/maxpatiiuk/geo-io) ∙
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/geo-io)
 
 Dive into how ArcGIS Maps SDK for JavaScript can be (mis)used for creating a
 video game. Presenting to you: geo-io - like Agar.io, but more mappy! Powerful

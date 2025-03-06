@@ -16,6 +16,10 @@ Presenters: [Max Payson](https://github.com/mpayson) &
 
 Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 
+[![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/build-tooling)
+
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/build-tooling)
+
 ## Resources
 
 ### Vite ⚡
