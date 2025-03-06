@@ -16,12 +16,6 @@ Presenters: [Max Payson](https://github.com/mpayson) &
 
 Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 
-## TODO
-
-- Practice
-- Add slide links to README.md
-
-
 ## Resources
 
 ### Vite ⚡
