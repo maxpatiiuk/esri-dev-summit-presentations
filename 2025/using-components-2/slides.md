@@ -22,7 +22,7 @@ App Development with Components Part 1: Core Patterns
 
 > Join us for the third session in our three-part series on building applications with the ArcGIS Maps SDK for JavaScript. This session is focused on building the user experience in your web app with the SDK's components and Calcite Design System. Calcite provides a library of patterns, icons, and user-friendly, configurable web components that enable developers to easily build responsive, accessible web applications. We'll demonstrate how the components can be used together to build intuitive yet powerful experiences in your apps.
 
-If you missed the previous session, we have a recording. They build on top of each other
+If you missed the previous session, we have a recording. These 3-part sessions build on top of each other
 
 
 ---
@@ -31,22 +31,35 @@ If you missed the previous session, we have a recording. They build on top of ea
 
 2nd in a 3-part series
 
+- We will cover:
+  - Calcite
+  - ArcGIS Maps SDK for JavaScript
+  - Bundlers
+  - Frameworks
+
+
 ---
 
 # Calcite Design System 💎
 
-- Library of 50 reusable web components
-- Provides consistent and accessible UI out of the box
+- An extensive library of reusable web components for designing compelling apps
+- Provides consistent, customizable, responsive and accessible UI out of the box
 - Works with any framework
-- Will be covered in more detail in the 3rd session in this series
+- Will be covered in more detail by the 3rd session in this 3-part series
 
 
 ---
 
-# JS Maps SDK components 📍
+# ArcGIS Maps SDK for JavaScript 📍
 
-- The most powerful Web GIS mapping library
-- Now simpler to use than ever thanks to web components
+- A comprehensive and powerful WebGIS mapping library
+- Now simpler to use thanks to web components
+- Core JavaScript API
+  - Provides the main functionality. Contains the classes, methods, properties, events and type definitions for all the layers, components, visualization and client-side analysis functionality.
+- JavaScript Maps SDK Components
+  - Standards-based web components designed to encapsulate complex functionality (core API) and styling (Calcite) into small HTML markup chunks (i.e., UI)
+- Documentation
+   - Get started, programming patterns, tutorials, samples and API / component references
 
 
 ---
