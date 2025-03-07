@@ -1,0 +1,36 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:chaos": "CHAOS=true vite",
+    "build": "tsc && vite build",
+    "lint": "prettier --write . && eslint --fix",
+    "test-pre": "npx playwright install --with-deps chromium",
+    "test": "vitest",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@arcgis/map-components": "^4.32.0-next.140",
+    "@esri/arcgis-rest-places": "^1.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-react-hooks": "^5.2.0-canary-8a7b487e-20250218",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.1",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.1.0"
+  }
+}

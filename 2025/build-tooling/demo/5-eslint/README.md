@@ -47,7 +47,7 @@ Tip:
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/build-tooling/demo/2-react
+   cd esri-dev-summit-presentations/2025/build-tooling/demo/5-eslint
    ```
 
 2. Install dependencies

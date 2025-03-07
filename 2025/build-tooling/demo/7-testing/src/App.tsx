@@ -36,7 +36,6 @@ const schoolSymbol = new WebStyleSymbol({
 });
 
 function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
-  const abortController = useRef<AbortController>(undefined);
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
   const [mapElement, setMapElement] = useState<HTMLArcgisMapElement | null>(
     null,
@@ -60,7 +59,6 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
     if (event.detail.name === "selectedFeature") {
       setSelectedFeature(event.target.selectedFeature);
       setSchoolResults(undefined);
-      abortController.current?.abort();
     }
   }
 
@@ -69,10 +67,6 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
   ) {
     const { action } = event.detail;
     if (action.id !== "load-schools" || !selectedFeature?.geometry) return;
-
-    // Abort any existing requests
-    abortController.current?.abort();
-    abortController.current = new AbortController();
 
     // Convert the selected feature's geometry to lat/long
     const latLngGeometry = webMercatorToGeographic(selectedFeature.geometry);
@@ -89,10 +83,9 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
         categoryIds: ["4d4b7105d754a06372d81259"], // Schools
         authentication: placesServiceInfo.authentication,
         endpoint: placesServiceInfo.endpoint,
-        signal: abortController.current.signal,
       });
     } catch (error) {
-      if (error instanceof Error && error.name !== "AbortError") {
+      if (error instanceof Error) {
         setSchoolResults({ error });
       }
       return;
