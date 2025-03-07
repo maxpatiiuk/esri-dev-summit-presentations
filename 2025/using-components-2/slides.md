@@ -250,41 +250,87 @@ layout: intro
 
 # Using frameworks
 
-
 ---
 
-# Frameworks make app development easier
+# Frameworks
 
-Benefits:
-
-- more structure (for scalable growth)
-  - encourages building app from "components" - reusable building blocks
-- declarative rendering, declarative events
-  - web components (map-components, calcite) are simpler to use with frameworks
-  - querySelector and addEventListener replaced by cleaner JSX
-
-React is most popular - will use them in this presentation. Angular and Vue also popular. Web components work in all.
-
-> Can borrow material from my previous year's React Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#react-%EF%B8%8F
+- Frameworks make app development easier by providing more structure and declarative rendering
+- React is most popular, but Angular and Vue also support web components
+- Web components work in most major frameworks
 
 ---
-
 
 # React ⚛️
 
-Either convert Vite+ESM into React
+- Most popular framework / library
+- Top down data flow
+- Declarative rendering and events (JSX)
+- Encourages building app from "components" - reusable building blocks
+- React19 has support for web components out of the box
 
-OR, take React starter app from jsapi-resources and walk over
-main differences from Vite+ES
+--- 
+layout: center
+---
 
-> Have code and browser side by side, showcasing HMR feature in Vite+React
+# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/2-react)
+
+
+<!--
+  - show differences to file extension
+  - show how JSX is used, such as event handlers and props
+  - highlight how we no longer have to use query selector
+  - highlight the event listening logic
+-->
+
+---
+
+# Summary of benefits from react
+
+- Declarative rendering
+- Easy to pass properties to components
+- Easier event logic
+- No need for query selectors
+- Easy to consume web components
 
 
 ---
 
 # TypeScript 🦾
 
-Add TypeScript to React app. Highlight web component name and prop autocomplete
+- Typescript is a superset of JavaScript
+- Adds static types to JavaScript
+- Improves developer experience and code quality
+- ArcGIS Web Components comes with TypeScript definitions out of the box
+
+--- 
+layout: center
+---
+
+# Demo: [Get started with React + Typescript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
+
+<!--
+- Show tsconfig
+- Show how to web component types use types in React
+- Highlight the syntax highlighting and intellisense
+- Show error when passing wrong type
+- Maybe add a new method to the app component and show how to use the typings?
+-->
+
+---
+
+# Summary of benefits from TypeScript
+
+- Static types
+- Improved developer experience
+- Intellisense
+- Error checking
+
+---
+
+# Framework specific component wrappers
+- React 18 wrapper package for our components
+  - npm: `@arcgis/map-components-react`
+  - Encourage you to use React 19 going forward where no wrapper is needed
 
 
 ---
@@ -292,7 +338,6 @@ layout: intro
 ---
 
 # Other component<br>packages
-
 
 ---
 
