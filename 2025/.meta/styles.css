@@ -32,3 +32,12 @@
   position: absolute;
   z-index: -1;;
 }
+
+.slidev-layout ul {
+  list-style: disc;
+}
+
+.slidev-layout li::marker {
+  color: #ffad29;
+  font-size: 0.75em;
+}
