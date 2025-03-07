@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-navigation";
 import "@esri/calcite-components/components/calcite-navigation-logo";
@@ -8,12 +8,13 @@ import "@esri/calcite-components/components/calcite-chip-group";
 import "@arcgis/map-components/components/arcgis-map";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
-const round = (value) =>
-      Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
+function round (value) {
+      return Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
+}
 
 const App = () => {
-  const [ distance, setDistance ] = React.useState(undefined);
-  const [ elevation, setElevation ] = React.useState(undefined);
+  const [ distance, setDistance ] = useState(undefined);
+  const [ elevation, setElevation ] = useState(undefined);
 
   const handleElevationProfileChange = (event) => {
     if (event.detail.name !== "progress" || event.target.progress !== 1) {

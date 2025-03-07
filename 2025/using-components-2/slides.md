@@ -264,22 +264,23 @@ layout: intro
 
 - Most popular framework / library
 - Top down data flow
-- Declarative rendering and events (JSX)
+- Declarative rendering and events
+  - JSX syntax, which is a mix of JavaScript and HTML
 - Encourages building app from "components" - reusable building blocks
+- Easy state management with "hooks"
 - React19 has support for web components out of the box
 
---- 
+---
 layout: center
 ---
 
 # Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/2-react)
 
-
 <!--
-  - show differences to file extension
-  - show how JSX is used, such as event handlers and props
-  - highlight how we no longer have to use query selector
-  - highlight the event listening logic
+- show differences to file extension
+- show how JSX is used, such as event handlers and props
+- highlight how we no longer have to use query selector
+- highlight the event listening logic
 -->
 
 ---
