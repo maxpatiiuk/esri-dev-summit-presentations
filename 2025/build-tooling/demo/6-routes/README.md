@@ -20,7 +20,7 @@
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/build-tooling/demo/final
+   cd esri-dev-summit-presentations/2025/build-tooling/demo/6-routes
    ```
 
 2. Install dependencies
@@ -29,9 +29,7 @@
    npm install
    ```
 
-3. Copy `.env.local.example` to `.env.local` and update it with an [API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/) that has access to the [ArcGIS Places service](https://developers.arcgis.com/rest/places/). Note, if you do not have an ArcGIS Location Platform account, sign up for free [here](https://location.arcgis.com/sign-up/).
-
-4. Start the development server
+3. Start the development server
 
    ```sh
    npm run dev

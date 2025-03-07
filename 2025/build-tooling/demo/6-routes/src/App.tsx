@@ -15,11 +15,10 @@ import "@arcgis/map-components/components/arcgis-map";
 import Graphic from "@arcgis/core/Graphic";
 
 function App() {
-  const abortController = useRef<AbortController>(undefined);
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
-  const [mapElement, setMapElement] = useState<
-    HTMLArcgisMapElement | null | undefined
-  >();
+  const [mapElement, setMapElement] = useState<HTMLArcgisMapElement | null>(
+    null,
+  );
   const [selectedFeature, setSelectedFeature] = useState<
     Graphic | null | undefined
   >();
@@ -36,7 +35,6 @@ function App() {
   ) {
     if (event.detail.name === "selectedFeature") {
       setSelectedFeature(event.target.selectedFeature);
-      abortController.current?.abort();
     }
   }
 

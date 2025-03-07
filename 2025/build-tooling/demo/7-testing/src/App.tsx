@@ -37,9 +37,9 @@ const schoolSymbol = new WebStyleSymbol({
 
 function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);
-  const [mapElement, setMapElement] = useState<
-    HTMLArcgisMapElement | null | undefined
-  >();
+  const [mapElement, setMapElement] = useState<HTMLArcgisMapElement | null>(
+    null,
+  );
   const [selectedFeature, setSelectedFeature] = useState<
     Graphic | null | undefined
   >();
