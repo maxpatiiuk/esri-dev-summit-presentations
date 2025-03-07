@@ -19,7 +19,7 @@ is: feedback
 # Agenda
 
 - Introduction to build tools
-- Building an app (based on how Esri teams do it)
+- Building an app
   - Get started with Vite
   - Add dependencies
   - Use TypeScript and ESLint
@@ -211,7 +211,7 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 
 ---
 
-# Summary of demos
+# Demo summaries
 
 - **Vite ⚡** simplifies the development workflow
 - **React ⚛️** makes it easy to do complex things in a maintainable way
@@ -226,38 +226,57 @@ layout: intro
 
 # Enhance the app
 
+---
+
+# Lazy loading
+
+* Only load source files when needed
+* Split app into multiple entry points
+* Simplest split: by page or route
+
+---
+layout: center
+---
+
+# Demo: [Lazy loading & routes with React Router](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/6-routes)
 
 ---
 
-# DEMO: Add react-router
+# Testing
 
-- Show landing page with a link that loads the map page
-- Map is loaded lazily
-- Throughout, have code editor and dev server side by side to show off hot module replacement
+Testing is great, Vitest is also great!
+* Fast with familiar API
+* Supports modern language features
+* Run tests in Node or the browser
+* Direct integration with Vite
+
+---
+layout: center
+---
+
+# Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/7-tests)
 
 
 ---
 
-# Demo summary
+# Custom plugins
 
-- Optimize performance by splitting bundles
-- Quickly preview or debug builds, before they are deployed
+* Powerful way to enhance builds or developer workflows
+* Vite plugins are flexible and easy to write
+
+---
+layout: center
+---
+
+# Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/8-plugins)
 
 ---
 
-# DEMO: Add Vitest
+# Demo summaries
 
-- Vitest inherits Vite config - things "just work"
-- Showcase basic html snapshot test via Vitest browser mode
-
-
----
-
-# DEMO: Add custom plugins
-
-- Add JS API build plugin
-- Add chaos monkey development plugin
-
+- **Lazy loading ⚡** improves app performance
+- **Testing with Vitest 🦾** makes it easy to write and maintain tests
+- **Custom plugins 💎** provides a powerful way to enhance workflows
 
 ---
 

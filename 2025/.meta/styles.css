@@ -5,12 +5,23 @@
   font-family: Arial;
 }
 
+.slidev-layout {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
 .slidev-layout.cover {
   padding-left: 4.5rem;
 }
 
 .slidev-layout:is(.cover, .intro, [is="social"]) p {
   color: #ffad29;
+}
+
+.slidev-layout h1 {
+  margin-bottom: 2rem;
 }
 
 .slidev-layout h1 + p {
