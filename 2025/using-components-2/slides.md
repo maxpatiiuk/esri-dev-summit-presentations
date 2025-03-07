@@ -128,6 +128,7 @@ layout: center
    - or local server (NGINX, Microsoft IIS, Apache)
 
 <!--
+- Vite team working on 4x speedup in build time
 - The output is index.html and static files - same as no-build-step apps
   - Show off single minified JavaScript file
 - Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevation Profiles of National Park Trails</title>
+    <link rel="icon" href="data:;base64,=" />
+  </head>
+  <body>
+    <calcite-shell class="custom-theme">
+      <calcite-navigation slot="header">
+        <calcite-navigation-logo
+          slot="logo"
+          icon="map"
+          heading="US National Parks"
+          description="Trail Explorer"
+        ></calcite-navigation-logo>
+      </calcite-navigation>
+
+      <div class="content-container">
+        <div class="content-start">
+          <calcite-panel id="map-container">
+            <arcgis-map
+              ground="world-elevation"
+              item-id="5fe7222cfd4e41cab4321cc1fde66cc2"
+              id="map"
+            >
+            </arcgis-map>
+            <calcite-panel
+              id="elevation-panel"
+              heading="Elevation profile"
+              closable
+            >
+              <calcite-chip-group slot="header-actions-end">
+                <calcite-chip
+                  icon="walking-distance"
+                  id="distance"
+                ></calcite-chip>
+                <calcite-chip icon="altitude" id="elevation"></calcite-chip>
+              </calcite-chip-group>
+              <arcgis-elevation-profile
+                reference-element="map"
+                unit="imperial"
+                hide-clear-button
+                hide-legend
+                hide-settings-button
+              ></arcgis-elevation-profile>
+            </calcite-panel>
+          </calcite-panel>
+        </div>
+      </div>
+    </calcite-shell>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
