@@ -1,11 +1,37 @@
-# Map components Vite sample
+# Vite + vanilla JavaScript demo
 
-## Get started
+[Session Description](../..)
 
-The project was created using [`npm create vite`](https://vitejs.dev/guide/#scaffolding-your-first-vite-project) with the [vanilla JavaScript template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-vanilla).
+The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
 
-Run `npm install` and then start adding modules.
+## Technologies used:
 
-For a list of all available `npm` commands see `scripts` in `package.json`, e.g. `npm run build`.
+- [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
+- [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
 
-For more details on using the SDK, please refer to the [ArcGIS Maps SDK for JavaScript documentation](https://developers.arcgis.com/javascript/latest/get-started-overview/).
+## Installation
+
+> [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm) and [Git](https://git-scm.com/downloads) is required to run the following commands.
+
+1. Clone this sample app
+
+   ```sh
+   git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
+   cd esri-dev-summit-presentations/2025/using-components-2/demo/1-javascript
+   ```
+
+2. Install dependencies
+
+   ```sh
+   npm install
+   ```
+
+3. Start the development server
+
+   ```sh
+   npm run dev
+   ```
+
+For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).

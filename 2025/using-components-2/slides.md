@@ -109,7 +109,7 @@ layout: center
 
 
 <!--
-- Show converting index.html app to Vite
+- Describe converting index.html app to Vite
   - use jsapi-resources starter app
 - Start the dev server and show how simple it is to use
 - Show package.json - discuss dependencies and semver
