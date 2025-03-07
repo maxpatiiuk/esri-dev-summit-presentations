@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import "@esri/calcite-components/components/calcite-alert";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-shell-panel";
@@ -19,6 +19,7 @@ import Point from "@arcgis/core/geometry/Point";
 import Collection from "@arcgis/core/core/Collection";
 import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils";
 import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
+
 import { Result, ServiceInfo } from "./interfaces";
 
 const featureActions = new Collection([
@@ -46,72 +47,68 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
   const [schoolResults, setSchoolResults] =
     useState<Result<Collection<Graphic>>>();
 
-  const onMapClick = useCallback(
-    (event: HTMLArcgisMapElement["arcgisViewClick"]) => {
-      featuresElement.current?.open({
-        location: event.detail.mapPoint,
-        fetchFeatures: true,
-      });
-    },
-    [],
-  );
+  function onMapClick(event: HTMLArcgisMapElement["arcgisViewClick"]) {
+    featuresElement.current?.open({
+      location: event.detail.mapPoint,
+      fetchFeatures: true,
+    });
+  }
 
-  const onFeaturesChange = useCallback(
-    (event: HTMLArcgisFeaturesElement["arcgisPropertyChange"]) => {
-      if (event.detail.name === "selectedFeature") {
-        setSelectedFeature(event.target.selectedFeature);
-        setSchoolResults(undefined);
-      }
-    },
-    [],
-  );
-
-  const onFeatureActionClicked = useCallback(
-    async (event: HTMLArcgisFeaturesElement["arcgisTriggerAction"]) => {
-      const { action } = event.detail;
-      if (action.id !== "load-schools" || !selectedFeature?.geometry) return;
-
-      // Abort any existing requests
+  function onFeaturesChange(
+    event: HTMLArcgisFeaturesElement["arcgisPropertyChange"],
+  ) {
+    if (event.detail.name === "selectedFeature") {
+      setSelectedFeature(event.target.selectedFeature);
+      setSchoolResults(undefined);
       abortController.current?.abort();
-      abortController.current = new AbortController();
+    }
+  }
 
-      // Convert the selected feature's geometry to lat/long
-      const latLngGeometry = webMercatorToGeographic(selectedFeature.geometry);
-      const latLngCenter = (latLngGeometry as Polygon).centroid!;
+  async function onFeatureActionClicked(
+    event: HTMLArcgisFeaturesElement["arcgisTriggerAction"],
+  ) {
+    const { action } = event.detail;
+    if (action.id !== "load-schools" || !selectedFeature?.geometry) return;
 
-      // Find schools near the selected feature
-      let response;
-      try {
-        setSchoolResults({ loading: true });
-        response = await findPlacesNearPoint({
-          x: latLngCenter.x,
-          y: latLngCenter.y,
-          radius: 1600 * 5, // 5 miles in meters
-          categoryIds: ["4d4b7105d754a06372d81259"], // Schools
-          authentication: placesServiceInfo.authentication,
-          endpoint: placesServiceInfo.endpoint,
-          signal: abortController.current.signal,
-        });
-      } catch (error) {
-        if (error instanceof Error && error.name !== "AbortError") {
-          setSchoolResults({ error });
-        }
-        return;
-      }
+    // Abort any existing requests
+    abortController.current?.abort();
+    abortController.current = new AbortController();
 
-      // Create graphics for each school and set the result
-      const graphics = response.results.map((result) => {
-        const { location, ...attributes } = result;
-        return new Graphic({
-          attributes,
-          geometry: new Point(location),
-          symbol: schoolSymbol,
-        });
+    // Convert the selected feature's geometry to lat/long
+    const latLngGeometry = webMercatorToGeographic(selectedFeature.geometry);
+    const latLngCenter = (latLngGeometry as Polygon).centroid!;
+
+    // Find schools near the selected feature
+    let response;
+    try {
+      setSchoolResults({ loading: true });
+      response = await findPlacesNearPoint({
+        x: latLngCenter.x,
+        y: latLngCenter.y,
+        radius: 1600 * 5, // 5 miles in meters
+        categoryIds: ["4d4b7105d754a06372d81259"], // Schools
+        authentication: placesServiceInfo.authentication,
+        endpoint: placesServiceInfo.endpoint,
+        signal: abortController.current.signal,
       });
-      setSchoolResults({ result: new Collection(graphics) });
-    },
-    [selectedFeature, placesServiceInfo],
-  );
+    } catch (error) {
+      if (error instanceof Error && error.name !== "AbortError") {
+        setSchoolResults({ error });
+      }
+      return;
+    }
+
+    // Create graphics for each school and set the result
+    const graphics = response.results.map((result) => {
+      const { location, ...attributes } = result;
+      return new Graphic({
+        attributes,
+        geometry: new Point(location),
+        symbol: schoolSymbol,
+      });
+    });
+    setSchoolResults({ result: new Collection(graphics) });
+  }
 
   return (
     <calcite-shell>
