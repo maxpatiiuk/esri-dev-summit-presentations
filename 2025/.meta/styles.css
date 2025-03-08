@@ -41,3 +41,8 @@
   color: #ffad29;
   font-size: 0.75em;
 }
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+}
