@@ -3,6 +3,24 @@
 
 ## 2025
 
+### [ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks](./2025/using-components-2)
+
+[![ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks header slide](2025/using-components-2/assets/header-slide.webp)](./2025/using-components-2)
+
+[Slides and Demos](./2025/using-components-2)
+
+Join us for the second session in our three-part series on building applications
+with the ArcGIS Maps SDK for JavaScript. This session will begin with exploring
+motivations for using frontend frameworks, and then will cover techniques for
+integrating the SDK's web components with frameworks and tools such as React and
+Vite. We will touch on current frontend methodologies for topics such as
+dependency management, asset management, semantic versioning, and conveniences
+offered by frameworks that streamline web mapping application development
+compared to plain JavaScript.
+
+Presenters: [Omar Kawach](https://github.com/omarkawach) &
+[Max Patiiuk](https://github.com/maxpatiiuk) & [Nicholas Romano](https://github.com/nick-romano)
+
 ### [ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling](./2025/build-tooling)
 
 [![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](2025/build-tooling/assets/header-slide.webp)](./2025/build-tooling)
