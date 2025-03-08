@@ -155,15 +155,6 @@ layout: center
 
 ---
 
-# Asset handling
-
-- By default, component assets are loaded from Esri's fast CDN
-- This includes translation files and images
-- They cab be made [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/) if needed
-
-
----
-
 # Dependency vs devDependency
 
 package.json:
@@ -242,6 +233,15 @@ Allows for dependency sharing (multiple packages can use single Calcite)
 These slides are built with Vite and hosted on GitHub Pages! ✨
 
 (with help from [Slidev](https://sli.dev/))
+
+
+---
+
+# Asset handling
+
+- By default, component assets are loaded from Esri's fast CDN
+- This includes translation files and images
+- They cab be made [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/) if needed
 
 
 ---
