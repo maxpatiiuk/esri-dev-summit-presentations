@@ -1,13 +1,6 @@
 import { useState, useRef } from "react";
-import "@esri/calcite-components/components/calcite-alert";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-shell-panel";
-import "@esri/calcite-components/components/calcite-list";
-import "@esri/calcite-components/components/calcite-list-item";
-import "@esri/calcite-components/components/calcite-list-item-group";
-import "@esri/calcite-components/components/calcite-navigation";
-import "@esri/calcite-components/components/calcite-navigation-logo";
-import "@esri/calcite-components/components/calcite-progress";
 import "@arcgis/map-components/components/arcgis-features";
 import "@arcgis/map-components/components/arcgis-legend";
 import "@arcgis/map-components/components/arcgis-map";
