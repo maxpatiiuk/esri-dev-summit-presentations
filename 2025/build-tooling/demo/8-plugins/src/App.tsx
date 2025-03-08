@@ -5,8 +5,6 @@ import "@esri/calcite-components/components/calcite-shell-panel";
 import "@esri/calcite-components/components/calcite-list";
 import "@esri/calcite-components/components/calcite-list-item";
 import "@esri/calcite-components/components/calcite-list-item-group";
-import "@esri/calcite-components/components/calcite-navigation";
-import "@esri/calcite-components/components/calcite-navigation-logo";
 import "@esri/calcite-components/components/calcite-progress";
 import "@arcgis/map-components/components/arcgis-features";
 import "@arcgis/map-components/components/arcgis-legend";
@@ -89,14 +87,15 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
         categoryIds: ["4d4b7105d754a06372d81259"], // Schools
         authentication: placesServiceInfo.authentication,
         endpoint: placesServiceInfo.endpoint,
-        // signal: abortController.current.signal,
       });
     } catch (error) {
-      if (error instanceof Error && error.name !== "AbortError") {
+      if (error instanceof Error) {
         setSchoolResults({ error });
       }
       return;
     }
+
+    // if (abortController.current.signal.aborted) return;
 
     // Create graphics for each school and set the result
     const graphics = response.results.map((result) => {
