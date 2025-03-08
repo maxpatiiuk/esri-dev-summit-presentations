@@ -274,9 +274,9 @@ layout: center
 
 # Demo summaries
 
-- **Lazy loading ⚡** improves app performance
-- **Testing with Vitest 🦾** makes it easy to write and maintain tests
-- **Custom plugins 💎** provides a powerful way to enhance workflows
+- **Lazy loading 🚀** improves app performance
+- **Testing with Vitest 🧪** makes it easy to write and maintain tests
+- **Custom plugins 🔌** provides a powerful way to enhance workflows
 
 ---
 
