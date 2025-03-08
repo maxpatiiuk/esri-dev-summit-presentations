@@ -84,6 +84,29 @@ layout: intro
 
 Bundlers transform the code that is easiest for developers to write into code that is most performant for the browser to run.
 
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 25 }}}%%
+
+graph LR
+  subgraph human_files["Human-readable files"]
+    direction LR
+    TS[TypeScript .ts/.tsx]
+    JS[JavaScript .js/.jsx]
+    CSS[CSS/Sass .css/.scss]
+    IMG[Assets .jpg/.json]
+  end
+
+  Bundler("Bundler")
+
+  subgraph optimized_output["Browser-optimized output"]
+    direction LR
+    O_JS[Optimized JavaScript]
+    O_CSS[Optimized CSS]
+    O_IMG[Optimized Images]
+  end
+
+  human_files ==> Bundler ==> optimized_output
+```
 
 ---
 
@@ -106,7 +129,7 @@ Bundlers transform the code that is easiest for developers to write into code th
 
 ---
 
-# Vite
+# Vite ⚡
 
 - Most popular bundler today
 - Used by many Esri teams
@@ -125,10 +148,74 @@ layout: center
 - Describe converting index.html app to Vite
   - use jsapi-resources starter app
 - Start the dev server and show how simple it is to use
-- Show package.json - discuss dependencies and semver
 - Show index.html, main.js
 - Show live update
 -->
+
+
+---
+
+# Asset handling
+
+- By default, component assets are loaded from Esri's fast CDN
+- This includes translation files and images
+- They cab be made [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/) if needed
+
+
+---
+
+# Dependency vs devDependency
+
+package.json:
+
+```json
+  // Required for the app to run
+  "dependencies": {
+    "@arcgis/map-components": "^4.32.9",
+    "@esri/calcite-components": "^3.0.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  // Only used during development/build
+  "devDependencies": {
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "typescript": "^5.8.2",
+    "vite": "^6.1.0"
+  }
+```
+
+
+---
+
+# Semantic versioning
+
+`<major>.<minor>.<patch>` (example: `3.0.3`)
+
+- **major**: breaking changes - read the release notes
+- **minor**: new features - safe to update
+- **patch**: bug fixes - safe to update
+
+
+---
+
+# Semantic versioning ranges
+
+Rather than specifying an exact version, you can let NPM decide which version to install:
+
+- `^3.0.3` - any version from 3.0.3 to 4.0.0 (features and bug fixes)
+- `~3.0.3` - any version from 3.0.3 to 3.1.0 (only bug fixes)
+
+Allows for dependency sharing (multiple packages can use single Calcite)
+
+
+---
+
+# Exceptions to semantic versioning
+
+- `typescript` - does not follow semantic versioning - any version can have breaking changes
+- `@arcgis/*` - follows `4.<major>.<patch>` instead
 
 
 ---
@@ -183,7 +270,7 @@ React is most popular - will use them in this presentation. Angular and Vue also
 ---
 
 
-# React demo
+# React ⚛️
 
 Either convert Vite+ESM into React
 
@@ -195,7 +282,7 @@ main differences from Vite+ES
 
 ---
 
-# TypeScript demo
+# TypeScript 🦾
 
 Add TypeScript to React app. Highlight web component name and prop autocomplete
 
@@ -264,6 +351,24 @@ App Development with Components Part 3: User Experience (deeper Calcite User Exp
 
 > Join us for the third session in our three-part series on building applications with the ArcGIS Maps SDK for JavaScript. This session is focused on building the user experience in your web app with the SDK's components and Calcite Design System. Calcite provides a library of patterns, icons, and user-friendly, configurable web components that enable developers to easily build responsive, accessible web applications. We'll demonstrate how the components can be used together to build intuitive yet powerful experiences in your apps.
 
+
+---
+layout: center
+---
+
+# Questions?
+
+ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks
+
+Demos and additional resources available at:
+[bit.ly/esri-2025-using-components-2](https://bit.ly/esri-2025-using-components-2)
+
+<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
+
+<!--
+If you wish to dive deeper, you can find our demos and
+additional resources at the URL above, or you can scan the QR code.
+-->
 
 ---
 src: ../.meta/footer.md
