@@ -261,8 +261,8 @@ layout: center
 
 # Custom plugins
 
-* Powerful way to enhance builds or developer workflows
 * Vite plugins are flexible and easy to write
+* Powerful way to enhance builds or developer workflows
 
 ---
 layout: center
