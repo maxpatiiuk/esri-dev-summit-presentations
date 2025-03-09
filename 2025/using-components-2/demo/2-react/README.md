@@ -2,7 +2,13 @@
 
 [Session Description](../..)
 
-The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
+## Key changes from [1-javascript](../1-javascript/)
+
+- Rename .js files to .jsx
+- Relocate markup into JSX syntax
+- Use react hooks to manage state
+- assign event handlers directly to JSX elements
+
 
 ## Technologies used:
 

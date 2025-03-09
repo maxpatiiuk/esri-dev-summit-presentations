@@ -9,30 +9,34 @@ import "@arcgis/map-components/components/arcgis-map";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
 const round = (value: number) =>
-      Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
+  Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
 const App = () => {
-  const [ distance, setDistance ] = React.useState<undefined | string>(undefined);
-  const [ elevation, setElevation ] = React.useState<undefined | string>(undefined);
+  const [distance, setDistance] = React.useState<undefined | string>(undefined);
+  const [elevation, setElevation] = React.useState<undefined | string>(
+    undefined,
+  );
 
-  const handleElevationProfileChange = (event: HTMLArcgisElevationProfileElement['arcgisPropertyChange']) => {
+  const handleElevationProfileChange = (
+    event: HTMLArcgisElevationProfileElement["arcgisPropertyChange"],
+  ) => {
     if (event.detail.name !== "progress" || event.target.progress !== 1) {
       return;
     }
     const profiles = event.target.profiles;
     const statistics = profiles.at(0)?.statistics;
-    if(!statistics) {
+    if (!statistics) {
       return;
     }
-    if(statistics.elevationGain) {
+    if (statistics.elevationGain) {
       const elevationGain = round(statistics.elevationGain);
       setElevation(`${elevationGain} ${event.target.effectiveUnits.elevation}`);
     }
-    if(statistics.maxDistance) {
+    if (statistics.maxDistance) {
       const distance = round(statistics.maxDistance);
       setDistance(`${distance} ${event.target.effectiveUnits.distance}`);
     }
-  }
+  };
 
   return (
     <calcite-shell className="custom-theme">
@@ -50,27 +54,36 @@ const App = () => {
           <calcite-panel id="map-container">
             <arcgis-map
               ground="world-elevation"
-              item-id="5fe7222cfd4e41cab4321cc1fde66cc2"
+              itemId="5fe7222cfd4e41cab4321cc1fde66cc2"
               id="map"
             ></arcgis-map>
-            <calcite-panel
-              id="elevation-panel"
-              heading="Elevation profile"
-            >
+            <calcite-panel id="elevation-panel" heading="Elevation profile">
               <calcite-chip-group slot="header-actions-end" label="Statistics">
-                <calcite-chip
-                  icon="walking-distance"
-                  id="distance"
-                  label="Walking Distance"
-                >{distance}</calcite-chip>
-                <calcite-chip icon="altitude" id="elevation" label="Elevation">{elevation}</calcite-chip>
+                {distance && (
+                  <calcite-chip
+                    icon="walking-distance"
+                    id="distance"
+                    label="Walking Distance"
+                  >
+                    {distance}
+                  </calcite-chip>
+                )}
+                {elevation && (
+                  <calcite-chip
+                    icon="altitude"
+                    id="elevation"
+                    label="Elevation"
+                  >
+                    {elevation}
+                  </calcite-chip>
+                )}
               </calcite-chip-group>
               <arcgis-elevation-profile
-                reference-element="map"
+                referenceElement="map"
                 unit="imperial"
-                hide-clear-button
-                hide-legend
-                hide-settings-button
+                hideClearButton
+                hideLegend
+                hideSettingsButton
                 onarcgisPropertyChange={handleElevationProfileChange}
               ></arcgis-elevation-profile>
             </calcite-panel>

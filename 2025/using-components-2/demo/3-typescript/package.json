@@ -15,10 +15,10 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "vite": "^6.1.1",
-    "@vitejs/plugin-react": "^4.3.4",
-    "typescript": "5.8.2",
     "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4"
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "typescript": "5.8.2",
+    "vite": "^6.1.1"
   }
 }

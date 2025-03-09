@@ -2,7 +2,10 @@
 
 [Session Description](../..)
 
-The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
+## Key changes from [2-react](../2-react/)
+
+- Rename .jsx files to .tsx
+- Add type annotations to functions and variables
 
 ## Technologies used:
 
@@ -20,7 +23,7 @@ The project was created using the [Vite sample app in jsapi-resources](https://g
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/using-components-2/demo/2-react
+   cd esri-dev-summit-presentations/2025/using-components-2/demo/3-typescript
    ```
 
 2. Install dependencies
