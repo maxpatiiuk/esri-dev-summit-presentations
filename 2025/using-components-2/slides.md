@@ -450,6 +450,7 @@ Declarative rendering makes it easier to understand what the component will look
 
 ---
 
+# Summary of benefits from react
 
 # TypeScript 🦾
 
