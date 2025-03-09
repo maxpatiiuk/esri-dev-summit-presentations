@@ -29,6 +29,9 @@ is: feedback
   - Add tests with Vitest
   - Add custom plugins
 
+<!--
+Quick tour of app building...based on what Esri teams are doing
+-->
 
 ---
 
@@ -36,6 +39,29 @@ is: feedback
 
 Build tools transform the code that is easiest for developers to write into code that is most performant for the browser to run.
 
+```mermaid
+%%{init: {'flowchart': {'nodeSpacing': 25 }}}%%
+
+graph LR
+  subgraph human_files["Human-readable files"]
+    direction LR
+    TS[TypeScript .ts/.tsx]
+    JS[JavaScript .js/.jsx]
+    CSS[CSS/Sass .css/.scss]
+    IMG[Assets .jpg/.json]
+  end
+
+  Bundler("Bundler")
+
+  subgraph optimized_output["Browser-optimized output"]
+    direction LR
+    O_JS[Optimized JavaScript]
+    O_CSS[Optimized CSS]
+    O_IMG[Optimized Images]
+  end
+
+  human_files ==> Bundler ==> optimized_output
+```
 
 ---
 
@@ -84,7 +110,7 @@ layout: center
 
 ---
 
-## React ⚛️
+## React
 
 - As app grows, it benefits from more structure
 - The most popular JavaScript library for building dynamic user-interfaces
@@ -103,7 +129,7 @@ layout: center
 
 ---
 
-# Calcite Design System 💎
+# Calcite Design System
 
 - Library of 50 reusable web components
 - Provides consistent and accessible UI out of the box
@@ -112,7 +138,7 @@ layout: center
 
 ---
 
-# JS Maps SDK components 📍
+# ArcGIS Maps SDK for JavaScript
 
 - The most powerful Web GIS mapping library
 - Now simpler to use than ever thanks to web components
@@ -127,13 +153,13 @@ layout: center
 
 ---
 
-## TypeScript 🦾
+## TypeScript
 
 Most developers see great benefit from adding TypeScript to their projects:
 
 > TypeScript: catch your bugs before your users do
 
-- Auto-magically provides better autocomplete and inline documentation
+- Auto-magically ✨ provides better autocomplete and inline documentation
 - Helps with code refactoring
 - Encourages self-documenting code
 - Essential part of every ArcGIS Online app at Esri
@@ -154,7 +180,7 @@ layout: center
 
 ---
 
-# ESLint 🚩
+# ESLint
 
 - Optional, but very helpful on projects with multiple developers
 - Enforce consistent code style on your team
