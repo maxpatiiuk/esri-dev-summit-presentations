@@ -250,41 +250,243 @@ layout: intro
 
 # Using frameworks
 
-
 ---
 
-# Frameworks make app development easier
+# Frameworks
 
-Benefits:
-
-- more structure (for scalable growth)
-  - encourages building app from "components" - reusable building blocks
-- declarative rendering, declarative events
-  - web components (map-components, calcite) are simpler to use with frameworks
-  - querySelector and addEventListener replaced by cleaner JSX
-
-React is most popular - will use them in this presentation. Angular and Vue also popular. Web components work in all.
-
-> Can borrow material from my previous year's React Benefits list https://github.com/maxpatiiuk/esri-dev-summit-presentations/blob/main/2024/calcite-react/index.md#react-%EF%B8%8F
+- Frameworks make app development easier by providing more structure and declarative rendering
+- React is most popular, but Angular and Vue also support web components
+- Web components work in most major frameworks
 
 ---
-
 
 # React ⚛️
 
-Either convert Vite+ESM into React
+- Most popular framework / library
+- Top down data flow
+- Declarative rendering and events
+  - JSX syntax, which is a mix of JavaScript and HTML
+- Encourages building app from "components" - reusable building blocks
+- Easy state management with "hooks"
+- React19 has support for web components out of the box
 
-OR, take React starter app from jsapi-resources and walk over
-main differences from Vite+ES
+---
+layout: center
+---
 
-> Have code and browser side by side, showcasing HMR feature in Vite+React
+# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/2-react)
 
+<!--
+- show differences to file extension
+- show how JSX is used, such as event handlers and props
+- highlight how we no longer have to use query selector
+- highlight the event listening logic
+
+Script:
+
+1. show package.json
+  - added react and react-dom package
+  - added vite react plugin
+
+2. Show vite.config.js
+  - added vite react plugin
+
+3. Show index.html
+  - now its just a very simple html template with a "root" div
+
+4. show main.jsx (highlight .jsx extension)
+  - bootstrap our app with react-dom, this is the entrypoint to our react application
+
+5. show app.jsx
+  - event.target > what's "target"
+  - event.detail > what's "event.detail"
+
+6. show the app
+-->
 
 ---
 
+# Summary of benefits from react
+
+- Declarative rendering
+- Easy to pass properties to components
+- Easier event logic
+- No need for query selectors
+- Easy to consume web components
+
+---
+layout: two-cols
+---
+
+<template v-slot:default>
+
+
+
+# Vanilla JavaScript: <br/> Setting Events and Properties
+
+
+#### HTML
+
+```html
+<body>
+  <calcite-chip id="distance"></calcite-chip>
+  <calcite-chip id="elevation"></calcite-chip>
+  <arcgis-map
+    item-id="5fe7222cfd4e41cab4321cc1fde66cc2"
+    id="map"
+  >
+  </arcgis-map>
+  <arcgis-elevation-profile
+    reference-element="map"
+  ></arcgis-elevation-profile>
+</body>
+```
+</template>
+
+<template v-slot:right v-click>
+
+#### JavaScript
+
+```js
+// Get references to the components we need to interact with
+const elevationProfile = document.querySelector("arcgis-elevation-profile");
+const distanceElement = document.getElementById("distance");
+const elevationElement = document.getElementById("elevation");
+if (!elevationProfile || !distanceElement || !elevationElement) {
+  throw Error("Error: Unable to find DOM elements");
+}
+
+// Watch for "progress" changes on the elevation profile component
+elevationProfile.addEventListener("arcgisPropertyChange", (event) => {
+  // 1 = complete
+  if (event.detail.name !== "progress" || elevationProfile.progress !== 1) {
+    return;
+  }
+  const profiles = elevationProfile.profiles;
+  const statistics = profiles.at(0)?.statistics;
+  const elevationGain = round(statistics?.elevationGain);
+  const distance = round(statistics?.maxDistance);
+  elevationElement.textContent = `${elevationGain} ${elevationProfile.effectiveUnits.elevation}`;
+  distanceElement.textContent = `${distance} ${elevationProfile.effectiveUnits.distance}`;
+});
+```
+</template>
+
+<!--
+Notes
+
+- Query selectors are used to get references to the components.
+- Event listeners are added to listen for changes on the elevation profile component.
+- You can imagine how this code would grow in complexity as more components are added to the page.
+
+-->
+
+---
+layout: two-cols
+---
+
+<style>
+  .two-columns {
+    gap: 2rem;
+  }
+</style>
+
+<template v-slot:default>
+
+# React
+
+#### HTML
+
+```html
+<body>
+  <div id="root"></div>
+</body>
+```
+
+</template>
+<template v-slot:right v-click>
+
+#### JSX
+
+```jsx
+// initialize state variables
+const [ distance, setDistance ] = useState(undefined);
+const [ elevation, setElevation ] = useState(undefined);
+
+const handleElevationProfileChange = (event) => {
+  if (event.detail.name !== "progress" || event.target.progress !== 1) {
+    return;
+  }
+  const profiles = event.target.profiles;
+  const statistics = profiles.at(0)?.statistics;
+  const elevationGain = round(statistics?.elevationGain);
+  const distance = round(statistics?.maxDistance);
+  setElevation(`${elevationGain} ${event.target.effectiveUnits.elevation}`);
+  setDistance(`${distance} ${event.target.effectiveUnits.distance}`);
+}
+
+return (
+  <calcite-chip id="distance">{distance}</calcite-chip>
+  <calcite-chip id="elevation">{elevation}</calcite-chip>
+  <arcgis-elevation-profile
+    onarcgisPropertyChange={handleElevationProfileChange}
+  ></arcgis-elevation-profile>
+);
+
+```
+
+</template>
+
+<!--
+React combines logic and markup into the same file.
+
+This makes it easier to understand the component's behavior and how it interacts with the rest of the application.
+
+React also provides a way to manage state and lifecycle events in a more predictable way.
+
+Declarative rendering makes it easier to understand what the component will look like based on its state.
+
+-->
+
+---
+
+
 # TypeScript 🦾
 
-Add TypeScript to React app. Highlight web component name and prop autocomplete
+- Typescript is a superset of JavaScript
+- Adds static types to JavaScript
+- Improves developer experience and code quality
+- The Maps SDK's components and Calcite come with TypeScript definitions out of the box
+
+--- 
+layout: center
+---
+
+# Demo: [Get started with React + Typescript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
+
+<!--
+- Show tsconfig
+- Show how to web component types use types in React
+- Highlight the syntax highlighting and intellisense
+- Show error when passing wrong type
+- Maybe add a new method to the app component and show how to use the typings?
+-->
+
+---
+
+# Summary of benefits from TypeScript
+
+- Static types
+- Improved developer experience
+- Intellisense
+- Error checking
+
+---
+
+# Framework specific component wrappers
+- React 18 wrapper package for our components
+  - npm: `@arcgis/map-components-react`
+  - Encourage you to use React 19 going forward where no wrapper is needed
 
 
 ---
@@ -292,7 +494,6 @@ layout: intro
 ---
 
 # Other component<br>packages
-
 
 ---
 
