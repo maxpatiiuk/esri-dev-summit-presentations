@@ -1,22 +1,18 @@
 {
 	"MiniMap Component": {
-	  "prefix": "minimap",
-	  "body": [
-		"const MiniMap = ({ selectedGraphic }: { selectedGraphic: __esri.Graphic }) => {",
-		"  const map = useMemo(() => {",
+		"prefix": "minimap",
+		"body": [
+		"function MiniMap({ selectedGraphic }: { selectedGraphic: __esri.Graphic }){",
+		"  const graphics = useMemo(() => {",
 		"    const graphic = selectedGraphic.clone();",
 		"    graphic.symbol = {",
 		"      type: \"simple-line\",",
 		"      color: [255, 0, 0],",
 		"      width: 2,",
 		"    };",
-		"    const map = new Map({",
-		"      basemap: \"topo-vector\",",
-		"      ground: \"world-elevation\",",
-		"      layers: [ new GraphicsLayer({  graphics: [graphic] }) ],",
-		"    });",
+		"    const graphics = new Collection([graphic]);",
 		"",
-		"    return map;",
+		"    return graphics;",
 		"  }, [selectedGraphic])",
 		"",
 		"  return (",
@@ -25,7 +21,8 @@
 		"        ground=\"world-elevation\"",
 		"        id=\"map\"",
 		"        center={selectedGraphic.geometry?.extent?.center}",
-		"        map={map}",
+		"        basemap=\"topo-vector\"",
+		"        graphics={graphics}",
 		"        spatialReference={selectedGraphic.geometry?.spatialReference}",
 		"        onarcgisViewReadyChange={async (event) => {",
 		"          await event.target.view?.goTo({ target: selectedGraphic.geometry, zoom: 13, tilt: 10 });",
@@ -34,7 +31,7 @@
 		"    </div>",
 		"  );",
 		"};"
-	  ],
+		],
 	  "description": "Creates a MiniMap component with ArcGIS SceneView"
 	},
 	
@@ -42,17 +39,23 @@
 		"prefix": "minimap imports",
 		"body": [
 		"import \"@arcgis/map-components/components/arcgis-scene\";",
-		"import GraphicsLayer from \"@arcgis/core/layers/GraphicsLayer\";",
-		"import Map from \"@arcgis/core/Map\";"
+		"import Collection from \"@arcgis/core/core/Collection\";",
 		],
 		"description": "Imports for ArcGIS components and modules"
 	},
 
 	"Selected Graphic State": {
-    "prefix": "minimap state",
-    "body": [
-      "const [ selectedGraphic, setSelectedGraphic ] = React.useState<undefined | null | __esri.Graphic>(undefined);"
-    ],
-    "description": "Creates a useState hook for selectedGraphic"
-  	}
+		"prefix": "minimap state",
+		"body": [
+		"const [ selectedGraphic, setSelectedGraphic ] = React.useState<undefined | null | __esri.Graphic>(undefined);"
+		],
+		"description": "Creates a useState hook for selectedGraphic"
+  	},
+	"Selected Graphic Set": {
+		"prefix": "minimap set selectedGraphic",
+		"body": [
+		"setSelectedGraphic(event.target.input);"
+		],
+		"description": "Sets the selectedGraphic state"
+	}
   }
