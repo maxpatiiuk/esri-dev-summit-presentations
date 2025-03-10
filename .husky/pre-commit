@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Lint all staged files using Prettier and ESLint. Prevent the commit if
+# linting does not pass
+#
+# See /lint-staged.config.js
+
+# Don't execute the hook for merge or rebase commits.
+if [ -e ".git/MERGE_HEAD" ] || [ -d ".git/rebase-merge" ] || [ -d ".git/rebase-apply" ]; then
+  exit 0
+fi
+
+# Redirect output to stderr.
+exec 1>&2
+
+npm run lint

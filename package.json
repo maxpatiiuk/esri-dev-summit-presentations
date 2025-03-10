@@ -1,15 +1,22 @@
 {
   "private": true,
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "lint": "lint-staged --config lint-staged.config.js",
+    "postinstall": "husky"
+  },
   "dependencies": {
-    "@slidev/cli": "^0.50.0-beta.6",
+    "@slidev/cli": "^51.3.0",
     "@slidev/theme-default": "latest",
-    "vue": "^3.5.12"
+    "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@arcgis/eslint-config": "~4.32.11",
     "@maxpatiiuk/prettier-config": "^2.0.0",
-    "playwright-chromium": "^1.49.1",
-    "prettier": "^3.0.3"
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "playwright-chromium": "^1.51.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-slidev": "^1.0.5"
   }
 }
