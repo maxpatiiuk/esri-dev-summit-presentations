@@ -254,19 +254,19 @@ layout: intro
 
 # Frameworks
 
-- Frameworks make app development easier by providing more structure and declarative rendering
-- React is most popular, but Angular and Vue also support web components
-- Web components work in most major frameworks
+- Frameworks make app development easier by providing more structure to the way we write applications
+- React is most popular, but Angular and Vue are also widely used
+- Web components work in most major frameworks because they are standards-based
 
 ---
 
 # React ⚛️
 
 - Most popular framework / library
+- Encourages building app from "components" - reusable building blocks
 - Top down data flow
 - Declarative rendering and events
   - JSX syntax, which is a mix of JavaScript and HTML
-- Encourages building app from "components" - reusable building blocks
 - Easy state management with "hooks"
 - React19 has support for web components out of the box
 
@@ -426,8 +426,8 @@ const handleElevationProfileChange = (event) => {
 }
 
 return (
-  <calcite-chip id="distance">{distance}</calcite-chip>
-  <calcite-chip id="elevation">{elevation}</calcite-chip>
+  {distance && (<calcite-chip id="distance">{distance}</calcite-chip>)}
+  {elevation && (<calcite-chip id="elevation">{elevation}</calcite-chip>)}
   <arcgis-elevation-profile
     onarcgisPropertyChange={handleElevationProfileChange}
   ></arcgis-elevation-profile>
@@ -450,19 +450,20 @@ Declarative rendering makes it easier to understand what the component will look
 
 ---
 
+# Summary of benefits from react
 
 # TypeScript 🦾
 
 - Typescript is a superset of JavaScript
 - Adds static types to JavaScript
 - Improves developer experience and code quality
-- The Maps SDK's components and Calcite come with TypeScript definitions out of the box
+- The Maps SDK's components and Calcite's components come with TypeScript definitions out of the box
 
 --- 
 layout: center
 ---
 
-# Demo: [Get started with React + Typescript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
+# Demo: [Get started with React + TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
 
 <!--
 - Show tsconfig
@@ -476,10 +477,11 @@ layout: center
 
 # Summary of benefits from TypeScript
 
-- Static types
 - Improved developer experience
+- Static types
 - Intellisense
 - Error checking
+- Give us more confidence in the code we write
 
 ---
 
@@ -488,39 +490,17 @@ layout: center
   - npm: `@arcgis/map-components-react`
   - Encourage you to use React 19 going forward where no wrapper is needed
 
+- Calcite React 18 wrapper
+  - npm: `@esri/calcite-components-react`
 
 ---
-layout: intro
----
-
-# Other component<br>packages
-
----
-
-# Charts? Coding? Other components?
-
-
----
-layout: intro
----
-
-# Final notes
-
-
----
-
 
 # Other frameworks
 
-Angular and Vue also support web components.
-(Show Angular get starter page in docs).
-For Vue, show JS API resources sample?
-Web components work in all.
-
-> Show jsapi-resources - many great starter apps there
-
-\*React 18 required wrappers which we provide. Not needed in React 19.
-
+- Angular and Vue also support web components.
+- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/get-started-angular/)
+- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
+- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue) repo has samples for all frameworks
 
 ---
 

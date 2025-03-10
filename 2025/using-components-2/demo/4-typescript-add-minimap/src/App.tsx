@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-navigation";
 import "@esri/calcite-components/components/calcite-navigation-logo";
@@ -7,15 +7,50 @@ import "@esri/calcite-components/components/calcite-chip";
 import "@esri/calcite-components/components/calcite-chip-group";
 import "@arcgis/map-components/components/arcgis-map";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
+import "@arcgis/map-components/components/arcgis-scene";
+import Collection from "@arcgis/core/core/Collection";
 
 const round = (value: number) =>
   Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
+
+function MiniMap({ selectedGraphic }: { selectedGraphic: __esri.Graphic }){
+  const graphics = useMemo(() => {
+    const graphic = selectedGraphic.clone();
+    graphic.symbol = {
+      type: "simple-line",
+      color: [255, 0, 0],
+      width: 2,
+    };
+    const graphics = new Collection([graphic]);
+
+    return graphics;
+  }, [selectedGraphic])
+
+  return (
+    <div id="minimap" style={{ position: "absolute", top: "2rem", right: "2rem", width: "300px", height: "200px", zIndex: 1000, boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)" }}>
+      <arcgis-scene
+        ground="world-elevation"
+        id="map"
+        center={selectedGraphic.geometry?.extent?.center}
+        basemap="topo-vector"
+        graphics={graphics}
+        spatialReference={selectedGraphic.geometry?.spatialReference}
+        onarcgisViewReadyChange={async (event) => {
+          await event.target.view?.goTo({ target: selectedGraphic.geometry, zoom: 13, tilt: 10 });
+        }}
+      ></arcgis-scene>
+    </div>
+  );
+};
 
 function App() {
   const [distance, setDistance] = React.useState<undefined | string>(undefined);
   const [elevation, setElevation] = React.useState<undefined | string>(
     undefined,
   );
+  const [selectedGraphic, setSelectedGraphic] = React.useState<
+    undefined | null | __esri.Graphic
+  >(undefined);
 
   const handleElevationProfileChange = (
     event: HTMLArcgisElevationProfileElement["arcgisPropertyChange"],
@@ -36,10 +71,15 @@ function App() {
       const distance = round(statistics.maxDistance);
       setDistance(`${distance} ${event.target.effectiveUnits.distance}`);
     }
+
+    const inputFeature = event.target.input;
+
+    setSelectedGraphic(inputFeature);
   };
 
   return (
     <calcite-shell className="custom-theme">
+      {selectedGraphic && <MiniMap selectedGraphic={selectedGraphic} />}
       <calcite-navigation slot="header">
         <calcite-navigation-logo
           slot="logo"
@@ -54,36 +94,31 @@ function App() {
           <calcite-panel id="map-container">
             <arcgis-map
               ground="world-elevation"
-              itemId="5fe7222cfd4e41cab4321cc1fde66cc2"
+              item-id="5fe7222cfd4e41cab4321cc1fde66cc2"
               id="map"
             ></arcgis-map>
             <calcite-panel id="elevation-panel" heading="Elevation profile">
               <calcite-chip-group slot="header-actions-end" label="Statistics">
-                {distance && (
-                  <calcite-chip
-                    icon="walking-distance"
-                    id="distance"
-                    label="Walking Distance"
-                  >
-                    {distance}
-                  </calcite-chip>
+                { distance && (<calcite-chip
+                  icon="walking-distance"
+                  id="distance"
+                  label="Walking Distance"
+                >
+                  {distance}
+                </calcite-chip>
                 )}
-                {elevation && (
-                  <calcite-chip
-                    icon="altitude"
-                    id="elevation"
-                    label="Elevation"
-                  >
-                    {elevation}
-                  </calcite-chip>
+                { elevation && (
+                <calcite-chip icon="altitude" id="elevation" label="Elevation">
+                  {elevation}
+                </calcite-chip>
                 )}
               </calcite-chip-group>
               <arcgis-elevation-profile
-                referenceElement="map"
+                reference-element="map"
                 unit="imperial"
-                hideClearButton
-                hideLegend
-                hideSettingsButton
+                hide-clear-button
+                hide-legend
+                hide-settings-button
                 onarcgisPropertyChange={handleElevationProfileChange}
               ></arcgis-elevation-profile>
             </calcite-panel>
