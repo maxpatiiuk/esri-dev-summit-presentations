@@ -12,7 +12,7 @@ function round(value) {
   return Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 }
 
-const App = () => {
+function App() {
   const [distance, setDistance] = useState(undefined);
   const [elevation, setElevation] = useState(undefined);
 

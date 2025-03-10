@@ -11,7 +11,7 @@ import "@arcgis/map-components/components/arcgis-elevation-profile";
 const round = (value: number) =>
   Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
-const App = () => {
+function App() {
   const [distance, setDistance] = React.useState<undefined | string>(undefined);
   const [elevation, setElevation] = React.useState<undefined | string>(
     undefined,
