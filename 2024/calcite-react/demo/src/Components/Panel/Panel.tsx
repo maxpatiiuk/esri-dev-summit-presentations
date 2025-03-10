@@ -25,7 +25,9 @@ export const Panel = ({ map, referenceElement, panelHeading }: PanelProps) => {
   // Step 14: useEffect - when features component and view is available, set up click handle
   // On click, open the clicked feature if any
   useEffect(() => {
-    if (!featuresComponent || map == null) return;
+    if (!featuresComponent || map == null) {
+      return;
+    }
 
     // Step 15: disable popup for features widget as feature information will be rendered in side panel
     map.view.popupEnabled = false;

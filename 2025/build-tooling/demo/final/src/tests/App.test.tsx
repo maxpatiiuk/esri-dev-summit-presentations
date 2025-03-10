@@ -16,9 +16,9 @@ const placesServiceInfo = {
 };
 
 const worker = setupWorker(
-  http.get(placesServiceInfo.endpoint, () => {
-    return HttpResponse.json(nearbySchoolsStub);
-  }),
+  http.get(placesServiceInfo.endpoint, () =>
+    HttpResponse.json(nearbySchoolsStub),
+  ),
   http.get("*", () => {
     passthrough();
   }),
@@ -99,9 +99,9 @@ it("loads nearby schools for the selected feature", async () => {
 it("shows an error when loading schools fails", async () => {
   const { container } = results;
   worker.use(
-    http.get(placesServiceInfo.endpoint, () => {
-      return HttpResponse.json({ error: "error" }, { status: 500 });
-    }),
+    http.get(placesServiceInfo.endpoint, () =>
+      HttpResponse.json({ error: "error" }, { status: 500 }),
+    ),
   );
   const mapPoint = new Point({ latitude: 40.9384275, longitude: -73.735152 });
   const event = new CustomEvent("arcgisViewClick", { detail: { mapPoint } });

@@ -11,14 +11,14 @@ import "@arcgis/map-components/components/arcgis-legend";
 import "@arcgis/map-components/components/arcgis-map";
 
 import type Polygon from "@arcgis/core/geometry/Polygon";
-import Graphic from "@arcgis/core/Graphic";
-import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol";
-import Point from "@arcgis/core/geometry/Point";
-import Collection from "@arcgis/core/core/Collection";
-import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils";
+import Graphic from "@arcgis/core/Graphic.js";
+import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol.js";
+import Point from "@arcgis/core/geometry/Point.js";
+import Collection from "@arcgis/core/core/Collection.js";
+import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils.js";
 import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
 
-import { Result, ServiceInfo } from "./interfaces";
+import type { Result, ServiceInfo } from "./interfaces";
 
 const featureActions = new Collection([
   {
@@ -66,7 +66,9 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
     event: HTMLArcgisFeaturesElement["arcgisTriggerAction"],
   ) {
     const { action } = event.detail;
-    if (action.id !== "load-schools" || !selectedFeature?.geometry) return;
+    if (action.id !== "load-schools" || !selectedFeature?.geometry) {
+      return;
+    }
 
     // Abort any existing requests
     abortController.current?.abort();
@@ -95,7 +97,9 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
       return;
     }
 
-    if (abortController.current.signal.aborted) return;
+    if (abortController.current.signal.aborted) {
+      return;
+    }
 
     // Create graphics for each school and set the result
     const graphics = response.results.map((result) => {

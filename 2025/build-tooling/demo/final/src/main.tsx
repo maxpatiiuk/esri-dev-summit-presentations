@@ -4,16 +4,15 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { ApiKeyManager } from "@esri/arcgis-rest-request";
 import "./index.css";
 
-const App = React.lazy(() => import("./App"));
-const Splash = React.lazy(() => import("./Splash"));
+const App = React.lazy(async () => await import("./App"));
+const Splash = React.lazy(async () => await import("./Splash"));
 
 const placesServiceInfo = {
   authentication: ApiKeyManager.fromKey(import.meta.env.VITE_API_KEY),
   // Use a local proxy in development mode
-  endpoint:
-    import.meta.env.DEV === true
-      ? "/arcgis/rest/services/places-service/v1/places/near-point"
-      : undefined,
+  endpoint: import.meta.env.DEV
+    ? "/arcgis/rest/services/places-service/v1/places/near-point"
+    : undefined,
 };
 
 const root = document.getElementById("root");

@@ -13,12 +13,14 @@ const chaosMonkey = (entries: ChaosMonkeyEntry[]) => ({
     console.log("Chaos monkey is on the loose!");
     server.middlewares.use((req, res, next) => {
       const entry = entries.find((entry) => req.url?.startsWith(entry.apiUrl));
-      if (!req.url || !entry) return next();
+      if (!req.url || !entry) {
+        return void next();
+      }
 
       const random = Math.random();
-      const delay = entry.delay || 0;
-      const chaosErrors = entry.chaosErrors || [400, 401, 403, 404, 500];
-      const chaosRatio = entry.chaosRatio || 0.1;
+      const delay = entry.delay ?? 0;
+      const chaosErrors = entry.chaosErrors ?? [400, 401, 403, 404, 500];
+      const chaosRatio = entry.chaosRatio ?? 0.1;
 
       if (random < chaosRatio) {
         const error = chaosErrors[Math.floor(random * chaosErrors.length)];

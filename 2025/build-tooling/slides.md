@@ -13,7 +13,6 @@ Max Patiiuk, Max Payson
 is: feedback
 ---
 
-
 ---
 
 # Agenda
@@ -37,7 +36,8 @@ Quick tour of app building...based on what Esri teams are doing
 
 # What are build tools?
 
-Build tools transform the code that is easiest for developers to write into code that is most performant for the browser to run.
+Build tools transform the code that is easiest for developers to write into code
+that is most performant for the browser to run.
 
 ```mermaid
 %%{init: {'flowchart': {'nodeSpacing': 25 }}}%%
@@ -73,14 +73,13 @@ graph LR
 - Optimize performance (reduce file sizes, split bundles...)
 - Allow extending capabilities with plugins
 
-
 ---
 
 # Examples of build tools
 
-* Vite
-* Parcel
-* Webpack
+- Vite
+- Parcel
+- Webpack
 
 ---
 
@@ -91,13 +90,11 @@ graph LR
 - Great developer experience
 - Large and rapidly growing community
 
-
 ---
 layout: center
 ---
 
 # Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/1-javascript)
-
 
 <!--
 - Create a Vite starter project
@@ -106,7 +103,6 @@ layout: center
   - Similar to no-build-step apps
 - Show live update
 -->
-
 
 ---
 
@@ -119,13 +115,11 @@ layout: center
   - `return <h1>Hello World! 👋</h1>;`
   - JavaScript code in HTML-like syntax
 
-
 ---
 layout: center
 ---
 
 # Demo: [Add basic React 19](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/2-react)
-
 
 ---
 
@@ -135,7 +129,6 @@ layout: center
 - Provides consistent and accessible UI out of the box
 - Works with any framework
 
-
 ---
 
 # ArcGIS Maps SDK for JavaScript
@@ -143,13 +136,11 @@ layout: center
 - The most powerful Web GIS mapping library
 - Now simpler to use than ever thanks to web components
 
-
 ---
 layout: center
 ---
 
 # Demo: [Add Calcite and JS Maps SDK components](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/3-web-components)
-
 
 ---
 
@@ -164,19 +155,16 @@ Most developers see great benefit from adding TypeScript to their projects:
 - Encourages self-documenting code
 - Essential part of every ArcGIS Online app at Esri
 
-
 <!--
 That's a lot of promises - lets see TypeScript in action by adding it to our
 project.
 -->
-
 
 ---
 layout: center
 ---
 
 # Demo: [Adopt TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/4-typescript)
-
 
 ---
 
@@ -187,19 +175,18 @@ layout: center
 - Catch some issues that TypeScript can't (like bad coding patterns)
 - Autofix some issues for you
 
-
 ---
 layout: center
 ---
 
 # Demo: [Use ESLint](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/5-eslint)
 
-
 ---
 
 # Publishing
 
-- You learned Vite, React, Calcite, Map Components, TypeScript, ESLint - now what?
+- You learned Vite, React, Calcite, Map Components, TypeScript, ESLint - now
+  what?
 - Let's publish the app!
 
 <!--
@@ -226,7 +213,6 @@ Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
 - Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
 -->
 
-
 ---
 
 # Fun fact
@@ -245,7 +231,6 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - **TypeScript 🦾** catches your bugs before your users do
 - **ESLint 🚩** ensures the code style stays consistent
 
-
 ---
 layout: intro
 ---
@@ -256,9 +241,9 @@ layout: intro
 
 # Lazy loading
 
-* Only load source files when needed
-* Split app into multiple entry points
-* Simplest split: by page or route
+- Only load source files when needed
+- Split app into multiple entry points
+- Simplest split: by page or route
 
 ---
 layout: center
@@ -271,10 +256,11 @@ layout: center
 # Testing
 
 Testing is great, Vitest is also great!
-* Fast with familiar API
-* Supports modern language features
-* Run tests in Node or the browser
-* Direct integration with Vite
+
+- Fast with familiar API
+- Supports modern language features
+- Run tests in Node or the browser
+- Direct integration with Vite
 
 ---
 layout: center
@@ -282,13 +268,12 @@ layout: center
 
 # Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/build-tooling/demo/7-tests)
 
-
 ---
 
 # Custom plugins
 
-* Vite plugins are flexible and easy to write
-* Powerful way to enhance builds or developer workflows
+- Vite plugins are flexible and easy to write
+- Powerful way to enhance builds or developer workflows
 
 ---
 layout: center
@@ -310,8 +295,8 @@ layout: center
 
 - Build tools like Vite help your app grow and stay maintainable
 - They offer plenty of control and developer experience enhancements
-- They pair well with testing tools like Vitest to ensure your app is production-ready
-
+- They pair well with testing tools like Vitest to ensure your app is
+  production-ready
 
 ---
 layout: center

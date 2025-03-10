@@ -9,7 +9,6 @@
 - Use react hooks to manage state
 - assign event handlers directly to JSX elements
 
-
 ## Technologies used:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)

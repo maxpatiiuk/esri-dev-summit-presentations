@@ -13,7 +13,9 @@ const chaosMonkey = (entries: ChaosMonkeyEntry[]) => ({
     console.log("Chaos monkey is on the loose!");
     server.middlewares.use((req, res, next) => {
       const entry = entries.find((entry) => req.url?.startsWith(entry.apiUrl));
-      if (!req.url || !entry) return next();
+      if (!req.url || !entry) {
+        return void next();
+      }
 
       const random = Math.random();
       const delay = entry.delay ?? 0;

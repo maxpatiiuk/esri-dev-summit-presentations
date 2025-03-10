@@ -23,7 +23,7 @@ export default defineConfig({
       instances: [{ browser: "chromium" }],
     },
     onConsoleLog: (msg) => {
-      const ignores = [/^Lit is in dev mode/, /^Using Calcite Components/];
+      const ignores = [/^Lit is in dev mode/u, /^Using Calcite Components/u];
       return !ignores.some((re) => re.test(msg));
     },
   },

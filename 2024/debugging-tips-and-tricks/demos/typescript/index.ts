@@ -1,5 +1,5 @@
-import Map from '@arcgis/core/Map';
-import MapView from '@arcgis/core/views/MapView';
+import Map from '@arcgis/core/Map.js';
+import MapView from '@arcgis/core/views/MapView.js';
 
 function createMap(
   basemap: string,

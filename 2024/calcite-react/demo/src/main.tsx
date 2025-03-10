@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import esriConfig from '@arcgis/core/config';
+import esriConfig from '@arcgis/core/config.js';
 
 import App from './App.tsx';
 

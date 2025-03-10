@@ -16,7 +16,7 @@
   padding-left: 4.5rem;
 }
 
-.slidev-layout:is(.cover, .intro, [is="social"]) p {
+.slidev-layout:is(.cover, .intro, [is='social']) p {
   color: #ffad29;
 }
 
@@ -30,7 +30,7 @@
 
 .slidev-page > img {
   position: absolute;
-  z-index: -1;;
+  z-index: -1;
 }
 
 .slidev-layout ul {
