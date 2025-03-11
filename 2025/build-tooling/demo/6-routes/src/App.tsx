@@ -5,7 +5,7 @@ import "@arcgis/map-components/components/arcgis-features";
 import "@arcgis/map-components/components/arcgis-legend";
 import "@arcgis/map-components/components/arcgis-map";
 
-import Graphic from "@arcgis/core/Graphic";
+import type Graphic from "@arcgis/core/Graphic.js";
 
 function App() {
   const featuresElement = useRef<HTMLArcgisFeaturesElement>(null);

@@ -8,12 +8,12 @@ import "@esri/calcite-components/components/calcite-chip-group";
 import "@arcgis/map-components/components/arcgis-map";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
-const round = (value: number) =>
+const round = (value?: number) =>
   Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
 function App() {
-  const [distance, setDistance] = React.useState<undefined | string>(undefined);
-  const [elevation, setElevation] = React.useState<undefined | string>(
+  const [distance, setDistance] = React.useState<string | undefined>(undefined);
+  const [elevation, setElevation] = React.useState<string | undefined>(
     undefined,
   );
 
@@ -92,6 +92,6 @@ function App() {
       </div>
     </calcite-shell>
   );
-};
+}
 
 export default App;

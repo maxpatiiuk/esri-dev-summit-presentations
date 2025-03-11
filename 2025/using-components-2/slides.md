@@ -13,17 +13,23 @@ Omar Kawach, Max Patiiuk, Nick Romano
 is: feedback
 ---
 
-
 ---
 
 # Previous session (yesterday)
 
 App Development with Components Part 1: Core Patterns
 
-> Join us for the third session in our three-part series on building applications with the ArcGIS Maps SDK for JavaScript. This session is focused on building the user experience in your web app with the SDK's components and Calcite Design System. Calcite provides a library of patterns, icons, and user-friendly, configurable web components that enable developers to easily build responsive, accessible web applications. We'll demonstrate how the components can be used together to build intuitive yet powerful experiences in your apps.
+> Join us for the third session in our three-part series on building
+> applications with the ArcGIS Maps SDK for JavaScript. This session is focused
+> on building the user experience in your web app with the SDK's components and
+> Calcite Design System. Calcite provides a library of patterns, icons, and
+> user-friendly, configurable web components that enable developers to easily
+> build responsive, accessible web applications. We'll demonstrate how the
+> components can be used together to build intuitive yet powerful experiences in
+> your apps.
 
-If you missed the previous session, we have a recording. These 3-part sessions build on top of each other
-
+If you missed the previous session, we have a recording. These 3-part sessions
+build on top of each other
 
 ---
 
@@ -37,7 +43,6 @@ If you missed the previous session, we have a recording. These 3-part sessions b
   - Bundlers
   - Frameworks
 
-
 ---
 
 # Calcite Design System 💎
@@ -47,7 +52,6 @@ If you missed the previous session, we have a recording. These 3-part sessions b
 - Works with any framework
 - Will be covered in more detail by the 3rd session in this 3-part series
 
-
 ---
 
 # ArcGIS Maps SDK for JavaScript 📍
@@ -55,20 +59,22 @@ If you missed the previous session, we have a recording. These 3-part sessions b
 - A comprehensive and powerful WebGIS mapping library
 - Now simpler to use thanks to web components
 - Core JavaScript API
-  - Provides the main functionality. Contains the classes, methods, properties, events and type definitions for all the layers, components, visualization and client-side analysis functionality.
+  - Provides the main functionality. Contains the classes, methods, properties,
+    events and type definitions for all the layers, components, visualization
+    and client-side analysis functionality.
 - JavaScript Maps SDK Components
-  - Standards-based web components designed to encapsulate complex functionality (core API) and styling (Calcite) into small HTML markup chunks (i.e., UI)
+  - Standards-based web components designed to encapsulate complex functionality
+    (core API) and styling (Calcite) into small HTML markup chunks (i.e., UI)
 - Documentation
-   - Get started, programming patterns, tutorials, samples and API / component references
-
+  - Get started, programming patterns, tutorials, samples and API / component
+    references
 
 ---
 
 # index.html demo
 
-> in previous session you saw how to write quick index.html app
-> quick to get started and easy for simple apps
-
+> in previous session you saw how to write quick index.html app quick to get
+> started and easy for simple apps
 
 ---
 layout: intro
@@ -76,13 +82,12 @@ layout: intro
 
 # Using Bundlers
 
-
 ---
-
 
 # What are bundlers?
 
-Bundlers transform the code that is easiest for developers to write into code that is most performant for the browser to run.
+Bundlers transform the code that is easiest for developers to write into code
+that is most performant for the browser to run.
 
 ```mermaid
 %%{init: {'flowchart': {'nodeSpacing': 25 }}}%%
@@ -118,14 +123,13 @@ graph LR
 - Optimize performance (reduce file sizes, split bundles...)
 - Allow extending capabilities with plugins
 
-
 ---
 
 # Examples of bundlers
 
-* Vite
-* Parcel
-* Webpack
+- Vite
+- Parcel
+- Webpack
 
 ---
 
@@ -136,13 +140,11 @@ graph LR
 - Great developer experience
 - Large and rapidly growing community
 
-
 ---
 layout: center
 ---
 
 # Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/1-javascript)
-
 
 <!--
 - Describe converting index.html app to Vite
@@ -151,7 +153,6 @@ layout: center
 - Show index.html, main.js
 - Show live update
 -->
-
 
 ---
 
@@ -177,7 +178,6 @@ package.json:
   }
 ```
 
-
 ---
 
 # Semantic versioning
@@ -188,26 +188,25 @@ package.json:
 - **minor**: new features - safe to update
 - **patch**: bug fixes - safe to update
 
-
 ---
 
 # Semantic versioning ranges
 
-Rather than specifying an exact version, you can let NPM decide which version to install:
+Rather than specifying an exact version, you can let NPM decide which version to
+install:
 
 - `^3.0.3` - any version from 3.0.3 to 4.0.0 (features and bug fixes)
 - `~3.0.3` - any version from 3.0.3 to 3.1.0 (only bug fixes)
 
 Allows for dependency sharing (multiple packages can use single Calcite)
 
-
 ---
 
 # Exceptions to semantic versioning
 
-- `typescript` - does not follow semantic versioning - any version can have breaking changes
+- `typescript` - does not follow semantic versioning - any version can have
+  breaking changes
 - `@arcgis/*` - follows `4.<major>.<patch>` instead
-
 
 ---
 
@@ -234,15 +233,15 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 
 (with help from [Slidev](https://sli.dev/))
 
-
 ---
 
 # Asset handling
 
 - By default, component assets are loaded from Esri's fast CDN
 - This includes translation files and images
-- They cab be made [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/) if needed
-
+- They can be made
+  [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/)
+  if needed
 
 ---
 layout: intro
@@ -254,7 +253,8 @@ layout: intro
 
 # Frameworks
 
-- Frameworks make app development easier by providing more structure to the way we write applications
+- Frameworks make app development easier by providing more structure to the way
+  we write applications
 - React is most popular, but Angular and Vue are also widely used
 - Web components work in most major frameworks because they are standards-based
 
@@ -320,10 +320,7 @@ layout: two-cols
 
 <template v-slot:default>
 
-
-
 # Vanilla JavaScript: <br/> Setting Events and Properties
-
 
 #### HTML
 
@@ -331,16 +328,11 @@ layout: two-cols
 <body>
   <calcite-chip id="distance"></calcite-chip>
   <calcite-chip id="elevation"></calcite-chip>
-  <arcgis-map
-    item-id="5fe7222cfd4e41cab4321cc1fde66cc2"
-    id="map"
-  >
-  </arcgis-map>
-  <arcgis-elevation-profile
-    reference-element="map"
-  ></arcgis-elevation-profile>
+  <arcgis-map item-id="5fe7222cfd4e41cab4321cc1fde66cc2" id="map"> </arcgis-map>
+  <arcgis-elevation-profile reference-element="map"></arcgis-elevation-profile>
 </body>
 ```
+
 </template>
 
 <template v-slot:right v-click>
@@ -349,17 +341,17 @@ layout: two-cols
 
 ```js
 // Get references to the components we need to interact with
-const elevationProfile = document.querySelector("arcgis-elevation-profile");
-const distanceElement = document.getElementById("distance");
-const elevationElement = document.getElementById("elevation");
+const elevationProfile = document.querySelector('arcgis-elevation-profile');
+const distanceElement = document.getElementById('distance');
+const elevationElement = document.getElementById('elevation');
 if (!elevationProfile || !distanceElement || !elevationElement) {
-  throw Error("Error: Unable to find DOM elements");
+  throw Error('Error: Unable to find DOM elements');
 }
 
 // Watch for "progress" changes on the elevation profile component
-elevationProfile.addEventListener("arcgisPropertyChange", (event) => {
+elevationProfile.addEventListener('arcgisPropertyChange', (event) => {
   // 1 = complete
-  if (event.detail.name !== "progress" || elevationProfile.progress !== 1) {
+  if (event.detail.name !== 'progress' || elevationProfile.progress !== 1) {
     return;
   }
   const profiles = elevationProfile.profiles;
@@ -370,6 +362,7 @@ elevationProfile.addEventListener("arcgisPropertyChange", (event) => {
   distanceElement.textContent = `${distance} ${elevationProfile.effectiveUnits.distance}`;
 });
 ```
+
 </template>
 
 <!--
@@ -378,7 +371,6 @@ Notes
 - Query selectors are used to get references to the components.
 - Event listeners are added to listen for changes on the elevation profile component.
 - You can imagine how this code would grow in complexity as more components are added to the page.
-
 -->
 
 ---
@@ -445,7 +437,6 @@ This makes it easier to understand the component's behavior and how it interacts
 React also provides a way to manage state and lifecycle events in a more predictable way.
 
 Declarative rendering makes it easier to understand what the component will look like based on its state.
-
 -->
 
 ---
@@ -457,9 +448,10 @@ Declarative rendering makes it easier to understand what the component will look
 - Typescript is a superset of JavaScript
 - Adds static types to JavaScript
 - Improves developer experience and code quality
-- The Maps SDK's components and Calcite's components come with TypeScript definitions out of the box
+- The Maps SDK's components and Calcite's components come with TypeScript
+  definitions out of the box
 
---- 
+---
 layout: center
 ---
 
@@ -486,7 +478,9 @@ layout: center
 ---
 
 # Framework specific component wrappers
+
 - React 18 wrapper package for our components
+
   - npm: `@arcgis/map-components-react`
   - Encourage you to use React 19 going forward where no wrapper is needed
 
@@ -500,7 +494,8 @@ layout: center
 - Angular and Vue also support web components.
 - [Getting started with Angular](https://developers.arcgis.com/javascript/latest/get-started-angular/)
 - [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
-- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue) repo has samples for all frameworks
+- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
+  repo has samples for all frameworks
 
 ---
 
@@ -513,25 +508,31 @@ Deeper Vite and Vitest guide - shows how Esri is building apps
 **Where**: Smoketree C | Palm Springs Convention Center
 
 > Learn how Esri's development teams are leveraging modern tools like Vite to
-build fast, dynamic Web GIS applications. With features such as lazy loading,
-client-side routing, hot module replacement, and lightning-fast builds, Vite
-streamlines the entire development workflow from bundling to deployment. Paired
-with Vitest for testing, these tools help ensure that your apps are both
-high-performing and production-ready.
-
+> build fast, dynamic Web GIS applications. With features such as lazy loading,
+> client-side routing, hot module replacement, and lightning-fast builds, Vite
+> streamlines the entire development workflow from bundling to deployment.
+> Paired with Vitest for testing, these tools help ensure that your apps are
+> both high-performing and production-ready.
 
 ---
 
 # Next session
 
-App Development with Components Part 3: User Experience (deeper Calcite User Experience good practices)
+App Development with Components Part 3: User Experience (deeper Calcite User
+Experience good practices)
 
 **When**: Tomorrow (Thursday, March 13) | 1:00 PM - 2:00 PM PDT
 
 **Where**: Primrose A | Palm Springs Convention Center
 
-> Join us for the third session in our three-part series on building applications with the ArcGIS Maps SDK for JavaScript. This session is focused on building the user experience in your web app with the SDK's components and Calcite Design System. Calcite provides a library of patterns, icons, and user-friendly, configurable web components that enable developers to easily build responsive, accessible web applications. We'll demonstrate how the components can be used together to build intuitive yet powerful experiences in your apps.
-
+> Join us for the third session in our three-part series on building
+> applications with the ArcGIS Maps SDK for JavaScript. This session is focused
+> on building the user experience in your web app with the SDK's components and
+> Calcite Design System. Calcite provides a library of patterns, icons, and
+> user-friendly, configurable web components that enable developers to easily
+> build responsive, accessible web applications. We'll demonstrate how the
+> components can be used together to build intuitive yet powerful experiences in
+> your apps.
 
 ---
 layout: center
@@ -539,7 +540,8 @@ layout: center
 
 # Questions?
 
-ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks
+ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using
+Frameworks
 
 Demos and additional resources available at:
 [bit.ly/esri-2025-using-components-2](https://bit.ly/esri-2025-using-components-2)

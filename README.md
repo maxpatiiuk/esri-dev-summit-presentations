@@ -1,6 +1,5 @@
 # Esri DevSummit Presentations
 
-
 ## 2025
 
 ### [ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks](./2025/using-components-2)
@@ -19,7 +18,8 @@ offered by frameworks that streamline web mapping application development
 compared to plain JavaScript.
 
 Presenters: [Omar Kawach](https://github.com/omarkawach) &
-[Max Patiiuk](https://github.com/maxpatiiuk) & [Nicholas Romano](https://github.com/nick-romano)
+[Max Patiiuk](https://github.com/maxpatiiuk) &
+[Nicholas Romano](https://github.com/nick-romano)
 
 ### [ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling](./2025/build-tooling)
 

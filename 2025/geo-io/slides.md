@@ -26,7 +26,6 @@ Max Patiiuk
 
 <iframe style="width:90%;height:90%;margin:0 auto;" src="https://www.youtube.com/embed/Vp-_1FW4nd0?si=cDXjdgnm6Td9Pyi4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen"></iframe>
 
-
 ---
 layout: center
 ---
@@ -39,7 +38,6 @@ Features 3 modes:
 - Vampire - leach mass off NPCs and don't let others leach off you
 - Explorer - peacefully explore the map and collect particles
 
-
 ---
 layout: center
 ---
@@ -51,7 +49,6 @@ layout: center
 - TypeScript
 - React
 - JavaScript
-
 
 ---
 layout: center
@@ -69,7 +66,6 @@ layout: center
 />
 ```
 
-
 ---
 layout: center
 ---
@@ -77,9 +73,9 @@ layout: center
 ## Consumables
 
 - Rendering **100,000** Points using a client-side FeatureLayer
-- Each point it assigned a random `COLOR` attribute - ClassBreaksRenderer colors features based on it
+- Each point it assigned a random `COLOR` attribute - ClassBreaksRenderer colors
+  features based on it
 - Find consumables "consumed" by the player using a client side spatial query
-
 
 ---
 layout: center
@@ -90,7 +86,6 @@ layout: center
 - 1 GraphicsLayer
 - 1 Point Geometry for the Player
 - 11 Point Geometries for the NPCs
-
 
 ---
 layout: center
@@ -103,7 +98,6 @@ layout: center
 - else if there is prey nearby, pursue
 - else move in random direction
 
-
 ---
 layout: center
 ---
@@ -113,7 +107,6 @@ layout: center
 - Spawn in a random point - but only on land
 - If trying to spawn in water, try again
 - Using geometryOperators for this (containsOperator, projectOperator)
-
 
 ---
 layout: center
@@ -129,13 +122,11 @@ I was able to use the view model directly.
 
 That provides mouse, touchscreen and keyboard support.
 
-
 ---
 layout: center
 ---
 
 ## [Live Demo](https://maxpatiiuk.github.io/geo-io/)
-
 
 ---
 layout: center

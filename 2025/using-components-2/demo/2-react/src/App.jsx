@@ -55,9 +55,9 @@ function App() {
                   </calcite-chip>
                 )}
                 {elevation && (
-                <calcite-chip icon="altitude" id="elevation">
-                  {elevation}
-                </calcite-chip>
+                  <calcite-chip icon="altitude" id="elevation">
+                    {elevation}
+                  </calcite-chip>
                 )}
               </calcite-chip-group>
               <arcgis-elevation-profile
@@ -74,6 +74,6 @@ function App() {
       </div>
     </calcite-shell>
   );
-};
+}
 
 export default App;

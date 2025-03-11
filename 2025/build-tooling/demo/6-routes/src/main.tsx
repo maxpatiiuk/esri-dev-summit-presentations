@@ -3,8 +3,8 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router";
 import "./index.css";
 
-const App = React.lazy(() => import("./App"));
-const Splash = React.lazy(() => import("./Splash"));
+const App = React.lazy(async () => await import("./App"));
+const Splash = React.lazy(async () => await import("./Splash"));
 
 const root = document.getElementById("root");
 if (!root) {

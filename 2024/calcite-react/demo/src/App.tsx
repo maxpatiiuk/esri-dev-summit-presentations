@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 
 // Step 6: Import Calcite Shell
 // Please note: At React 19, we are expecting React to fully support web components which will eliminate the need for web component wrappers, but as of now we will use these.
@@ -23,7 +23,7 @@ interface AppProps {
   panelHeading: string;
 }
 
-function App({ webmap, title, panelHeading }: AppProps) {
+function App({ webmap, title, panelHeading }: AppProps): ReactNode {
   // Step 8: Set up state to store map to pass into other components (ArcgisFeatures in Panel)
   const [map, setMap] = useState<HTMLArcgisMapElement | null>(null);
   const mapId = 'arcgis-map';
