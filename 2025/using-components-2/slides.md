@@ -64,6 +64,23 @@ If you missed the previous session, we have a recording. These 3-part sessions b
 
 ---
 
+# Prebuilt versus building the SDK and Calcite
+ 
+- Script tag applications are quick to get started
+  - No build step, the SDK and Calcite are prebuilt for you via the ArcGIS CDN
+  - Only need a single HTML file
+  - Syntax for including modules:
+    - `require(["esri/WebMap"], (WebMap) => { /* code goes here */ });`
+- Building an application that scales is more involved
+  - Work with a bundler (Vite, Parcel, Webpack)
+  - Use a framework (React, Angular, Vue)
+    - Routing and state management
+  - Syntax for including modules:
+    - `import { WebMap } from "@arcgis/core/WebMap";`
+
+
+---
+
 # index.html demo
 
 > in previous session you saw how to write quick index.html app
