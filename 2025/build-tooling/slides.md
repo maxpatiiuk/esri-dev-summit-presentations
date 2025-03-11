@@ -130,13 +130,6 @@ layout: center
 - Works with any framework
 
 ---
-
-# ArcGIS Maps SDK for JavaScript
-
-- The most powerful Web GIS mapping library
-- Now simpler to use than ever thanks to web components
-
----
 layout: center
 ---
 
@@ -236,6 +229,13 @@ layout: intro
 ---
 
 # Enhance the app
+
+---
+
+# ArcGIS Maps SDK for JavaScript
+
+- Powerful GIS mapping library
+- Now simpler to use thanks to web components
 
 ---
 

@@ -1,4 +1,4 @@
-import type { ViteDevServer } from "vite";
+import type { Plugin, ViteDevServer } from "vite";
 
 interface ChaosMonkeyEntry {
   apiUrl: string;
@@ -7,7 +7,7 @@ interface ChaosMonkeyEntry {
   chaosErrors?: number[];
 }
 
-const chaosMonkey = (entries: ChaosMonkeyEntry[]) => ({
+const chaosMonkey = (entries: ChaosMonkeyEntry[]): Plugin => ({
   name: "chaos-monkey",
   configureServer(server: ViteDevServer) {
     console.log("Chaos monkey is on the loose!");

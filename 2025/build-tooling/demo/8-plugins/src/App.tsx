@@ -91,6 +91,7 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
         endpoint: placesServiceInfo.endpoint,
       });
     } catch (error) {
+      // if (abortController.current.signal.aborted) return;
       if (error instanceof Error) {
         setSchoolResults({ error });
       }
