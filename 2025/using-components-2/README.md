@@ -58,6 +58,7 @@ and
 - [Demo app](./demo/2-react)
   - [Get started steps](./demo/2-react/README.md#key-changes-from-1-javascript)
 - [Documentation](https://reactjs.org/)
+- [TypeScript guide](https://developers.arcgis.com/javascript/latest/get-started-react/#bonus-typescript)
 
 ### TypeScript 🦾
 
