@@ -72,7 +72,7 @@ build on top of each other
 ---
 
 # Prebuilt versus building the SDK and Calcite
- 
+
 - Script tag applications are quick to get started
   - No build step - the SDK and Calcite are prebuilt for you via the ArcGIS CDN
   - Only need a single HTML file
@@ -84,7 +84,6 @@ build on top of each other
     - Routing and state management
   - Syntax for including modules:
     - `import { WebMap } from "@arcgis/core/WebMap";`
-
 
 ---
 
@@ -144,18 +143,13 @@ graph LR
 
 # Examples of bundlers
 
-- Vite
+- Vite ⚡
+  - Most popular bundler today
+  - Used by many Esri teams
+  - Great developer experience
+  - Large and rapidly growing community
 - Parcel
 - Webpack
-
----
-
-# Vite ⚡
-
-- Most popular bundler today
-- Used by many Esri teams
-- Great developer experience
-- Large and rapidly growing community
 
 ---
 layout: center
@@ -170,6 +164,13 @@ layout: center
 - Show index.html, main.js
 - Show live update
 -->
+
+---
+
+# Dependencies
+
+- Your application can consume other packages
+- Use npmjs.com to find packages or find out the latest version number
 
 ---
 
@@ -221,9 +222,10 @@ Allows for dependency sharing (multiple packages can use single Calcite)
 
 # Exceptions to semantic versioning
 
+- `@arcgis/*` - follows `4.<major>.<patch>` instead
+  - Use `~` over `^` for such packages
 - `typescript` - does not follow semantic versioning - any version can have
   breaking changes
-- `@arcgis/*` - follows `4.<major>.<patch>` instead
 
 ---
 
@@ -533,7 +535,8 @@ Deeper Vite and Vitest guide - shows how Esri is building apps
 
 # Next session
 
-App Development with Components Part 3: User Experience (Deeper Calcite UX best practices)
+App Development with Components Part 3: User Experience (Deeper Calcite UX best
+practices)
 
 **When**: Tomorrow (Thursday, March 13) | 1:00 PM - 2:00 PM PDT
 
@@ -558,7 +561,7 @@ ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using
 Frameworks
 
 Demos and additional resources available at:
-[bit.ly/esri-2025-using-components-2](https://bit.ly/esri-2025-using-components-2)
+[arcg.is/esri-2025-using-components-2](https://arcg.is/esri-2025-using-components-2)
 
 <img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 
