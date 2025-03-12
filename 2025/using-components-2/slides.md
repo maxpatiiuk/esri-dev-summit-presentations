@@ -181,7 +181,7 @@ package.json:
 ```json
   // Required for the app to run
   "dependencies": {
-    "@arcgis/map-components": "^4.32.9",
+    "@arcgis/map-components": "~4.32.9",
     "@esri/calcite-components": "^3.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
