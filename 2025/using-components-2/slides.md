@@ -67,7 +67,7 @@ If you missed the previous session, we have a recording. These 3-part sessions b
 # Prebuilt versus building the SDK and Calcite
  
 - Script tag applications are quick to get started
-  - No build step, the SDK and Calcite are prebuilt for you via the ArcGIS CDN
+  - No build step - the SDK and Calcite are prebuilt for you via the ArcGIS CDN
   - Only need a single HTML file
   - Syntax for including modules:
     - `require(["esri/WebMap"], (WebMap) => { /* code goes here */ });`
