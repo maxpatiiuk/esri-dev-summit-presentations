@@ -441,8 +441,6 @@ Declarative rendering makes it easier to understand what the component will look
 
 ---
 
-# Summary of benefits from react
-
 # TypeScript 🦾
 
 - Typescript is a superset of JavaScript
@@ -518,8 +516,7 @@ Deeper Vite and Vitest guide - shows how Esri is building apps
 
 # Next session
 
-App Development with Components Part 3: User Experience (deeper Calcite User
-Experience good practices)
+App Development with Components Part 3: User Experience (Deeper Calcite UX best practices)
 
 **When**: Tomorrow (Thursday, March 13) | 1:00 PM - 2:00 PM PDT
 
