@@ -1,4 +1,4 @@
-# Vite + vanilla JavaScript demo
+# Vanilla JavaScript demo
 
 [Session Description](../..)
 
