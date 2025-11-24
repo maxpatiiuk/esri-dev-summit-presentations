@@ -1,0 +1,48 @@
+#page-root {
+  --slidev-code-background: #1118;
+
+  color: white;
+  font-family: Arial;
+}
+
+.slidev-layout {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.slidev-layout.cover {
+  padding-left: 4.5rem;
+}
+
+.slidev-layout:is(.cover, .intro, [is='social']) p {
+  color: #ffad29;
+}
+
+.slidev-layout h1 {
+  margin-bottom: 2rem;
+}
+
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
+.slidev-page > img {
+  position: absolute;
+  z-index: -1;
+}
+
+.slidev-layout ul {
+  list-style: disc;
+}
+
+.slidev-layout li::marker {
+  color: #ffad29;
+  font-size: 0.75em;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+}
