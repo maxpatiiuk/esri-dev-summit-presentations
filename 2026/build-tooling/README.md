@@ -1,31 +1,31 @@
-# ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
+# ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps
 
-Learn how Esri's development teams are leveraging modern tools like Vite to
-build fast, dynamic Web GIS applications. With features such as lazy loading,
-client-side routing, hot module replacement, and lightning-fast builds, Vite
-streamlines the entire development workflow from bundling to deployment. Paired
-with Vitest for testing, these tools help ensure that your apps are both
-high-performing and production-ready.
+This technical session explores a case study on how Esri's development teams are
+leveraging modern tools like Vite to build fast, dynamic web GIS applications.
+With features such as lazy loading, client-side routing, hot module replacement,
+and lightning-fast builds, Vite streamlines the entire development workflow from
+bundling to deployment. Paired with Vitest for testing, these tools help ensure
+that your apps are both high-performing and production-ready.
 
-When: Wednesday, March 12 | 4:00 PM - 5:00 PM PDT
+When: Thursday, March 12 | 4:00 PM - 5:00 PM PDT
 
-Where: Smoketree C | Palm Springs Convention Center
+Where: Mohave Learning Center | Palm Springs Convention Center
 
 Presenters: [Max Payson](https://github.com/mpayson) &
 [Max Patiiuk](https://github.com/maxpatiiuk)
 
-Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
+Presented at [Esri Developer Summit 2026](https://devtechsummit2026.esri.com/).
 
-[![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/build-tooling)
+[![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/build-tooling)
 
-[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/build-tooling)
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/build-tooling)
 
 ## Resources
 
 ### Vite ⚡
 
 - [Final demo app](./demo/final)
-- [Basic demo apo](./demo/1-javascript)
+- [Basic demo app](./demo/1-javascript)
   - Run `npm create vite` to create a new Vite project
 - [Documentation](https://vitejs.dev/)
   - [Publishing guide](https://vite.dev/guide/static-deploy)

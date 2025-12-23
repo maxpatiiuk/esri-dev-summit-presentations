@@ -49,7 +49,7 @@ Tips:
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/build-tooling/demo/4-typescript
+   cd esri-dev-summit-presentations/2026/build-tooling/demo/4-typescript
    ```
 
 2. Install dependencies

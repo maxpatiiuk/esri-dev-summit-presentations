@@ -20,7 +20,7 @@
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/build-tooling/demo/7-testing
+   cd esri-dev-summit-presentations/2026/build-tooling/demo/7-testing
    ```
 
 2. Install dependencies
