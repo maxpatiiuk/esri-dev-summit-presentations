@@ -29,7 +29,7 @@ Benefits:
 
    ```sh
    # navigate to the directory for the presentation you want to work on:
-   cd 2025/build-tooling
+   cd 2026/build-tooling
 
    npm start
    ```

@@ -6,17 +6,17 @@
     "postinstall": "husky"
   },
   "dependencies": {
-    "@slidev/cli": "^51.3.0",
+    "@slidev/cli": "^52.11.1",
     "@slidev/theme-default": "latest",
-    "vue": "^3.5.13"
+    "vue": "^3.5.26"
   },
   "devDependencies": {
-    "@arcgis/eslint-config": "~4.32.11",
+    "@arcgis/eslint-config": "~5.0.0-next.99",
     "@maxpatiiuk/prettier-config": "^2.0.0",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
-    "playwright-chromium": "^1.51.0",
-    "prettier": "^3.5.3",
+    "lint-staged": "^16.2.7",
+    "playwright-chromium": "^1.57.0",
+    "prettier": "^3.7.4",
     "prettier-plugin-slidev": "^1.0.5"
   }
 }
