@@ -1,13 +1,13 @@
 ---
 titleTemplate: '%s'
-author: Omar Kawach, Max Patiiuk
+author: Omar Kawach, Max Patiiuk, Nicholas Romano
 mdc: true
 colorSchema: dark
 ---
 
-## ArcGIS Maps SDK for JavaScript:<br>App Development with Components<br>part 2: Using Frameworks
+## ArcGIS Maps SDK for JavaScript: App Development with Components,<br>Part 2: Using Frameworks
 
-Omar Kawach, Max Patiiuk, Nick Romano
+Omar Kawach, Max Patiiuk, Nicholas Romano
 
 ---
 is: feedback
@@ -35,7 +35,7 @@ build on top of each other
 
 # Today's session
 
-2nd in a 3-part series
+2nd in a 4-part series
 
 - We will cover:
   - Calcite
@@ -155,7 +155,7 @@ graph LR
 layout: center
 ---
 
-# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/1-javascript)
+# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/1-javascript)
 
 <!--
 - Describe converting index.html app to Vite
@@ -181,8 +181,8 @@ package.json:
 ```json
   // Required for the app to run
   "dependencies": {
-    "@arcgis/map-components": "~4.32.9",
-    "@esri/calcite-components": "^3.0.3",
+    "@arcgis/map-components": "~5.0.0",
+    "@esri/calcite-components": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -293,7 +293,7 @@ layout: intro
 layout: center
 ---
 
-# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/2-react)
+# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/2-react)
 
 <!--
 - show differences to file extension
@@ -472,7 +472,7 @@ Declarative rendering makes it easier to understand what the component will look
 layout: center
 ---
 
-# Demo: [Get started with React + TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
+# Demo: [Get started with React + TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/3-typescript)
 
 <!--
 - Show tsconfig
@@ -497,7 +497,6 @@ layout: center
 # Framework specific component wrappers
 
 - React 18 wrapper package for our components
-
   - npm: `@arcgis/map-components-react`
   - Encourage you to use React 19 going forward where no wrapper is needed
 

@@ -5,7 +5,7 @@
 This is a base no-bundler sample that we will be enhancing today.
 
 See
-[Part 1](https://devtechsummit2025.esri.com/flow/esri/25epcdev/deveventportal/page/detailed-agenda/session/1730689428965001R0ur)
+[Part 1](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121115055001AX1x)
 of this series for more details.
 
 ## Technologies used:
@@ -22,7 +22,7 @@ of this series for more details.
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/using-components-2/demo/0-vanilla
+   cd esri-dev-summit-presentations/2026/using-components-2/demo/0-vanilla
    ```
 
 2. Open index.html in the browser
