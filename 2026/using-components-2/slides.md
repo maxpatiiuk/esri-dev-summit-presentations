@@ -180,7 +180,7 @@ package.json:
 
 ```json
   // Required for the app to run
-   "dependencies": {
+  "dependencies": {
     "@arcgis/map-components": "^5.0.0-next.99",
     "@esri/calcite-components": "^5.0.0-next.38",
     "react": "^19.2.3",
