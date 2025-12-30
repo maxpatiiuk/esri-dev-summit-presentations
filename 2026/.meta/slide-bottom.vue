@@ -20,7 +20,7 @@
   />
   <img
     alt=""
-    src="https://github.com/Esri/reveal.js/blob/dev-summit-2026/images/2026/dev/06.jpg?raw=true"
+    src="https://github.com/Esri/reveal.js/blob/dev-summit-2026/images/2026/dev/03.jpg?raw=true"
     v-show="$frontmatter.is === 'social'"
   />
   <img

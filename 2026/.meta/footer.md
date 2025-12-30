@@ -6,9 +6,7 @@ is: feedback
 is: social
 ---
 
-<div class="sr-only">
-
-Connect with us on Social
+# Connect with us on Social
 
 Join the Conversation using #EsriDevTech2026
 
@@ -63,8 +61,6 @@ Join the Conversation using #EsriDevTech2026
     <a href="https://links.esri.com/EsriDevCommunity" target="_new">links.esri.com/EsriDevCommunity</a>
   </li>
 </ul>
-
-</div>
 
 ---
 is: esri
