@@ -21,6 +21,8 @@ export default [
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/no-unsafe-argument': 'off',
+      // Conflicts with slidev
+      'markdown/no-multiple-h1': 'off',
     },
   },
 ];
