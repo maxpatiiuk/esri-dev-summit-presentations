@@ -11,7 +11,7 @@ When: Thursday, March 12 | 4:00 PM - 5:00 PM PDT
 
 Where: Mohave Learning Center | Palm Springs Convention Center
 
-Presenters: [Max Payson](https://github.com/mpayson) &
+Presenters: [Hugo Campos](https://bsky.app/profile/hugocampos.bsky.social) &
 [Max Patiiuk](https://github.com/maxpatiiuk)
 
 Presented at [Esri Developer Summit 2026](https://devtechsummit2026.esri.com/).

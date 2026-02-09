@@ -1,13 +1,13 @@
 ---
 titleTemplate: '%s'
-author: Max Payson, Max Patiiuk
+author: Hugo Campos, Max Patiiuk
 mdc: true
 colorSchema: dark
 ---
 
 ## ArcGIS Maps SDK for JavaScript:<br>Using Vite for Building Fast, Dynamic Web Apps
 
-Max Patiiuk, Max Payson
+Hugo Campos, Max Patiiuk
 
 ---
 is: feedback
