@@ -11,7 +11,7 @@ Based on [Calcite get started](https://developers.arcgis.com/calcite-design-syst
   npm install @esri/calcite-components @arcgis/map-components
   ```
 - Import their styles in [src/index.css](./src/index.css)
-- import `<calcite-link` and use it in [src/Splash.jsx](./src/Splash.jsx)
+- import `<calcite-link>` and use it in [src/Splash.jsx](./src/Splash.jsx)
 
 ## Technologies used:
 
@@ -28,7 +28,7 @@ Based on [Calcite get started](https://developers.arcgis.com/calcite-design-syst
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/build-tooling/demo/3-web-components
+   cd esri-dev-summit-presentations/2026/build-tooling/demo/3-web-components
    ```
 
 2. Install dependencies

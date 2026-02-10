@@ -13,24 +13,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arcgis/map-components": "~4.32.9",
-    "@esri/arcgis-rest-places": "^1.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.2.0"
+    "@arcgis/map-components": "^5.0.0-next.99",
+    "@esri/calcite-components": "^5.0.0-next.38",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router": "^7.11.0"
   },
   "devDependencies": {
-    "@eslint/js": "^9.20.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.2.0-canary-8a7b487e-20250218",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "prettier": "^3.5.1",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.24.1",
-    "vite": "^6.1.0"
+    "@eslint/js": "^9.39.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.50.1",
+    "vite": "^7.3.0"
   }
 }
