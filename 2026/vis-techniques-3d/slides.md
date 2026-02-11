@@ -165,7 +165,7 @@ layout: two-cols
 
 Global View vs Local View
 
-<img src="/scene-view.png">
+<img src="/scene-view.avif">
 
 ::right::
 
@@ -173,7 +173,7 @@ Global View vs Local View
 
 &nbsp;
 
-<img src="/local-scene.png">
+<img src="/local-scene.avif">
 
 <!--
 The SceneView supports two different viewing modes, global and the, specified by the viewingMode property. Global scenes render the earth as a globe, while local scenes render the surface on a flat plane.
@@ -181,7 +181,7 @@ The SceneView supports two different viewing modes, global and the, specified by
 
 ---
 layout: image-right
-image: /scene-view.png
+image: /scene-view.avif
 ---
 
 # Core Concepts
@@ -196,7 +196,7 @@ const view = new SceneView({
 
 ---
 layout: image-right
-image: /local-scene.png
+image: /local-scene.avif
 ---
 
 # Core Concepts
@@ -218,7 +218,7 @@ The viewing mode (if not explicitly set by the user) is determined based on the 
 
 ---
 layout: image-right
-image: /local-scene-clipped.png
+image: /local-scene-clipped.avif
 ---
 
 # Core Concepts
@@ -251,7 +251,7 @@ If defined, only features that intersect the area will be displayed. The clippin
 
 ---
 layout: image-right
-image: /basemap-topo-vector.png
+image: /basemap-topo-vector.avif
 ---
 
 # Core Concepts
@@ -274,7 +274,7 @@ The basemap is a set of layers that give geographic context to the MapView or Sc
 
 ---
 layout: image-right
-image: /basemap-topo-3d.png
+image: /basemap-topo-3d.avif
 ---
 
 # Core Concepts
@@ -289,7 +289,7 @@ const map = new WebScene({
 const view = new SceneView({ map });
 ```
 
-<img v-click="1" src="./basemaps-list.png">
+<img v-click="1" src="./basemaps-list.avif">
 
 <!--
 Use of these basemaps requires either an ArcGIS Location Platform account, ArcGIS Online organizational subscription, or an ArcGIS Enterprise license.
@@ -301,7 +301,7 @@ List of basemaps
 
 ---
 layout: image-right
-image: /elevation-topo.png
+image: /elevation-topo.avif
 ---
 
 # Core Concepts
@@ -317,7 +317,7 @@ const map = new WebScene({
 
 ---
 layout: image-right
-image: /elevation-satellite.png
+image: /elevation-satellite.avif
 ---
 
 # Core Concepts
@@ -333,7 +333,7 @@ const map = new WebScene({
 
 ---
 layout: image-right
-image: /elevation-bathymetry.png
+image: /elevation-bathymetry.avif
 ---
 
 # Core Concepts
@@ -357,7 +357,7 @@ Types and Sources of Data
 
 ---
 layout: image-right
-image: '/scene-layer.png'
+image: '/scene-layer.avif'
 ---
 
 # Types of Data
@@ -377,7 +377,7 @@ image: '/scene-layer.png'
 
 ---
 layout: image-right
-image: '/data-living-atlas.png'
+image: '/data-living-atlas.avif'
 ---
 
 # Sources of Data
@@ -397,7 +397,7 @@ ArcGIS Enterprise
 
 ---
 layout: image-right
-image: '/arcgis-developers-create-hosted-layer.png'
+image: '/arcgis-developers-create-hosted-layer.avif'
 ---
 
 # Data Sources
@@ -411,7 +411,7 @@ Your Own Data
 
 ---
 layout: image-right
-image: '/data-open.png'
+image: '/data-open.avif'
 ---
 
 # Data Sources
@@ -425,7 +425,7 @@ Other Sources
 
 ---
 layout: image-right
-image: /world-countries.png
+image: /world-countries.avif
 ---
 
 # Loading Data
@@ -472,7 +472,7 @@ layout: intro
 
 ---
 layout: image-right
-image: /symbology-applying.png
+image: /symbology-applying.avif
 ---
 
 # Layer Symbology
@@ -487,7 +487,7 @@ const layer = new FeatureLayer({
       symbolLayers: [
         new IconSymbol3DLayer({
           size: '10px',
-          href: 'icon.png',
+          href: 'icon.avif',
         }),
       ],
     }),
@@ -495,11 +495,11 @@ const layer = new FeatureLayer({
 });
 ```
 
-<img v-click="2" src="./renderers.png">
+<img v-click="2" src="./renderers.avif">
 
 ---
 layout: image-right
-image: /symbology-3d.png
+image: /symbology-3d.avif
 ---
 
 # Layer Symbology
@@ -520,7 +520,7 @@ mdc: true
 
 3D Symbology for 2D Features
 
-![](/symbology-overview-vectorized.png){width=70%}
+![](/symbology-overview-vectorized.avif){width=70%}
 
 ---
 layout: iframe-right
@@ -623,7 +623,7 @@ const symbol = new LineSymbol3D({
 
 ---
 layout: image-right
-image: /polygon-symbol-flat.png
+image: /polygon-symbol-flat.avif
 ---
 
 # PolygonSymbol3D
@@ -638,7 +638,7 @@ const symbol = new PolygonSymbol3D({
 
 ---
 layout: image-right
-image: /polygon-symbol-volumetric.png
+image: /polygon-symbol-volumetric.avif
 ---
 
 # PolygonSymbol3D
@@ -753,7 +753,7 @@ arcgisScene.view.whenLayerView(campusSceneLayer).then((layerView) => {
 
 ---
 layout: image-right
-image: /sl-color.png
+image: /sl-color.avif
 ---
 
 # Scene Layer
@@ -788,7 +788,7 @@ layer.renderer = thematicRenderer;
 
 ---
 layout: image-right
-image: /sl-edges.png
+image: /sl-edges.avif
 ---
 
 # Scene Layer
@@ -825,7 +825,7 @@ const sliceWidget = new Slice({
 
 ---
 layout: image-right
-image: /bsl-colored-columns.png
+image: /bsl-colored-columns.avif
 ---
 
 # Building Scene Layer
