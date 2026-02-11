@@ -17,7 +17,12 @@
 }
 
 .slidev-layout:is(.cover, .intro, [is='social']) p {
-  color: #ffad29;
+  color: #bee3ff;
+}
+
+.slidev-layout:is([is='intro']) h1 {
+  margin-bottom: 0.75rem;
+  line-height: 4.5rem !important;
 }
 
 .slidev-layout h1 {
@@ -38,7 +43,7 @@
 }
 
 .slidev-layout li::marker {
-  color: #ffad29;
+  color: #bee3ff;
   font-size: 0.75em;
 }
 
