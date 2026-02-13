@@ -180,7 +180,7 @@ The SceneView supports two different viewing modes, global and the, specified by
 -->
 
 ---
-layout: image-right
+layout: media-right
 image: /scene-view.avif
 ---
 
@@ -195,7 +195,7 @@ const view = new SceneView({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /local-scene.avif
 ---
 
@@ -217,7 +217,7 @@ The viewing mode (if not explicitly set by the user) is determined based on the 
 -->
 
 ---
-layout: image-right
+layout: media-right
 image: /local-scene-clipped.avif
 ---
 
@@ -250,7 +250,7 @@ If defined, only features that intersect the area will be displayed. The clippin
 -->
 
 ---
-layout: image-right
+layout: media-right
 image: /basemap-topo-vector.avif
 ---
 
@@ -273,7 +273,7 @@ The basemap is a set of layers that give geographic context to the MapView or Sc
 -->
 
 ---
-layout: image-right
+layout: media-right
 image: /basemap-topo-3d.avif
 ---
 
@@ -300,7 +300,7 @@ List of basemaps
 -->
 
 ---
-layout: image-right
+layout: media-right
 image: /elevation-topo.avif
 ---
 
@@ -316,7 +316,7 @@ const map = new WebScene({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /elevation-satellite.avif
 ---
 
@@ -332,7 +332,7 @@ const map = new WebScene({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /elevation-bathymetry.avif
 ---
 
@@ -356,7 +356,7 @@ layout: intro
 Types and Sources of Data
 
 ---
-layout: image-right
+layout: media-right
 image: '/scene-layer.avif'
 ---
 
@@ -376,7 +376,7 @@ image: '/scene-layer.avif'
 - Media Layer
 
 ---
-layout: image-right
+layout: media-right
 image: '/data-living-atlas.avif'
 fit: contain
 ---
@@ -397,7 +397,7 @@ ArcGIS Enterprise
 - On-premises
 
 ---
-layout: image-right
+layout: media-right
 image: '/arcgis-developers-create-hosted-layer.avif'
 fit: contain
 ---
@@ -412,7 +412,7 @@ Your Own Data
 - Create hosted layer (e.g. Feature Service)
 
 ---
-layout: image-right
+layout: media-right
 image: '/data-open.avif'
 fit: contain
 ---
@@ -427,7 +427,7 @@ Other Sources
 - OGC features
 
 ---
-layout: image-right
+layout: media-right
 image: /world-countries.avif
 ---
 
@@ -474,7 +474,7 @@ layout: intro
 # Layer Symbology
 
 ---
-layout: image-right
+layout: media-right
 image: /symbology-applying.avif
 fit: contain
 ---
@@ -502,7 +502,7 @@ const layer = new FeatureLayer({
 <img v-click="2" src="/renderers.avif">
 
 ---
-layout: image-right
+layout: media-right
 image: /symbology-3d.avif
 ---
 
@@ -527,7 +527,7 @@ mdc: true
 ![](/symbology-overview-vectorized.avif){width=70%}
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/live/'
 extendedIframe: true
 ---
@@ -565,7 +565,7 @@ const renderer = new SimpleRenderer({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-rotation-3d/live'
 ---
 
@@ -598,7 +598,7 @@ const renderer = new SimpleRenderer({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3d/live/'
 ---
 
@@ -626,7 +626,7 @@ const symbol = new LineSymbol3D({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /polygon-symbol-flat.avif
 ---
 
@@ -641,7 +641,7 @@ const symbol = new PolygonSymbol3D({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /polygon-symbol-volumetric.avif
 ---
 
@@ -656,7 +656,7 @@ const symbol = new PolygonSymbol3D({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildings-3d/live'
 ---
 
@@ -702,7 +702,7 @@ layout: intro
 Hugo Campos
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-points/live/'
 ---
 
@@ -721,7 +721,7 @@ map.add(layer);
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer/live'
 ---
 
@@ -756,7 +756,7 @@ arcgisScene.view.whenLayerView(campusSceneLayer).then((layerView) => {
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /sl-color.avif
 ---
 
@@ -791,7 +791,7 @@ layer.renderer = thematicRenderer;
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /sl-edges.avif
 ---
 
@@ -807,7 +807,7 @@ symbolLayer.edges = new SolidEdges3D({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-slice/live'
 ---
 
@@ -828,7 +828,7 @@ const sliceWidget = new Slice({
 ```
 
 ---
-layout: image-right
+layout: media-right
 image: /bsl-colored-columns.avif
 ---
 
@@ -853,7 +853,7 @@ columnsLayer.renderer = new SimpleRenderer({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-portal/live'
 ---
 
@@ -869,7 +869,7 @@ map.add(pcLayer);
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud/live'
 ---
 
@@ -911,7 +911,7 @@ if (fieldName === 'ELEVATION' || 'INTENSITY') {
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer/live'
 ---
 
@@ -927,7 +927,7 @@ map.add(layer);
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/live'
 ---
 
@@ -954,7 +954,7 @@ layout: intro
 # Other Layers
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/live'
 ---
 
@@ -987,7 +987,7 @@ const aspectFunction = rasterFunctionUtils.aspect({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live'
 ---
 
@@ -1003,7 +1003,7 @@ map.add(layer);
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/live'
 ---
 
@@ -1023,7 +1023,7 @@ vxlLayer.getVolumeStyle(null).slices = [xSlice];
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-time/live'
 ---
 
@@ -1047,7 +1047,7 @@ if (vxlVolumeType === 'xyzt') {
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-video/live'
 ---
 
@@ -1080,7 +1080,7 @@ const layer = new MediaLayer({
 ```
 
 ---
-layout: iframe-right
+layout: media-right
 url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live'
 ---
 
