@@ -1,13 +1,13 @@
 ---
 titleTemplate: '%s'
-author: Omar Kawach, Max Patiiuk
+author: Omar Kawach, Max Patiiuk, Nicholas Romano
 mdc: true
 colorSchema: dark
 ---
 
-## ArcGIS Maps SDK for JavaScript:<br>App Development with Components<br>part 2: Using Frameworks
+## ArcGIS Maps SDK for JavaScript: App Development with Components,<br>Part 2: Using Frameworks
 
-Omar Kawach, Max Patiiuk, Nick Romano
+Omar Kawach, Max Patiiuk, Nicholas Romano
 
 ---
 is: feedback
@@ -35,7 +35,7 @@ build on top of each other
 
 # Today's session
 
-2nd in a 3-part series
+2nd in a 4-part series
 
 - We will cover:
   - Calcite
@@ -155,7 +155,7 @@ graph LR
 layout: center
 ---
 
-# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/1-javascript)
+# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/1-javascript)
 
 <!--
 - Describe converting index.html app to Vite
@@ -181,18 +181,18 @@ package.json:
 ```json
   // Required for the app to run
   "dependencies": {
-    "@arcgis/map-components": "~4.32.9",
-    "@esri/calcite-components": "^3.0.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "@arcgis/map-components": "^5.0.0-next.99",
+    "@esri/calcite-components": "^5.0.0-next.38",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   // Only used during development/build
   "devDependencies": {
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react-swc": "^3.8.0",
-    "typescript": "^5.8.2",
-    "vite": "^6.1.0"
+    "vite": "^7.3.0",
+    "typescript": "5.9.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3"
   }
 ```
 
@@ -200,7 +200,7 @@ package.json:
 
 # Semantic versioning
 
-`<major>.<minor>.<patch>` (example: `3.0.3`)
+`<major>.<minor>.<patch>` (example: `5.0.0`)
 
 - **major**: breaking changes - read the release notes
 - **minor**: new features - safe to update
@@ -213,19 +213,10 @@ package.json:
 Rather than specifying an exact version, you can let NPM decide which version to
 install:
 
-- `^3.0.3` - any version from 3.0.3 to 4.0.0 (features and bug fixes)
-- `~3.0.3` - any version from 3.0.3 to 3.1.0 (only bug fixes)
+- `^5.0.0` - any version from 5.0.0 to 6.0.0 (features and bug fixes)
+- `~5.0.0` - any version from 5.0.0 to 5.1.0 (only bug fixes)
 
 Allows for dependency sharing (multiple packages can use single Calcite)
-
----
-
-# Exceptions to semantic versioning
-
-- `@arcgis/*` - follows `4.<major>.<patch>` instead
-  - Use `~` over `^` for such packages
-- `typescript` - does not follow semantic versioning - any version can have
-  breaking changes
 
 ---
 
@@ -293,7 +284,7 @@ layout: intro
 layout: center
 ---
 
-# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/2-react)
+# Demo: [Get started with React](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/2-react)
 
 <!--
 - show differences to file extension
@@ -472,7 +463,7 @@ Declarative rendering makes it easier to understand what the component will look
 layout: center
 ---
 
-# Demo: [Get started with React + TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2025/using-components-2/demo/3-typescript)
+# Demo: [Get started with React + TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/using-components-2/demo/3-typescript)
 
 <!--
 - Show tsconfig
@@ -494,18 +485,6 @@ layout: center
 
 ---
 
-# Framework specific component wrappers
-
-- React 18 wrapper package for our components
-
-  - npm: `@arcgis/map-components-react`
-  - Encourage you to use React 19 going forward where no wrapper is needed
-
-- Calcite React 18 wrapper
-  - npm: `@esri/calcite-components-react`
-
----
-
 # Other frameworks
 
 - Angular and Vue also support web components.
@@ -516,40 +495,41 @@ layout: center
 
 ---
 
-# Vite deep dive session (today in 2 hrs)
-
-Deeper Vite and Vitest guide - shows how Esri is building apps
-
-**When**: Today (Wednesday, March 12) | 4:00 PM - 5:00 PM PDT
-
-**Where**: Smoketree C | Palm Springs Convention Center
-
-> Learn how Esri's development teams are leveraging modern tools like Vite to
-> build fast, dynamic Web GIS applications. With features such as lazy loading,
-> client-side routing, hot module replacement, and lightning-fast builds, Vite
-> streamlines the entire development workflow from bundling to deployment.
-> Paired with Vitest for testing, these tools help ensure that your apps are
-> both high-performing and production-ready.
-
----
-
 # Next session
 
-App Development with Components Part 3: User Experience (Deeper Calcite UX best
-practices)
+ArcGIS Maps SDK for JavaScript: App Development with Components, Part 3: User
+Experience (Deeper Calcite UX best practices)
 
-**When**: Tomorrow (Thursday, March 13) | 1:00 PM - 2:00 PM PDT
+**When**: Tomorrow (Thursday, March 13) | 10:30 AM - 11:30 AM PDT
 
 **Where**: Primrose A | Palm Springs Convention Center
 
-> Join us for the third session in our three-part series on building
-> applications with the ArcGIS Maps SDK for JavaScript. This session is focused
-> on building the user experience in your web app with the SDK's components and
+> Join us for the third technical session in a four-part series on building
+> applications with the ArcGIS Maps SDK for JavaScript. This session focuses on
+> building the user experience in your web app with the SDK's components and
 > Calcite Design System. Calcite provides a library of patterns, icons, and
-> user-friendly, configurable web components that enable developers to easily
-> build responsive, accessible web applications. We'll demonstrate how the
+> user-friendly, configurable web components that enable you to easily build
+> responsive, accessible web applications. Speakers demonstrate how the
 > components can be used together to build intuitive yet powerful experiences in
 > your apps.
+
+---
+
+# ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps (tomorrow)
+
+Deeper Vite and Vitest guide - shows how Esri is building apps
+
+**When**: Tomorrow (Wednesday, March 12) | 4:00 PM - 5:00 PM PDT
+
+**Where**: Mohave Learning Center | Palm Springs Convention Center
+
+> This technical session explores a case study on how Esri's development teams
+> are leveraging modern tools like Vite to build fast, dynamic web GIS
+> applications. With features such as lazy loading, client-side routing, hot
+> module replacement, and lightning-fast builds, Vite streamlines the entire
+> development workflow from bundling to deployment. Paired with Vitest for
+> testing, these tools help ensure that your apps are both high-performing and
+> production-ready.
 
 ---
 layout: center
@@ -557,7 +537,7 @@ layout: center
 
 # Questions?
 
-ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using
+ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using
 Frameworks
 
 Demos and additional resources available at:

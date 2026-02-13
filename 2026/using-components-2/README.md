@@ -1,32 +1,33 @@
-# ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks
+# ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using Frameworks
 
-Join us for the second session in our three-part series on building applications
-with the ArcGIS Maps SDK for JavaScript. This session will begin with exploring
-motivations for using frontend frameworks, and then will cover techniques for
-integrating the SDK's web components with frameworks and tools such as React and
-Vite. We will touch on current frontend methodologies for topics such as
-dependency management, asset management, semantic versioning, and conveniences
-offered by frameworks that streamline web mapping application development
-compared to plain JavaScript.
+Join us for the second technical session in a four-part series on building
+applications with the ArcGIS Maps SDK for JavaScript. Speakers begin with
+exploring motivations for using front-end frameworks and then cover techniques
+for integrating the SDK's web components with frameworks and tools such as React
+and Vite. The session touches on current front-end methodologies for topics such
+as dependency management, asset management, semantic versioning, prebuilt versus
+built applications that scale, and conveniences offered by frameworks that
+streamline web mapping app development compared to plain JavaScript.
 
-When: Wednesday, March 12 | 1:00 PM - 2:00 PM PDT
+When: Wednesday, March 11 | 1:00 PM - 2:00 PM PDT
 
-Where: Primrose B | Palm Springs Convention Center
+Where: Primrose A | Palm Springs Convention Center
 
 Presenters: [Omar Kawach](https://github.com/omarkawach) &
 [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Nicholas Romano](https://github.com/nick-romano)
 
-Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
+Presented at
+[Esri Dev & Tech Summit 2026](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121225206001GaOj).
 
-[![ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/using-components-2)
+[![ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/using-components-2)
 
-[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2025/using-components-2)
-
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/using-components-2)
 See
-[Part 1](https://devtechsummit2025.esri.com/flow/esri/25epcdev/deveventportal/page/detailed-agenda/session/1730689428965001R0ur)
+[Part 1](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121115055001AX1x),
+[Part 3](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121324274001qsE7),
 and
-[Part 3](https://devtechsummit2025.esri.com/flow/esri/25epcdev/deveventportal/page/detailed-agenda/session/1730691473863001d3c1)
+[Part 4](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761122138829001Iinc)
 
 ## Resources
 

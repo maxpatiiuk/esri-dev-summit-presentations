@@ -19,7 +19,7 @@ The project was created using the [Vite sample app in jsapi-resources](https://g
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2025/using-components-2/demo/1-javascript
+   cd esri-dev-summit-presentations/2026/using-components-2/demo/1-javascript
    ```
 
 2. Install dependencies
