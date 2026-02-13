@@ -398,6 +398,7 @@ ArcGIS Enterprise
 ---
 layout: image-right
 image: '/arcgis-developers-create-hosted-layer.avif'
+fit: contain
 ---
 
 # Data Sources
@@ -412,6 +413,7 @@ Your Own Data
 ---
 layout: image-right
 image: '/data-open.avif'
+fit: contain
 ---
 
 # Data Sources
@@ -473,6 +475,7 @@ layout: intro
 ---
 layout: image-right
 image: /symbology-applying.avif
+fit: contain
 ---
 
 # Layer Symbology
