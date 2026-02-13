@@ -5,6 +5,7 @@ type Props = {
   url: string;
   title?: string;
   scale?: number;
+  aspect?: 'screen' | 'fill';
 };
 
 const props = defineProps<Props>();
@@ -13,6 +14,7 @@ const iframeRef = ref<HTMLIFrameElement | null>(null);
 const screenFrameRef = ref<{ el: HTMLElement | null } | null>(null);
 
 const normalizedUrl = computed(() => props.url?.trim());
+const aspect = computed(() => props.aspect ?? 'screen');
 const contentScale = computed(() => {
   const raw = props.scale ?? 0.85;
   // Keep in a sane range.
@@ -27,6 +29,24 @@ const iframeStyle = computed(() => {
     transformOrigin: 'top left',
     width: size,
     height: size,
+  } as const;
+});
+
+const frameHostStyle = computed(() => {
+  if (aspect.value === 'fill') {
+    return {
+      width: '100%',
+      height: '100%',
+    } as const;
+  }
+
+  // Fit a 16:9 "screen" inside the available box.
+  return {
+    aspectRatio: '16 / 9',
+    height: '100%',
+    width: 'auto',
+    maxWidth: '100%',
+    maxHeight: '100%',
   } as const;
 });
 
@@ -67,22 +87,26 @@ async function onFullscreen() {
 
 <template>
   <div class="h-full w-full flex flex-col">
-    <ScreenFrame ref="screenFrameRef" class="flex-1">
-      <iframe
-        v-if="normalizedUrl"
-        ref="iframeRef"
-        class="w-full h-full"
-        :style="iframeStyle"
-        :title="title ?? 'Embedded content'"
-        allow="fullscreen; geolocation; clipboard-read; clipboard-write"
-        allowfullscreen
-      />
-      <div v-else class="w-full h-full grid place-items-center opacity-70">
-        Missing iframe URL
+    <div class="flex-1 min-h-0 flex items-center justify-center">
+      <div :style="frameHostStyle" class="max-w-full max-h-full">
+        <ScreenFrame ref="screenFrameRef" class="w-full h-full">
+          <iframe
+            v-if="normalizedUrl"
+            ref="iframeRef"
+            class="w-full h-full"
+            :style="iframeStyle"
+            :title="title ?? 'Embedded content'"
+            allow="fullscreen; geolocation; clipboard-read; clipboard-write"
+            allowfullscreen
+          />
+          <div v-else class="w-full h-full grid place-items-center opacity-70">
+            Missing iframe URL
+          </div>
+        </ScreenFrame>
       </div>
-    </ScreenFrame>
+    </div>
 
-    <div class="mt-2 flex items-center justify-end gap-1.5">
+    <div class="mt-2 flex items-center justify-center gap-1.5">
       <button
         class="text-xs px-2 py-0.5 rounded border border-white/20 hover:border-white/40"
         type="button"

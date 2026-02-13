@@ -378,6 +378,7 @@ image: '/scene-layer.avif'
 ---
 layout: image-right
 image: '/data-living-atlas.avif'
+fit: contain
 ---
 
 # Sources of Data
