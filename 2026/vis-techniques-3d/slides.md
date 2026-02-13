@@ -483,7 +483,7 @@ fit: contain
 
 Applying Symbology
 
-```ts {0|1|3|4|5-10|*}{maxHeight:'200px'}
+```ts {0|1|3|4|5-10|*}{maxHeight:'160px'}
 const layer = new FeatureLayer({
   url: 'https://services/../FeatureServer',
   renderer: new SimpleRenderer({
@@ -664,7 +664,7 @@ url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-
 
 ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
 
-```ts {0|2|3-9|13-20|22-25}{maxHeight:'300px'}
+```ts {0|2|3-9|13-20|22-25}{maxHeight:'260px'}
 getSymbol(color){
   const symbol = new PolygonSymbol3D({
     symbolLayers: [
@@ -729,7 +729,7 @@ url: 'https://developers.arcgis.com/javascript/latest/sample-code/highlight-scen
 
 Scene Layer and Multiple Highlights
 
-```ts {0-22}{maxHeight:'360px'}
+```ts {0-22}{maxHeight:'300px'}
 const campusSceneLayer = arcgisScene.map.allLayers.find((layer) => {
   return layer.title === 'Buildings';
 });
@@ -764,7 +764,7 @@ image: /sl-color.avif
 
 Colored by attribute
 
-```ts {0-25}{maxHeight:'360px'}
+```ts {0-25}{maxHeight:'300px'}
 const thematicRenderer = new SimpleRenderer({
   symbol: new MeshSymbol3D({
     symbolLayers: [
