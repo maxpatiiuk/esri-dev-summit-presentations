@@ -7,20 +7,34 @@ type Props = {
   showTitle?: boolean;
 };
 
-const props = defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+  extendedIframe: false,
+  showTitle: false,
+});
 </script>
 
 <template>
   <div class="slidev-layout iframe h-full w-full flex flex-col">
-    <div :class="{ 'iframe-hide-title': !props.showTitle }">
+    <div :class="{ 'iframe-hide-title': !showTitle }">
       <slot />
+
+      <div v-if="codeBase" class="mt-2 flex items-center justify-center">
+        <a
+          class="text-xs px-2 py-0.5 rounded border border-white/20 hover:border-white/40"
+          :href="codeBase"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Code
+        </a>
+      </div>
     </div>
 
-    <div class="flex-1 mt-2">
-      <IframeScreen
+    <div class="flex-1 min-h-0 mt-2">
+      <FramedIframe
         :url="url"
         :scale="scale"
-        aspect="screen"
+        :aspect="extendedIframe ? 'fill' : 'screen'"
         class="h-full"
       />
     </div>
