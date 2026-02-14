@@ -2,7 +2,7 @@
 titleTemplate: '%s'
 author: Hugo Campos, Thorben Westerhuys
 mdc: true
-colorSchema: dark
+colorSchema: light
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: view-transition
 fonts:

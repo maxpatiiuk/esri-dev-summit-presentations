@@ -2,7 +2,7 @@
 titleTemplate: '%s'
 author: Omar Kawach, Max Patiiuk, Nicholas Romano
 mdc: true
-colorSchema: dark
+colorSchema: light
 ---
 
 ## ArcGIS Maps SDK for JavaScript: App Development with Components,<br>Part 2: Using Frameworks

@@ -2,7 +2,7 @@
 titleTemplate: '%s'
 author: Thorben Westerhuys, Max Patiiuk
 mdc: true
-colorSchema: dark
+colorSchema: light
 ---
 
 ## ArcGIS Maps SDK for JavaScript:<br>A Look Under the Hood
