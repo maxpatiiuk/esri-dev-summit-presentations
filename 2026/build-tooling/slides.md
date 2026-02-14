@@ -2,7 +2,7 @@
 titleTemplate: '%s'
 author: Hugo Campos, Max Patiiuk
 mdc: true
-colorSchema: dark
+colorSchema: light
 ---
 
 ## ArcGIS Maps SDK for JavaScript:<br>Using Vite for Building Fast, Dynamic Web Apps
