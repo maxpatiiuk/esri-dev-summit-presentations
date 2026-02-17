@@ -1,8 +1,31 @@
-#page-root {
-  --slidev-code-background: #1118;
+:root {
+  /* Disable Chrome auto dark mode */
+  color-scheme: only light;
+}
 
+#page-root {
+  /*
+   * While code blocks are in light mode, the slide background is darker so
+   * slide text defaults to white
+   */
   color: white;
+  /* Match presentation template */
   font-family: Arial;
+}
+
+/** Force light mode for code blocks */
+.slidev-note :not(pre) > code,
+.slidev-layout :not(pre) > code {
+  background: #fffb;
+  color: black;
+}
+
+#slide-content {
+  /*
+   * The background image is 1px too short. To avoid a 1px white line, make
+   * background invisible
+   */
+  background: black;
 }
 
 .slidev-layout {
@@ -50,4 +73,6 @@
 .mermaid {
   display: flex;
   justify-content: center;
+  background: white;
+  border-radius: 0.5rem;
 }
