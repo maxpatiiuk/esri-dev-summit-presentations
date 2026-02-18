@@ -289,7 +289,7 @@ const map = new WebScene({
 const view = new SceneView({ map });
 ```
 
-<img v-click="1" src="./basemaps-list.avif">
+<img v-click="1" src="/basemaps-list.avif">
 
 <!--
 Use of these basemaps requires either an ArcGIS Location Platform account, ArcGIS Online organizational subscription, or an ArcGIS Enterprise license.
@@ -495,7 +495,7 @@ const layer = new FeatureLayer({
 });
 ```
 
-<img v-click="2" src="./renderers.avif">
+<img v-click="2" src="/renderers.avif">
 
 ---
 layout: image-right
