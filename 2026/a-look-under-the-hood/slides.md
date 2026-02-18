@@ -36,9 +36,8 @@ ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
 Demos and additional resources available at:
 [arcg.is/esri-2025-build-tooling](https://arcg.is/esri-2025-build-tooling)
 
-<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
-
 <!--
+<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 If you wish to dive deeper, you can find our demos and
 additional resources at the URL above, or you can scan the QR code.
 -->
