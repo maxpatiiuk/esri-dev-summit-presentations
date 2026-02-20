@@ -2,14 +2,13 @@
 
 [Session Description](../..)
 
-The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
+The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-and-charts-components-vite)
 
 ## Technologies used:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
 - [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
 
 ## Installation
 

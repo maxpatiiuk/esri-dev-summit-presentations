@@ -259,7 +259,7 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - By default, component assets are loaded from Esri's fast CDN
 - This includes translation files and images
 - They can be made
-  [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/)
+  [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
 
 ---
@@ -497,7 +497,6 @@ layout: center
 # Framework specific component wrappers
 
 - React 18 wrapper package for our components
-
   - npm: `@arcgis/map-components-react`
   - Encourage you to use React 19 going forward where no wrapper is needed
 

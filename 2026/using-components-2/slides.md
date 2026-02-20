@@ -5,7 +5,7 @@ mdc: true
 colorSchema: light
 ---
 
-## ArcGIS Maps SDK for JavaScript: App Development with Components,<br>Part 2: Using Frameworks
+## ArcGIS Maps SDK for JavaScript:<br>App Development with Components,<br>Part 2: Using Frameworks
 
 Omar Kawach, Max Patiiuk, Nicholas Romano
 
@@ -28,7 +28,7 @@ App Development with Components Part 1: Core Patterns
 > components can be used together to build intuitive yet powerful experiences in
 > your apps.
 
-If you missed the previous session, we have a recording. These 3-part sessions
+If you missed the previous session, we have a recording. These 4-part sessions
 build on top of each other
 
 ---
@@ -50,7 +50,7 @@ build on top of each other
 - An extensive library of reusable web components for designing compelling apps
 - Provides consistent, customizable, responsive and accessible UI out of the box
 - Works with any framework
-- Will be covered in more detail by the 3rd session in this 3-part series
+- Will be covered in more detail by the 3rd session in this 4-part series
 
 ---
 
@@ -170,7 +170,8 @@ layout: center
 # Dependencies
 
 - Your application can consume other packages
-- Use npmjs.com to find packages or find out the latest version number
+- Use [npmjs.com](https://www.npmjs.com/) to find packages or find out the
+  latest version number
 
 ---
 
@@ -181,17 +182,17 @@ package.json:
 ```json
   // Required for the app to run
   "dependencies": {
-    "@arcgis/map-components": "^5.0.0-next.99",
-    "@esri/calcite-components": "^5.0.0-next.38",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "@arcgis/map-components": "^5.0.0",
+    "@esri/calcite-components": "^5.0.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   // Only used during development/build
   "devDependencies": {
-    "vite": "^7.3.0",
+    "vite": "^7.3.1"
     "typescript": "5.9.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "@types/react": "^19.2.7",
+    "@vitejs/plugin-react": "^4.2.3",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3"
   }
 ```
@@ -250,7 +251,7 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - By default, component assets are loaded from Esri's fast CDN
 - This includes translation files and images
 - They can be made
-  [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/)
+  [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
 
 ---
@@ -497,10 +498,9 @@ layout: center
 
 # Next session
 
-ArcGIS Maps SDK for JavaScript: App Development with Components, Part 3: User
-Experience (Deeper Calcite UX best practices)
+[ArcGIS Maps SDK for JavaScript: App Development with Components, Part 3: User Experience (Deeper Calcite UX best practices)](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121324274001qsE7)
 
-**When**: Tomorrow (Thursday, March 13) | 10:30 AM - 11:30 AM PDT
+**When**: Tomorrow (Thursday, March 12) | 10:30 AM - 11:30 AM PDT
 
 **Where**: Primrose A | Palm Springs Convention Center
 
@@ -515,7 +515,7 @@ Experience (Deeper Calcite UX best practices)
 
 ---
 
-# ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps (tomorrow)
+# [ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps (tomorrow)](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121854534001s2my)
 
 Deeper Vite and Vitest guide - shows how Esri is building apps
 

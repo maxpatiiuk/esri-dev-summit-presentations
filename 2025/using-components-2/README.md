@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks
 
+[Recording](https://mediaspace.esri.com/media/t/1_v4cmupss/368599242)
+
 Join us for the second session in our three-part series on building applications
 with the ArcGIS Maps SDK for JavaScript. This session will begin with exploring
 motivations for using frontend frameworks, and then will cover techniques for
@@ -33,7 +35,7 @@ and
 ### Vite ⚡
 
 - [Final demo app](./demo/3-typescript)
-- [Basic demo apo](./demo/1-javascript)
+- [Basic demo app](./demo/1-javascript)
 - [Documentation](https://vitejs.dev/)
   - [Publishing guide](https://vite.dev/guide/static-deploy)
 
@@ -48,23 +50,22 @@ and
 ### ArcGIS Maps SDK for JavaScript 📍
 
 - [Documentation](https://developers.arcgis.com/javascript)
-- [Get started (for NPM)](https://developers.arcgis.com/javascript/latest/get-started-npm/)
+- [Get started (for NPM)](https://developers.arcgis.com/javascript/latest/get-started/#npm)
 - [Maps SDK Resources](https://github.com/Esri/jsapi-resources)
-- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/react)
-- [Disconnected environment tutorial](https://developers.arcgis.com/javascript/latest/disconnected-environment/)
+- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-and-charts-components-react)
+- [Disconnected environment tutorial](https://developers.arcgis.com/javascript/latest/working-with-assets/)
 
 ### React ⚛️
 
 - [Demo app](./demo/2-react)
   - [Get started steps](./demo/2-react/README.md#key-changes-from-1-javascript)
 - [Documentation](https://reactjs.org/)
-- [TypeScript guide](https://developers.arcgis.com/javascript/latest/get-started-react/#bonus-typescript)
 
 ### TypeScript 🦾
 
 - [Demo app](./demo/3-typescript)
   - [Get started steps](./demo/3-typescript/README.md#key-changes-from-2-react)
 - [Documentation](https://www.typescriptlang.org)
-- [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+- [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/get-started/#typescript)
 - VS Code extension:
   - [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
