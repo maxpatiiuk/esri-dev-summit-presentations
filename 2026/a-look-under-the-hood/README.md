@@ -15,3 +15,13 @@ Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Thorben Westerhuys](https://github.com/twesterhuys)
 
 Presented at [Esri Developer Summit 2026](https://devtechsummit2025.esri.com/).
+
+## Additional resources 📕
+
+- [pnpm + Turbo monorepo template](https://github.com/maxpatiiuk/monorepo-template)
+
+  A scalable template for a pnpm monorepo, using Turborepo, Vite, and
+  TypeScript.
+
+  The README.md lists suggestions for additional things to add for a large-scale
+  monorepo.

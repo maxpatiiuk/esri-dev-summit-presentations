@@ -119,7 +119,8 @@ Many semi-independent packages under a common roof.​
 Pros:​
 
 - Control how much coupling you get.​
-- Consistent coding standards and tooling. Setup once, benefit many.​
+- **Consistent coding standards and tooling**.
+- **Setup once, benefit many**.​
 
 Cons:​
 
@@ -172,9 +173,9 @@ examples: [react](https://github.com/facebook/react),
   - ...
   - docs-packages/    # Private, Internal, and External docs
   - test-packages/    # Test apps for verifying libraries
-  - starter-packages/  # New monorepo package starters
+  - starter-packages/ # New monorepo package starters
+  - samples-packages/ # Public sample & template packages
   - support-packages/ # Configs. Tooling
-- samples/            # Public sample & starter packages
 ```
 
 ---
@@ -185,17 +186,17 @@ examples: [react](https://github.com/facebook/react),
 ```yaml
 - packages/
   - support-packages/
-    - runtime-utils
-    - build-utils
-    - monorepo-cli
-    - lumina-runtime         # Base class for all web components (uses Lit)
-    - lumina-compiler        # Internal web component framework (uses Vite and TypeScript)
-    - eslint-config
-    - prettier-config
-    - typescript-config
-    - storybook-config
-    - codemod                # Codemods for migrating between frameworks or updating libraries
-    - create-cli             # CLI to bootstrap a new Maps SDK package
+    - runtime-utils/          # DOM, Intl, logging
+    - build-utils/            # Node.js file system and shell wrappers, package.json utils
+    - monorepo-cli/           # Chores automation: linting, building, deploying, releasing
+    - lumina-runtime/         # Base class for all web components (uses Lit)
+    - lumina-compiler/        # Internal web component framework (uses Vite and TypeScript)
+    - eslint-config/
+    - prettier-config/
+    - typescript-config/
+    - storybook-config/
+    - codemod/                # @arcgis/codemod: Codemods for migrating between frameworks or updating libraries
+    - create-cli/             # @arcgis/create: CLI to bootstrap a new Maps SDK package
 ```
 
 ---
@@ -208,7 +209,7 @@ layout: intro
 
 # Disclaimer
 
-- This presentation covers a common monorepo stack​
+- This presentation covers our monorepo tooling stack
 - Every team has their unique needs, baggage, and preferences​
 - No tooling works universally​
 
@@ -223,24 +224,126 @@ packages together.​
 
 - npm (default for non-monorepo projects, simple)​
 - yarn (most common in monorepos as it supported them first)​
-- pnpm (modern, fast, has security options)​
+- pnpm (modern, fast, protects against hacked dependencies)
 
 [pnpm](https://pnpm.io/installation) and
 [pnpm workspace](https://pnpm.io/workspaces) get started
 
 ---
 
-# Turbo build cache
+# Turborepo build cache
 
 - Build package once – reuse, if nothing changed​
 - Build cache is shared between CI and all devs​
 - Result: `pnpm build:all` "builds" thousands of files in 3s​
 
-[Turbo Introduction​](https://turborepo.dev/docs)
+[Turborepo Introduction​](https://turborepo.dev/docs)
+
+---
+layout: center
+---
+
+# [Demo: pnpm + Turborepo](https://github.com/maxpatiiuk/monorepo-template)
 
 ---
 
-# WIP
+# [Prettier](https://prettier.io/docs/)
+
+Enforce consistent code formatting.
+
+Recommendation:
+
+- Create a single `prettier.config.js` at the monorepo root and lint changed
+  files from monorepo root.
+
+```js
+// prettier.config.js
+export default {
+  singleQuote: true,
+  proseWrap: 'always',
+};
+```
+
+---
+
+# [ESLint](https://eslint.org/docs/latest/use/getting-started)
+
+Enforce consistent monorepo code standard.
+
+Create an eslint-config package that contains:
+
+- Rule configs
+- ESLint plugins setup
+- Custom monorepo-specific rules
+
+Recommendation:
+
+- single `eslint.config.js` for the entire monorepo (consistency by default)
+- run lint from the monorepo root (simpler) for changed files only (faster)
+
+---
+
+# Linting setup
+
+IDE plugin:
+
+- Auto-fix on save & inline error - very convenient
+- But, highly dependent on local IDE setup
+
+Pre-commit:
+
+- Quick feedback before the commit goes through
+- But, limited performance budget to not slow down committing
+
+CI check:
+
+- Guaranteed & consistent check for all contributors
+- But, slow feedback loop
+
+---
+
+# Pre-commit hook
+
+Common tools: [husky](https://www.npmjs.com/package/husky/) together with
+[lint-staged](https://github.com/lint-staged/lint-staged).
+
+Example config:
+
+```js
+export default {
+  '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
+  '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,json,html}':
+    'prettier --write',
+  '*.{ts,tsx,json}': 'yarn my-cli run-tests-for-changes',
+  '*': 'yarn my-cli detect-large-files',
+  './.gitattributes': () => 'git add --renormalize .',
+};
+```
+
+---
+
+# Bonus
+
+- Use [pnpm catalogs](https://pnpm.io/catalogs) to keep dependency versions
+  within monorepo consistent.
+- Use [VitePress](http://vitepress.dev/) to build an internal docs site for your
+  team/org.
+- Use [codemods](https://ts-morph.com/) to automate large-scale refactoring.
+- Use [commander](https://www.npmjs.com/package/commander) to create CLI scripts
+  for automating monorepo chores.
+
+You can find these, and more suggestions in our
+[monorepo-template](https://github.com/maxpatiiuk/monorepo-template?tab=readme-ov-file#what-you-can-add-after-forking-the-template).
+
+---
+
+# Grow incrementally
+
+We mentioned many tools. Don't get intimidated: you only need two to get
+started: `pnpm` and `turbo`.
+
+Everything else can be gradually added later as your team growth and you get
+familiarity with tools.
 
 ---
 layout: intro
