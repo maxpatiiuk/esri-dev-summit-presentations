@@ -3,7 +3,13 @@ import eslintConfigLumina from '@arcgis/eslint-config/lumina';
 
 export default [
   {
-    ignores: ['dist', 'node_modules', '**/*.js', '**/*.cjs'],
+    ignores: [
+      'dist',
+      'node_modules',
+      '**/*.js',
+      '**/*.cjs',
+      '**/setup/shiki.ts',
+    ],
   },
   ...eslintConfig,
   ...eslintConfigLumina,
