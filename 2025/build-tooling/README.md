@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
 
+[Recording](https://mediaspace.esri.com/media/t/1_jeg4ahle/368599242)
+
 Learn how Esri's development teams are leveraging modern tools like Vite to
 build fast, dynamic Web GIS applications. With features such as lazy loading,
 client-side routing, hot module replacement, and lightning-fast builds, Vite
