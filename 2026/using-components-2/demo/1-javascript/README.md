@@ -9,7 +9,6 @@ The project was created using the [Vite sample app in jsapi-resources](https://g
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
 - [Vite](https://vitejs.dev/)
-- [React](https://react.dev/)
 
 ## Installation
 

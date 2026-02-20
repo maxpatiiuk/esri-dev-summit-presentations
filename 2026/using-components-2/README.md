@@ -29,6 +29,8 @@ See
 and
 [Part 4](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761122138829001Iinc)
 
+See also, [deeper dive into Vite](../build-tooling/).
+
 ## Resources
 
 ### Vite ⚡

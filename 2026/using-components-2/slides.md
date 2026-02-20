@@ -50,7 +50,7 @@ build on top of each other
 - An extensive library of reusable web components for designing compelling apps
 - Provides consistent, customizable, responsive and accessible UI out of the box
 - Works with any framework
-- Will be covered in more detail by the 3rd session in this 3-part series
+- Will be covered in more detail by the 3rd session in this 4-part series
 
 ---
 
@@ -182,17 +182,17 @@ package.json:
 ```json
   // Required for the app to run
   "dependencies": {
-    "@arcgis/map-components": "^5.0.0-next.99",
-    "@esri/calcite-components": "^5.0.0-next.38",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "@arcgis/map-components": "^5.0.0",
+    "@esri/calcite-components": "^5.0.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   // Only used during development/build
   "devDependencies": {
-    "vite": "^7.3.0",
+    "vite": "^7.3.1"
     "typescript": "5.9.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "@types/react": "^19.2.7",
+    "@vitejs/plugin-react": "^4.2.3",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3"
   }
 ```
@@ -498,10 +498,9 @@ layout: center
 
 # Next session
 
-ArcGIS Maps SDK for JavaScript: App Development with Components, Part 3: User
-Experience (Deeper Calcite UX best practices)
+[ArcGIS Maps SDK for JavaScript: App Development with Components, Part 3: User Experience (Deeper Calcite UX best practices)](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121324274001qsE7)
 
-**When**: Tomorrow (Thursday, March 13) | 10:30 AM - 11:30 AM PDT
+**When**: Tomorrow (Thursday, March 12) | 10:30 AM - 11:30 AM PDT
 
 **Where**: Primrose A | Palm Springs Convention Center
 
@@ -516,7 +515,7 @@ Experience (Deeper Calcite UX best practices)
 
 ---
 
-# ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps (tomorrow)
+# [ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps (tomorrow)](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121854534001s2my)
 
 Deeper Vite and Vitest guide - shows how Esri is building apps
 
