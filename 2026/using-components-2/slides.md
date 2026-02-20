@@ -5,7 +5,7 @@ mdc: true
 colorSchema: light
 ---
 
-## ArcGIS Maps SDK for JavaScript: App Development with Components,<br>Part 2: Using Frameworks
+## ArcGIS Maps SDK for JavaScript:<br>App Development with Components,<br>Part 2: Using Frameworks
 
 Omar Kawach, Max Patiiuk, Nicholas Romano
 
@@ -28,7 +28,7 @@ App Development with Components Part 1: Core Patterns
 > components can be used together to build intuitive yet powerful experiences in
 > your apps.
 
-If you missed the previous session, we have a recording. These 3-part sessions
+If you missed the previous session, we have a recording. These 4-part sessions
 build on top of each other
 
 ---
@@ -170,7 +170,8 @@ layout: center
 # Dependencies
 
 - Your application can consume other packages
-- Use npmjs.com to find packages or find out the latest version number
+- Use [npmjs.com](https://www.npmjs.com/) to find packages or find out the
+  latest version number
 
 ---
 
@@ -250,7 +251,7 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - By default, component assets are loaded from Esri's fast CDN
 - This includes translation files and images
 - They can be made
-  [fully self-hosted](https://developers.arcgis.com/javascript/latest/disconnected-environment/)
+  [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
 
 ---
