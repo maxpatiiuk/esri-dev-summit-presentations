@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
 
+[Recording](https://mediaspace.esri.com/media/t/1_jeg4ahle/368599242)
+
 Learn how Esri's development teams are leveraging modern tools like Vite to
 build fast, dynamic Web GIS applications. With features such as lazy loading,
 client-side routing, hot module replacement, and lightning-fast builds, Vite
@@ -25,7 +27,7 @@ Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 ### Vite ⚡
 
 - [Final demo app](./demo/final)
-- [Basic demo apo](./demo/1-javascript)
+- [Basic demo app](./demo/1-javascript)
   - Run `npm create vite` to create a new Vite project
 - [Documentation](https://vitejs.dev/)
   - [Publishing guide](https://vite.dev/guide/static-deploy)
@@ -51,16 +53,16 @@ Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 - [Demo app](./demo/final)
   - [Get started steps](./demo/3-web-components/README.md#key-changes-from-2-react)
 - [Documentation](https://developers.arcgis.com/javascript)
-- [Get started (for NPM)](https://developers.arcgis.com/javascript/latest/get-started-npm/)
+- [Get started (for NPM)](https://developers.arcgis.com/javascript/latest/get-started/#npm)
 - [Maps SDK Resources](https://github.com/Esri/jsapi-resources)
-- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/react)
+- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-and-charts-components-react)
 
 ### TypeScript 🦾
 
 - [Demo app](./demo/4-typescript)
   - [Get started steps](./demo/4-typescript/README.md#key-changes-from-3-web-components)
 - [Documentation](https://www.typescriptlang.org)
-- [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/guide/typescript-setup/)
+- [Guide to using ArcGIS Maps SDK for JavaScript with TypeScript](https://developers.arcgis.com/javascript/latest/get-started/#typescript)
 - VS Code extension:
   - [Pretty TypeScript Errors](https://marketplace.visualstudio.com/items?itemName=yoavbls.pretty-ts-errors)
 

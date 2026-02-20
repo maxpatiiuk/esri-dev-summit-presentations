@@ -29,7 +29,7 @@
    npm install
    ```
 
-3. Copy `.env.local.example` to `.env.local` and update it with an [API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/) that has access to the [ArcGIS Places service](https://developers.arcgis.com/rest/places/). Note, if you do not have an ArcGIS Location Platform account, sign up for free [here](https://location.arcgis.com/sign-up/).
+3. Copy `.env.local.example` to `.env.local` and update it with an [API key](https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/online/) that has access to the [ArcGIS Places service](https://developers.arcgis.com/rest/places/). Note, if you do not have an ArcGIS Location Platform account, sign up for free [here](https://location.arcgis.com/sign-up/).
 
 4. Start the development server
 
@@ -57,6 +57,6 @@ For production build and deployment, see [Vite documentation](https://vite.dev/g
 
 1. Use Vite starter app (React + TypeScript): `npm init vite`
 
-2. Follow the Maps SDK's ["Get started with npm"](https://developers.arcgis.com/javascript/latest/get-started-npm/) guide to install `@arcgis/map-components`
+2. Follow the Maps SDK's ["Get started with npm"](https://developers.arcgis.com/javascript/latest/get-started/#npm) guide to install `@arcgis/map-components`
 
 3. Add `<calcite-shell>` and `<arcgis-map>` components to `App.tsx`

@@ -10,7 +10,7 @@
   # Install the Vite React plugin:
   npm install -D @vitejs/plugin-react-swc
   ```
-- Add react plugin to [vite.config.ts](./vite.config.ts)
+- Add react plugin to [vite.config.js](./vite.config.js)
 - Rename .js files to .jsx
 - Render Splash screen using React in [src/main.jsx](./src/main.jsx)
 - Use JSX syntax in [src/Splash.jsx](./src/Splash.jsx)
