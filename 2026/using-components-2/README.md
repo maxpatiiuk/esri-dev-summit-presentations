@@ -36,7 +36,7 @@ See also, [deeper dive into Vite](../build-tooling/).
 ### Vite ⚡
 
 - [Final demo app](./demo/3-typescript)
-- [Basic demo apo](./demo/1-javascript)
+- [Basic demo app](./demo/1-javascript)
 - [Documentation](https://vitejs.dev/)
   - [Publishing guide](https://vite.dev/guide/static-deploy)
 
