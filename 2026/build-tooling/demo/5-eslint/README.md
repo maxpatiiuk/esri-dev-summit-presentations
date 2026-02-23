@@ -34,7 +34,7 @@ Tip:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
-- [Vite](https://vitejs.dev/)
+- [Vite](https://vite.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
 - [ESLint](https://eslint.org/)

@@ -1,9 +1,9 @@
-import { useState, useRef } from "react";
-import "@esri/calcite-components/components/calcite-shell";
-import "@esri/calcite-components/components/calcite-shell-panel";
 import "@arcgis/map-components/components/arcgis-features";
 import "@arcgis/map-components/components/arcgis-legend";
 import "@arcgis/map-components/components/arcgis-map";
+import "@esri/calcite-components/components/calcite-shell";
+import "@esri/calcite-components/components/calcite-shell-panel";
+import { useRef, useState } from "react";
 
 import type Graphic from "@arcgis/core/Graphic.js";
 
@@ -17,10 +17,13 @@ function App() {
   >();
 
   function onMapClick(event: HTMLArcgisMapElement["arcgisViewClick"]) {
-    featuresElement.current?.open({
-      location: event.detail.mapPoint,
-      fetchFeatures: true,
-    });
+    const { current } = featuresElement;
+    if (!current) {
+      return;
+    }
+
+    current.fetchFeatures(event.detail);
+    current.open = true;
   }
 
   function onFeaturesChange(
@@ -43,13 +46,15 @@ function App() {
           }
         >
           <div className="panel-content">
-            <arcgis-features
-              hideCloseButton
-              hideHeading
-              ref={featuresElement}
-              referenceElement={mapElement}
-              onarcgisPropertyChange={onFeaturesChange}
-            ></arcgis-features>
+            {mapElement ? (
+              <arcgis-features
+                hideCloseButton
+                hideHeading
+                ref={featuresElement}
+                referenceElement={mapElement}
+                onarcgisPropertyChange={onFeaturesChange}
+              />
+            ) : undefined}
           </div>
         </calcite-panel>
       </calcite-shell-panel>
@@ -60,7 +65,7 @@ function App() {
         onarcgisViewClick={onMapClick}
       >
         <arcgis-legend
-          position="bottom-right"
+          slot="bottom-right"
           legend-style="classic"
         ></arcgis-legend>
       </arcgis-map>

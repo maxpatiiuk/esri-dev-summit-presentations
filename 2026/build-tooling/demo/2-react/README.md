@@ -17,7 +17,7 @@
 
 ## Technologies used:
 
-- [Vite](https://vitejs.dev/)
+- [Vite](https://vite.dev/)
 - [React](https://react.dev/)
 
 ## Installation

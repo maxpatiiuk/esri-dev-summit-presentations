@@ -1,9 +1,10 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
+import { playwright } from "@vitest/browser-playwright";
 import chaosMonkey from "./support/chaosMonkey.js";
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   server: {
     open: true,
@@ -32,7 +33,7 @@ export default defineConfig({
     setupFiles: "./src/setupTests.ts",
     browser: {
       enabled: true,
-      provider: "playwright",
+      provider: playwright(),
       // https://vitest.dev/guide/browser/playwright
       instances: [{ browser: "chromium" }],
     },
