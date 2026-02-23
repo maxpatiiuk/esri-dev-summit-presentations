@@ -124,7 +124,7 @@ Pros:​
 
 Cons:​
 
-- More tooling complexity
+- More tooling and CI complexity
 
 Esri examples:
 [calcite-design-system](https://github.com/Esri/calcite-design-system),
@@ -138,12 +138,13 @@ examples: [react](https://github.com/facebook/react),
 
 <!-- prettier-ignore -->
 ```yaml
-- .github/           # Shared GitHub actions​
-- .gitignore         # Single gitignore​
-- eslint.config.js   # Single config​
-- prettier.config.js # Single config​
-- pnpm-lock.yaml     # Single lock file for the entire monorepo​
-- packages/          # ...
+- .github/            # Shared GitHub actions​
+- .gitignore          # Single gitignore​
+- eslint.config.js    # Single config​
+- prettier.config.js  # Single config​
+- pnpm-lock.yaml      # Single lock file for the entire monorepo​
+- pnpm-workspace.yaml # Monorepo configuration file
+- packages/           # ...
 ```
 
 ---
