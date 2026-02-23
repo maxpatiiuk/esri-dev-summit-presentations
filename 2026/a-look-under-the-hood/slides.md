@@ -313,7 +313,7 @@ Example config:
 ```js
 export default {
   '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
-  '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,json,html}':
+  '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,html}':
     'prettier --write',
   '*.{ts,tsx,json}': 'yarn my-cli run-tests-for-changes',
   '*': 'yarn my-cli detect-large-files',
