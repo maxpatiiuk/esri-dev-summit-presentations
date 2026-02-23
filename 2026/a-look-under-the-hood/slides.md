@@ -17,7 +17,7 @@ is: feedback
 
 # Agenda
 
-- How Esri's largest monorepos works
+- How Esri's largest monorepo works
   - What is a monorepo and why create it? 📐
   - What tooling is needed? ⚙️
   - Live Demo 🧪
