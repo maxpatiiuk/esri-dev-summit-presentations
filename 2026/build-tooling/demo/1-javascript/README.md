@@ -2,7 +2,7 @@
 
 [Session Description](../..)
 
-## Technologies used
+## Technologies used:
 
 - [Vite](https://vite.dev/)
 

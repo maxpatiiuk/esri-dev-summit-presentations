@@ -2,7 +2,7 @@
 
 [Session Description](../..)
 
-## Technologies used
+## Technologies used:
 
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
