@@ -3,6 +3,7 @@ import Point from "@arcgis/core/geometry/Point.js";
 import type Polygon from "@arcgis/core/geometry/Polygon";
 import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils.js";
 import Graphic from "@arcgis/core/Graphic.js";
+import ActionButton from "@arcgis/core/support/actions/ActionButton.js";
 import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol.js";
 import type { PopupAction } from "@arcgis/core/widgets/Popup/types";
 import "@arcgis/map-components/components/arcgis-features";
@@ -18,7 +19,6 @@ import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-shell-panel";
 import { useRef, useState } from "react";
 import type { Result, ServiceInfo } from "./interfaces";
-import ActionButton from "@arcgis/core/support/actions/ActionButton.js";
 
 const featureActions = new Collection<PopupAction>([
   new ActionButton({

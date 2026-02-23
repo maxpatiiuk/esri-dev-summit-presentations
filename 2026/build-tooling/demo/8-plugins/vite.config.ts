@@ -36,6 +36,7 @@ export default defineConfig({
       provider: playwright(),
       // https://vitest.dev/config/browser/playwright
       instances: [{ browser: "chromium" }],
+      viewport: { width: 800, height: 600 },
     },
     onConsoleLog: (msg) => {
       const ignores = [/^Lit is in dev mode/u, /^Using Calcite Components/u];
