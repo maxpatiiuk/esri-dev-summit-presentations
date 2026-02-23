@@ -343,7 +343,7 @@ You can find these, and more suggestions in our
 We mentioned many tools. Don't get intimidated: you only need two to get
 started: `pnpm` and `turbo`.
 
-Everything else can be gradually added later as your team growth and you get
+Everything else can be gradually added later as your team grows and you get
 familiarity with tools.
 
 ---
