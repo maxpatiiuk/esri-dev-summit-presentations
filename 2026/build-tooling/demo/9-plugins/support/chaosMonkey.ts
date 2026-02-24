@@ -14,7 +14,7 @@ const chaosMonkey = (entries: ChaosMonkeyEntry[]): Plugin => ({
     server.middlewares.use((req, res, next) => {
       const entry = entries.find((entry) => req.url?.startsWith(entry.apiUrl));
       if (!req.url || !entry) {
-        return void next();
+        return next();
       }
 
       const random = Math.random();

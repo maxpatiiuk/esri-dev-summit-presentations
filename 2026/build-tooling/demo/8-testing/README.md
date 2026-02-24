@@ -7,6 +7,7 @@
 - [Calcite Design System](https://developers.arcgis.com/calcite-design-system/)
 - [ArcGIS Maps SDK for JavaScript's ES modules](https://developers.arcgis.com/javascript/latest/)
 - [Vite](https://vite.dev/)
+- [Sonda](https://sonda.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [ESLint](https://eslint.org/)
 - [React](https://react.dev/)
@@ -20,7 +21,7 @@
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2026/build-tooling/demo/8-plugins
+   cd esri-dev-summit-presentations/2026/build-tooling/demo/8-testing
    ```
 
 2. Install dependencies
