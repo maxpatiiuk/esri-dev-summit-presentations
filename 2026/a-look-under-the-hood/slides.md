@@ -120,7 +120,7 @@ Pros:​
 
 - Control how much coupling you get.​
 - **Consistent coding standards and tooling**.
-- **Setup once, benefit many**.​
+- Any tooling and process improvement benefits many teams.
 
 Cons:​
 
@@ -228,7 +228,7 @@ packages together.​
 - pnpm (modern, fast, protects against hacked dependencies)
 
 [pnpm](https://pnpm.io/installation) and
-[pnpm workspace](https://pnpm.io/workspaces) get started
+[pnpm workspace](https://pnpm.io/workspaces) to get started
 
 ---
 
@@ -313,8 +313,7 @@ Example config:
 ```js
 export default {
   '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
-  '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,html}':
-    'prettier --write',
+  '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,html}': 'prettier --write',
   '*.{ts,tsx,json}': 'yarn my-cli run-tests-for-changes',
   '*': 'yarn my-cli detect-large-files',
   './.gitattributes': () => 'git add --renormalize .',
