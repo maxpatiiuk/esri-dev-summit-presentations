@@ -165,7 +165,7 @@ layout: two-cols
 
 Global View vs Local View
 
-<img src="/scene-view.avif">
+<img src="/scene-view.avif" alt="SceneView in global mode, showing the entire globe with a topographic basemap.">
 
 ::right::
 
@@ -173,7 +173,7 @@ Global View vs Local View
 
 &nbsp;
 
-<img src="/local-scene.avif">
+<img src="/local-scene.avif" alt="SceneView in local mode, showing a flat plane with a map of Antarctica.">
 
 <!--
 The SceneView supports two different viewing modes, global and the, specified by the viewingMode property. Global scenes render the earth as a globe, while local scenes render the surface on a flat plane.
@@ -289,7 +289,7 @@ const map = new WebScene({
 const view = new SceneView({ map });
 ```
 
-<img v-click="1" src="/basemaps-list.avif">
+<img v-click="1" src="/basemaps-list.avif" alt="List of basemaps available in ArcGIS Maps SDK for JavaScript, including topo-3d, satellite, etc">
 
 <!--
 Use of these basemaps requires either an ArcGIS Location Platform account, ArcGIS Online organizational subscription, or an ArcGIS Enterprise license.
@@ -499,7 +499,7 @@ const layer = new FeatureLayer({
 });
 ```
 
-<img v-click="2" src="/renderers.avif">
+<img src="/renderers.avif" alt="SimpleRenderer image with a globe with icons and labels for cities. UniqueValueRenderer image with colored schematic buildings and a legend. ClassBreaksRenderer image with colored schematic buildings and a legend.">
 
 ---
 layout: media-right
@@ -528,15 +528,16 @@ mdc: true
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/live/'
-extendedIframe: true
+image: /point-symbol-flat.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/live/ -->
 
 # PointSymbol3D
 
-Flat and Volumetric
+Flat
 
-```ts {0|1-12|13-25}{maxHeight:'320px'}
+```ts
 const renderer = new SimpleRenderer({
   symbol: new PointSymbol3D({
     symbolLayers: [
@@ -549,6 +550,18 @@ const renderer = new SimpleRenderer({
     ],
   }),
 });
+```
+
+---
+layout: media-right
+image: /point-symbol-cone.avif
+---
+
+# PointSymbol3D
+
+Volumetric
+
+```ts
 const renderer = new SimpleRenderer({
   symbol: new PointSymbol3D({
     symbolLayers: [
@@ -566,14 +579,16 @@ const renderer = new SimpleRenderer({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-rotation-3d/live'
+image: /point-symbol-icon-rotation.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-rotation-3d/live -->
 
 # PointSymbol3D
 
 Icon Rotation
 
-```ts {0|3-10|16-21}{maxHeight:'320px'}
+```ts {0|3-8|15-18}{maxHeight:'320px'}
 const arrowSymbol = new PointSymbol3D({
   symbolLayers: [
     new IconSymbol3DLayer({
@@ -599,12 +614,36 @@ const renderer = new SimpleRenderer({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3d/live/'
+image: /line-symbol-flat.avif
+---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3d/live/ -->
+
+# LineSymbol3D
+
+Flat
+
+```ts
+const symbol = new LineSymbol3D({
+  symbolLayers: [
+    new LineSymbol3DLayer({
+      size: 2, // points
+      material: {
+        color: 'blue',
+      },
+    }),
+  ],
+});
+```
+
+---
+layout: media-right
+image: /line-symbol-volumetric.avif
 ---
 
 # LineSymbol3D
 
-PathSymbol3DLayer
+Volumetric
 
 ```ts
 const symbol = new LineSymbol3D({
@@ -623,6 +662,62 @@ const symbol = new LineSymbol3D({
     }),
   ],
 });
+```
+
+---
+layout: media-right
+image: /glow-off.avif
+---
+
+# LineSymbol3D
+
+Glow
+
+```ts
+const renderer = lines.renderer.clone();
+
+// Modify each symbol in the renderer to emit
+// light based on its existing color
+renderer.symbols.forEach((symbol) => {
+  symbol.symbolLayers.forEach((layer) => {
+    layer.material.emissive = {
+      // The symbol's color is used for emission
+      source: 'color',
+      // How much light is being emitted
+      strength: 1.0,
+    };
+  });
+});
+
+lines.renderer = renderer;
+```
+
+---
+layout: media-right
+image: /glow-on.avif
+---
+
+# LineSymbol3D
+
+Glow
+
+```ts
+const renderer = lines.renderer.clone();
+
+// Modify each symbol in the renderer to emit
+// light based on its existing color
+renderer.symbols.forEach((symbol) => {
+  symbol.symbolLayers.forEach((layer) => {
+    layer.material.emissive = {
+      // The symbol's color is used for emission
+      source: 'color',
+      // How much light is being emitted
+      strength: 1.0,
+    };
+  });
+});
+
+lines.renderer = renderer;
 ```
 
 ---
@@ -657,20 +752,88 @@ const symbol = new PolygonSymbol3D({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildings-3d/live'
+image: /sl-emissive-off.avif
 ---
+
+# Mesh
+
+Loading a mesh
+
+```ts
+const mesh = await Mesh.createFromGLTF(origin, url);
+await mesh.load();
+
+graphicsLayer.add(
+  new Graphic({
+    geometry: mesh
+    symbol: meshSymbol,
+  }),
+);
+```
+
+---
+layout: media-right
+image: /sl-emissive-on.avif
+---
+
+# Mesh
+
+Emissive Textures
+
+```ts
+mesh.symbol = new MeshSymbol3D({
+  symbolLayers: [
+    {
+      type: 'fill',
+      material: {
+        emissive: {
+          source: 'emissive',
+          // 0 to disable, 1 for full effect
+          strength: 1.0,
+        },
+      },
+    },
+  ],
+});
+```
+
+---
+layout: media-right
+image: /sl-emissive-glow.avif
+---
+
+# Mesh
+
+Glow
+
+```ts
+viewElement.environment.lighting.glow = new Glow({
+  intensity: glowIntensity, // 0 to 1
+});
+```
+
+---
+layout: media-right
+image: /building-footprints.avif
+---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildings-3d/live -->
 
 # Extruding building footprints
 
 ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
 
-```ts {0|2|3-9|13-20|22-25}{maxHeight:'260px'}
-getSymbol(color){
+```ts {0|2-13|3-12|17-25|26-29}{maxHeight:'260px'}
+getSymbol(color) {
   const symbol = new PolygonSymbol3D({
     symbolLayers: [
       new ExtrudeSymbol3DLayer({
         material: { color },
-        edges: { type: "solid", color: "#999", size: 0.5 },
+        edges: {
+          type: "solid",
+          color: "#999",
+          size: 0.5
+        },
       }),
     ],
   });
@@ -683,13 +846,13 @@ const renderer = new UniqueValueRenderer({
       value: "Residential",
       symbol: getSymbol("#A7C636"),
       label: "Residential"
-    }
-    ... // same for all categories
-    ]
+    },
+    /* same for all categories */
+  ]
   visualVariables: [{
-      type: "size",
-      field: "HEIGHT",
-    }],
+    type: "size",
+    field: "HEIGHT",
+  }],
 });
 ```
 
@@ -703,8 +866,10 @@ Hugo Campos
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-points/live/'
+image: /scene-layer-points.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-points/live/ -->
 
 # Scene Layer
 
@@ -722,36 +887,42 @@ map.add(layer);
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer/live'
+image: /scene-layer-highlights.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer/live -->
 
 # Scene Layer
 
 Scene Layer and Multiple Highlights
 
-```ts {0-22}{maxHeight:'300px'}
-const campusSceneLayer = arcgisScene.map.allLayers.find((layer) => {
-  return layer.title === 'Buildings';
-});
+```ts {0-100}{maxHeight:'300px'}
+const campusSceneLayer = viewElement.map.allLayers.find(
+  (layer) => layer.title === 'Buildings',
+);
 
-// Add a "multiselect" highlight option for buildings selected in the list
-// Add a "default" highlight option for when a building is hovered over in the list
-arcgisScene.highlights = [
-  {
-    name: 'multiselect',
-    color: 'blue',
-  },
+// Define multiple highlight options with different
+// names and colors
+viewElement.highlights = [
+  { name: 'multiselect', color: 'blue' },
   { name: 'default', color: 'gold' },
 ];
 
-arcgisScene.view.whenLayerView(campusSceneLayer).then((layerView) => {
-  // When the list item is hovered over, highlight the corresponding building in gold
-  li.addEventListener('mouseenter', () => {
-    // Since no highlight name is provided, the default will be used
-    hoverHighlight = layerView.highlight(feature);
-  });
+const layerView = await viewElement.whenLayerView(campusSceneLayer);
 
-  selectionHighlight = layerView.highlight(objectId, { name: 'multiselect' });
+// Highlight on hover using the default highlight options
+li.addEventListener('mouseenter', () => {
+  // No name provided - the default will be used
+  hoverHighlight = layerView.highlight(feature);
+});
+
+// Highlight on click using the multiselect highlight options
+viewElement.addEventListener('arcgisViewClick', async (event) => {
+  const objectId = await getObjectIdAt(event);
+
+  selectionHighlight = layerView.highlight(objectId, {
+    name: 'multiselect',
+  });
 });
 ```
 
@@ -808,12 +979,14 @@ symbolLayer.edges = new SolidEdges3D({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-slice/live'
+image: /bsl.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-slice/live -->
 
 # Building Scene Layer
 
-BSL and Slice Widget
+With SliceAnalysis
 
 ```ts
 const buildingLayer = new BuildingSceneLayer({
@@ -821,10 +994,13 @@ const buildingLayer = new BuildingSceneLayer({
 });
 map.add(layer);
 
-const sliceWidget = new Slice({
-  view: view,
-  container: document.createElement('div'),
+const plane = new SlicePlane(/* ... */);
+
+// Add an analysis to slice the building layer.
+const slice = new SliceAnalysis({
+  shape: plane,
 });
+viewElement.analyses.add(slice);
 ```
 
 ---
@@ -854,8 +1030,10 @@ columnsLayer.renderer = new SimpleRenderer({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-portal/live'
+image: /pcl.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-portal/live -->
 
 # Point Cloud Scene Layer
 
@@ -870,8 +1048,10 @@ map.add(pcLayer);
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud/live'
+image: /pcl-classification.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud/live -->
 
 # Point Cloud Scene Layer
 
@@ -912,12 +1092,14 @@ if (fieldName === 'ELEVATION' || 'INTENSITY') {
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer/live'
+image: /im.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer/live -->
 
 # Integrated Mesh
 
-Another type of Scene Layer
+Realistic 3D meshes
 
 ```ts
 const layer = new IntegratedMeshLayer({
@@ -928,23 +1110,41 @@ map.add(layer);
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/live'
+image: /im-flat.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/live -->
 
 # Integrated Mesh
 
-IML Modification
+Scene Modifications
 
 ```ts
-// create the modification collection with the geometry and attribute from the graphicsLayer
-let modifications = new SceneModifications(
-  graphicsLayer.graphics.toArray().map((graphic) => {
-    return new SceneModification({
-      geometry: graphic.geometry,
-      type: graphic.attributes.modificationType,
-    });
-  }),
+layer.modifications = new SceneModifications(
+  return new SceneModification({
+    geometry: graphic.geometry,
+    type: 'replace', // or "clip", "mask"
+  });
 );
+```
+
+---
+layout: media-right
+image: /gaussian-layer.avif
+---
+
+# Gaussian Splats
+
+Realistic rendering of fine details
+
+```ts
+const layer = new GaussianSplatLayer({
+  portalItem: { id: '...' },
+  elevationInfo: {
+    mode: 'absolute-height',
+    offset: 10,
+  },
+});
 ```
 
 ---
@@ -955,14 +1155,16 @@ layout: intro
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/live'
+image: /terrain.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/live -->
 
 # Terrain 3D Layer
 
 Applying RasterFunction
 
-```ts {0|1-7|9-14|16-19}{maxHeight:'340px'}
+```ts {0-100}{maxHeight:'300px'}
 // Setup layer with initial raster function
 const analysisLayer = new ImageryTileLayer({
   url: 'https://elevation3d.arcgis.com/.../ImageServer',
@@ -988,8 +1190,10 @@ const aspectFunction = rasterFunctionUtils.aspect({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live'
+image: /voxel.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live -->
 
 # Voxel Layer
 
@@ -1004,8 +1208,10 @@ map.add(layer);
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/live'
+image: /voxel-slice.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/live -->
 
 # Voxel Layer
 
@@ -1024,38 +1230,16 @@ vxlLayer.getVolumeStyle(null).slices = [xSlice];
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-time/live'
+image: /media-layer-video.avif
 ---
 
-# Voxel Layer
-
-Time enabled
-
-```ts
-const vxlVolume = vxlLayer.getVolume(null);
-const vxlVolumeType = vxlVolume.volumeType;
-// Check that the volume type is xyzt
-if (vxlVolumeType === 'xyzt') {
-  // Configure the timeSlider to use the layer's timeInfo.stops
-  timeSlider.fullTimeExtent = vxlLayer.timeInfo.fullTimeExtent;
-  timeSlider.stops = {
-    dates: vxlLayer.timeInfo.stops,
-  };
-  timeSlider.mode = 'instant';
-  // The slider will show temporal data that falls on a single instance in time.
-}
-```
-
----
-layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-video/live'
----
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-video/live -->
 
 # Media Layer
 
 Video element
 
-```ts {0|1-14|16-21}{maxHeight:'320px'}
+```ts {0-100}{maxHeight:'320px'}
 const element = new VideoElement({
   video: 'https://.../video.mp4',
   georeference: new ExtentAndRotationGeoreference({
@@ -1081,15 +1265,17 @@ const layer = new MediaLayer({
 
 ---
 layout: media-right
-url: 'https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live'
+image: /media-layer.avif
 ---
+
+<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live -->
 
 # Media Layer
 
 Interactive georeferencing
 
-```ts {0|1|3-5|7}
-const mediaLayerView = await view.whenLayerView(mediaLayer);
+```ts
+const mediaLayerView = await viewElement.whenLayerView(mediaLayer);
 
 // Enable interactivity and select the image
 mediaLayerView.interactive = true;
