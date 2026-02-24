@@ -13,25 +13,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arcgis/core": "5.0.0",
-    "@arcgis/map-components": "5.0.0",
+    "@arcgis/core": "^5.0.2",
+    "@arcgis/map-components": "^5.0.2",
     "@esri/calcite-components": "^5.0.2",
+    "@esri/arcgis-rest-places": "^4.9.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router": "^7.13.0"
+    "react-router": "^7.13.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.3",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react-swc": "^4.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
-    "eslint-plugin-react-refresh": "^0.5.0",
+    "eslint-plugin-react-refresh": "^0.5.2",
     "globals": "^17.3.0",
     "prettier": "^3.8.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.56.0",
+    "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
   }
 }
