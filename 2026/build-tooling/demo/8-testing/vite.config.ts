@@ -1,4 +1,5 @@
 import react from "@vitejs/plugin-react";
+import Sonda from "sonda/vite";
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vitest/config";
 
@@ -13,7 +14,15 @@ export default defineConfig({
       },
     },
   },
-  plugins: [react()],
+  plugins: [
+    react(),
+    process.env.SONDA
+      ? Sonda({
+          gzip: true,
+          deep: true,
+        })
+      : undefined,
+  ],
   test: {
     setupFiles: "./src/setupTests.ts",
     browser: {

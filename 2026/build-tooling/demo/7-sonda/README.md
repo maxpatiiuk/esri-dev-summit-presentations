@@ -36,6 +36,12 @@
    npm run dev
    ```
 
+   To run Sonda during the build:
+
+   ```sh
+   npm run build:sonda
+   ```
+
 For production build and deployment, see [Vite documentation](https://vite.dev/guide/static-deploy.html).
 
 ## How this sample was created

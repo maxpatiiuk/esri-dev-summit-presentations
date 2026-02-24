@@ -18,9 +18,11 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    Sonda({
-      gzip: true,
-      deep: true,
-    }),
+    process.env.SONDA
+      ? Sonda({
+          gzip: true,
+          deep: true,
+        })
+      : undefined,
   ],
 });
