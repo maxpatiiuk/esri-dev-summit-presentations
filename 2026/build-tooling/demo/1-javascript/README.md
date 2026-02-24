@@ -4,7 +4,7 @@
 
 ## Technologies used:
 
-- [Vite](https://vitejs.dev/)
+- [Vite](https://vite.dev/)
 
 ## Installation
 

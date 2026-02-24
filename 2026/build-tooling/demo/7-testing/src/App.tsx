@@ -1,31 +1,31 @@
-import { useState, useRef } from "react";
+import Collection from "@arcgis/core/core/Collection.js";
+import Point from "@arcgis/core/geometry/Point.js";
+import type Polygon from "@arcgis/core/geometry/Polygon";
+import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils.js";
+import Graphic from "@arcgis/core/Graphic.js";
+import ActionButton from "@arcgis/core/support/actions/ActionButton.js";
+import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol.js";
+import type { PopupAction } from "@arcgis/core/widgets/Popup/types";
+import "@arcgis/map-components/components/arcgis-features";
+import "@arcgis/map-components/components/arcgis-legend";
+import "@arcgis/map-components/components/arcgis-map";
+import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
 import "@esri/calcite-components/components/calcite-alert";
-import "@esri/calcite-components/components/calcite-shell";
-import "@esri/calcite-components/components/calcite-shell-panel";
 import "@esri/calcite-components/components/calcite-list";
 import "@esri/calcite-components/components/calcite-list-item";
 import "@esri/calcite-components/components/calcite-list-item-group";
 import "@esri/calcite-components/components/calcite-progress";
-import "@arcgis/map-components/components/arcgis-features";
-import "@arcgis/map-components/components/arcgis-legend";
-import "@arcgis/map-components/components/arcgis-map";
-
-import type Polygon from "@arcgis/core/geometry/Polygon";
-import Graphic from "@arcgis/core/Graphic.js";
-import WebStyleSymbol from "@arcgis/core/symbols/WebStyleSymbol.js";
-import Point from "@arcgis/core/geometry/Point.js";
-import Collection from "@arcgis/core/core/Collection.js";
-import { webMercatorToGeographic } from "@arcgis/core/geometry/support/webMercatorUtils.js";
-import { findPlacesNearPoint } from "@esri/arcgis-rest-places";
-
+import "@esri/calcite-components/components/calcite-shell";
+import "@esri/calcite-components/components/calcite-shell-panel";
+import { useRef, useState } from "react";
 import type { Result, ServiceInfo } from "./interfaces";
 
-const featureActions = new Collection([
-  {
+const featureActions = new Collection<PopupAction>([
+  new ActionButton({
     title: "Load nearby schools",
     id: "load-schools",
     icon: "education",
-  },
+  }),
 ]);
 
 const schoolSymbol = new WebStyleSymbol({
@@ -45,10 +45,13 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
     useState<Result<Collection<Graphic>>>();
 
   function onMapClick(event: HTMLArcgisMapElement["arcgisViewClick"]) {
-    featuresElement.current?.open({
-      location: event.detail.mapPoint,
-      fetchFeatures: true,
-    });
+    const { current } = featuresElement;
+    if (!current) {
+      return;
+    }
+
+    current.fetchFeatures(event.detail);
+    current.open = true;
   }
 
   function onFeaturesChange(
@@ -115,21 +118,20 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
           }
         >
           {schoolResults?.loading && (
-            <calcite-progress
-              type="indeterminate"
-              className="sticky-top"
-            ></calcite-progress>
+            <calcite-progress type="indeterminate" className="sticky-top" />
           )}
           <div className="panel-content">
-            <arcgis-features
-              hideCloseButton
-              hideHeading
-              ref={featuresElement}
-              referenceElement={mapElement}
-              actions={featureActions}
-              onarcgisPropertyChange={onFeaturesChange}
-              onarcgisTriggerAction={onFeatureActionClicked}
-            ></arcgis-features>
+            {mapElement ? (
+              <arcgis-features
+                hideCloseButton
+                hideHeading
+                ref={featuresElement}
+                referenceElement={mapElement}
+                actions={featureActions}
+                onarcgisPropertyChange={onFeaturesChange}
+                onarcgisTriggerAction={onFeatureActionClicked}
+              />
+            ) : undefined}
             {schoolResults?.result && (
               <calcite-list label="Nearby schools">
                 <calcite-list-item-group heading="Nearby schools">
@@ -154,10 +156,7 @@ function App({ placesServiceInfo }: { placesServiceInfo: ServiceInfo }) {
         ref={setMapElement}
         onarcgisViewClick={onMapClick}
       >
-        <arcgis-legend
-          position="bottom-right"
-          legend-style="classic"
-        ></arcgis-legend>
+        <arcgis-legend slot="bottom-right" legend-style="classic" />
       </arcgis-map>
       {schoolResults?.error && (
         <calcite-alert
