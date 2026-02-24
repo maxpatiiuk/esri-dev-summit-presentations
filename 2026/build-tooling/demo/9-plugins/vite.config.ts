@@ -1,5 +1,5 @@
-/// <reference types="vitest" />
 import react from "@vitejs/plugin-react";
+import Sonda from "sonda/vite";
 import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vitest/config";
 import chaosMonkey from "./support/chaosMonkey.js";
@@ -27,6 +27,12 @@ export default defineConfig({
             chaosErrors: [400, 401, 403, 500],
           },
         ])
+      : undefined,
+    process.env.SONDA
+      ? Sonda({
+          gzip: true,
+          deep: true,
+        })
       : undefined,
   ],
   test: {

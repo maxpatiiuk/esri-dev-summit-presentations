@@ -25,6 +25,7 @@ is: feedback
   - Publish the app
 - Enhance the app
   - Lazy load parts of the application
+  - Analyze bundles with Sonda
   - Add tests with Vitest
   - Add custom plugins
 
@@ -253,9 +254,25 @@ layout: center
 
 ---
 
+# Bundle analysis with Sonda
+
+- Visualize what ends up in your production bundle
+- Uses source maps to inspect post-tree-shaking and minified output
+- Find large or duplicated dependencies before they impact users
+- Works with Vite, Rollup, Rolldown, Webpack, esbuild, etc
+
+---
+layout: center
+---
+
+# Demo: [Analyze bundles with Sonda](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/7-sonda)
+
+---
+
 # Testing
 
-Testing is great, Vitest is also great!
+Testing: if you're not doing it, you should. Vitest makes it super easy to write
+tests:
 
 - Fast with familiar API
 - Supports modern language features
@@ -266,7 +283,7 @@ Testing is great, Vitest is also great!
 layout: center
 ---
 
-# Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/7-tests)
+# Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/8-testing)
 
 ---
 
@@ -279,13 +296,14 @@ layout: center
 layout: center
 ---
 
-# Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/8-plugins)
+# Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/9-plugins)
 
 ---
 
 # Demo summaries
 
 - **Lazy loading 🚀** improves app performance
+- **Sonda 📦** helps visualize and optimize bundle size
 - **Testing with Vitest 🧪** makes it easy to write and maintain tests
 - **Custom plugins 🔌** provides a powerful way to enhance workflows
 
