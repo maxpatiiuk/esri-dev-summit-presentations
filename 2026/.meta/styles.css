@@ -4,9 +4,7 @@
 }
 
 /** Style the slide container, without affecting Slidev controls */
-#slide-content,
-/* Style the slide preview in the slides gallery */
-.slidev-slide-container {
+.slidev-slide-content {
   /*
    * While code blocks are in light mode, the slide background is darker so
    * slide text defaults to white
