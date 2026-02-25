@@ -120,7 +120,7 @@ Pros:​
 
 - Control how much coupling you get.​
 - **Consistent coding standards and tooling**.
-- Any tooling and process improvement benefits many teams.
+- **Any tooling and process improvement benefits many teams**.
 
 Cons:​
 
@@ -314,8 +314,8 @@ Example config:
 export default {
   '*.{ts,tsx}': ['eslint --fix', 'prettier --write'],
   '*.{css,scss,js,jsx,mjs,cjs,md,mdx,json,yml,yaml,html}': 'prettier --write',
-  '*.{ts,tsx,json}': 'yarn my-cli run-tests-for-changes',
-  '*': 'yarn my-cli detect-large-files',
+  '*.{ts,tsx,json}': 'pnpm my-cli run-tests-for-changes',
+  '*': 'pnpm my-cli detect-large-files',
   './.gitattributes': () => 'git add --renormalize .',
 };
 ```

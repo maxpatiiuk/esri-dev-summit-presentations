@@ -23,7 +23,7 @@ export default [
     },
   },
   react.configs.flat["jsx-runtime"],
-  reactHooks.configs["recommended-latest"],
+  reactHooks.configs.flat.recommended,
   reactRefresh.configs.recommended,
 
   // Run all of the above on .ts and .tsx files
