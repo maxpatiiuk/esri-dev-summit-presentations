@@ -251,6 +251,39 @@ If defined, only features that intersect the area will be displayed. The clippin
 
 ---
 layout: media-right
+image: /focus-area.avif
+---
+
+# Core Concepts
+
+Focus Areas
+
+```ts {0|1-11|13-18|20-21}{maxHeight:'340px'}
+const focusPolygon = new Polygon({
+  spatialReference: { wkid: 102100 },
+  rings: [
+    [
+      [1288603, 6130075],
+      [1288506, 6129722],
+      [1288260, 6129821],
+      /* ... */
+    ],
+  ],
+});
+
+const focusArea = new FocusArea({
+  id: 'focusarea-0',
+  title: 'Focus Area',
+  outline: { color: [255, 128, 128, 0.55] },
+  geometries: new Collection([focusPolygon]),
+});
+
+view.focusAreas.areas.add(focusArea);
+view.focusAreas.style = 'bright';
+```
+
+---
+layout: media-right
 image: /basemap-topo-vector.avif
 ---
 
@@ -874,6 +907,33 @@ https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildi
 -->
 
 ---
+layout: media-right
+image: /flow.avif
+---
+
+# Flow Renderer
+
+```ts
+const layer = new ImageryTileLayer({
+  url: 'https://tiledimageservices.../ImageServer',
+  renderer: {
+    type: 'flow',
+    trailLength: 30,
+    maxPathLength: 60,
+    flowSpeed: 2,
+    trailWidth: 3,
+    color: 'white',
+  },
+});
+
+viewElement.map.add(layer);
+```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-imagerytilelayer-flow-3d-local/
+-->
+
+---
 layout: intro
 ---
 
@@ -1290,35 +1350,6 @@ lv.interactionOptions.tool = 'reshape';
 
 <!--
 https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live
--->
-
----
-layout: media-right
-image: /flow.avif
----
-
-# Flow Renderer
-
-Animated Flow Lines
-
-```ts
-const layer = new ImageryTileLayer({
-  url: 'https://tiledimageservices.../ImageServer',
-  renderer: {
-    type: 'flow',
-    trailLength: 30,
-    maxPathLength: 60,
-    flowSpeed: 2,
-    trailWidth: 3,
-    color: 'white',
-  },
-});
-
-viewElement.map.add(layer);
-```
-
-<!--
-https://developers.arcgis.com/javascript/latest/sample-code/layers-imagerytilelayer-flow-3d-local/
 -->
 
 ---
