@@ -77,7 +77,7 @@ build on top of each other
   - No build step - the SDK and Calcite are prebuilt for you via the ArcGIS CDN
   - Only need a single HTML file
   - Syntax for including modules:
-    - `require(["esri/WebMap"], (WebMap) => { /* code goes here */ });`
+    - `const WebMap = await $arcgis.import("@arcgis/core/WebMap.js");`
 - Building an application that scales is more involved
   - Work with a bundler (Vite, Parcel, Webpack)
   - Use a framework (React, Angular, Vue)
@@ -111,8 +111,8 @@ that is most performant for the browser to run.
 graph LR
   subgraph human_files["Human-readable files"]
     direction LR
-    TS[TypeScript .ts/.tsx]
     JS[JavaScript .js/.jsx]
+    TS[TypeScript .ts/.tsx]
     CSS[CSS/Sass .css/.scss]
     IMG[Assets .jpg/.json]
   end
@@ -133,23 +133,29 @@ graph LR
 
 # Bundler benefits
 
-- Improve development experience (live updates...)
-- Enable modern syntax features and dependencies
-- Make testing code simpler
-- Optimize performance (reduce file sizes, split bundles...)
-- Allow extending capabilities with plugins
+1. Optimize performance (reduce file sizes, split bundles...)
+2. Improve development experience (live updates...)
+3. Permits consumption of NPM packages
+4. Make testing code simpler
+
+Bonus: can extend the build tool using plugins
 
 ---
 
 # Examples of bundlers
 
-- Vite ⚡
-  - Most popular bundler today
-  - Used by many Esri teams
-  - Great developer experience
-  - Large and rapidly growing community
+- Vite
 - Parcel
 - Webpack
+
+---
+
+# Vite
+
+- Most popular build tool today
+- Used by many Esri teams
+- Great developer experience
+- Large and rapidly growing community
 
 ---
 layout: center
@@ -189,7 +195,7 @@ package.json:
   },
   // Only used during development/build
   "devDependencies": {
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
     "typescript": "5.9.3",
     "@vitejs/plugin-react": "^4.2.3",
     "@types/react": "^19.2.14",
@@ -201,11 +207,15 @@ package.json:
 
 # Semantic versioning
 
-`<major>.<minor>.<patch>` (example: `5.0.0`)
+Example: 3.0.3 => 5.0.2
+
+`<major>.<minor>.<patch>`
 
 - **major**: breaking changes - read the release notes
 - **minor**: new features - safe to update
 - **patch**: bug fixes - safe to update
+
+> New: as of 5.0.0, `@arcgis/*` packages are following semantic versioning.
 
 ---
 
@@ -238,14 +248,6 @@ Allows for dependency sharing (multiple packages can use single Calcite)
 
 ---
 
-# Fun fact
-
-These slides are built with Vite and hosted on GitHub Pages! ✨
-
-(with help from [Slidev](https://sli.dev/))
-
----
-
 # Asset handling
 
 - By default, component assets are loaded from Esri's fast CDN
@@ -253,6 +255,14 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - They can be made
   [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
+
+---
+
+# Fun fact
+
+These slides are built with Vite and hosted on GitHub Pages! ✨
+
+(with help from [Slidev](https://sli.dev/))
 
 ---
 layout: intro
@@ -489,10 +499,10 @@ layout: center
 # Other frameworks
 
 - Angular and Vue also support web components.
-- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/get-started-angular/)
-- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
-- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
-  repo has samples for all frameworks
+- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/angular/)
+- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vue)
+- [jsapi-resources](https://github.com/Esri/jsapi-resources) repo has samples
+  for all frameworks
 
 ---
 
