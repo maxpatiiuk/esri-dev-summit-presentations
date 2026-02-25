@@ -207,7 +207,7 @@ package.json:
 
 # Semantic versioning
 
-Example: 3.0.3 > 5.0.2
+Example: 3.0.3 => 5.0.2
 
 `<major>.<minor>.<patch>`
 
