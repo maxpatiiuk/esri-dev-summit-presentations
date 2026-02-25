@@ -1,5 +1,79 @@
 # Esri DevSummit Presentations
 
+## 2026
+
+### [ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using Frameworks](./2026/using-components-2)
+
+[![ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using Frameworks header slide](2026/using-components-2/assets/header-slide.avif)](./2026/using-components-2)
+
+[Slides and Demos](./2026/using-components-2)
+
+Join us for the second technical session in a four-part series on building
+applications with the ArcGIS Maps SDK for JavaScript. Speakers begin with
+exploring motivations for using front-end frameworks and then cover techniques
+for integrating the SDK's web components with frameworks and tools such as React
+and Vite. The session touches on current front-end methodologies for topics such
+as dependency management, asset management, semantic versioning, prebuilt versus
+built applications that scale, and conveniences offered by frameworks that
+streamline web mapping app development compared to plain JavaScript.
+
+Presenters: [Omar Kawach](https://github.com/omarkawach) &
+[Max Patiiuk](https://github.com/maxpatiiuk) &
+[Nicholas Romano](https://github.com/nick-romano)
+
+### [ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps](./2026/build-tooling)
+
+[![ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps header slide](2026/build-tooling/assets/header-slide.avif)](./2026/build-tooling)
+
+[Slides and Demos](./2026/build-tooling)
+
+This technical session explores a case study on how Esri's development teams are
+leveraging modern tools like Vite to build fast, dynamic web GIS applications.
+With features such as lazy loading, client-side routing, hot module replacement,
+and lightning-fast builds, Vite streamlines the entire development workflow from
+bundling to deployment. Paired with Vitest for testing, these tools help ensure
+that your apps are both high-performing and production-ready.
+
+Presenters: [Hugo Campos](https://bsky.app/profile/hugocampos.bsky.social) &
+[Max Patiiuk](https://github.com/maxpatiiuk)
+
+### [ArcGIS Maps SDK for JavaScript and 3D GIS Visualization: A Developer's Guide Beyond 2D Cartography](./2026/vis-techniques-3d)
+
+[![ArcGIS Maps SDK for JavaScript and 3D GIS Visualization: A Developer's Guide Beyond 2D Cartography header slide](2026/vis-techniques-3d/public/header-slide.avif)](./2026/vis-techniques-3d)
+
+[Slides and Demos](./2026/vis-techniques-3d)
+
+Discover how ArcGIS Maps SDK for JavaScript unlocks powerful 3D visualization on
+the web. This technical session dives into symbol types, visual variables, and
+cartographic techniques unique to 3D, showing how to transform 2D features into
+rich thematic 3D views. Through live demonstrations, see how to work with key 3D
+data layers—including Indexed 3D Scene (I3S), integrated mesh, and building
+scene layers—and learn best practices to create compelling, interactive
+experiences that bring your GIS data to life.
+
+Presenters: [Hugo Campos](https://github.com/hcampos-professional) &
+[Thorben Westerhuys](https://github.com/twesterhuys)
+
+### [ArcGIS Maps SDK for JavaScript: A Look Under the Hood](./2026/a-look-under-the-hood)
+
+[![ArcGIS Maps SDK for JavaScript: A Look Under the Hood header slide](2026/a-look-under-the-hood/assets/header-slide.avif)](./2026/a-look-under-the-hood)
+
+[Slides and Demos](./2026/a-look-under-the-hood)
+
+Come to this technical session to discover the engineering infrastructure that
+powers the ArcGIS Maps SDK for JavaScript. We will focus on two key topics:
+
+Get an inside look at Esri’s largest monorepo. We will demonstrate how we
+structure our codebase to allow a dozen teams to collaborate, build, and deploy
+from a single repository.
+
+Learn how we manage and scale our supporting infrastructure and leverage
+infrastructure-as-code and GitOps to enable GPU-based screenshot, performance
+testing and more.
+
+Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
+[Thorben Westerhuys](https://github.com/twesterhuys)
+
 ## 2025
 
 ### [ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks](./2025/using-components-2)
@@ -96,4 +170,4 @@ creative applications in unintended areas, showing it's versatility.
 
 Presenter: [Max Patiiuk](https://github.com/maxpatiiuk)
 
-[![](https://github.com/maxpatiiuk/tetris-react/raw/main/docs/scenery-world.jpg)](./2024/tetris-react)
+[![Gaming with ArcGIS Maps SDK for JavaScript - 3D Tetris Game](https://github.com/maxpatiiuk/tetris-react/raw/main/docs/scenery-world.jpg)](./2024/tetris-react)

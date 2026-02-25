@@ -20,9 +20,10 @@ Presenters: [Omar Kawach](https://github.com/omarkawach) &
 Presented at
 [Esri Dev & Tech Summit 2026](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121225206001GaOj).
 
-[![ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks header slide](./assets/header-slide.webp)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/using-components-2)
+[![ArcGIS Maps SDK for JavaScript: App Development with Components part 2: Using Frameworks header slide](./assets/header-slide.avif)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/using-components-2)
 
 [Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/using-components-2)
+
 See
 [Part 1](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121115055001AX1x),
 [Part 3](https://registration.esri.com/flow/esri/26epcdev/deveventportal/page/detailed-agenda/session/1761121324274001qsE7),
