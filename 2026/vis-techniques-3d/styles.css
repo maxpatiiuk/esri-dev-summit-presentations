@@ -3,5 +3,5 @@
 }
 
 .glow-swap-on {
-  transition: opacity 600ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
 }
