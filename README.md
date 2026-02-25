@@ -41,6 +41,8 @@ Presenters: [Hugo Campos](https://bsky.app/profile/hugocampos.bsky.social) &
 
 [![ArcGIS Maps SDK for JavaScript and 3D GIS Visualization: A Developer's Guide Beyond 2D Cartography header slide](2026/vis-techniques-3d/public/header-slide.avif)](./2026/vis-techniques-3d)
 
+[Slides and Demos](./2026/vis-techniques-3d)
+
 Discover how ArcGIS Maps SDK for JavaScript unlocks powerful 3D visualization on
 the web. This technical session dives into symbol types, visual variables, and
 cartographic techniques unique to 3D, showing how to transform 2D features into

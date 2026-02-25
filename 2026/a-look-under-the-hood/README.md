@@ -18,7 +18,7 @@ Where: Catalina | Renaissance Hotel
 Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 [Thorben Westerhuys](https://github.com/twesterhuys)
 
-Presented at [Esri Developer Summit 2026](https://devtechsummit2025.esri.com/).
+Presented at [Esri Developer Summit 2026](https://devtechsummit2026.esri.com/).
 
 [![ArcGIS Maps SDK for JavaScript: A Look Under the Hood](./assets/header-slide.avif)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/a-look-under-the-hood)
 
