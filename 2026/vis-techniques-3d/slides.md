@@ -531,8 +531,6 @@ layout: media-right
 image: /point-symbol-flat.avif
 ---
 
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/live/ -->
-
 # PointSymbol3D
 
 Flat
@@ -551,6 +549,10 @@ const renderer = new SimpleRenderer({
   }),
 });
 ```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/live/
+-->
 
 ---
 layout: media-right
@@ -582,8 +584,6 @@ layout: media-right
 image: /point-symbol-icon-rotation.avif
 ---
 
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-rotation-3d/live -->
-
 # PointSymbol3D
 
 Icon Rotation
@@ -612,29 +612,37 @@ const renderer = new SimpleRenderer({
 });
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-rotation-3d/live
+-->
+
 ---
 layout: media-right
 image: /line-symbol-flat.avif
 ---
 
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3d/live/ -->
-
 # LineSymbol3D
 
 Flat
 
-```ts
+```ts ${0-100}{maxHeight:'320px'}
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new LineSymbol3DLayer({
-      size: 2, // points
+      size: 20, // points
       material: {
         color: 'blue',
       },
+      cap: 'round',
+      join: 'round',
     }),
   ],
 });
 ```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3d/
+-->
 
 ---
 layout: media-right
@@ -645,7 +653,7 @@ image: /line-symbol-volumetric.avif
 
 Volumetric
 
-```ts
+```ts ${0-100}{maxHeight:'320px'}
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new PathSymbol3DLayer({
@@ -653,7 +661,7 @@ const symbol = new LineSymbol3D({
       material: {
         color: 'blue',
       },
-      width: 5, // in meters
+      width: 20, // in meters
       height: 30, // in meters
       join: 'miter',
       cap: 'round',
@@ -663,6 +671,10 @@ const symbol = new LineSymbol3D({
   ],
 });
 ```
+
+<!--
+https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-path-3d/
+-->
 
 ---
 layout: media-right
@@ -695,10 +707,11 @@ lines.renderer = renderer;
 ::media::
 
 <div class="w-full h-full relative">
-  <img src="/glow-off.avif" class="w-full h-full object-cover" />
+  <img src="/glow-off.avif" class="w-full h-full object-cover" alt="Paths througout a city, not glowing" />
   <img
     src="/glow-on.avif"
     class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
+    alt="Paths througout a city, glowing"
     :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
   />
 </div>
@@ -718,6 +731,10 @@ const symbol = new PolygonSymbol3D({
 });
 ```
 
+<!--
+https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-vv-extrusion/
+-->
+
 ---
 layout: media-right
 image: /polygon-symbol-volumetric.avif
@@ -732,6 +749,10 @@ const symbol = new PolygonSymbol3D({
   symbolLayers: [new ExtrudeSymbol3DLayer()],
 });
 ```
+
+<!--
+https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-vv-extrusion/
+-->
 
 ---
 layout: media-right
@@ -800,8 +821,6 @@ layout: media-right
 image: /building-footprints.avif
 ---
 
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildings-3d/live -->
-
 # Extruding building footprints
 
 ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
@@ -839,6 +858,10 @@ const renderer = new UniqueValueRenderer({
 });
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildings-3d/live
+-->
+
 ---
 layout: intro
 ---
@@ -851,8 +874,6 @@ Hugo Campos
 layout: media-right
 image: /scene-layer-points.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-points/live/ -->
 
 # Scene Layer
 
@@ -868,12 +889,14 @@ const layer = new SceneLayer({
 map.add(layer);
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-points/live/
+-->
+
 ---
 layout: media-right
 image: /scene-layer-highlights.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer/live -->
 
 # Scene Layer
 
@@ -909,6 +932,10 @@ viewElement.addEventListener('arcgisViewClick', async (event) => {
 });
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer/live
+-->
+
 ---
 layout: media-right
 image: /sl-color.avif
@@ -918,43 +945,61 @@ image: /sl-color.avif
 
 Colored by attribute
 
-```ts {0-25}{maxHeight:'300px'}
-const thematicRenderer = new SimpleRenderer({
-  symbol: new MeshSymbol3D({
-    symbolLayers: [
-      new FillSymbol3DLayer({
-        material: {
-          color: '#ffffff',
-          colorMixMode: 'replace',
-        },
-      }),
-    ],
-    visualVariables: [
-      {
-        type: 'color',
-        field: 'solarAreaSuitableM2',
-        stops: [
-          { value: 1, color: '#FFFCD4' },
-          { value: 1000, color: [153, 83, 41] },
-        ],
-      },
-    ],
-  }),
+```ts {0-100}{maxHeight:'340px'}
+import { createContinuousRenderer } from '@arcgis/core/smartMapping/renderers/color.js';
+
+const rendererResult = await createContinuousRenderer({
+  layer: layer,
+  view: viewElement.view,
+  field: 'CNSTRCT_YR',
+  theme: 'above-and-below',
+  minValue: 1800,
+  maxValue: 2020,
+  edgesType: 'solid',
 });
-layer.renderer = thematicRenderer;
+
+layer.renderer = rendererResult.renderer;
 ```
 
 ---
 layout: media-right
-image: /sl-edges.avif
+clicks: 1
 ---
 
 # Scene Layer
 
-Edges
+Solid Edges
 
 ```ts
 symbolLayer.edges = new SolidEdges3D({
+  color: [0, 0, 0, 0.6],
+  size: 1,
+});
+```
+
+::media::
+
+<div class="w-full h-full relative">
+  <img src="/sl-edges-none.avif" class="w-full h-full object-cover" alt="Buildings with no edges" />
+  <img
+    src="/sl-edges-solid.avif"
+    class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
+    alt="Buildings with solid edges"
+    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+  />
+</div>
+
+---
+layout: media-right
+image: /sl-edges-sketch.avif
+---
+
+# Scene Layer
+
+Sketch Edges
+
+```ts
+symbolLayer.edges = new SketchEdges3D({
   color: [0, 0, 0, 0.6],
   size: 1,
 });
@@ -964,8 +1009,6 @@ symbolLayer.edges = new SolidEdges3D({
 layout: media-right
 image: /bsl.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-slice/live -->
 
 # Building Scene Layer
 
@@ -985,6 +1028,10 @@ const slice = new SliceAnalysis({
 });
 viewElement.analyses.add(slice);
 ```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer-slice/live
+-->
 
 ---
 layout: media-right
@@ -1016,8 +1063,6 @@ layout: media-right
 image: /pcl.avif
 ---
 
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-portal/live -->
-
 # Point Cloud Scene Layer
 
 Create PCL from Scene Service
@@ -1029,56 +1074,14 @@ const pcLayer = new PointCloudLayer({
 map.add(pcLayer);
 ```
 
----
-layout: media-right
-image: /pcl-classification.avif
----
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud/live -->
-
-# Point Cloud Scene Layer
-
-Color by LAS classification
-
-```ts {0-29}{maxHeight:'280px'}
-// Store the generated renderer in a predefined object in
-// case it is requested in the future and return the renderer
-function responseCallback(response) {
-  renderersByField[fieldName] = response.renderer;
-  return response.renderer;
-}
-
-if (fieldName === 'RGB') {
-  return colorRendererCreator
-    .createPCTrueColorRenderer({
-      layer: pcLayer,
-    })
-    .then(responseCallback);
-}
-if (fieldName === 'CLASS_CODE') {
-  return typeRendererCreator
-    .createPCClassRenderer({
-      layer: pcLayer,
-      field: fieldName,
-    })
-    .then(responseCallback);
-}
-if (fieldName === 'ELEVATION' || 'INTENSITY') {
-  return colorRendererCreator
-    .createPCContinuousRenderer({
-      layer: pcLayer,
-      field: fieldName,
-    })
-    .then(responseCallback);
-}
-```
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-portal/live
+-->
 
 ---
 layout: media-right
 image: /im.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer/live -->
 
 # Integrated Mesh
 
@@ -1091,12 +1094,14 @@ const layer = new IntegratedMeshLayer({
 map.add(layer);
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer/live
+-->
+
 ---
 layout: media-right
 image: /im-flat.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/live -->
 
 # Integrated Mesh
 
@@ -1111,6 +1116,10 @@ layer.modifications = new SceneModifications(
 );
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmeshlayer-modification/live
+-->
+
 ---
 layout: media-right
 image: /gaussian-layer.avif
@@ -1123,10 +1132,6 @@ Realistic rendering of fine details
 ```ts
 const layer = new GaussianSplatLayer({
   portalItem: { id: '...' },
-  elevationInfo: {
-    mode: 'absolute-height',
-    offset: 10,
-  },
 });
 ```
 
@@ -1140,8 +1145,6 @@ layout: intro
 layout: media-right
 image: /terrain.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/live -->
 
 # Terrain 3D Layer
 
@@ -1171,12 +1174,14 @@ const aspectFunction = rasterFunctionUtils.aspect({
 });
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/live
+-->
+
 ---
 layout: media-right
 image: /voxel.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live -->
 
 # Voxel Layer
 
@@ -1189,12 +1194,14 @@ const layer = new VoxelLayer({
 map.add(layer);
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live
+-->
+
 ---
 layout: media-right
 image: /voxel-slice.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/live -->
 
 # Voxel Layer
 
@@ -1211,12 +1218,14 @@ xSlice = new VoxelSlice({
 vxlLayer.getVolumeStyle(null).slices = [xSlice];
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/live
+-->
+
 ---
 layout: media-right
 image: /media-layer-video.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-video/live -->
 
 # Media Layer
 
@@ -1246,12 +1255,14 @@ const layer = new MediaLayer({
 });
 ```
 
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-video/live
+-->
+
 ---
 layout: media-right
 image: /media-layer.avif
 ---
-
-<!-- https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live -->
 
 # Media Layer
 
@@ -1266,6 +1277,39 @@ mediaLayerView.selectedElement = mediaLayer.source;
 
 mediaLayerView.interactionOptions.tool = 'reshape';
 ```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-interactive/live
+-->
+
+---
+layout: media-right
+image: /flow.avif
+---
+
+# Flow Renderer
+
+Animated flow lines
+
+```ts
+const layer new ImageryTileLayer({
+  url: 'https://tiledimageservices.../ImageServer',
+  renderer: {
+    type: 'flow',
+    trailLength: 30,
+    maxPathLength: 60,
+    flowSpeed: 2,
+    trailWidth: 3,
+    color: 'white',
+  },
+});
+
+viewElement.map.add(layer);
+```
+
+<!--
+https://developers.arcgis.com/javascript/latest/sample-code/layers-imagerytilelayer-flow-3d-local/
+-->
 
 ---
 src: ../.meta/footer.md
