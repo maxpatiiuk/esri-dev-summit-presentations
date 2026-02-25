@@ -46,8 +46,8 @@ that is most performant for the browser to run.
 graph LR
   subgraph human_files["Human-readable files"]
     direction LR
-    TS[TypeScript .ts/.tsx]
     JS[JavaScript .js/.jsx]
+    TS[TypeScript .ts/.tsx]
     CSS[CSS/Sass .css/.scss]
     IMG[Assets .jpg/.json]
   end
@@ -68,11 +68,12 @@ graph LR
 
 # Build tool benefits
 
-- Improve development experience (live updates...)
-- Enable modern syntax features and dependencies
-- Make testing code simpler
-- Optimize performance (reduce file sizes, split bundles...)
-- Allow extending capabilities with plugins
+1. Optimize performance (reduce file sizes, split bundles...)
+2. Improve development experience (live updates...)
+3. Permits consumption of NPM packages
+4. Make testing code simpler
+
+Bonus: can extend the build tool using plugins
 
 ---
 
@@ -198,8 +199,10 @@ Do a production build:
 npm run build
 ```
 
-Outputs static files that can be published to any hosting provider (GitHub
-Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
+Deploy the `dist` folder anywhere!
+
+- any hosting provider (GitHub Pages, Vercel)
+- or local server (NGINX, Microsoft IIS, Apache)
 
 <!--
 - The output is index.html and static files - same as no-build-step apps
@@ -222,7 +225,7 @@ These slides are built with Vite and hosted on GitHub Pages! ✨
 - **Vite ⚡** simplifies the development workflow
 - **React ⚛️** makes it easy to do complex things in a maintainable way
 - **Calcite 💎** provides ready to use user interface components
-- **TypeScript 🦾** catches your bugs before your users do
+- **TypeScript 🦾** catches bugs before your users do
 - **ESLint 🚩** ensures the code style stays consistent
 
 ---

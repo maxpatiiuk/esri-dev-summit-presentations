@@ -55,7 +55,7 @@ Presented at [Esri Developer Summit 2025](https://devtechsummit2025.esri.com/).
 - [Documentation](https://developers.arcgis.com/javascript)
 - [Get started (for NPM)](https://developers.arcgis.com/javascript/latest/get-started/#npm)
 - [Maps SDK Resources](https://github.com/Esri/jsapi-resources)
-- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-and-charts-components-react)
+- [React sample app](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-react)
 
 ### TypeScript 🦾
 
