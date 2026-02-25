@@ -68,10 +68,10 @@ graph LR
 
 # Build tool benefits
 
-1. Optimize performance (reduce file sizes, split bundles...)
-2. Improve development experience (live updates...)
+1. Optimizes performance (reduce file sizes, split bundles...)
+2. Improves development experience (live updates...)
 3. Permits consumption of NPM packages
-4. Make testing code simpler
+4. Makes testing code simpler
 
 Bonus: can extend the build tool using plugins
 
