@@ -16,34 +16,38 @@ import "@arcgis/map-components/components/arcgis-feature-table";
 import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
-import * as reactiveUtils from "@arcgis/core/core/reactiveUtils.js";
+const mapHighlights = [
+  { name: "default", color: "#ff7500" },
+  { name: "temporary", color: "#a2f2a4" },
+];
+
+const popupDockOptions = {
+  buttonEnabled: false,
+  breakpoint: false,
+  position: "top-right",
+};
 
 function App() {
-  const [mapView, setMapView] = useState(null);
   const [trailsLayer, setTrailsLayer] = useState(null);
   const [selectionHandle, setSelectionHandle] = useState(null);
   const [filterGeometry, setFilterGeometry] = useState(null);
   const [selectedGraphic, setSelectedGraphic] = useState(null);
   const [distance, setDistance] = useState("");
   const [elevation, setElevation] = useState("");
-
+  
   const round = (value) =>
     Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
   const handleMapReadyChange = async (event) => {
     const mapElement = event.target;
     const map = mapElement.map;
-    setMapView(mapElement.view);
-
     const layer = map.layers.find(
       (candidateLayer) => candidateLayer.title === "National Park Trails",
     );
     if (!layer) {
       return;
     }
-
     setTrailsLayer(layer);
-
     selectionHandle?.remove?.();
     const nextSelectionHandle = mapElement.view.selectionManager.on(
       "selection-change",
@@ -85,18 +89,16 @@ function App() {
   };
 
   const handleSearchComplete = (event) => {
-    if (!mapView || !trailsLayer) {
-      return;
-    }
-
+    const mapView = event.target.view;
     const result = event.detail.results?.[0]?.results?.[0];
     if (result?.feature) {
       const objectId = result.feature.getObjectId();
-      mapView.selectionManager.replace(trailsLayer, [objectId]);
+      mapView.selectionManager.replace(result.feature.layer, [objectId]);
     }
   };
 
   const handleMapClick = async (event) => {
+    const mapView = event.target.view;
     if (!mapView || !trailsLayer) {
       return;
     }
@@ -120,19 +122,11 @@ function App() {
     const analysisView = await view.whenAnalysisView(elevProf.analysis);
     console.log("Results are computed", analysisView.results);
     console.log("Statistics are computed", analysisView.statistics);
-
-    const elevGain =
-      Math.round(
-        (analysisView.statistics.elevationGain + Number.EPSILON) * 100,
-      ) / 100;
-    const distance =
-      Math.round((analysisView.statistics.maxDistance + Number.EPSILON) * 100) /
-      100;
     setDistance(
-      `${round(distance)} ${elevProf.effectiveDisplayUnits.distance}`,
+      `${round(analysisView.statistics.maxDistance)} ${elevProf.effectiveDisplayUnits.distance}`,
     );
     setElevation(
-      `${round(elevGain)} ${elevProf.effectiveDisplayUnits.elevation}`,
+      `${round(analysisView.statistics.elevationGain)} ${elevProf.effectiveDisplayUnits.elevation}`,
     );
   };
 
@@ -162,31 +156,22 @@ function App() {
               onarcgisViewClick={handleMapClick}
               item-id="a2a490fe264c4363b4fa2981d03f43f5"
               id="map"
-              padding={{ bottom: 500 }}
               ground="world-elevation"
-              highlights={[
-                { name: "default", color: "#ff7500" },
-                { name: "temporary", color: "#a2f2a4" },
-              ]}
+              highlights={mapHighlights}
             >
               <arcgis-expand slot="bottom-left">
                 <arcgis-legend></arcgis-legend>
               </arcgis-expand>
               <arcgis-popup
                 slot="popup"
-                dockOptions={{
-                  buttonEnabled: false,
-                  breakpoint: false,
-                  position: "top-right",
-                }}
-                hide-action-bar
-                hide-collapse-button
-                hide-feature-navigation
-                dock-enabled
+                dockOptions={popupDockOptions}
+                hideActionBar
+                hideCollapseButton
+                hideFeatureNavigation
+                dockEnabled
               ></arcgis-popup>
               <arcgis-zoom slot="top-left"></arcgis-zoom>
             </arcgis-map>
-
             <calcite-panel id="elevation-panel" heading="Elevation profile">
               <calcite-chip-group slot="header-actions-end">
                 {!!distance && (
@@ -205,10 +190,10 @@ function App() {
                 feature={selectedGraphic}
                 elevationUnit="imperial"
                 distanceUnit="imperial"
-                hide-clear-button
-                hide-legend
-                hide-settings-button
-				onarcgisPropertyChange={handleElevationProfileChange}
+                hideClearButton
+                hideLegend
+                hideSettingsButton
+				        onarcgisPropertyChange={handleElevationProfileChange}
               ></arcgis-elevation-profile>
             </calcite-panel>
           </calcite-panel>
@@ -221,9 +206,9 @@ function App() {
                 referenceElement="map"
                 layer={trailsLayer}
                 filterGeometry={filterGeometry}
-                attachments-enabled
+                attachmentsEnabled
+                syncViewSelection
                 multipleSelectionDisabled
-                sync-view-selection
               ></arcgis-feature-table>
             </calcite-shell>
           </calcite-panel>
