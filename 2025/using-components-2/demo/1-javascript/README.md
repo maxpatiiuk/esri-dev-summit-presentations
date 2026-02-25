@@ -2,7 +2,7 @@
 
 [Session Description](../..)
 
-The project was created using the [Vite sample app in jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vite)
+The project was created using `npx @arcgis/create -n my-arcgis-app -t vite`. [More details](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vite)
 
 ## Technologies used:
 
