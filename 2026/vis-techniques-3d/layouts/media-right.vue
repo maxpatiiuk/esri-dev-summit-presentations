@@ -32,17 +32,24 @@ withDefaults(defineProps<Props>(), {
         v-else
         class="h-full rounded-lg overflow-hidden border border-white/10 bg-black/20"
       >
-        <img
-          v-if="image"
-          :src="image"
-          :class="[
-            'w-full h-full',
-            fit === 'contain' ? 'object-contain' : 'object-cover',
-          ]"
-        />
-        <div v-else class="w-full h-full grid place-items-center opacity-70">
-          Missing media
-        </div>
+        <template v-if="$slots.media">
+          <div class="w-full h-full">
+            <slot name="media" />
+          </div>
+        </template>
+        <template v-else>
+          <img
+            v-if="image"
+            :src="image"
+            :class="[
+              'w-full h-full',
+              fit === 'contain' ? 'object-contain' : 'object-cover',
+            ]"
+          />
+          <div v-else class="w-full h-full grid place-items-center opacity-70">
+            Missing media
+          </div>
+        </template>
       </div>
     </div>
   </div>

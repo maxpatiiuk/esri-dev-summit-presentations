@@ -666,7 +666,7 @@ const symbol = new LineSymbol3D({
 
 ---
 layout: media-right
-image: /glow-off.avif
+clicks: 1
 ---
 
 # LineSymbol3D
@@ -692,33 +692,16 @@ renderer.symbols.forEach((symbol) => {
 lines.renderer = renderer;
 ```
 
----
-layout: media-right
-image: /glow-on.avif
----
+::media::
 
-# LineSymbol3D
-
-Glow
-
-```ts
-const renderer = lines.renderer.clone();
-
-// Modify each symbol in the renderer to emit
-// light based on its existing color
-renderer.symbols.forEach((symbol) => {
-  symbol.symbolLayers.forEach((layer) => {
-    layer.material.emissive = {
-      // The symbol's color is used for emission
-      source: 'color',
-      // How much light is being emitted
-      strength: 1.0,
-    };
-  });
-});
-
-lines.renderer = renderer;
-```
+<div class="w-full h-full relative">
+  <img src="/glow-off.avif" class="w-full h-full object-cover" />
+  <img
+    src="/glow-on.avif"
+    class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
+    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+  />
+</div>
 
 ---
 layout: media-right
