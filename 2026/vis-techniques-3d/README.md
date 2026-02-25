@@ -16,3 +16,7 @@ Presenters: [Hugo Campos](https://github.com/hcampos-professional) &
 [Thorben Westerhuys](https://github.com/twesterhuys)
 
 Presented at [Esri Developer Summit 2026](https://devtechsummit2026.esri.com/).
+
+[![ArcGIS Maps SDK for JavaScript and 3D GIS Visualization: A Developer's Guide Beyond 2D Cartography](./public/header-slide.avif)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/vis-techniques-3d)
+
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/vis-techniques-3d)

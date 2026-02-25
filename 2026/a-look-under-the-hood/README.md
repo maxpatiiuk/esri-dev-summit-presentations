@@ -20,6 +20,10 @@ Presenters: [Max Patiiuk](https://github.com/maxpatiiuk) &
 
 Presented at [Esri Developer Summit 2026](https://devtechsummit2025.esri.com/).
 
+[![ArcGIS Maps SDK for JavaScript: A Look Under the Hood](./assets/header-slide.avif)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/a-look-under-the-hood)
+
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/a-look-under-the-hood)
+
 ## Additional resources 📕
 
 - [pnpm + Turbo monorepo template](https://github.com/maxpatiiuk/monorepo-template)
