@@ -25,8 +25,8 @@ is: feedback
 
 # Agenda
 
-- 3D visualization showcases
-- Core Concepts: Getting started with 3D
+- 3D Visualization Showcases
+- Core Concepts: Getting Started with 3D
 - Data: Types and Sources of Data
 - Layer Symbology
 - Scene Layers
@@ -65,7 +65,7 @@ url: 'https://ralucanicola.github.io/JSAPI_demos/earthquakes-depth/'
 codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/earthquakes-depth'
 ---
 
-# Earthquakes depth
+# Earthquakes Depth
 
 <!--
 This 3D visualization reveals the depth and magnitude of major earthquakes across the globe in 2019. Each sphere represents an earthquake.  Both size and color help to identify stronger earthquakes.
@@ -81,7 +81,7 @@ url: 'https://ralucanicola.github.io/JSAPI_demos/zurich-festival/'
 codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-festival'
 ---
 
-# Zurich festival pedestrian counters
+# Zurich Festival Pedestrian Counters
 
 <!--
 This other 3D visualization uses pedestrian data to show crowd dynamics during Zurich festival.
@@ -101,7 +101,7 @@ url: 'https://ralucanicola.github.io/JSAPI_demos/zurich-hb-update/index.html'
 codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-hb-update'
 ---
 
-# Zurich HB exploration
+# Zurich HB Exploration
 
 <!--
 This is a 3D web scene of Zurich Main Station, built with the ArcGIS API for JavaScript. We're showcasing detailed indoor visualization
@@ -117,7 +117,7 @@ url: 'https://ralucanicola.github.io/JSAPI_demos/carbon-dioxide/'
 codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/carbon-dioxide'
 ---
 
-# World carbon dioxide monitoring
+# World Carbon Dioxide Monitoring
 
 <!--
 Let's dive into how we're visualizing this complex data. What you're seeing is a 3D representation of global carbon dioxide concentrations (tilting camera) not just a flat map.
@@ -147,7 +147,7 @@ url: 'https://ralucanicola.github.io/JSAPI_demos/rock-the-house/'
 codeBase: 'https://ralucanicola.github.io/JSAPI_demos/rock-the-house/'
 ---
 
-# Rock the house
+# Rock the House
 
 ---
 layout: intro
@@ -155,7 +155,7 @@ layout: intro
 
 # Core Concepts
 
-Getting started with 3D
+Getting Started with 3D
 
 ---
 layout: two-cols
@@ -770,7 +770,7 @@ image: /sl-emissive-off.avif
 
 # Mesh
 
-Loading a mesh
+Loading a Mesh
 
 ```ts
 const mesh = await Mesh.createFromGLTF(origin, url);
@@ -830,7 +830,7 @@ layout: media-right
 image: /building-footprints.avif
 ---
 
-# Extruding building footprints
+# Extruding Building Footprints
 
 ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
 
@@ -956,7 +956,7 @@ image: /sl-color.avif
 
 # Scene Layers
 
-Colored by attribute
+Colored by Attribute
 
 ```ts {0-100}{maxHeight:'340px'}
 const rendererResult = await createContinuousRenderer({
@@ -1096,7 +1096,7 @@ image: /im.avif
 
 # Integrated Mesh
 
-Realistic 3D meshes
+Realistic 3D Meshes
 
 ```ts
 const layer = new IntegratedMeshLayer({
@@ -1138,7 +1138,7 @@ image: /gaussian-layer.avif
 
 # Gaussian Splats
 
-Realistic rendering of fine details
+Realistic Rendering of Fine Details
 
 ```ts
 const layer = new GaussianSplatLayer({
@@ -1215,7 +1215,7 @@ image: /voxel-slice.avif
 
 # Voxel Layer
 
-Create area of interest
+Create Area of Interest
 
 ```ts
 //A vertical slice from West to East
@@ -1239,7 +1239,7 @@ image: /media-layer-video.avif
 
 # Media Layer
 
-Video element
+Video Element
 
 ```ts {0-100}{maxHeight:'320px'}
 const element = new VideoElement({
@@ -1276,7 +1276,7 @@ image: /media-layer.avif
 
 # Media Layer
 
-Interactive georeferencing
+Interactive Georeferencing
 
 ```ts
 const lv = await viewElement.whenLayerView(mediaLayer);
@@ -1299,7 +1299,7 @@ image: /flow.avif
 
 # Flow Renderer
 
-Animated flow lines
+Animated Flow Lines
 
 ```ts
 const layer = new ImageryTileLayer({
