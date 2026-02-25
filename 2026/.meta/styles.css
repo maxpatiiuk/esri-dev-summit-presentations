@@ -3,8 +3,8 @@
   color-scheme: only light;
 }
 
-/** Style the slide container, without affecting Slidev controls */
-.slidev-slide-content {
+/** Style the slide container, without affecting Slidev controls and working across modes and pdf export */
+.slidev-page {
   /*
    * While code blocks are in light mode, the slide background is darker so
    * slide text defaults to white
