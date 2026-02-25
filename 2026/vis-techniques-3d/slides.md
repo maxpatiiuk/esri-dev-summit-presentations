@@ -9,7 +9,7 @@ fonts:
   mono: Consolas
 ---
 
-## ArcGIS Maps SDK for JavaScript:<br />3D Visualization Techniques
+## ArcGIS Maps SDK for JavaScript and 3D GIS Visualization:<br />A Developer's Guide Beyond 2D Cartography
 
 Hugo Campos, Thorben Westerhuys
 
