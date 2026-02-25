@@ -1,8 +1,10 @@
 {
+  "type": "module",
   "scripts": {
     "build": "slidev build",
     "start": "slidev --open",
     "export": "slidev export",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "compress-images": "node ./scripts/compress-images.ts"
   }
 }
