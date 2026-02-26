@@ -339,7 +339,7 @@ layout: two-cols
 <body>
   <calcite-chip id="distance"></calcite-chip>
   <calcite-chip id="elevation"></calcite-chip>
-  <arcgis-map item-id="5fe7222cfd4e41cab4321cc1fde66cc2" id="map"> </arcgis-map>
+  <arcgis-map item-id="a2a490fe264c4363b4fa2981d03f43f5" id="map"> </arcgis-map>
   <arcgis-elevation-profile reference-element="map"></arcgis-elevation-profile>
 </body>
 ```
