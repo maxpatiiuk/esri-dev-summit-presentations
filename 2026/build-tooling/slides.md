@@ -17,7 +17,7 @@ is: feedback
 
 # Agenda
 
-- Introduction to build tools
+- Introduction to bundlers
 - Building an app
   - Get started with Vite
   - Add dependencies
@@ -35,9 +35,9 @@ Quick tour of app building...based on what Esri teams are doing
 
 ---
 
-# What are build tools?
+# What are bundlers?
 
-Build tools transform the code that is easiest for developers to write into code
+Bundlers transform the code that is easiest for developers to write into code
 that is most performant for the browser to run.
 
 ```mermaid
@@ -66,18 +66,18 @@ graph LR
 
 ---
 
-# Build tool benefits
+# Bundler benefits
 
 1. Optimizes performance (reduce file sizes, split bundles...)
 2. Improves development experience (live updates...)
 3. Permits consumption of NPM packages
 4. Makes testing code simpler
 
-Bonus: can extend the build tool using plugins
+Bonus: can extend the bundler using plugins
 
 ---
 
-# Examples of build tools
+# Examples of bundlers
 
 - Vite
 - Parcel
@@ -87,7 +87,7 @@ Bonus: can extend the build tool using plugins
 
 # Vite
 
-- Most popular build tool today
+- Most popular bundler today
 - Used by many Esri teams
 - Great developer experience
 - Large and rapidly growing community
@@ -148,7 +148,8 @@ Most developers see great benefit from adding TypeScript to their projects:
 - Auto-magically ✨ provides better autocomplete and inline documentation
 - Helps with code refactoring
 - Encourages self-documenting code
-- Essential part of every ArcGIS Online app at Esri
+
+Essential part of every ArcGIS Online app at Esri
 
 <!--
 That's a lot of promises - lets see TypeScript in action by adding it to our
@@ -314,7 +315,7 @@ layout: center
 
 # In conclusion...
 
-- Build tools like Vite help your app grow and stay maintainable
+- Bundlers like Vite help your app grow and stay maintainable
 - They offer plenty of control and developer experience enhancements
 - They pair well with testing tools like Vitest to ensure your app is
   production-ready

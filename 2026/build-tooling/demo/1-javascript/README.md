@@ -2,6 +2,8 @@
 
 [Session Description](../..)
 
+This sample was created using the `npx @arcgis/create` command. [More details](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vite).
+
 ## Technologies used:
 
 - [Vite](https://vite.dev/)
@@ -14,7 +16,7 @@
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2026/build-tooling/demo/1-javascript
+   cd esri-dev-summit-presentations/2026/˝build-tooling/demo/1-javascript
    ```
 
 2. Install dependencies
