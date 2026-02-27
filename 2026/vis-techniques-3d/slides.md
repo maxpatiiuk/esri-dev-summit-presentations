@@ -181,7 +181,7 @@ The SceneView supports two different viewing modes, global and local, specified 
 
 ---
 layout: media-right
-image: /scene-view.avif
+image: ./scene-view.avif
 ---
 
 # Core Concepts
@@ -196,7 +196,7 @@ const view = new SceneView({
 
 ---
 layout: media-right
-image: /local-scene.avif
+image: ./local-scene.avif
 ---
 
 # Core Concepts
@@ -218,7 +218,7 @@ The viewing mode (if not explicitly set by the user) is determined based on the 
 
 ---
 layout: media-right
-image: /local-scene-clipped.avif
+image: ./local-scene-clipped.avif
 ---
 
 # Core Concepts
@@ -251,7 +251,7 @@ If defined, only features that intersect the area will be displayed. The clippin
 
 ---
 layout: media-right
-image: /focus-area.avif
+image: ./focus-area.avif
 ---
 
 # Core Concepts
@@ -284,7 +284,7 @@ view.focusAreas.style = 'bright';
 
 ---
 layout: media-right
-image: /basemap-topo-vector.avif
+image: ./basemap-topo-vector.avif
 ---
 
 # Core Concepts
@@ -307,7 +307,7 @@ The basemap is a set of layers that give geographic context to the MapView or Sc
 
 ---
 layout: media-right
-image: /basemap-topo-3d.avif
+image: ./basemap-topo-3d.avif
 ---
 
 # Core Concepts
@@ -334,7 +334,7 @@ List of basemaps
 
 ---
 layout: media-right
-image: /elevation-topo.avif
+image: ./elevation-topo.avif
 ---
 
 # Core Concepts
@@ -350,7 +350,7 @@ const map = new WebScene({
 
 ---
 layout: media-right
-image: /elevation-satellite.avif
+image: ./elevation-satellite.avif
 ---
 
 # Core Concepts
@@ -366,7 +366,7 @@ const map = new WebScene({
 
 ---
 layout: media-right
-image: /elevation-bathymetry.avif
+image: ./elevation-bathymetry.avif
 ---
 
 # Core Concepts
@@ -470,7 +470,7 @@ Other Sources
 
 ---
 layout: media-right
-image: /world-countries.avif
+image: ./world-countries.avif
 ---
 
 # Loading Data
@@ -517,7 +517,7 @@ layout: intro
 
 ---
 layout: media-right
-image: /symbology-applying.avif
+image: ./symbology-applying.avif
 fit: contain
 ---
 
@@ -545,7 +545,7 @@ const layer = new FeatureLayer({
 
 ---
 layout: media-right
-image: /symbology-3d.avif
+image: ./symbology-3d.avif
 ---
 
 # Layer Symbology
@@ -570,7 +570,7 @@ mdc: true
 
 ---
 layout: media-right
-image: /point-symbol-flat.avif
+image: ./point-symbol-flat.avif
 ---
 
 # PointSymbol3D
@@ -598,7 +598,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/symbols-points-3d/li
 
 ---
 layout: media-right
-image: /point-symbol-cone.avif
+image: ./point-symbol-cone.avif
 ---
 
 # PointSymbol3D
@@ -623,7 +623,7 @@ const renderer = new SimpleRenderer({
 
 ---
 layout: media-right
-image: /point-symbol-icon-rotation.avif
+image: ./point-symbol-icon-rotation.avif
 ---
 
 # PointSymbol3D
@@ -660,7 +660,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/visualization-icon-r
 
 ---
 layout: media-right
-image: /line-symbol-flat.avif
+image: ./line-symbol-flat.avif
 ---
 
 # LineSymbol3D
@@ -688,7 +688,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/visualization-path-3
 
 ---
 layout: media-right
-image: /line-symbol-volumetric.avif
+image: ./line-symbol-volumetric.avif
 ---
 
 # LineSymbol3D
@@ -760,7 +760,7 @@ lines.renderer = renderer;
 
 ---
 layout: media-right
-image: /polygon-symbol-flat.avif
+image: ./polygon-symbol-flat.avif
 ---
 
 # PolygonSymbol3D
@@ -779,7 +779,7 @@ https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-vv-e
 
 ---
 layout: media-right
-image: /polygon-symbol-volumetric.avif
+image: ./polygon-symbol-volumetric.avif
 ---
 
 # PolygonSymbol3D
@@ -798,7 +798,7 @@ https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-vv-e
 
 ---
 layout: media-right
-image: /sl-emissive-off.avif
+image: ./sl-emissive-off.avif
 ---
 
 # Mesh
@@ -819,7 +819,7 @@ graphicsLayer.add(
 
 ---
 layout: media-right
-image: /sl-emissive-on.avif
+image: ./sl-emissive-on.avif
 ---
 
 # Mesh
@@ -845,7 +845,7 @@ mesh.symbol = new MeshSymbol3D({
 
 ---
 layout: media-right
-image: /sl-emissive-glow.avif
+image: ./sl-emissive-glow.avif
 ---
 
 # Mesh
@@ -860,7 +860,7 @@ viewElement.environment.lighting.glow = new Glow({
 
 ---
 layout: media-right
-image: /building-footprints.avif
+image: ./building-footprints.avif
 ---
 
 # Extruding Building Footprints
@@ -908,7 +908,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/visualization-buildi
 
 ---
 layout: media-right
-image: /flow.avif
+image: ./flow.avif
 ---
 
 # Flow Renderer
@@ -943,7 +943,7 @@ Hugo Campos
 
 ---
 layout: media-right
-image: /scene-layer-points.avif
+image: ./scene-layer-points.avif
 ---
 
 # Scene Layers
@@ -966,7 +966,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-scenelayer-po
 
 ---
 layout: media-right
-image: /scene-layer-highlights.avif
+image: ./scene-layer-highlights.avif
 ---
 
 # Scene Layers
@@ -1011,7 +1011,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/highlight-scenelayer
 
 ---
 layout: media-right
-image: /sl-color.avif
+image: ./sl-color.avif
 ---
 
 # Scene Layers
@@ -1062,7 +1062,7 @@ symbolLayer.edges = new SolidEdges3D({
 
 ---
 layout: media-right
-image: /sl-edges-sketch.avif
+image: ./sl-edges-sketch.avif
 ---
 
 # Scene Layers
@@ -1078,7 +1078,7 @@ symbolLayer.edges = new SketchEdges3D({
 
 ---
 layout: media-right
-image: /bsl.avif
+image: ./bsl.avif
 ---
 
 # Building Scene Layer
@@ -1106,7 +1106,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/building-scene-layer
 
 ---
 layout: media-right
-image: /bsl-colored-columns.avif
+image: ./bsl-colored-columns.avif
 ---
 
 # Building Scene Layer
@@ -1131,7 +1131,7 @@ columnsLayer.renderer = new SimpleRenderer({
 
 ---
 layout: media-right
-image: /pcl.avif
+image: ./pcl.avif
 ---
 
 # Point Cloud Scene Layer
@@ -1151,7 +1151,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-pointcloud-po
 
 ---
 layout: media-right
-image: /im.avif
+image: ./im.avif
 ---
 
 # Integrated Mesh
@@ -1171,7 +1171,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
 
 ---
 layout: media-right
-image: /im-flat.avif
+image: ./im-flat.avif
 ---
 
 # Integrated Mesh
@@ -1193,7 +1193,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-integratedmes
 
 ---
 layout: media-right
-image: /gaussian-layer.avif
+image: ./gaussian-layer.avif
 ---
 
 # Gaussian Splats
@@ -1214,7 +1214,7 @@ layout: intro
 
 ---
 layout: media-right
-image: /terrain.avif
+image: ./terrain.avif
 ---
 
 # Terrain 3D Layer
@@ -1250,7 +1250,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/elevation-analysis/l
 
 ---
 layout: media-right
-image: /voxel.avif
+image: ./voxel.avif
 ---
 
 # Voxel Layer
@@ -1270,7 +1270,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel/live
 
 ---
 layout: media-right
-image: /voxel-slice.avif
+image: ./voxel-slice.avif
 ---
 
 # Voxel Layer
@@ -1294,7 +1294,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-voxel-slices/
 
 ---
 layout: media-right
-image: /media-layer-video.avif
+image: ./media-layer-video.avif
 ---
 
 # Media Layer
@@ -1331,7 +1331,7 @@ https://developers.arcgis.com/javascript/latest/sample-code/layers-medialayer-vi
 
 ---
 layout: media-right
-image: /media-layer.avif
+image: ./media-layer.avif
 ---
 
 # Media Layer
