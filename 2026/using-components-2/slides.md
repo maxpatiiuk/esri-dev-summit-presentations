@@ -45,45 +45,80 @@ build on top of each other
 
 ---
 
-# Calcite Design System 💎
+# Calcite Design System
 
-- An extensive library of reusable web components for designing compelling apps
-- Provides consistent, customizable, responsive and accessible UI out of the box
-- Works with any framework
+- Platform-agnostic design system by Esri
+  - Design guidelines including accessibility, iconography, theming, and
+    typography
+  - Ensures a consistent, compelling, and cohesive user experience across
+    products
+- Includes **Calcite components**, an extensive library of reusable web
+  components
+  - Framework-agnostic, W3C standards-based, and customizable
+  - Responsive and follows WCAG standards for accessibility
 - Will be covered in more detail by the 3rd session in this 4-part series
 
----
-
-# ArcGIS Maps SDK for JavaScript 📍
-
-- A comprehensive and powerful WebGIS mapping library
-- Now simpler to use thanks to web components
-- Core JavaScript API
-  - Provides the main functionality. Contains the classes, methods, properties,
-    events and type definitions for all the layers, components, visualization
-    and client-side analysis functionality.
-- JavaScript Maps SDK Components
-  - Standards-based web components designed to encapsulate complex functionality
-    (core API) and styling (Calcite) into small HTML markup chunks (i.e., UI)
-- Documentation
-  - Get started, programming patterns, tutorials, samples and API / component
-    references
+![Calcite components](./assets/calcite.png){ width=250 }
 
 ---
 
-# Prebuilt versus building the SDK and Calcite
+# ArcGIS Maps SDK for JavaScript
 
-- Script tag applications are quick to get started
-  - No build step - the SDK and Calcite are prebuilt for you via the ArcGIS CDN
-  - Only need a single HTML file
+- A comprehensive and powerful Web GIS mapping library
+- Allows developers to build apps where people create, analyze, collaborate on,
+  and share maps
+- Three main parts of the SDK:
+  - **Core API** - The main functionality for maps, layers, data visualization,
+    and client-side analysis through its classes, methods, properties, events,
+    and type definitions.
+  - **Components** - Web components designed to encapsulate complex
+    functionality and styling into small chunks of HTML markup (i.e.,
+    declarative UI).
+  - **Documentation** - Includes docs for getting started, programming patterns,
+    tutorials, application templates, sample code, and references.
+
+---
+
+# How to get the SDK into your app
+
+- Include the ArcGIS CDN in script tag applications for prototyping and getting
+  started quickly
+  - Single HTML file with no build step
+    - Prebuilt versions of the SDK and Calcite are hosted on the ArcGIS CDN
   - Syntax for including modules:
     - `const WebMap = await $arcgis.import("@arcgis/core/WebMap.js");`
-- Building an application that scales is more involved
-  - Work with a bundler (Vite, Parcel, Webpack)
-  - Use a framework (React, Angular, Vue)
-    - Routing and state management
+- Add the SDK as a dependency when building applications that scale
+  - JavaScript runtime environment and package manager required
+  - Work with a bundler (Vite, Parcel, Webpack) and framework (React, Angular,
+    Vue)
   - Syntax for including modules:
-    - `import { WebMap } from "@arcgis/core/WebMap";`
+    - `import WebMap from "@arcgis/core/WebMap.js";`
+
+---
+
+# What you need to install and run the SDK
+
+- An up-to-date browser
+- A JavaScript runtime environment
+  - Node.js
+- And a package manager
+  - NPM (comes with Node.js)
+- For more information, see the SDK's
+  [system requirements](https://developers.arcgis.com/javascript/latest/system-requirements/)
+  documentation
+
+---
+
+# Scaffold a new app using a single command
+
+- Reminder - We’ll be building on the app from session Part 1 as a starting
+  point
+- But, you can create a new app using a single command:
+  - Run `npm init @arcgis` in your terminal and follow the prompts
+  - This CLI tool uses
+    [git-sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) to fetch
+    app templates from the
+    [Esri/jsapi-resources](https://github.com/Esri/jsapi-resources) repository
 
 ---
 
