@@ -5,10 +5,6 @@ body {
   height: 100%;
 }
 
-#root {
-  height: 100%;
-}
-
 arcgis-search {
   display: flex;
   margin-right: 1em;
@@ -183,6 +179,7 @@ calcite-shell-panel[slot="panel-bottom"] {
   width: 35%;
 }
 
+/* Make calcite dialog content and editor fill available space */
 calcite-dialog > div {
   display: flex;
   flex-direction: column;

@@ -1,60 +1,185 @@
 import { useState } from "react";
+
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-navigation";
 import "@esri/calcite-components/components/calcite-navigation-logo";
 import "@esri/calcite-components/components/calcite-panel";
 import "@esri/calcite-components/components/calcite-chip";
 import "@esri/calcite-components/components/calcite-chip-group";
+
 import "@arcgis/map-components/components/arcgis-map";
+import "@arcgis/map-components/components/arcgis-expand";
+import "@arcgis/map-components/components/arcgis-legend";
+import "@arcgis/map-components/components/arcgis-popup";
+import "@arcgis/map-components/components/arcgis-zoom";
+import "@arcgis/map-components/components/arcgis-feature-table";
+import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
-function round(value) {
-  return Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
-}
+const mapHighlights = [
+  { name: "default", color: "#ff7500" },
+  { name: "temporary", color: "#a2f2a4" },
+];
+
+const popupDockOptions = {
+  buttonEnabled: false,
+  breakpoint: false,
+  position: "top-right",
+};
 
 function App() {
-  const [distance, setDistance] = useState(undefined);
-  const [elevation, setElevation] = useState(undefined);
+  const [trailsLayer, setTrailsLayer] = useState(null);
+  const [selectionHandle, setSelectionHandle] = useState(null);
+  const [filterGeometry, setFilterGeometry] = useState(null);
+  const [selectedGraphic, setSelectedGraphic] = useState(null);
+  const [distance, setDistance] = useState("");
+  const [elevation, setElevation] = useState("");
+  
+  const round = (value) =>
+    Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
-  const handleElevationProfileChange = (event) => {
+  const handleMapReadyChange = async (event) => {
+    const mapElement = event.target;
+    const map = mapElement.map;
+    const layer = map.layers.find(
+      (candidateLayer) => candidateLayer.title === "National Park Trails",
+    );
+    if (!layer) {
+      return;
+    }
+    setTrailsLayer(layer);
+    selectionHandle?.remove?.();
+    const nextSelectionHandle = mapElement.view.selectionManager.on(
+      "selection-change",
+      async () => {
+        const results =
+          await mapElement.view.selectionManager.getSelectedFeatures([layer], {
+            returnGeometry: true,
+          });
+
+        if (!results.length || !results[0].data.features.length) {
+          return;
+        }
+
+        const graphic = results[0].data.features[0];
+        setSelectedGraphic(graphic);
+        mapElement.openPopup({
+          features: [graphic],
+        });
+      },
+    );
+    setSelectionHandle(nextSelectionHandle);
+  };
+
+  const handleMapViewChange = (event) => {
+    if (event.target.view.stationary) {
+      const nextExtent = event.target.view.extent;
+      setFilterGeometry((oldExtent) => {
+        if (!oldExtent) {
+          return nextExtent;
+        }
+        if (oldExtent.equals(nextExtent)) {
+          console.log("Extent is the same, not updating filter geometry");
+          return oldExtent;
+        }
+        console.log("updating-extent");
+        return nextExtent;
+      });
+    }
+  };
+
+  const handleSearchComplete = (event) => {
+    const mapView = event.target.view;
+    const result = event.detail.results?.[0]?.results?.[0];
+    if (result?.feature) {
+      const objectId = result.feature.getObjectId();
+      mapView.selectionManager.replace(result.feature.layer, [objectId]);
+    }
+  };
+
+  const handleMapClick = async (event) => {
+    const mapView = event.target.view;
+    if (!mapView || !trailsLayer) {
+      return;
+    }
+
+    const { results } = await mapView.hitTest(event.detail, {
+      include: [trailsLayer],
+    });
+    if (results?.length > 0) {
+      const objectId = results[0].graphic.getObjectId();
+      mapView.selectionManager.replace(trailsLayer, [objectId]);
+    }
+  };
+
+  const handleElevationProfileChange = async (event) => {
     if (event.detail.name !== "progress" || event.target.progress !== 1) {
       return;
     }
-    const profiles = event.target.profiles;
-    const statistics = profiles.at(0)?.statistics;
-    const elevationGain = round(statistics?.elevationGain);
-    const distance = round(statistics?.maxDistance);
-    setElevation(`${elevationGain} ${event.target.effectiveUnits.elevation}`);
-    setDistance(`${distance} ${event.target.effectiveUnits.distance}`);
+    const elevProf = event.target;
+    const view = elevProf.view;
+    await view.when();
+    const analysisView = await view.whenAnalysisView(elevProf.analysis);
+    console.log("Results are computed", analysisView.results);
+    console.log("Statistics are computed", analysisView.statistics);
+    setDistance(
+      `${round(analysisView.statistics.maxDistance)} ${elevProf.effectiveDisplayUnits.distance}`,
+    );
+    setElevation(
+      `${round(analysisView.statistics.elevationGain)} ${elevProf.effectiveDisplayUnits.elevation}`,
+    );
   };
 
   return (
-    <calcite-shell className="custom-theme">
-      <calcite-navigation slot="header">
+    <calcite-shell className="burnt-orange-theme">
+      <calcite-navigation slot="header" id="nav">
         <calcite-navigation-logo
+          href="#"
+          thumbnail="./hiker-48.svg"
+          alt="Application logo"
           slot="logo"
-          icon="map"
-          heading="US National Parks"
-          description="Trail Explorer"
+          heading="Zion Trail Explorer"
         ></calcite-navigation-logo>
+        <arcgis-search
+          slot="content-end"
+          referenceElement="map"
+          onarcgisSearchComplete={handleSearchComplete}
+        ></arcgis-search>
       </calcite-navigation>
 
       <div className="content-container">
-        <div className="content-start">
+        <div className="content-start" id="map-div">
           <calcite-panel id="map-container">
             <arcgis-map
-              ground="world-elevation"
-              itemId="5fe7222cfd4e41cab4321cc1fde66cc2"
+              onarcgisViewReadyChange={handleMapReadyChange}
+              onarcgisViewChange={handleMapViewChange}
+              onarcgisViewClick={handleMapClick}
+              item-id="a2a490fe264c4363b4fa2981d03f43f5"
               id="map"
-            ></arcgis-map>
+              ground="world-elevation"
+              highlights={mapHighlights}
+            >
+              <arcgis-expand slot="bottom-left">
+                <arcgis-legend></arcgis-legend>
+              </arcgis-expand>
+              <arcgis-popup
+                slot="popup"
+                dockOptions={popupDockOptions}
+                hideActionBar
+                hideCollapseButton
+                hideFeatureNavigation
+                dockEnabled
+              ></arcgis-popup>
+              <arcgis-zoom slot="top-left"></arcgis-zoom>
+            </arcgis-map>
             <calcite-panel id="elevation-panel" heading="Elevation profile">
               <calcite-chip-group slot="header-actions-end">
-                {distance && (
+                {!!distance && (
                   <calcite-chip icon="walking-distance" id="distance">
                     {distance}
                   </calcite-chip>
                 )}
-                {elevation && (
+                {!!elevation && (
                   <calcite-chip icon="altitude" id="elevation">
                     {elevation}
                   </calcite-chip>
@@ -62,13 +187,30 @@ function App() {
               </calcite-chip-group>
               <arcgis-elevation-profile
                 referenceElement="map"
-                unit="imperial"
+                feature={selectedGraphic}
+                elevationUnit="imperial"
+                distanceUnit="imperial"
                 hideClearButton
                 hideLegend
                 hideSettingsButton
-                onarcgisPropertyChange={handleElevationProfileChange}
+				        onarcgisPropertyChange={handleElevationProfileChange}
               ></arcgis-elevation-profile>
             </calcite-panel>
+          </calcite-panel>
+        </div>
+
+        <div className="content-end" id="table-div">
+          <calcite-panel>
+            <calcite-shell className="panel-shell">
+              <arcgis-feature-table
+                referenceElement="map"
+                layer={trailsLayer}
+                filterGeometry={filterGeometry}
+                attachmentsEnabled
+                syncViewSelection
+                multipleSelectionDisabled
+              ></arcgis-feature-table>
+            </calcite-shell>
           </calcite-panel>
         </div>
       </div>
