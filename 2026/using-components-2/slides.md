@@ -138,7 +138,7 @@ graph LR
 3. Permits consumption of NPM packages
 4. Make testing code simpler
 
-Bonus: can extend the build tool using plugins
+Bonus: can extend the bundlers using plugins
 
 ---
 
@@ -152,7 +152,7 @@ Bonus: can extend the build tool using plugins
 
 # Vite
 
-- Most popular build tool today
+- Most popular bundler today
 - Used by many Esri teams
 - Great developer experience
 - Large and rapidly growing community
@@ -498,11 +498,13 @@ layout: center
 
 # Other frameworks
 
-- Angular and Vue also support web components.
-- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/angular/)
-- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vue)
-- [jsapi-resources](https://github.com/Esri/jsapi-resources) repo has samples
-  for all frameworks
+- Our web components work with all frameworks.
+- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/get-started-angular/)
+- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
+- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
+  repo has samples for all frameworks
+- You can slot any framework component into our components, or use Lit to write
+  your own components.
 
 ---
 
@@ -551,7 +553,7 @@ ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using
 Frameworks
 
 Demos and additional resources available at:
-[arcg.is/esri-2025-using-components-2](https://arcg.is/esri-2025-using-components-2)
+[arcg.is/esri-2026-using-components-2](https://arcg.is/esri-2026-using-components-2)
 
 <img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 
