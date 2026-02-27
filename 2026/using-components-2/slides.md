@@ -92,7 +92,7 @@ build on top of each other
   - Work with a bundler (Vite, Parcel, Webpack) and framework (React, Angular,
     Vue)
   - Syntax for including modules:
-    - `import { WebMap } from "@arcgis/core/WebMap";`
+    - `import WebMap from "@arcgis/core/WebMap.js";`
 
 ---
 
