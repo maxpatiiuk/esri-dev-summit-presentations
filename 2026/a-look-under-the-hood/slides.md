@@ -17,7 +17,7 @@ is: feedback
 
 # Agenda
 
-- How Esri's largest monorepo works
+- How Esri's largest JavaScript monorepo works
   - What is a monorepo and why create it? 📐
   - What tooling is needed? ⚙️
   - Live Demo 🧪
@@ -28,7 +28,7 @@ is: feedback
 layout: intro
 ---
 
-# How Esri's largest<br>monorepo works
+# How Esri's largest JavaScript <br>monorepo works
 
 ---
 
@@ -103,6 +103,8 @@ Cons:
 - High duplication. Hard to keep things in sync.
 - Local development tricky - juggling many repositories & dev servers.
 - PRs and issues split between multiple repositories - disruptive
+- Changes in one repository can break another - not visible till you try to
+  update
 
 Esri examples: [EsriDevEvents](https://github.com/EsriDevEvents)<br>Community
 examples: [express.js](https://github.com/expressjs) (split across 30
@@ -190,8 +192,8 @@ examples: [react](https://github.com/facebook/react),
     - runtime-utils/          # DOM, Intl, logging
     - build-utils/            # Node.js file system and shell wrappers, package.json utils
     - monorepo-cli/           # Chores automation: linting, building, deploying, releasing
-    - lumina-runtime/         # Base class for all web components (uses Lit)
-    - lumina-compiler/        # Internal web component framework (uses Vite and TypeScript)
+    - lit-runtime/            # Base class for all web components (uses Lit)
+    - lit-compiler/           # Internal web component framework (uses Vite and TypeScript)
     - eslint-config/
     - prettier-config/
     - typescript-config/
@@ -236,7 +238,7 @@ packages together.​
 
 - Build package once – reuse, if nothing changed​
 - Build cache is shared between CI and all devs​
-- Result: `pnpm build:all` "builds" thousands of files in 3s​
+- Result: `pnpm build:all` "builds" thousands of files in 1s​
 
 [Turborepo Introduction​](https://turborepo.dev/docs)
 
@@ -332,8 +334,20 @@ export default {
 - Use [commander](https://www.npmjs.com/package/commander) to create CLI scripts
   for automating monorepo chores.
 
-You can find these, and more suggestions in our
-[monorepo-template](https://github.com/maxpatiiuk/monorepo-template?tab=readme-ov-file#what-you-can-add-after-forking-the-template).
+You can find these, and **more suggestions** in our
+[monorepo-template](https://github.com/maxpatiiuk/monorepo-template?tab=readme-ov-file#what-you-can-add-after-forking-the-template)
+👈.
+
+---
+
+# Monorepo template & additional resources
+
+ArcGIS Maps SDK for JavaScript: A Look Under the Hood
+
+Demos and additional resources available at:
+[arcg.is/esri-2026-under-the-hood](https://arcg.is/esri-2026-under-the-hood)
+
+<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 
 ---
 
@@ -344,6 +358,9 @@ started: `pnpm` and `turbo`.
 
 Everything else can be gradually added later as your team grows and you get
 familiarity with tools.
+
+If you have existing repositories, align lint rules and devops between them to
+make move into the monorepo smoother.
 
 ---
 layout: intro
@@ -357,14 +374,14 @@ layout: center
 
 # Questions?
 
-ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling
+ArcGIS Maps SDK for JavaScript: A Look Under the Hood
 
 Demos and additional resources available at:
-[arcg.is/esri-2025-build-tooling](https://arcg.is/esri-2025-build-tooling)
+[arcg.is/esri-2026-under-the-hood](https://arcg.is/esri-2026-under-the-hood)
+
+<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 
 <!--
-TODO: also add qr code link after the first half
-<img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
 If you wish to dive deeper, you can find our demos and
 additional resources at the URL above, or you can scan the QR code.
 -->
