@@ -5,10 +5,6 @@ body {
   height: 100%;
 }
 
-#root {
-  height: 100%;
-}
-
 arcgis-search {
   display: flex;
   margin-right: 1em;
@@ -125,7 +121,7 @@ arcgis-elevation-profile {
   margin-inline-end: 0.5rem;
 }
 
-calcite-shell-panel[slot="panel-bottom"] {
+calcite-shell-panel[slot='panel-bottom'] {
   margin-bottom: 1rem;
 }
 
@@ -147,14 +143,6 @@ arcgis-feature-table {
   border: 1px solid var(--calcite-color-border-2);
   border-radius: 8px;
   box-shadow: var(--calcite-shadow-md);
-}
-
-calcite-shell-panel[slot="panel-bottom"] {
-  margin-bottom: 1rem;
-}
-
-.esri-ui-corner .esri-component {
-  box-shadow: none;
 }
 
 .content-container {
@@ -183,6 +171,7 @@ calcite-shell-panel[slot="panel-bottom"] {
   width: 35%;
 }
 
+/* Make calcite dialog content and editor fill available space */
 calcite-dialog > div {
   display: flex;
   flex-direction: column;
