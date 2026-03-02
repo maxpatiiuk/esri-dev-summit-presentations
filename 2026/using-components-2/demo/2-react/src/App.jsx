@@ -193,7 +193,7 @@ function App() {
                 hideClearButton
                 hideLegend
                 hideSettingsButton
-				        onarcgisPropertyChange={handleElevationProfileChange}
+                onarcgisPropertyChange={handleElevationProfileChange}
               ></arcgis-elevation-profile>
             </calcite-panel>
           </calcite-panel>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-navigation";
 import "@esri/calcite-components/components/calcite-navigation-logo";
@@ -14,6 +13,7 @@ import "@arcgis/map-components/components/arcgis-feature-table";
 import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
+import { useState } from "react";
 import type FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import type { ResourceHandle } from "@arcgis/core/core/Handles";
 import type Extent from "@arcgis/core/geometry/Extent.js";

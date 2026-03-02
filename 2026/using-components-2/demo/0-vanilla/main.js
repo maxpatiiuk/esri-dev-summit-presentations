@@ -48,7 +48,7 @@ async function load() {
   //////////////////////////////////////////////////////
 
   searchElement.addEventListener('arcgisSearchComplete', (event) => {
-    const result = event.detail.results[0].results[0];
+    const result = event.detail?.results?.[0]?.results?.[0];
     if (result?.feature) {
       const objectId = result.feature.getObjectId();
       view.selectionManager.replace(trailsLayer, [objectId]);

@@ -16,7 +16,7 @@ import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-popup";
 import "@arcgis/map-components/components/arcgis-legend";
 
-import * as reactiveUtils from "@arcgis/core/core/reactiveUtils.js";
+import { watch } from "@arcgis/core/core/reactiveUtils.js";
 
 async function load() {
   const mapElem = document.querySelector("arcgis-map");
@@ -64,7 +64,7 @@ async function load() {
   //////////////////////////////////////////////////////
 
   searchElement.addEventListener("arcgisSearchComplete", (event) => {
-    const result = event.detail.results[0].results[0];
+    const result = event.detail?.results?.[0]?.results?.[0];
     if (result?.feature) {
       const objectId = result.feature.getObjectId();
       view.selectionManager.replace(trailsLayer, [objectId]);
@@ -103,7 +103,7 @@ async function load() {
   await elevProf.componentOnReady();
 
   const analysisView = await view.whenAnalysisView(elevProf.analysis);
-  reactiveUtils.watch(
+  watch(
     () => analysisView.progress,
     (progress) => {
       if (progress === 1) {
