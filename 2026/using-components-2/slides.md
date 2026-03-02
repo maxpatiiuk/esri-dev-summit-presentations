@@ -55,7 +55,7 @@ build on top of each other
 - Includes **Calcite components**, an extensive library of reusable web
   components
   - Framework-agnostic, W3C standards-based, and customizable
-  - Responsive and follows WCAG standards for accessibility
+  - Responsive and follows WCAG for accessibility
 - Will be covered in more detail by the 3rd session in this 4-part series
 
 ![Calcite components](./assets/calcite.png){ width=250 }
