@@ -149,14 +149,6 @@ arcgis-feature-table {
   box-shadow: var(--calcite-shadow-md);
 }
 
-calcite-shell-panel[slot="panel-bottom"] {
-  margin-bottom: 1rem;
-}
-
-.esri-ui-corner .esri-component {
-  box-shadow: none;
-}
-
 .content-container {
   display: flex;
   flex-direction: row;
