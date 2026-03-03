@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 import "@esri/calcite-components/components/calcite-shell";
 import "@esri/calcite-components/components/calcite-navigation";
 import "@esri/calcite-components/components/calcite-navigation-logo";
 import "@esri/calcite-components/components/calcite-panel";
 import "@esri/calcite-components/components/calcite-chip";
 import "@esri/calcite-components/components/calcite-chip-group";
-
 import "@arcgis/map-components/components/arcgis-map";
 import "@arcgis/map-components/components/arcgis-expand";
 import "@arcgis/map-components/components/arcgis-legend";
@@ -15,6 +12,8 @@ import "@arcgis/map-components/components/arcgis-zoom";
 import "@arcgis/map-components/components/arcgis-feature-table";
 import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
+
+import { useState, useRef } from "react";
 
 const mapHighlights = [
   { name: "default", color: "#ff7500" },
@@ -27,17 +26,23 @@ const popupDockOptions = {
   position: "top-right",
 };
 
+const round = (value) =>
+  Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
+
+
+// main application component
 function App() {
-  const [trailsLayer, setTrailsLayer] = useState(null);
-  const [selectionHandle, setSelectionHandle] = useState(null);
-  const [filterGeometry, setFilterGeometry] = useState(null);
-  const [selectedGraphic, setSelectedGraphic] = useState(null);
+  // state variables
+  const [trailsLayer, setTrailsLayer] = useState(undefined);
+  const [filterGeometry, setFilterGeometry] = useState(undefined);
+  const [selectedGraphic, setSelectedGraphic] = useState(undefined);
   const [distance, setDistance] = useState("");
   const [elevation, setElevation] = useState("");
-  
-  const round = (value) =>
-    Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
+  // store a reference to the selection listener so that it can be removed when the map view changes and a new one needs to be added
+  const selectionHandlerRef = useRef(undefined);
+
+  // event handlers
   const handleMapReadyChange = async (event) => {
     const mapElement = event.target;
     const map = mapElement.map;
@@ -48,8 +53,8 @@ function App() {
       return;
     }
     setTrailsLayer(layer);
-    selectionHandle?.remove?.();
-    const nextSelectionHandle = mapElement.view.selectionManager.on(
+    selectionHandlerRef.current?.remove();
+    const newSelectionHandler = mapElement.view.selectionManager.on(
       "selection-change",
       async () => {
         const results =
@@ -68,7 +73,7 @@ function App() {
         });
       },
     );
-    setSelectionHandle(nextSelectionHandle);
+    selectionHandlerRef.current = newSelectionHandler;
   };
 
   const handleMapViewChange = (event) => {
@@ -174,12 +179,12 @@ function App() {
             </arcgis-map>
             <calcite-panel id="elevation-panel" heading="Elevation profile">
               <calcite-chip-group slot="header-actions-end">
-                {!!distance && (
+                {distance && (
                   <calcite-chip icon="walking-distance" id="distance">
                     {distance}
                   </calcite-chip>
                 )}
-                {!!elevation && (
+                {elevation && (
                   <calcite-chip icon="altitude" id="elevation">
                     {elevation}
                   </calcite-chip>

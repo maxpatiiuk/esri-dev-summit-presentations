@@ -13,7 +13,7 @@ import "@arcgis/map-components/components/arcgis-feature-table";
 import "@arcgis/map-components/components/arcgis-search";
 import "@arcgis/map-components/components/arcgis-elevation-profile";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import type { ResourceHandle } from "@arcgis/core/core/Handles";
 import type Extent from "@arcgis/core/geometry/Extent.js";
@@ -21,7 +21,6 @@ import type Graphic from "@arcgis/core/Graphic.js";
 import type ElevationProfileAnalysisView2D from "@arcgis/core/views/2d/analysis/ElevationProfileAnalysisView2D.js";
 import type { DockOptions } from "@arcgis/core/popup/types.js";
 import type { SelectableLayerWithObjectIds } from "@arcgis/core/views/selection/types";
-import type { FeatureTableSupportedLayer } from "@arcgis/core/widgets/FeatureTable/support/types";
 import Collection from "@arcgis/core/core/Collection.js";
 import HighlightOptions from "@arcgis/core/views/support/HighlightOptions.js";
 
@@ -40,21 +39,22 @@ const round = (value?: number) =>
   Math.round(((value ?? 0) + Number.EPSILON) * 100) / 100;
 
 function App() {
+  const [mapLoaded, setMapLoaded] = useState<boolean>(false);
   const [trailsLayer, setTrailsLayer] = useState<FeatureLayer | undefined>(
     undefined,
   );
-  const [selectionHandle, setSelectionHandle] = useState<
-    ResourceHandle | undefined
-  >(undefined);
   const [filterGeometry, setFilterGeometry] = useState<Extent | undefined>(
     undefined,
   );
   const [selectedGraphic, setSelectedGraphic] = useState<Graphic | undefined>(
     undefined,
   );
-  const [distance, setDistance] = useState("");
-  const [elevation, setElevation] = useState("");
+  const [distance, setDistance] = useState<string>("");
+  const [elevation, setElevation] = useState<string>("");
 
+  const selectionHandlerRef = useRef<ResourceHandle | undefined>(undefined);
+
+  // event handlers
   const handleMapReadyChange = async (
     event: HTMLArcgisMapElement["arcgisViewReadyChange"],
   ) => {
@@ -70,8 +70,9 @@ function App() {
       return;
     }
 
+    setMapLoaded(true);
     setTrailsLayer(layer);
-    selectionHandle?.remove();
+    selectionHandlerRef.current?.remove();
     const nextSelectionHandle = mapElement.view.selectionManager.on(
       "selection-change",
       () => {
@@ -92,7 +93,7 @@ function App() {
           });
       },
     );
-    setSelectionHandle(nextSelectionHandle);
+    selectionHandlerRef.current = nextSelectionHandle;
   };
 
   const handleMapViewChange = (
@@ -140,6 +141,7 @@ function App() {
     const { results } = await mapView.hitTest(event.detail, {
       include: [trailsLayer],
     });
+
     if (results.length > 0) {
       const firstResult = results[0];
       if (!("graphic" in firstResult)) {
@@ -149,10 +151,7 @@ function App() {
       if (objectId == null) {
         return;
       }
-      mapView.selectionManager.replace(
-        trailsLayer as unknown as SelectableLayerWithObjectIds,
-        [objectId],
-      );
+      mapView.selectionManager.replace(trailsLayer, [objectId]);
     }
   };
 
@@ -264,14 +263,24 @@ function App() {
         <div className="content-end" id="table-div">
           <calcite-panel>
             <calcite-shell className="panel-shell">
-              <arcgis-feature-table
-                referenceElement="map"
-                layer={trailsLayer as FeatureTableSupportedLayer}
-                filterGeometry={filterGeometry}
-                attachmentsEnabled
-                syncViewSelection
-                multipleSelectionDisabled
-              ></arcgis-feature-table>
+              {mapLoaded ? (
+                <arcgis-feature-table
+                  referenceElement="map"
+                  layer={trailsLayer}
+                  filterGeometry={filterGeometry}
+                  attachmentsEnabled
+                  syncViewSelection
+                  multipleSelectionDisabled
+                ></arcgis-feature-table>
+              ) : (
+                <div className="flex-loader">
+                  <calcite-loader
+                    label="Loading map..."
+                    type="indeterminate"
+                  ></calcite-loader>
+                  <p>Loading map...</p>
+                </div>
+              )}
             </calcite-shell>
           </calcite-panel>
         </div>
