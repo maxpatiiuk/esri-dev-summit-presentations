@@ -1,11 +1,10 @@
-# Vite + React + TypeScript demo
+# Vite + React + TypeScript encapsulation demo
 
 [Session Description](../..)
 
-## Key changes from [2-react](../2-react/)
+## Key changes from [3-typescript](../3-typescript/)
 
-- Rename .jsx files to .tsx
-- Add type annotations to functions and variables
+- Refactored the elevation profile panel into a separate component
 
 ## Technologies used:
 
