@@ -529,7 +529,7 @@ layout: center
 
 - Angular and Vue also support web components.
 - [Getting started with Angular](https://developers.arcgis.com/javascript/latest/angular/)
-- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vue)
+- [Vue template application](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vue)
 - [jsapi-resources](https://github.com/Esri/jsapi-resources) repo has samples
   for many frameworks
 - Get started with `npm init @arcgis` and select your framework of choice
