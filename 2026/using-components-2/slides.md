@@ -318,7 +318,7 @@ layout: intro
 - Easy state management with "hooks"
 - Components re-render when state changes, so no need for query selectors or
   manual DOM manipulation
-- React19 has support for web components out of the box
+- React 19 has support for web components out of the box
 
 ---
 layout: center
