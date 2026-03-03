@@ -22,7 +22,7 @@
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2026/using-components-2/demo/3-typescript
+   cd esri-dev-summit-presentations/2026/using-components-2/demo/4-typescript-react-encapsulation
    ```
 
 2. Install dependencies
