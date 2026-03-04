@@ -199,7 +199,7 @@ layout: center
 - Start the dev server and show how simple it is to use
 - Show index.html, main.js
 - Show live update
-- ctrl + cmd + space for emoji picker
+- Ctrl + Cmd + Space for emoji picker
 -->
 
 ---
