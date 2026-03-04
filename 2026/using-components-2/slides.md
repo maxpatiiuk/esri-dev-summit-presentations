@@ -252,7 +252,7 @@ Example: 3.0.3 => 5.0.2
 
 As of 5.0.0, `@arcgis/*` packages follow semantic versioning.
 
-Tools like `npm install` and dependabot assume semantic versioning by default.
+Tools like `npm install` and Dependabot assume semantic versioning by default.
 
 ---
 
