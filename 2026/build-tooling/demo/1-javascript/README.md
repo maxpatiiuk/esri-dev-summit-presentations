@@ -2,7 +2,7 @@
 
 [Session Description](../..)
 
-This sample was created using the `npx @arcgis/create` command. [More details](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vite).
+This sample was created using the `npm init @arcgis` command. [More details](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vite).
 
 ## Technologies used:
 

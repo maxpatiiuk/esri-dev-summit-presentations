@@ -179,18 +179,13 @@ Bonus: can extend the bundlers using plugins
 
 # Examples of bundlers
 
-- Vite
 - Parcel
 - Webpack
-
----
-
-# Vite
-
-- Most popular bundler today
-- Used by many Esri teams
-- Great developer experience
-- Large and rapidly growing community
+- Vite
+  - Most popular bundler today
+  - Used by many Esri teams
+  - Great developer experience
+  - Large and rapidly growing community
 
 ---
 layout: center
@@ -204,6 +199,7 @@ layout: center
 - Start the dev server and show how simple it is to use
 - Show index.html, main.js
 - Show live update
+- Ctrl + Cmd + Space for emoji picker
 -->
 
 ---
@@ -250,19 +246,13 @@ Example: 3.0.3 => 5.0.2
 - **minor**: new features - safe to update
 - **patch**: bug fixes - safe to update
 
-> New: as of 5.0.0, `@arcgis/*` packages are following semantic versioning.
-
 ---
 
-# Semantic versioning ranges
+# Semantic versioning
 
-Rather than specifying an exact version, you can let NPM decide which version to
-install:
+As of 5.0.0, `@arcgis/*` packages follow semantic versioning.
 
-- `^5.0.0` - any version from 5.0.0 to 6.0.0 (features and bug fixes)
-- `~5.0.0` - any version from 5.0.0 to 5.1.0 (only bug fixes)
-
-Allows for dependency sharing (multiple packages can use single Calcite)
+Tools like `npm install` and Dependabot assume semantic versioning by default.
 
 ---
 
@@ -278,18 +268,20 @@ Allows for dependency sharing (multiple packages can use single Calcite)
 - The output is index.html and static files - same as no-build-step apps
   - Show off single minified JavaScript file
 - Can be deployed to any hosting provider (GitHub Pages, Vercel) or local server (NGINX, Microsoft IIS, Apache)
-- Mention assets can be made fully self-hosted
+- Preview using `npm run preview`
 -->
 
 ---
 
 # Asset handling
 
-- By default, component assets are loaded from Esri's fast CDN
-- This includes translation files and images
+- By default, `dist/` does not include component images and translation files
+- Instead, they are loaded from Esri's CDN (fast server in the cloud)
 - They can be made
   [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
+
+![Even in a self-hosted app some requests come from js.arcgis.com](./assets/cdn-network.avif)
 
 ---
 
