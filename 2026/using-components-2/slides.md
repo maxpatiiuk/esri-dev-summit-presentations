@@ -276,7 +276,7 @@ Tools like `npm install` and Dependabot assume semantic versioning by default.
 # Asset handling
 
 - By default, `dist/` does not include component images and translation files
-- Instead, they are loaded from Esri's fast server in the cloud (CDN)
+- Instead, they are loaded from Esri's CDN (fast server in the cloud)
 - They can be made
   [fully self-hosted](https://developers.arcgis.com/javascript/latest/working-with-assets/)
   if needed
