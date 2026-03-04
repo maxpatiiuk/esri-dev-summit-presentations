@@ -17,10 +17,10 @@ import "@arcgis/map-components/components/arcgis-elevation-profile";
 import { useRef, useState } from "react";
 import type FeatureLayer from "@arcgis/core/layers/FeatureLayer";
 import type { ResourceHandle } from "@arcgis/core/core/Handles";
-import type Extent from "@arcgis/core/geometry/Extent.js";
-import type Graphic from "@arcgis/core/Graphic.js";
-import type ElevationProfileAnalysisView2D from "@arcgis/core/views/2d/analysis/ElevationProfileAnalysisView2D.js";
-import type { DockOptions } from "@arcgis/core/popup/types.js";
+import type Extent from "@arcgis/core/geometry/Extent";
+import type Graphic from "@arcgis/core/Graphic";
+import type ElevationProfileAnalysisView2D from "@arcgis/core/views/2d/analysis/ElevationProfileAnalysisView2D";
+import type { DockOptions } from "@arcgis/core/popup/types";
 import type { SelectableLayerWithObjectIds } from "@arcgis/core/views/selection/types";
 import Collection from "@arcgis/core/core/Collection.js";
 import HighlightOptions from "@arcgis/core/views/support/HighlightOptions.js";
@@ -50,8 +50,6 @@ function App() {
   const [selectedGraphic, setSelectedGraphic] = useState<Graphic | undefined>(
     undefined,
   );
-  const [distance, setDistance] = useState<string>("");
-  const [elevation, setElevation] = useState<string>("");
 
   const selectionHandlerRef = useRef<ResourceHandle | undefined>(undefined);
 
@@ -156,34 +154,6 @@ function App() {
     }
   };
 
-  const handleElevationProfileChange = async (
-    event: HTMLArcgisElevationProfileElement["arcgisPropertyChange"],
-  ) => {
-    if (event.detail.name !== "progress" || event.target.progress !== 1) {
-      return;
-    }
-    const elevProf = event.target;
-    const view = elevProf.view;
-    if (!view) {
-      return;
-    }
-    await view.when();
-    const analysisView = (await view.whenAnalysisView(
-      elevProf.analysis,
-    )) as ElevationProfileAnalysisView2D;
-    if (!analysisView.statistics || !elevProf.effectiveDisplayUnits) {
-      return;
-    }
-    console.log("Results are computed", analysisView.results);
-    console.log("Statistics are computed", analysisView.statistics);
-    setDistance(
-      `${round(analysisView.statistics.maxDistance ?? undefined)} ${elevProf.effectiveDisplayUnits.distance}`,
-    );
-    setElevation(
-      `${round(analysisView.statistics.elevationGain ?? undefined)} ${elevProf.effectiveDisplayUnits.elevation}`,
-    );
-  };
-
   return (
     <calcite-shell className="burnt-orange-theme">
       <calcite-navigation slot="header" id="nav">
@@ -200,7 +170,6 @@ function App() {
           onarcgisSearchComplete={handleSearchComplete}
         ></arcgis-search>
       </calcite-navigation>
-
       <div className="content-container">
         <div className="content-start" id="map-div">
           <calcite-panel id="map-container">
@@ -226,38 +195,9 @@ function App() {
               ></arcgis-popup>
               <arcgis-zoom slot="top-left"></arcgis-zoom>
             </arcgis-map>
-            <calcite-panel id="elevation-panel" heading="Elevation profile">
-              <calcite-chip-group slot="header-actions-end" label="Statistics">
-                {distance && (
-                  <calcite-chip
-                    icon="walking-distance"
-                    id="distance"
-                    label="Distance"
-                  >
-                    {distance}
-                  </calcite-chip>
-                )}
-                {elevation && (
-                  <calcite-chip
-                    icon="altitude"
-                    id="elevation"
-                    label="Elevation"
-                  >
-                    {elevation}
-                  </calcite-chip>
-                )}
-              </calcite-chip-group>
-              <arcgis-elevation-profile
-                referenceElement="map"
-                feature={selectedGraphic}
-                elevationUnit="imperial"
-                distanceUnit="imperial"
-                hideClearButton
-                hideLegend
-                hideSettingsButton
-                onarcgisPropertyChange={handleElevationProfileChange}
-              ></arcgis-elevation-profile>
-            </calcite-panel>
+            {selectedGraphic && (
+              <ElevationProfilePanel selectedGraphic={selectedGraphic} />
+            )}
           </calcite-panel>
         </div>
 
@@ -289,5 +229,69 @@ function App() {
     </calcite-shell>
   );
 }
+
+const ElevationProfilePanel = ({
+  selectedGraphic,
+}: {
+  selectedGraphic?: Graphic;
+}) => {
+  const [distance, setDistance] = useState<string>("");
+  const [elevation, setElevation] = useState<string>("");
+
+  const handleElevationProfileChange = async (
+    event: HTMLArcgisElevationProfileElement["arcgisPropertyChange"],
+  ) => {
+    if (event.detail.name !== "progress" || event.target.progress !== 1) {
+      return;
+    }
+    const elevProf = event.target;
+    const view = elevProf.view;
+    if (!view) {
+      return;
+    }
+    await view.when();
+    const analysisView = (await view.whenAnalysisView(
+      elevProf.analysis,
+    )) as ElevationProfileAnalysisView2D;
+    if (!analysisView.statistics || !elevProf.effectiveDisplayUnits) {
+      return;
+    }
+    console.log("Results are computed", analysisView.results);
+    console.log("Statistics are computed", analysisView.statistics);
+    setDistance(
+      `${round(analysisView.statistics.maxDistance ?? undefined)} ${elevProf.effectiveDisplayUnits.distance}`,
+    );
+    setElevation(
+      `${round(analysisView.statistics.elevationGain ?? undefined)} ${elevProf.effectiveDisplayUnits.elevation}`,
+    );
+  };
+
+  return (
+    <calcite-panel id="elevation-panel" heading="Elevation profile">
+      <calcite-chip-group slot="header-actions-end" label="Statistics">
+        {distance && (
+          <calcite-chip icon="walking-distance" id="distance" label="Distance">
+            {distance}
+          </calcite-chip>
+        )}
+        {elevation && (
+          <calcite-chip icon="altitude" id="elevation" label="Elevation">
+            {elevation}
+          </calcite-chip>
+        )}
+      </calcite-chip-group>
+      <arcgis-elevation-profile
+        referenceElement="map"
+        feature={selectedGraphic}
+        elevationUnit="imperial"
+        distanceUnit="imperial"
+        hideClearButton
+        hideLegend
+        hideSettingsButton
+        onarcgisPropertyChange={handleElevationProfileChange}
+      ></arcgis-elevation-profile>
+    </calcite-panel>
+  );
+};
 
 export default App;

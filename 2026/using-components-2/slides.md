@@ -316,7 +316,9 @@ layout: intro
 - Declarative rendering and events
   - JSX syntax, which is a mix of JavaScript and HTML
 - Easy state management with "hooks"
-- React19 has support for web components out of the box
+- Components re-render when state changes, so no need for query selectors or
+  manual DOM manipulation
+- React 19 has support for web components out of the box
 
 ---
 layout: center
@@ -354,7 +356,7 @@ Script:
 
 ---
 
-# Summary of benefits from react
+# Summary of benefits from React
 
 - Declarative rendering
 - Easy to pass properties to components
@@ -525,13 +527,12 @@ layout: center
 
 # Other frameworks
 
-- Our web components work with all frameworks.
-- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/get-started-angular/)
-- [Vue Sample Application](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
-- [jsapi-resources](https://github.com/Esri/jsapi-resources/tree/main/component-samples/map-components/samples/vue)
-  repo has samples for all frameworks
-- You can slot any framework component into our components, or use Lit to write
-  your own components.
+- Angular and Vue also support web components.
+- [Getting started with Angular](https://developers.arcgis.com/javascript/latest/angular/)
+- [Vue template application](https://github.com/Esri/jsapi-resources/tree/main/templates/js-maps-sdk-vue)
+- [jsapi-resources](https://github.com/Esri/jsapi-resources) repo has samples
+  for many frameworks
+- Get started with `npm init @arcgis` and select your framework of choice
 
 ---
 
