@@ -235,26 +235,47 @@ layout: intro
 
 # Enhance the app
 
+<!--
+Now let’s look at how we can make apps faster and easier to maintain.
+
+We’ll look at:
+- Lazy loading and routes
+- Bundle analysis
+- Testing
+- Vite plugins
+-->
+
 ---
 
-# ArcGIS Maps SDK for JavaScript
-
-- Powerful GIS mapping library
-- Now simpler to use thanks to web components
-
----
-
-# Lazy loading
+# Routes and Lazy loading
 
 - Only load source files when needed
 - Split app into multiple entry points
 - Simplest split: by page or route
+
+<!--
+Most apps have multiple pages, and a lot of code.
+
+Instead of loading everything up front, we only load what the user needs for the page they’re on.
+
+Routes give us a really natural split:
+start small on a splash page, and load the “real app” only when the user goes there.
+-->
 
 ---
 layout: center
 ---
 
 # Demo: [Lazy loading & routes with React Router](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/6-routes)
+
+<!--
+We’ll start on the splash page first.
+
+Now when we go to the map route, that’s when the heavier code loads.
+
+The nice part is this is just standard React patterns: lazy + dynamic import.
+Vite turns that into a separate bundle automatically.
+-->
 
 ---
 
@@ -265,11 +286,25 @@ layout: center
 - Find large or duplicated dependencies before they impact users
 - Works with Vite, Rollup, Rolldown, Webpack, esbuild, etc
 
+<!--
+Sometimes bundles can get big, even with lazy loading. Sonda is a great tool to understand why.
+-->
+
 ---
 layout: center
 ---
 
 # Demo: [Analyze bundles with Sonda](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/7-sonda)
+
+<!--
+All I need is to add the Sonda plugin to my Vite config.
+After doing a production build, I can view the report in the browser.
+
+First, look at the treemap: big boxes are big parts of your bundle.
+
+Then we can click around and see what pulls those chunks in.
+That makes it much easier to decide what to optimize.
+-->
 
 ---
 
@@ -283,11 +318,33 @@ tests:
 - Run tests in Node or the browser
 - Direct integration with Vite
 
+<!--
+As it says on the slide, if you’re not writing tests, you should be.
+
+These days, using tools like Vitest makes it really easy to get started.
+
+For UI + maps, browser-mode tests are a great fit and Vitest has built-in support for that.
+- real clicks and pointer events
+- stable, mocked APIs
+
+And it all integrates directly with Vite so you can use the same config and plugins for your tests as you do for your app.
+-->
+
 ---
 layout: center
 ---
 
 # Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/8-testing)
+
+<!--
+Let's look at a couple of tests that cover real user behavior.
+
+We render the app, click on the map, and confirm the UI updates.
+
+We can also simulate an API failure and confirm we show an error.
+
+The key ideas: fast, repeatable, and close to how users interact.
+-->
 
 ---
 
@@ -296,11 +353,29 @@ layout: center
 - Vite plugins are flexible and easy to write
 - Powerful way to enhance builds or developer workflows
 
+<!--
+Sometimes you need to do something that's not built into Vite.
+
+It comes with a rich plugin API that lets you hook into the build process and dev server.
+
+Common use-cases:
+- Dev server helpers (middleware)
+- Build-time tooling (analysis, transforms), like Sonda which we saw earlier
+-->
+
 ---
 layout: center
 ---
 
 # Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/9-plugins)
+
+<!--
+To exemplify this, we built custom plugin that makes the dev server “unreliable” on purpose.
+
+If we run the app with "chaos mode" enabled, the plugin will randomly delay responses and fail some requests.
+
+This is a great way to test loading states and error handling without touching app logic.
+-->
 
 ---
 
@@ -310,6 +385,16 @@ layout: center
 - **Sonda 📦** helps visualize and optimize bundle size
 - **Testing with Vitest 🧪** makes it easy to write and maintain tests
 - **Custom plugins 🔌** provides a powerful way to enhance workflows
+
+<!--
+Big idea: you don’t need a new stack to scale an app.
+
+Just add a few simple practices:
+- Split by route
+- Measure and optimize bundle size with tools like Sonda
+- Add good tests (AI agents make this easier than ever!)
+- Use plugins when you need custom behavior
+-->
 
 ---
 
