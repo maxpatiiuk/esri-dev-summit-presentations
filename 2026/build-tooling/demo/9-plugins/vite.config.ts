@@ -10,8 +10,13 @@ export default defineConfig({
     open: true,
     proxy: {
       "/arcgis": {
-        target: "https://places-api.arcgis.com",
+        target: "https://services.arcgis.com",
         changeOrigin: true,
+        rewrite: (path) =>
+          path.replace(
+            /^\/arcgis(?=\?|$)/u,
+            "/V6ZHFr6zdgNZuVG0/arcgis/rest/services/NY%20Educational%20Attainment/FeatureServer/0/query",
+          ),
       },
     },
   },
@@ -21,9 +26,7 @@ export default defineConfig({
       ? chaosMonkey([
           {
             apiUrl: "/arcgis",
-            delay: 400,
             chaosRatio: 0.5,
-            // https://developers.arcgis.com/rest/places/near-point-get/#response
             chaosErrors: [400, 401, 403, 500],
           },
         ])

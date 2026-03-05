@@ -14,9 +14,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@arcgis/core": "^5.0.2",
-    "@arcgis/map-components": "^5.0.2",
-    "@esri/arcgis-rest-places": "^4.9.0",
+    "@arcgis/core": "^5.0.9",
+    "@arcgis/map-components": "^5.0.9",
+    "@esri/arcgis-rest-places": "^4.10.0",
     "@esri/calcite-components": "^5.0.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -30,7 +30,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.5.2",
-    "globals": "^17.3.0",
+    "globals": "^17.4.0",
     "prettier": "^3.8.1",
     "sonda": "^0.11.1",
     "typescript": "^5.9.3",

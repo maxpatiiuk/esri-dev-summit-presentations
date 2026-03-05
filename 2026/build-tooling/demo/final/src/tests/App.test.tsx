@@ -1,4 +1,4 @@
-import { cleanup, render, fireEvent } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 import { ApiKeyManager } from "@esri/arcgis-rest-request";
 import { setupWorker } from "msw/browser";
 import { http, HttpResponse, passthrough } from "msw";
@@ -26,6 +26,7 @@ const worker = setupWorker(
 
 const it = itBase.extend({
   worker: [
+    // eslint-disable-next-line no-empty-pattern
     async ({}, use) => {
       // Start the worker before the test.
       await worker.start({ quiet: true });
@@ -69,7 +70,7 @@ it("renders", () => {
 it("shows a popup details when a feature is clicked", async () => {
   const { container } = results;
 
-  clickMapAt({ x: 500, y: 100 });
+  await clickMapAt({ x: 500, y: 100 });
 
   await expect
     .poll(() => container.querySelector("arcgis-features")?.features)
@@ -83,7 +84,7 @@ it("shows a popup details when a feature is clicked", async () => {
 it("loads nearby schools for the selected feature", async () => {
   const { container } = results;
 
-  clickMapAt({ x: 500, y: 100 });
+  await clickMapAt({ x: 500, y: 100 });
 
   await expect
     .poll(() => container.querySelector("arcgis-features")?.features)
@@ -105,7 +106,7 @@ it("shows an error when loading schools fails", async () => {
     ),
   );
 
-  clickMapAt({ x: 500, y: 100 });
+  await clickMapAt({ x: 500, y: 100 });
 
   await expect
     .poll(() => container.querySelector("arcgis-features")?.features)
@@ -118,15 +119,13 @@ it("shows an error when loading schools fails", async () => {
     .not.toBeNull();
 });
 
-function clickMapAt(point: { x: number; y: number }) {
-  const { x, y } = point;
-  const topLevelTarget = document.elementFromPoint(x, y);
-  const target =
-    topLevelTarget?.shadowRoot?.elementFromPoint(x, y) ?? topLevelTarget;
-
+async function clickMapAt({ x, y }: { x: number; y: number }): Promise<void> {
+  const target = document.elementFromPoint(x, y);
   assert(target);
-
-  const options = { clientX: point.x, clientY: point.y };
-  fireEvent.pointerDown(target, options);
-  fireEvent.pointerUp(target, options);
+  await page.elementLocator(target).click({
+    position: {
+      x: x - target.getBoundingClientRect().left,
+      y: y - target.getBoundingClientRect().top,
+    },
+  });
 }

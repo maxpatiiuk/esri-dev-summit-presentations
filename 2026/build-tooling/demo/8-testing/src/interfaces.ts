@@ -7,6 +7,6 @@ export interface Result<T> {
 }
 
 export interface ServiceInfo {
-  authentication: ApiKeyManager;
+  authentication?: ApiKeyManager;
   endpoint?: string;
 }
