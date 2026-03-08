@@ -324,6 +324,19 @@ export default {
 
 ---
 
+# Grow incrementally
+
+We mentioned many tools. Don't get intimidated: you only need two to get
+started: `pnpm` and `turbo`.
+
+Everything else can be gradually added later as your team grows and you get
+familiarity with tools.
+
+If you have existing repositories, align lint rules and devops between them to
+make move into the monorepo smoother.
+
+---
+
 # Bonus
 
 - Use [pnpm catalogs](https://pnpm.io/catalogs) to keep dependency versions
@@ -348,19 +361,6 @@ Demos and additional resources available at:
 [arcg.is/esri-2026-under-the-hood](https://arcg.is/esri-2026-under-the-hood)
 
 <img src="./assets/qr-code.svg" alt="" style="margin: 0 auto">
-
----
-
-# Grow incrementally
-
-We mentioned many tools. Don't get intimidated: you only need two to get
-started: `pnpm` and `turbo`.
-
-Everything else can be gradually added later as your team grows and you get
-familiarity with tools.
-
-If you have existing repositories, align lint rules and devops between them to
-make move into the monorepo smoother.
 
 ---
 layout: intro
