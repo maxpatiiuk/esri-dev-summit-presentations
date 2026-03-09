@@ -575,6 +575,20 @@ Deeper Vite and Vitest guide - shows how Esri is building apps
 layout: center
 ---
 
+# Share your feedback on Map components in the JavaScript Maps SDK
+
+And get Esri swag!
+
+- **30-minute feedback sessions** with our User Research team on Wednesday and
+  Thursday
+- No need to prepare anything. _Schedule your session today!_
+
+<img src="./assets/map-components-feedback.svg" alt="" style="margin: 0 auto">
+
+---
+layout: center
+---
+
 # Questions?
 
 ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using
