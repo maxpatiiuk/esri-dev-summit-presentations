@@ -146,8 +146,8 @@ that is most performant for the browser to run.
 graph LR
   subgraph human_files["Human-readable files"]
     direction LR
-    JS[JavaScript .js/.jsx]
-    TS[TypeScript .ts/.tsx]
+    JS[JavaScript .js/.ts]
+    NPM[NPM dependencies]
     CSS[CSS/Sass .css/.scss]
     IMG[Assets .jpg/.json]
   end
