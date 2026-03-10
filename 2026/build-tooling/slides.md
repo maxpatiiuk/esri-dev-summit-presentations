@@ -46,10 +46,10 @@ that is most performant for the browser to run.
 graph LR
   subgraph human_files["Human-readable files"]
     direction LR
-    JS[JavaScript .js/.jsx]
-    TS[TypeScript .ts/.tsx]
+    JS[JavaScript .js/.ts]
     CSS[CSS/Sass .css/.scss]
     IMG[Assets .jpg/.json]
+    NPM[NPM dependencies]
   end
 
   Bundler("Bundler")
