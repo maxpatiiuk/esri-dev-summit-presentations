@@ -21,7 +21,7 @@ is: feedback
   - What is a monorepo and why create it? 📐
   - What tooling is needed? ⚙️
   - Live Demo 🧪
-- Action Runners, screenshot testing and performance
+- Action Runners, screenshot and performance testing
   - From GitHub Actions to bare metal 🏗️
   - Screenshot testing at scale 📸
   - Automating performance testing on mobile 🧪
@@ -379,7 +379,7 @@ layout: center
 <!--
 Over the last years we moved from Jenkins to GitHub Actions.
 This allowed us to have a more declarative CI right inside the repo.
-This enabled a much broader adoption of automation. From traditional CI
+And it enabled a much broader adoption of automation. From traditional CI
 workflows to many smaller tasks. Now I want to shift gears and talk a bit
 about how we manage the infrastructure behind it.
 -->
@@ -418,6 +418,19 @@ jobs:
 ```
 
 ---
+layout: image-right
+image: ./assets/pull-request-workflow.png
+backgroundSize: contain
+---
+
+# Pull request workflow
+
+- Spawns up to 19 jobs
+- Up to 6 of them are running tests
+- We only run tests affected by the current change
+- Tests need hardware accelerated graphics
+
+---
 
 # Self-hosted
 
@@ -452,16 +465,14 @@ or do not cover your needs?
 
 - Self managed pool of runners
 - Runs on Linux, macOS and Windows
-- `runner-group`'s and labels for organization
 
 ```mermaid
 flowchart TD
-    A[Job]
+    A[Job: self-hosted,GPU]
     A -->|self-hosted,Linux| D[GHAR]
     A -->|self-hosted,Linux| E[GHAR]
     A -->|self-hosted,Windows,GPU| F[GHAR]
     A -->|self-hosted,Windows,GPU| G[GHAR]
-    A -->|self-hosted,Windows,GPU| H[GHAR]
 ```
 
 <!--
@@ -472,11 +483,13 @@ binary and register it to an organization or repo.
 
 ---
 
-# Pool
+# Our Pool
 
+- Serving up to ~80 contributors, distributed globally
+- Up to 20 new pull requests/workday
 - Currently
   - ~50 GPU runners
-  - ~18 general purpose Linux runners
+  - ~16 general purpose Linux runners
 
 ↪ up to 10 PRs/merges in parallel
 
@@ -514,15 +527,12 @@ flowchart TD
 
 # How to manage them
 
-<v-clicks>
-
 - _Goal_: No manual deployment and configuration of VMs
 - Pre-built base image and system configuration
+- Shared between teams
 - Infrastructure as code
-- Version changes with git
+- Versioned using git
 - Using pull requests to preview, code review and apply
-
-</v-clicks>
 
 <!--
 With declarative infrastructure. Leaning on the same ideas that
@@ -534,6 +544,8 @@ infrastructure as code, versioned in git.
 ---
 
 # A simple VM
+
+- HCL (Hashicorp configuration language)
 
 ```hcl {|5-8|10|12-13}
 module "devops-platform" "dts-2026" {
@@ -610,17 +622,13 @@ change is made, you can merge the pull request.
 
 ---
 
-# Results
-
-<v-clicks>
+# Summary
 
 - Define once, scale as needed
-- Fix issues once and roll out to all runners
+- Fix issues and roll out to all runners
 - State of the infrastructure is reflected in the code
 - Preview and code review changes before applying
 - Changes are traceable (through git)
-
-</v-clicks>
 
 ---
 layout: center
@@ -654,14 +662,6 @@ screenshots per tests, so we are talking about roughly 10k screenshots.
 
 ---
 
-# Demo: Dashboard
-
-<!--
-- Show screenshot failures in CI dashboard
--->
-
----
-
 # Image hashes
 
 - Use image hashes
@@ -676,27 +676,49 @@ await expectations.assert(
 
 ---
 
+# Demo: Dashboard
+
+<!--
+- Show screenshot failures in CI dashboard
+-->
+
+---
+layout: two-cols
+---
+
 # Workflow
 
-- Create screenshot
 - Locally hash screenshot
 - If hashes match: test passes
 - If hashes do not match:
-  - Has an allowed one-off: fetch expected image and compare
+  - Has an allowed one-off: fetch expected image and compare using one-off
+    threshold
+  - Otherwise fail
+
+::right::
+
+<div class="mt-12 pl-4">
+
+![](./assets/image-assert-overview.png)
+
+</div>
 
 ---
 
 # Tooling
 
+- CI Dashboard to inspect failures
+- Test reporter integration
 - VSCode plugin to show screenshot on hover
 - cli script to update larger batches (e.g. browser related)
 
 ---
 
-# Conclusion
+# Summary
 
-- Hashes allow fast local comparisons
-- Can use perceptual hashes or allowed one-offs
+- Screenshots are stored as hashes in the code
+- Allows fast local comparisons for thousands of screenshots
+- Shared storage for the screenshots
 
 ---
 layout: center
@@ -715,14 +737,14 @@ we extended this to mobile.
 
 # Performance Testing
 
-- Rendering in the browser is interactive and user‑perceived
+- Rendering in WebGL in the browser is highly interactive
 - New features can regress FPS, latency, or memory in subtle ways
 - Automated tests create **repeatable history** and **comparable baselines**
 - Manual testing is error prone, time consuming, and hard to reproduce
 
 ---
 
-# Automated tests
+# Automated Tests
 
 - Reproducible setup (scene, camera, layers, ...)
 - Allows averages over multiple runs
@@ -749,12 +771,14 @@ layout: two-cols
 
 - Set of curated performance scenes
 - Runs in-browser
-- Custom instrumentation to get or estimate browser metrics
+- Custom instrumentation to get or estimate metrics
 - Once test ends, send collected data to time series backend
 - Visualize in Grafana
 - Alerts for significant changes
 
 ::right::
+
+<div class="pl-6 mt-12">
 
 ```mermaid
 flowchart TD
@@ -764,13 +788,13 @@ flowchart TD
   Grafana -->|Alert| Teams
 ```
 
+</div>
+
 ---
 
-# Demo: Alert in teams
+# Alert in Teams
 
-<!--
-- Show a recent regression
--->
+![](./assets/performance-testing-alert.png)
 
 ---
 
@@ -784,12 +808,15 @@ flowchart TD
 
 # Hardware
 
-- Runs on reference hardware
-  - Office Lab
-    - macOS laptop
-    - Linux laptop with integrated graphics
-  - On CI: Windows 11 with vGPU slice
-  - New: Mobile, Android phone, iPad, ...
+<v-clicks>
+
+- Office Lab
+  - macOS laptop
+  - Linux laptop with integrated graphics
+- On CI: Windows 11 with vGPU slice
+- Mobile devices on BrowserStack: Android phone, iPad, ...
+
+</v-clicks>
 
 ---
 
@@ -819,6 +846,14 @@ matrix:
 ---
 
 # Demo: Mobile Performance data in Grafana
+
+---
+
+# Summary
+
+- Performance tests are essential to catch regressions early
+- Alerts ensure data and changes are monitored
+- Run on real hardware
 
 ---
 layout: center
