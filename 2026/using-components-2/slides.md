@@ -335,8 +335,8 @@ graph TD
   Sidebar["<b>Sidebar</b>"]:::component
   Main["<b>Main content</b>"]:::component
   Toolbar["<b>Toolbar</b>"]:::component
-  Login["<b>Login</b><br/>render when user is empty"]:::view
-  Profile["<b>Profile</b><br/>render when user exists"]:::view
+  Login["<b>Login</b><br/>rendered when user is empty"]:::view
+  Profile["<b>Profile</b><br/>rendered when user exists"]:::view
   Map["<b>Map / chart / UI</b>"]:::component
 
   App --> Sidebar
