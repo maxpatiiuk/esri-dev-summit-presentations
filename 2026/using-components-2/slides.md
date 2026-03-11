@@ -336,6 +336,41 @@ layout: intro
 - React 19 has support for web components out of the box
 
 ---
+layout: full
+---
+
+```mermaid
+%%{init: {'themeCSS': '.edgeLabel, .edgeLabel span, .edgeLabel p { color: #000 !important; fill: #000 !important; }'}}%%
+graph TD
+  classDef state fill:#15324a,stroke:#7fd1b9,color:#fff,stroke-width:3px
+  classDef component fill:#1f4b6e,stroke:#9ad1ff,color:#fff,stroke-width:2px
+  classDef view fill:#355f2e,stroke:#b7d77a,color:#fff,stroke-width:2px
+
+  App["<b>App</b><br/>owns state: { user, filters }"]:::state
+  Sidebar["<b>Sidebar</b>"]:::component
+  Main["<b>Main content</b>"]:::component
+  Toolbar["<b>Toolbar</b>"]:::component
+  Login["<b>Login</b><br/>rendered when user is empty"]:::view
+  Profile["<b>Profile</b><br/>rendered when user exists"]:::view
+  Map["<b>Map / chart / UI</b>"]:::component
+
+  App --> Sidebar
+  App --> Main
+  App --> Toolbar
+  Toolbar -->|user state is empty| Login
+  Toolbar -->|user state exists| Profile
+  Main --> Map
+```
+
+---
+layout: center
+---
+
+<video width="640" height="480" controls>
+    <source src="./assets/react-tree.webm" type="video/webm">
+</video>
+
+---
 layout: center
 ---
 
@@ -368,6 +403,31 @@ Script:
 
 6. show the app
 -->
+
+---
+
+# React in this app
+
+```mermaid
+%%{init: {'themeCSS': '.edgeLabel, .edgeLabel span, .edgeLabel p { color: #000 !important; fill: #000 !important; }'}}%%
+graph TD
+  classDef root fill:#15324a,stroke:#7fd1b9,color:#fff,stroke-width:3px
+  classDef react fill:#1f4b6e,stroke:#9ad1ff,color:#fff,stroke-width:2px
+  classDef calcite fill:#355f2e,stroke:#b7d77a,color:#fff,stroke-width:2px
+  classDef maps fill:#5b3a1f,stroke:#ffb36b,color:#fff,stroke-width:2px
+
+  App["<b>App.jsx</b><br/>owns state: { distance, elevation }"]:::root
+  Chips["<b>Calcite UI</b><br/>&lt;calcite-chip&gt; distance<br/>&lt;calcite-chip&gt; elevation"]:::calcite
+  Map["<b>Map component</b><br/>&lt;arcgis-map&gt;"]:::maps
+  Profile["<b>Elevation profile</b><br/>&lt;arcgis-elevation-profile&gt;"]:::maps
+  Handler["<b>React handler</b><br/>handleElevationProfileChange(event)"]:::react
+
+  App -->|declarative render in JSX| Chips
+  App -->|declarative render in JSX| Map
+  App -->|declarative render in JSX| Profile
+  Profile -->|arcgisPropertyChange| Handler
+  Handler -->|updates App state with setDistance / setElevation| App
+```
 
 ---
 
@@ -540,6 +600,15 @@ layout: center
 
 ---
 
+# Encapsulating complexity with components
+
+- Application logic can be encapsulated into smaller components
+- This makes it easier to manage and reason about the code
+- For example, we can create a new component for the elevation profile logic in
+  our app
+
+---
+
 # Other frameworks
 
 - Angular and Vue also support web components.
@@ -574,7 +643,7 @@ layout: center
 
 Deeper Vite and Vitest guide - shows how Esri is building apps
 
-**When**: Tomorrow (Wednesday, March 12) | 4:00 PM - 5:00 PM PDT
+**When**: Tomorrow (Thursday, March 12) | 4:00 PM - 5:00 PM PDT
 
 **Where**: Mohave Learning Center | Palm Springs Convention Center
 
