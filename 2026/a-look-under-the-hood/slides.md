@@ -485,8 +485,8 @@ binary and register it to an organization or repo.
 
 # Our Pool
 
-- Serving up to ~80 contributors, distributed globally
-- Up to 20 new pull requests/workday
+- Used by over 80 contributors, distributed globally
+- In `@arcgis/core`: up to 20 new pull requests/workday
 - Currently
   - ~50 GPU runners
   - ~16 general purpose Linux runners
@@ -650,7 +650,7 @@ screenshot tests on it.
 - ~1.2M SLOC
 - ~24k unit tests and ~5.2k integration tests
 - 4.5k screenshot tests being run
-- often multiple screenshots per test, ~10k screenshots
+- often multiple screenshots per test
 
 <!--
 Why you might ask? The SDK is a highly visual and interactive product, running
