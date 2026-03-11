@@ -61,6 +61,12 @@ build on top of each other
 ![Calcite components](./assets/calcite.png){ width=250 }
 
 ---
+layout: iframe
+
+url: https://developers.arcgis.com/calcite-design-system/
+---
+
+---
 
 # ArcGIS Maps SDK for JavaScript
 
@@ -95,6 +101,9 @@ build on top of each other
     - `import WebMap from "@arcgis/core/WebMap.js";`
 
 ---
+layout: iframe-right
+url: https://developers.arcgis.com/javascript/latest/system-requirements/
+---
 
 # What you need to install and run the SDK
 
@@ -114,11 +123,17 @@ build on top of each other
 - Reminder - We’ll be building on the app from session Part 1 as a starting
   point
 - But, you can create a new app using a single command:
-  - Run `npm init @arcgis` in your terminal and follow the prompts
+  - Run `npm init @arcgis` in your terminal and follow the prompts,
+  - or skip the prompts by using `npx @arcgis/create -n my-arcgis-app -t vite`
   - This CLI tool uses
     [git-sparse-checkout](https://git-scm.com/docs/git-sparse-checkout) to fetch
     app templates from the
     [Esri/jsapi-resources](https://github.com/Esri/jsapi-resources) repository
+
+---
+layout: iframe
+url: https://developers.arcgis.com/javascript/latest/get-started/
+---
 
 ---
 
