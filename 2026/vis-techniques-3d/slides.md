@@ -51,8 +51,6 @@ layout: intro
 
 # 3D Visualization<br />Showcases
 
-Thorben Westerhuys
-
 <!--
 Alright, let's kick off this session with some really cool 3D visualization showcases. Again, the goal here is to show you what's possible with our SDK.
 
@@ -202,14 +200,11 @@ image: ./local-scene.avif
 Local View
 
 ```html
-<arcgis-scene
-  id="viewEl"
-  viewing-mode="local"
-></arcgis-scene>
+<arcgis-scene viewing-mode="local"></arcgis-scene>
 ```
 
 ```ts
-const viewEl = document.querySelector('#viewEl');
+const viewEl = document.querySelector('arcgis-scene');
 viewEl.spatialReference = { wkid: 54099 };
 ```
 
@@ -229,10 +224,7 @@ image: ./local-scene-clipped.avif
 Local View - Clipping
 
 ```html
-<arcgis-scene
-  id="viewEl"
-  viewing-mode="local"
-></arcgis-scene>
+<arcgis-scene viewing-mode="local"></arcgis-scene>
 ```
 
 ```ts
@@ -244,7 +236,7 @@ const kansasExtent = new Extent({
   spatialReference: { wkid: 54099 },
 });
 
-const viewEl = document.querySelector('#viewEl');
+const viewEl = document.querySelector('arcgis-scene');
 viewEl.clippingArea = kansasExtent;
 viewEl.spatialReference = { wkid: 54099 };
 ```
@@ -344,11 +336,11 @@ image: ./elevation-topo.avif
 
 Elevation
 
-```ts
-const map = new WebScene({
-  basemap: 'topo-vector',
-  ground: 'world-elevation',
-});
+```html
+<arcgis-scene
+  basemap="topo-vector"
+  ground="world-elevation"
+></arcgis-scene>
 ```
 
 ---
@@ -360,11 +352,11 @@ image: ./elevation-satellite.avif
 
 Elevation
 
-```ts
-const map = new WebScene({
-  basemap: 'satellite',
-  ground: 'world-elevation',
-});
+```html
+<arcgis-scene
+  basemap="satellite"
+  ground="world-elevation"
+></arcgis-scene>
 ```
 
 ---
@@ -376,11 +368,11 @@ image: ./elevation-bathymetry.avif
 
 Elevation
 
-```ts
-const map = new Map({
-  basemap: 'satellite',
-  ground: 'world-topobathymetry',
-});
+```html
+<arcgis-scene
+  basemap="satellite"
+  ground="world-topobathymetry"
+></arcgis-scene>
 ```
 
 ---
@@ -941,8 +933,6 @@ layout: intro
 ---
 
 # Scene Layers
-
-Hugo Campos
 
 ---
 layout: media-right
