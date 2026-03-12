@@ -66,7 +66,7 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/earthquakes-dep
 # Earthquakes Depth
 
 <!--
-This 3D visualization reveals the depth and magnitude of major earthquakes across the globe in 2019. Each sphere represents an earthquake.  Both size and color help to identify stronger earthquakes.
+This 3D visualization reveals the depth and magnitude of major earthquakes across the globe in 2019. Each sphere represents an earthquake. Both size and color help identify stronger earthquakes.
 
 But the real story here is depth. Each earthquake's vertical position shows how far below the surface it occurred.
 
@@ -82,13 +82,13 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-festival
 # Zurich Festival Pedestrian Counters
 
 <!--
-This other 3D visualization uses pedestrian data to show crowd dynamics during Zurich festival.
+This 3D visualization uses pedestrian data to show crowd dynamics during the Zurich festival.
 
 We're using proportional symbology, where the height of each cylinder is directly related to the number of people passing by. The color also changes from green to orange, using a color ramp, to visually represent the increasing density. 
 
 The time slider on the right allows us to explore how these counts change throughout the day.  
 
-Regarding the tech: The visualization is built on a detailed 3D city model of Zurich which is an IntegratedMeshLayer, providing a realistic context.  We've added a parade route layer using a bright orange line for visual clarity, and a 3D object symbol for the snowman, highlighting key elements of the festival within the 3D scene.
+On the technical side, the visualization is built on a detailed 3D city model of Zurich, which is an IntegratedMeshLayer providing a realistic context. We've added a parade route layer using a bright orange line for visual clarity, and a 3D object symbol for the snowman, highlighting key elements of the festival within the 3D scene.
 
 Cylinders with Mesh
 -->
@@ -102,11 +102,11 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-hb-updat
 # Zurich HB Exploration
 
 <!--
-This is a 3D web scene of Zurich Main Station, built with the ArcGIS API for JavaScript. We're showcasing detailed indoor visualization
+This is a 3D web scene of Zurich Main Station, built with the ArcGIS API for JavaScript. It showcases detailed indoor visualization.
 
 We use Building Scene Layers for accurate 3D building representation, enabling sublayer control to toggle elements like the ground floor or Level -1. 
 
-Key features include dynamic floor level filtering using feature layer definition expressions
+Key features include dynamic floor level filtering using feature layer definition expressions.
 -->
 
 ---
@@ -418,7 +418,7 @@ image: '/data-living-atlas.avif'
 fit: contain
 ---
 
-# Sources of Data
+# Data Sources
 
 ArcGIS Online
 
@@ -1224,7 +1224,7 @@ image: ./voxel.avif
 
 # Voxel Layer
 
-Intro
+Intro to VoxelLayer
 
 ```ts
 const layer = new VoxelLayer({
@@ -1248,7 +1248,7 @@ Create Area of Interest
 
 ```ts
 //A vertical slice from West to East
-xSlice = new VoxelSlice({
+const xSlice = new VoxelSlice({
   orientation: 270,
   tilt: 90,
   point: [volSize[0] / 2, 0, 0],
