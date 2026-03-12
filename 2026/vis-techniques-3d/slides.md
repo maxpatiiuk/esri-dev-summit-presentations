@@ -51,8 +51,6 @@ layout: intro
 
 # 3D Visualization<br />Showcases
 
-Thorben Westerhuys
-
 <!--
 Alright, let's kick off this session with some really cool 3D visualization showcases. Again, the goal here is to show you what's possible with our SDK.
 
@@ -68,7 +66,7 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/earthquakes-dep
 # Earthquakes Depth
 
 <!--
-This 3D visualization reveals the depth and magnitude of major earthquakes across the globe in 2019. Each sphere represents an earthquake.  Both size and color help to identify stronger earthquakes.
+This 3D visualization reveals the depth and magnitude of major earthquakes across the globe in 2019. Each sphere represents an earthquake. Both size and color help identify stronger earthquakes.
 
 But the real story here is depth. Each earthquake's vertical position shows how far below the surface it occurred.
 
@@ -84,13 +82,13 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-festival
 # Zurich Festival Pedestrian Counters
 
 <!--
-This other 3D visualization uses pedestrian data to show crowd dynamics during Zurich festival.
+This 3D visualization uses pedestrian data to show crowd dynamics during the Zurich festival.
 
 We're using proportional symbology, where the height of each cylinder is directly related to the number of people passing by. The color also changes from green to orange, using a color ramp, to visually represent the increasing density. 
 
 The time slider on the right allows us to explore how these counts change throughout the day.  
 
-Regarding the tech: The visualization is built on a detailed 3D city model of Zurich which is an IntegratedMeshLayer, providing a realistic context.  We've added a parade route layer using a bright orange line for visual clarity, and a 3D object symbol for the snowman, highlighting key elements of the festival within the 3D scene.
+On the technical side, the visualization is built on a detailed 3D city model of Zurich, which is an IntegratedMeshLayer providing a realistic context. We've added a parade route layer using a bright orange line for visual clarity, and a 3D object symbol for the snowman, highlighting key elements of the festival within the 3D scene.
 
 Cylinders with Mesh
 -->
@@ -104,11 +102,11 @@ codeBase: 'https://github.com/RalucaNicola/JSAPI_demos/tree/main/zurich-hb-updat
 # Zurich HB Exploration
 
 <!--
-This is a 3D web scene of Zurich Main Station, built with the ArcGIS API for JavaScript. We're showcasing detailed indoor visualization
+This is a 3D web scene of Zurich Main Station, built with the ArcGIS API for JavaScript. It showcases detailed indoor visualization.
 
 We use Building Scene Layers for accurate 3D building representation, enabling sublayer control to toggle elements like the ground floor or Level -1. 
 
-Key features include dynamic floor level filtering using feature layer definition expressions
+Key features include dynamic floor level filtering using feature layer definition expressions.
 -->
 
 ---
@@ -165,7 +163,7 @@ layout: two-cols
 
 Global View vs Local View
 
-<img src="/scene-view.avif" alt="SceneView in global mode, showing the entire globe with a topographic basemap.">
+<img src="/scene-view.avif" alt="Scene component in global mode, showing the entire globe with a topographic basemap.">
 
 ::right::
 
@@ -173,10 +171,10 @@ Global View vs Local View
 
 &nbsp;
 
-<img src="/local-scene.avif" alt="SceneView in local mode, showing a flat plane with a map of Antarctica.">
+<img src="/local-scene.avif" alt="Scene component in local mode, showing a flat plane with a map of Antarctica.">
 
 <!--
-The SceneView supports two different viewing modes, global and local, specified by the viewingMode property. Global scenes render the Earth as a globe, while local scenes render the surface on a flat plane.
+The scene component supports two different viewing modes, global and local, specified by the viewingMode property. Global scenes render the Earth as a globe, while local scenes render the surface on a flat plane.
 -->
 
 ---
@@ -188,10 +186,8 @@ image: ./scene-view.avif
 
 Global View
 
-```ts
-const view = new SceneView({
-  viewingMode: 'global',
-});
+```html
+<arcgis-scene viewing-mode="global"></arcgis-scene>
 ```
 
 ---
@@ -203,17 +199,19 @@ image: ./local-scene.avif
 
 Local View
 
+```html
+<arcgis-scene viewing-mode="local"></arcgis-scene>
+```
+
 ```ts
-const view = new SceneView({
-  viewingMode: 'local',
-  spatialReference: { wkid: 54099 },
-});
+const viewEl = document.querySelector('arcgis-scene');
+viewEl.spatialReference = { wkid: 54099 };
 ```
 
 <!--
 Local mode allows for navigation and feature display in a localized or clipped area.
 
-The viewing mode (if not explicitly set by the user) is determined based on the spatial reference of the view. If the spatial reference is either Web Mercator, WGS84, CGCS2000, Mars_2000_(Sphere), GCS_Mars_2000 or GCS_Moon_2000 then the viewingMode will default to global. For any other spatial reference the viewingMode will default to local.
+The viewing mode (if not explicitly set by the user) is determined based on the spatial reference of the scene component. If the spatial reference is either Web Mercator, WGS84, CGCS2000, Mars_2000_(Sphere), GCS_Mars_2000 or GCS_Moon_2000 then the viewingMode will default to global. For any other spatial reference the viewingMode will default to local.
 -->
 
 ---
@@ -225,7 +223,11 @@ image: ./local-scene-clipped.avif
 
 Local View - Clipping
 
-```ts {0|1-8|1-8,11}
+```html
+<arcgis-scene viewing-mode="local"></arcgis-scene>
+```
+
+```ts
 const kansasExtent = new Extent({
   xmax: -10834217,
   xmin: -10932882,
@@ -234,11 +236,9 @@ const kansasExtent = new Extent({
   spatialReference: { wkid: 54099 },
 });
 
-const view = new SceneView({
-  viewingMode: 'local',
-  clippingArea: kansasExtent,
-  spatialReference: { wkid: 54099 },
-});
+const viewEl = document.querySelector('arcgis-scene');
+viewEl.clippingArea = kansasExtent;
+viewEl.spatialReference = { wkid: 54099 };
 ```
 
 <!--
@@ -258,7 +258,10 @@ image: ./focus-area.avif
 
 Focus Areas
 
-```ts {0|1-11|13-18|20-21}{maxHeight:'340px'}
+```ts
+const viewEl = document.querySelector('arcgis-scene');
+await viewEl.viewOnReady();
+
 const focusPolygon = new Polygon({
   spatialReference: { wkid: 102100 },
   rings: [
@@ -278,8 +281,8 @@ const focusArea = new FocusArea({
   geometries: new Collection([focusPolygon]),
 });
 
-view.focusAreas.areas.add(focusArea);
-view.focusAreas.style = 'bright';
+viewEl.focusAreas.areas.add(focusArea);
+viewEl.focusAreas.style = 'bright';
 ```
 
 ---
@@ -291,18 +294,14 @@ image: ./basemap-topo-vector.avif
 
 Basemap
 
-```ts
-const map = new WebScene({
-  basemap: 'topo-vector',
-});
-
-const view = new SceneView({ map });
+```html
+<arcgis-scene basemap="topo-vector"></arcgis-scene>
 ```
 
 <!--
-basemap property of the WebScene is Inherited from Map
+The scene component supports setting the basemap directly.
 
-The basemap is a set of layers that give geographic context to the MapView or SceneView and the other operational layers in the map.
+The basemap is a set of layers that give geographic context to the map or scene component and the other operational layers in the map.
 -->
 
 ---
@@ -314,15 +313,11 @@ image: ./basemap-topo-3d.avif
 
 Basemap
 
-```ts {2}
-const map = new WebScene({
-  basemap: 'topo-3d',
-});
-
-const view = new SceneView({ map });
+```html
+<arcgis-scene basemap="topo-3d"></arcgis-scene>
 ```
 
-<img v-click="1" src="/basemaps-list.avif" alt="List of basemaps available in ArcGIS Maps SDK for JavaScript, including topo-3d, satellite, etc">
+<img src="/basemaps-list.avif" alt="List of basemaps available in ArcGIS Maps SDK for JavaScript, including topo-3d, satellite, etc">
 
 <!--
 Use of these basemaps requires either an ArcGIS Location Platform account, ArcGIS Online organizational subscription, or an ArcGIS Enterprise license.
@@ -341,11 +336,11 @@ image: ./elevation-topo.avif
 
 Elevation
 
-```ts {3}
-const map = new WebScene({
-  basemap: 'topo-vector',
-  ground: 'world-elevation',
-});
+```html
+<arcgis-scene
+  basemap="topo-vector"
+  ground="world-elevation"
+></arcgis-scene>
 ```
 
 ---
@@ -357,11 +352,11 @@ image: ./elevation-satellite.avif
 
 Elevation
 
-```ts
-const map = new WebScene({
-  basemap: 'satellite',
-  ground: 'world-elevation',
-});
+```html
+<arcgis-scene
+  basemap="satellite"
+  ground="world-elevation"
+></arcgis-scene>
 ```
 
 ---
@@ -373,11 +368,11 @@ image: ./elevation-bathymetry.avif
 
 Elevation
 
-```ts {3}
-const map = new Map({
-  basemap: 'satellite',
-  ground: 'world-topobathymetry',
-});
+```html
+<arcgis-scene
+  basemap="satellite"
+  ground="world-topobathymetry"
+></arcgis-scene>
 ```
 
 ---
@@ -423,7 +418,7 @@ image: '/data-living-atlas.avif'
 fit: contain
 ---
 
-# Sources of Data
+# Data Sources
 
 ArcGIS Online
 
@@ -477,36 +472,28 @@ image: ./world-countries.avif
 
 ::code-group
 
-```ts [URL] {0|0-3|}
+```ts [URL]
 const layer = new FeatureLayer({
   url: 'https://services.arcgis.com/.../FeatureServer',
 });
 
-const map = new Map({
-  layers: [layer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ```ts [Portal item]
 const layer = new FeatureLayer({
-  portalItem: {
-    id: 'ac80670eb213440ea5899bbf92a04998',
-  },
+  portalItem: { id: 'ac80670eb213440ea5899bbf92a04998' },
 });
 
-const map = new Map({
-  layers: [layer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ```ts [CSV]
-const csvLayer = new CSVLayer({
+const layer = new CSVLayer({
   url: 'https://.../earthquakes.csv',
 });
 
-const map = new Map({
-  layers: [csvLayer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ---
@@ -525,7 +512,7 @@ fit: contain
 
 Applying Symbology
 
-```ts {0|1|3|4|5-10|*}{maxHeight:'160px'}
+```ts
 const layer = new FeatureLayer({
   url: 'https://services/../FeatureServer',
   renderer: new SimpleRenderer({
@@ -630,7 +617,7 @@ image: ./point-symbol-icon-rotation.avif
 
 Icon Rotation
 
-```ts {0|3-8|15-18}{maxHeight:'320px'}
+```ts
 const arrowSymbol = new PointSymbol3D({
   symbolLayers: [
     new IconSymbol3DLayer({
@@ -667,14 +654,12 @@ image: ./line-symbol-flat.avif
 
 Flat
 
-```ts {0-100}{maxHeight:'320px'}
+```ts
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new LineSymbol3DLayer({
       size: 20, // points
-      material: {
-        color: 'blue',
-      },
+      material: { color: 'blue' },
       cap: 'round',
       join: 'round',
     }),
@@ -695,14 +680,12 @@ image: ./line-symbol-volumetric.avif
 
 Volumetric
 
-```ts {0-100}{maxHeight:'320px'}
+```ts
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new PathSymbol3DLayer({
       profile: 'quad',
-      material: {
-        color: 'blue',
-      },
+      material: { color: 'blue' },
       width: 20, // in meters
       height: 30, // in meters
       join: 'miter',
@@ -720,7 +703,6 @@ https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-path
 
 ---
 layout: media-right
-clicks: 1
 ---
 
 # LineSymbol3D
@@ -754,7 +736,7 @@ lines.renderer = renderer;
     src="/glow-on.avif"
     class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
     alt="Paths throughout a city, glowing"
-    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+    style="opacity: 1"
   />
 </div>
 
@@ -853,7 +835,7 @@ image: ./sl-emissive-glow.avif
 Glow
 
 ```ts
-viewElement.environment.lighting.glow = new Glow({
+viewEl.environment.lighting.glow = new Glow({
   intensity: glowIntensity, // 0 to 1
 });
 ```
@@ -865,19 +847,16 @@ image: ./building-footprints.avif
 
 # Extruding Building Footprints
 
-ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
+ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual
+Variables
 
-```ts {0|2-13|3-12|16-25|26-31}{maxHeight:'260px'}
+```ts
 function getSymbol(color) {
   return new PolygonSymbol3D({
     symbolLayers: [
       new ExtrudeSymbol3DLayer({
         material: { color },
-        edges: {
-          type: 'solid',
-          color: '#999',
-          size: 0.5,
-        },
+        edges: { type: 'solid', color: '#999', size: 0.5 },
       }),
     ],
   });
@@ -893,12 +872,7 @@ const renderer = new UniqueValueRenderer({
     },
     /* same for all categories */
   ],
-  visualVariables: [
-    {
-      type: 'size',
-      field: 'HEIGHT',
-    },
-  ],
+  visualVariables: [{ type: 'size', field: 'HEIGHT' }],
 });
 ```
 
@@ -926,7 +900,7 @@ const layer = new ImageryTileLayer({
   },
 });
 
-viewElement.map.add(layer);
+viewEl.map.add(layer);
 ```
 
 <!--
@@ -938,8 +912,6 @@ layout: intro
 ---
 
 # Scene Layers
-
-Hugo Campos
 
 ---
 layout: media-right
@@ -973,19 +945,19 @@ image: ./scene-layer-highlights.avif
 
 Scene Layer and Multiple Highlights
 
-```ts {0-100}{maxHeight:'300px'}
-const sceneLayer = viewElement.map.allLayers.find(
+```ts
+const sceneLayer = viewEl.map.allLayers.find(
   (layer) => layer.title === 'Buildings',
 );
 
 // Define multiple highlight options with different
 // names and colors
-viewElement.highlights = [
+viewEl.highlights = [
   { name: 'multiselect', color: 'blue' },
   { name: 'default', color: 'gold' },
 ];
 
-const lv = await viewElement.whenLayerView(sceneLayer);
+const lv = await viewEl.whenLayerView(sceneLayer);
 
 // Highlight on hover using the default highlight options
 li.addEventListener('mouseenter', () => {
@@ -1002,7 +974,7 @@ const onClick = async (event) => {
   });
 };
 
-viewElement.addEventListener('arcgisViewClick', onClick);
+viewEl.addEventListener('arcgisViewClick', onClick);
 ```
 
 <!--
@@ -1018,10 +990,10 @@ image: ./sl-color.avif
 
 Colored by Attribute
 
-```ts {0-100}{maxHeight:'340px'}
+```ts
 const rendererResult = await createContinuousRenderer({
   layer: layer,
-  view: viewElement.view,
+  view: viewEl.view,
   field: 'CNSTRCT_YR',
   theme: 'above-and-below',
   minValue: 1800,
@@ -1034,7 +1006,6 @@ layer.renderer = rendererResult.renderer;
 
 ---
 layout: media-right
-clicks: 1
 ---
 
 # Scene Layers
@@ -1056,7 +1027,7 @@ symbolLayer.edges = new SolidEdges3D({
     src="/sl-edges-solid.avif"
     class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
     alt="Buildings with solid edges"
-    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+    style="opacity: 1"
   />
 </div>
 
@@ -1094,10 +1065,8 @@ map.add(buildingLayer);
 const plane = new SlicePlane(/* ... */);
 
 // Add an analysis to slice the building layer.
-const slice = new SliceAnalysis({
-  shape: plane,
-});
-viewElement.analyses.add(slice);
+const slice = new SliceAnalysis({ shape: plane });
+viewEl.analyses.add(slice);
 ```
 
 <!--
@@ -1221,7 +1190,7 @@ image: ./terrain.avif
 
 Applying RasterFunction
 
-```ts {0-100}{maxHeight:'300px'}
+```ts
 // Setup layer with initial raster function
 const analysisLayer = new ImageryTileLayer({
   url: 'https://elevation3d.arcgis.com/.../ImageServer',
@@ -1255,7 +1224,7 @@ image: ./voxel.avif
 
 # Voxel Layer
 
-Intro
+Intro to VoxelLayer
 
 ```ts
 const layer = new VoxelLayer({
@@ -1279,7 +1248,7 @@ Create Area of Interest
 
 ```ts
 //A vertical slice from West to East
-xSlice = new VoxelSlice({
+const xSlice = new VoxelSlice({
   orientation: 270,
   tilt: 90,
   point: [volSize[0] / 2, 0, 0],
@@ -1301,7 +1270,7 @@ image: ./media-layer-video.avif
 
 Video Element
 
-```ts {0-100}{maxHeight:'320px'}
+```ts
 const element = new VideoElement({
   video: 'https://.../video.mp4',
   georeference: new ExtentAndRotationGeoreference({
@@ -1310,9 +1279,7 @@ const element = new VideoElement({
       ymin: 1,
       xmax: 20,
       ymax: 80,
-      spatialReference: {
-        wkid: 4326,
-      },
+      spatialReference: { wkid: 4326 },
     }),
   }),
 });
@@ -1339,7 +1306,7 @@ image: ./media-layer.avif
 Interactive Georeferencing
 
 ```ts
-const lv = await viewElement.whenLayerView(mediaLayer);
+const lv = await viewEl.whenLayerView(mediaLayer);
 
 // Enable interactivity and select the image
 lv.interactive = true;

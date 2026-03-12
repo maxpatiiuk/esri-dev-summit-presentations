@@ -2,6 +2,17 @@
   color: #bee3ff;
 }
 
+.slidev-layout.media-right .media-right-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.slidev-layout.media-right .media-right-content .slidev-code-wrapper {
+  height: stretch;
+  overflow: auto;
+  overscroll-behavior: none;
+}
+
 .glow-swap-on {
   transition: opacity 250ms ease-in-out;
 }
