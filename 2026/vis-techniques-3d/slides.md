@@ -477,31 +477,23 @@ const layer = new FeatureLayer({
   url: 'https://services.arcgis.com/.../FeatureServer',
 });
 
-const map = new Map({
-  layers: [layer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ```ts [Portal item]
 const layer = new FeatureLayer({
-  portalItem: {
-    id: 'ac80670eb213440ea5899bbf92a04998',
-  },
+  portalItem: { id: 'ac80670eb213440ea5899bbf92a04998' },
 });
 
-const map = new Map({
-  layers: [layer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ```ts [CSV]
-const csvLayer = new CSVLayer({
+const layer = new CSVLayer({
   url: 'https://.../earthquakes.csv',
 });
 
-const map = new Map({
-  layers: [csvLayer],
-});
+const map = new Map({ layers: [layer] });
 ```
 
 ---
@@ -667,9 +659,7 @@ const symbol = new LineSymbol3D({
   symbolLayers: [
     new LineSymbol3DLayer({
       size: 20, // points
-      material: {
-        color: 'blue',
-      },
+      material: { color: 'blue' },
       cap: 'round',
       join: 'round',
     }),
@@ -695,9 +685,7 @@ const symbol = new LineSymbol3D({
   symbolLayers: [
     new PathSymbol3DLayer({
       profile: 'quad',
-      material: {
-        color: 'blue',
-      },
+      material: { color: 'blue' },
       width: 20, // in meters
       height: 30, // in meters
       join: 'miter',
@@ -868,11 +856,7 @@ function getSymbol(color) {
     symbolLayers: [
       new ExtrudeSymbol3DLayer({
         material: { color },
-        edges: {
-          type: 'solid',
-          color: '#999',
-          size: 0.5,
-        },
+        edges: { type: 'solid', color: '#999', size: 0.5 },
       }),
     ],
   });
@@ -888,12 +872,7 @@ const renderer = new UniqueValueRenderer({
     },
     /* same for all categories */
   ],
-  visualVariables: [
-    {
-      type: 'size',
-      field: 'HEIGHT',
-    },
-  ],
+  visualVariables: [{ type: 'size', field: 'HEIGHT' }],
 });
 ```
 
@@ -1086,9 +1065,7 @@ map.add(buildingLayer);
 const plane = new SlicePlane(/* ... */);
 
 // Add an analysis to slice the building layer.
-const slice = new SliceAnalysis({
-  shape: plane,
-});
+const slice = new SliceAnalysis({ shape: plane });
 viewEl.analyses.add(slice);
 ```
 
@@ -1302,9 +1279,7 @@ const element = new VideoElement({
       ymin: 1,
       xmax: 20,
       ymax: 80,
-      spatialReference: {
-        wkid: 4326,
-      },
+      spatialReference: { wkid: 4326 },
     }),
   }),
 });
