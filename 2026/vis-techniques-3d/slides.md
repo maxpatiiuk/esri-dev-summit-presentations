@@ -165,7 +165,7 @@ layout: two-cols
 
 Global View vs Local View
 
-<img src="/scene-view.avif" alt="SceneView in global mode, showing the entire globe with a topographic basemap.">
+<img src="/scene-view.avif" alt="Scene component in global mode, showing the entire globe with a topographic basemap.">
 
 ::right::
 
@@ -173,10 +173,10 @@ Global View vs Local View
 
 &nbsp;
 
-<img src="/local-scene.avif" alt="SceneView in local mode, showing a flat plane with a map of Antarctica.">
+<img src="/local-scene.avif" alt="Scene component in local mode, showing a flat plane with a map of Antarctica.">
 
 <!--
-The SceneView supports two different viewing modes, global and local, specified by the viewingMode property. Global scenes render the Earth as a globe, while local scenes render the surface on a flat plane.
+The scene component supports two different viewing modes, global and local, specified by the viewingMode property. Global scenes render the Earth as a globe, while local scenes render the surface on a flat plane.
 -->
 
 ---
@@ -188,10 +188,8 @@ image: ./scene-view.avif
 
 Global View
 
-```ts
-const view = new SceneView({
-  viewingMode: 'global',
-});
+```html
+<arcgis-scene viewing-mode="global"></arcgis-scene>
 ```
 
 ---
@@ -203,17 +201,22 @@ image: ./local-scene.avif
 
 Local View
 
+```html
+<arcgis-scene
+  id="viewEl"
+  viewing-mode="local"
+></arcgis-scene>
+```
+
 ```ts
-const view = new SceneView({
-  viewingMode: 'local',
-  spatialReference: { wkid: 54099 },
-});
+const viewEl = document.querySelector('#viewEl');
+viewEl.spatialReference = { wkid: 54099 };
 ```
 
 <!--
 Local mode allows for navigation and feature display in a localized or clipped area.
 
-The viewing mode (if not explicitly set by the user) is determined based on the spatial reference of the view. If the spatial reference is either Web Mercator, WGS84, CGCS2000, Mars_2000_(Sphere), GCS_Mars_2000 or GCS_Moon_2000 then the viewingMode will default to global. For any other spatial reference the viewingMode will default to local.
+The viewing mode (if not explicitly set by the user) is determined based on the spatial reference of the scene component. If the spatial reference is either Web Mercator, WGS84, CGCS2000, Mars_2000_(Sphere), GCS_Mars_2000 or GCS_Moon_2000 then the viewingMode will default to global. For any other spatial reference the viewingMode will default to local.
 -->
 
 ---
@@ -225,7 +228,14 @@ image: ./local-scene-clipped.avif
 
 Local View - Clipping
 
-```ts {0|1-8|1-8,11}
+```html
+<arcgis-scene
+  id="viewEl"
+  viewing-mode="local"
+></arcgis-scene>
+```
+
+```ts
 const kansasExtent = new Extent({
   xmax: -10834217,
   xmin: -10932882,
@@ -234,11 +244,9 @@ const kansasExtent = new Extent({
   spatialReference: { wkid: 54099 },
 });
 
-const view = new SceneView({
-  viewingMode: 'local',
-  clippingArea: kansasExtent,
-  spatialReference: { wkid: 54099 },
-});
+const viewEl = document.querySelector('#viewEl');
+viewEl.clippingArea = kansasExtent;
+viewEl.spatialReference = { wkid: 54099 };
 ```
 
 <!--
@@ -258,7 +266,10 @@ image: ./focus-area.avif
 
 Focus Areas
 
-```ts {0|1-11|13-18|20-21}{maxHeight:'340px'}
+```ts {1-100}{maxHeight:'300px'}
+const viewEl = document.querySelector('arcgis-scene');
+await viewEl.viewOnReady();
+
 const focusPolygon = new Polygon({
   spatialReference: { wkid: 102100 },
   rings: [
@@ -278,8 +289,8 @@ const focusArea = new FocusArea({
   geometries: new Collection([focusPolygon]),
 });
 
-view.focusAreas.areas.add(focusArea);
-view.focusAreas.style = 'bright';
+viewEl.focusAreas.areas.add(focusArea);
+viewEl.focusAreas.style = 'bright';
 ```
 
 ---
@@ -291,18 +302,14 @@ image: ./basemap-topo-vector.avif
 
 Basemap
 
-```ts
-const map = new WebScene({
-  basemap: 'topo-vector',
-});
-
-const view = new SceneView({ map });
+```html
+<arcgis-scene basemap="topo-vector"></arcgis-scene>
 ```
 
 <!--
-basemap property of the WebScene is Inherited from Map
+The scene component supports setting the basemap directly.
 
-The basemap is a set of layers that give geographic context to the MapView or SceneView and the other operational layers in the map.
+The basemap is a set of layers that give geographic context to the map or scene component and the other operational layers in the map.
 -->
 
 ---
@@ -314,15 +321,11 @@ image: ./basemap-topo-3d.avif
 
 Basemap
 
-```ts {2}
-const map = new WebScene({
-  basemap: 'topo-3d',
-});
-
-const view = new SceneView({ map });
+```html
+<arcgis-scene basemap="topo-3d"></arcgis-scene>
 ```
 
-<img v-click="1" src="/basemaps-list.avif" alt="List of basemaps available in ArcGIS Maps SDK for JavaScript, including topo-3d, satellite, etc">
+<img src="/basemaps-list.avif" alt="List of basemaps available in ArcGIS Maps SDK for JavaScript, including topo-3d, satellite, etc">
 
 <!--
 Use of these basemaps requires either an ArcGIS Location Platform account, ArcGIS Online organizational subscription, or an ArcGIS Enterprise license.
@@ -341,7 +344,7 @@ image: ./elevation-topo.avif
 
 Elevation
 
-```ts {3}
+```ts
 const map = new WebScene({
   basemap: 'topo-vector',
   ground: 'world-elevation',
@@ -373,7 +376,7 @@ image: ./elevation-bathymetry.avif
 
 Elevation
 
-```ts {3}
+```ts
 const map = new Map({
   basemap: 'satellite',
   ground: 'world-topobathymetry',
@@ -477,7 +480,7 @@ image: ./world-countries.avif
 
 ::code-group
 
-```ts [URL] {0|0-3|}
+```ts [URL]
 const layer = new FeatureLayer({
   url: 'https://services.arcgis.com/.../FeatureServer',
 });
@@ -525,7 +528,7 @@ fit: contain
 
 Applying Symbology
 
-```ts {0|1|3|4|5-10|*}{maxHeight:'160px'}
+```ts {1-100}{maxHeight:'160px'}
 const layer = new FeatureLayer({
   url: 'https://services/../FeatureServer',
   renderer: new SimpleRenderer({
@@ -630,7 +633,7 @@ image: ./point-symbol-icon-rotation.avif
 
 Icon Rotation
 
-```ts {0|3-8|15-18}{maxHeight:'320px'}
+```ts {1-100}{maxHeight:'320px'}
 const arrowSymbol = new PointSymbol3D({
   symbolLayers: [
     new IconSymbol3DLayer({
@@ -667,7 +670,7 @@ image: ./line-symbol-flat.avif
 
 Flat
 
-```ts {0-100}{maxHeight:'320px'}
+```ts
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new LineSymbol3DLayer({
@@ -695,7 +698,7 @@ image: ./line-symbol-volumetric.avif
 
 Volumetric
 
-```ts {0-100}{maxHeight:'320px'}
+```ts {1-100}{maxHeight:'320px'}
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new PathSymbol3DLayer({
@@ -720,7 +723,6 @@ https://next.gha.afd.arcgis.com/javascript/latest/sample-code/visualization-path
 
 ---
 layout: media-right
-clicks: 1
 ---
 
 # LineSymbol3D
@@ -754,7 +756,7 @@ lines.renderer = renderer;
     src="/glow-on.avif"
     class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
     alt="Paths throughout a city, glowing"
-    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+    style="opacity: 1"
   />
 </div>
 
@@ -853,7 +855,7 @@ image: ./sl-emissive-glow.avif
 Glow
 
 ```ts
-viewElement.environment.lighting.glow = new Glow({
+viewEl.environment.lighting.glow = new Glow({
   intensity: glowIntensity, // 0 to 1
 });
 ```
@@ -865,9 +867,10 @@ image: ./building-footprints.avif
 
 # Extruding Building Footprints
 
-ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual Variables
+ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual
+Variables
 
-```ts {0|2-13|3-12|16-25|26-31}{maxHeight:'260px'}
+```ts {1-100}{maxHeight:'260px'}
 function getSymbol(color) {
   return new PolygonSymbol3D({
     symbolLayers: [
@@ -926,7 +929,7 @@ const layer = new ImageryTileLayer({
   },
 });
 
-viewElement.map.add(layer);
+viewEl.map.add(layer);
 ```
 
 <!--
@@ -973,19 +976,19 @@ image: ./scene-layer-highlights.avif
 
 Scene Layer and Multiple Highlights
 
-```ts {0-100}{maxHeight:'300px'}
-const sceneLayer = viewElement.map.allLayers.find(
+```ts {1-100}{maxHeight:'300px'}
+const sceneLayer = viewEl.map.allLayers.find(
   (layer) => layer.title === 'Buildings',
 );
 
 // Define multiple highlight options with different
 // names and colors
-viewElement.highlights = [
+viewEl.highlights = [
   { name: 'multiselect', color: 'blue' },
   { name: 'default', color: 'gold' },
 ];
 
-const lv = await viewElement.whenLayerView(sceneLayer);
+const lv = await viewEl.whenLayerView(sceneLayer);
 
 // Highlight on hover using the default highlight options
 li.addEventListener('mouseenter', () => {
@@ -1002,7 +1005,7 @@ const onClick = async (event) => {
   });
 };
 
-viewElement.addEventListener('arcgisViewClick', onClick);
+viewEl.addEventListener('arcgisViewClick', onClick);
 ```
 
 <!--
@@ -1018,10 +1021,10 @@ image: ./sl-color.avif
 
 Colored by Attribute
 
-```ts {0-100}{maxHeight:'340px'}
+```ts {1-100}{maxHeight:'340px'}
 const rendererResult = await createContinuousRenderer({
   layer: layer,
-  view: viewElement.view,
+  view: viewEl.view,
   field: 'CNSTRCT_YR',
   theme: 'above-and-below',
   minValue: 1800,
@@ -1034,7 +1037,6 @@ layer.renderer = rendererResult.renderer;
 
 ---
 layout: media-right
-clicks: 1
 ---
 
 # Scene Layers
@@ -1056,7 +1058,7 @@ symbolLayer.edges = new SolidEdges3D({
     src="/sl-edges-solid.avif"
     class="w-full h-full object-cover absolute inset-0 pointer-events-none glow-swap-on"
     alt="Buildings with solid edges"
-    :style="{ opacity: $clicks >= 1 ? 1 : 0 }"
+    style="opacity: 1"
   />
 </div>
 
@@ -1097,7 +1099,7 @@ const plane = new SlicePlane(/* ... */);
 const slice = new SliceAnalysis({
   shape: plane,
 });
-viewElement.analyses.add(slice);
+viewEl.analyses.add(slice);
 ```
 
 <!--
@@ -1221,7 +1223,7 @@ image: ./terrain.avif
 
 Applying RasterFunction
 
-```ts {0-100}{maxHeight:'300px'}
+```ts {1-100}{maxHeight:'300px'}
 // Setup layer with initial raster function
 const analysisLayer = new ImageryTileLayer({
   url: 'https://elevation3d.arcgis.com/.../ImageServer',
@@ -1301,7 +1303,7 @@ image: ./media-layer-video.avif
 
 Video Element
 
-```ts {0-100}{maxHeight:'320px'}
+```ts {1-100}{maxHeight:'320px'}
 const element = new VideoElement({
   video: 'https://.../video.mp4',
   georeference: new ExtentAndRotationGeoreference({
@@ -1339,7 +1341,7 @@ image: ./media-layer.avif
 Interactive Georeferencing
 
 ```ts
-const lv = await viewElement.whenLayerView(mediaLayer);
+const lv = await viewEl.whenLayerView(mediaLayer);
 
 // Enable interactivity and select the image
 lv.interactive = true;
