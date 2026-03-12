@@ -26,10 +26,9 @@ const worker = setupWorker(
 
 const it = itBase.extend({
   worker: [
-    // eslint-disable-next-line no-empty-pattern
     async ({}, use) => {
       // Start the worker before the test.
-      await worker.start({ quiet: true });
+      await worker.start({ onUnhandledRequest: "bypass", quiet: true });
       // Expose the worker object on the test's context.
       await use(worker);
       // Stop the worker after the test is done.

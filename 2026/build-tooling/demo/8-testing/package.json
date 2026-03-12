@@ -16,14 +16,15 @@
   "dependencies": {
     "@arcgis/core": "^5.0.9",
     "@arcgis/map-components": "^5.0.9",
-    "@esri/calcite-components": "^5.0.2",
     "@esri/arcgis-rest-places": "^4.10.0",
+    "@esri/calcite-components": "^5.0.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-router": "^7.13.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.3",
+    "@msw/source": "^0.6.1",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/react": "^16.3.2",
     "@types/react": "^19.2.14",
