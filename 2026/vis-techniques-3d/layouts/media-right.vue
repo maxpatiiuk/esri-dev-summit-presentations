@@ -15,11 +15,11 @@ withDefaults(defineProps<Props>(), {
 
 <template>
   <div class="slidev-layout media-right h-full w-full grid grid-cols-2 gap-10">
-    <div>
+    <div class="media-right-content h-full min-h-0 min-w-0 pr-3">
       <slot />
     </div>
 
-    <div class="h-full min-h-0 mt-8">
+    <div class="h-full min-h-0 min-w-0">
       <FramedIframe
         v-if="url"
         :url="url"

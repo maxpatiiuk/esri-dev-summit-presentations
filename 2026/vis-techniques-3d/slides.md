@@ -258,7 +258,7 @@ image: ./focus-area.avif
 
 Focus Areas
 
-```ts {1-100}{maxHeight:'300px'}
+```ts
 const viewEl = document.querySelector('arcgis-scene');
 await viewEl.viewOnReady();
 
@@ -512,7 +512,7 @@ fit: contain
 
 Applying Symbology
 
-```ts {1-100}{maxHeight:'160px'}
+```ts
 const layer = new FeatureLayer({
   url: 'https://services/../FeatureServer',
   renderer: new SimpleRenderer({
@@ -617,7 +617,7 @@ image: ./point-symbol-icon-rotation.avif
 
 Icon Rotation
 
-```ts {1-100}{maxHeight:'320px'}
+```ts
 const arrowSymbol = new PointSymbol3D({
   symbolLayers: [
     new IconSymbol3DLayer({
@@ -680,7 +680,7 @@ image: ./line-symbol-volumetric.avif
 
 Volumetric
 
-```ts {1-100}{maxHeight:'320px'}
+```ts
 const symbol = new LineSymbol3D({
   symbolLayers: [
     new PathSymbol3DLayer({
@@ -850,7 +850,7 @@ image: ./building-footprints.avif
 ExtrudeSymbol3DLayer, UniqueValueRenderer and Visual
 Variables
 
-```ts {1-100}{maxHeight:'260px'}
+```ts
 function getSymbol(color) {
   return new PolygonSymbol3D({
     symbolLayers: [
@@ -945,7 +945,7 @@ image: ./scene-layer-highlights.avif
 
 Scene Layer and Multiple Highlights
 
-```ts {1-100}{maxHeight:'300px'}
+```ts
 const sceneLayer = viewEl.map.allLayers.find(
   (layer) => layer.title === 'Buildings',
 );
@@ -990,7 +990,7 @@ image: ./sl-color.avif
 
 Colored by Attribute
 
-```ts {1-100}{maxHeight:'340px'}
+```ts
 const rendererResult = await createContinuousRenderer({
   layer: layer,
   view: viewEl.view,
@@ -1190,7 +1190,7 @@ image: ./terrain.avif
 
 Applying RasterFunction
 
-```ts {1-100}{maxHeight:'300px'}
+```ts
 // Setup layer with initial raster function
 const analysisLayer = new ImageryTileLayer({
   url: 'https://elevation3d.arcgis.com/.../ImageServer',
@@ -1270,7 +1270,7 @@ image: ./media-layer-video.avif
 
 Video Element
 
-```ts {1-100}{maxHeight:'320px'}
+```ts
 const element = new VideoElement({
   video: 'https://.../video.mp4',
   georeference: new ExtentAndRotationGeoreference({
