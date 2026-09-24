@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript and 3D GIS Visualization: A Developer's Guide Beyond 2D Cartography
 
+[Recording](https://mediaspace.esri.com/playlist/dedicated/394319663/1_u6v21esr/1_giyu0qc3)
+
 Discover how ArcGIS Maps SDK for JavaScript unlocks powerful 3D visualization on
 the web. This technical session dives into symbol types, visual variables, and
 cartographic techniques unique to 3D, showing how to transform 2D features into

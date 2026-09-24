@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript: App Development with Components, Part 2: Using Frameworks
 
+[Recording](https://mediaspace.esri.com/playlist/dedicated/394319663/1_k9r3lf3w/1_16y6nul8)
+
 Join us for the second technical session in a four-part series on building
 applications with the ArcGIS Maps SDK for JavaScript. Speakers begin with
 exploring motivations for using front-end frameworks and then cover techniques
