@@ -1,5 +1,7 @@
 # ArcGIS Maps SDK for JavaScript: A Look Under the Hood
 
+[Recording](https://mediaspace.esri.com/playlist/dedicated/394319663/1_k9r3lf3w/1_nlivd046)
+
 Come to this technical session to discover the engineering infrastructure that
 powers the ArcGIS Maps SDK for JavaScript. We will focus on two key topics:
 
