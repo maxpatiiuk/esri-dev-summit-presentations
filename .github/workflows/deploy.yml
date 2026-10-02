@@ -63,6 +63,11 @@ jobs:
         run: |
           npx slidev build --base /${{github.event.repository.name}}/2026/vis-techniques-3d --out ../../dist/2026/vis-techniques-3d/
 
+      - name: Build Slides > 2026-eu > using Vite
+        working-directory: 2026-eu/using-vite
+        run: |
+          npx slidev build --base /${{github.event.repository.name}}/2026-eu/using-vite/ --out ../../dist/2026-eu/using-vite/
+
       - name: Collect build outputs
         run: |
           mv -f 2024 dist/2024

@@ -1,0 +1,79 @@
+:root {
+  /* Disable Chrome auto dark mode */
+  color-scheme: only light;
+}
+
+/** Style the slide container, without affecting Slidev controls and working across modes and pdf export */
+.slidev-page {
+  /*
+   * While code blocks are in light mode, the slide background is darker so
+   * slide text defaults to white
+   */
+  color: white;
+  /* Match presentation template */
+  font-family: Arial;
+}
+
+/** Force light mode for code blocks */
+.slidev-note :not(pre) > code,
+.slidev-layout :not(pre) > code {
+  background: #fffb;
+  color: black;
+}
+
+#slide-content {
+  /*
+   * The background image is 1px too short. To avoid a 1px white line, make
+   * background invisible
+   */
+  background: black;
+}
+
+.slidev-layout {
+  padding-left: 4.5rem;
+  padding-right: 4.5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.slidev-layout.cover {
+  padding-left: 4.5rem;
+}
+
+.slidev-layout:is(.cover, .intro, [is='social']) p {
+  color: #bee3ff;
+}
+
+.slidev-layout:is([is='intro']) h1 {
+  margin-bottom: 0.75rem;
+  line-height: 4.5rem !important;
+}
+
+.slidev-layout h1 {
+  margin-bottom: 2rem;
+}
+
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
+.slidev-page > img {
+  position: absolute;
+  z-index: -1;
+}
+
+.slidev-layout ul {
+  list-style: disc;
+}
+
+.slidev-layout li::marker {
+  color: #bee3ff;
+  font-size: 0.75em;
+}
+
+.mermaid {
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-radius: 0.5rem;
+}
