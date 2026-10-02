@@ -16,7 +16,7 @@ This sample was created using the `npm init @arcgis` command. [More details](htt
 
    ```sh
    git clone https://github.com/maxpatiiuk/esri-dev-summit-presentations esri-dev-summit-presentations
-   cd esri-dev-summit-presentations/2026/build-tooling/demo/1-javascript
+   cd esri-dev-summit-presentations/2026-eu/using-vite/demo/1-javascript
    ```
 
 2. Install dependencies
