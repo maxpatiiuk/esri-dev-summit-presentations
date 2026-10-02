@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "placeId": "test",
+      "location": {
+        "x": -73.735152,
+        "y": 40.9384275
+      },
+      "categories": [
+        {
+          "categoryId": "4bf58dd8d48988d1ae941735",
+          "label": "University"
+        }
+      ],
+      "name": "Test school",
+      "distance": 0
+    }
+  ]
+}
