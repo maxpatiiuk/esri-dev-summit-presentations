@@ -8,7 +8,7 @@ is: social
 
 # Connect with us on Social
 
-Join the Conversation using #EsriDevTech2026
+Join the Conversation using #EUDevTech2026
 
 <ul class="flex flex-col !list-none gap-3">
   <li class="flex items-center gap-4">
