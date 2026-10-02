@@ -41,7 +41,7 @@
 }
 
 .slidev-layout:is(.cover, .intro, [is='social']) p {
-  color: #bee3ff;
+  color: #a5def7;
 }
 
 .slidev-layout:is([is='intro']) h1 {
@@ -67,7 +67,7 @@
 }
 
 .slidev-layout li::marker {
-  color: #bee3ff;
+  color: #a5def7;
   font-size: 0.75em;
 }
 
