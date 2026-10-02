@@ -1,26 +1,22 @@
 # ArcGIS Maps SDK for JavaScript: Using Vite for Building Fast, Dynamic Web Apps
 
-[Recording](https://mediaspace.esri.com/playlist/dedicated/394319663/1_k9r3lf3w/1_hx7v6zht)
-
-This technical session explores a case study on how Esri's development teams are
-leveraging modern tools like Vite to build fast, dynamic web GIS applications.
+This session will explore a case study on how Esri's development teams are
+leveraging modern tools like Vite to build fast, dynamic Web GIS applications.
 With features such as lazy loading, client-side routing, hot module replacement,
 and lightning-fast builds, Vite streamlines the entire development workflow from
 bundling to deployment. Paired with Vitest for testing, these tools help ensure
 that your apps are both high-performing and production-ready.
 
-When: Thursday, March 12 | 4:00 PM - 5:00 PM PDT
+When: Tuesday, October 20 | 16:00 - 17:00 CEST
 
-Where: Mohave Learning Center | Palm Springs Convention Center
+Where: Spektrum 2—Level C2 | Congress Center
 
-Presenters: [Hugo Campos](https://bsky.app/profile/hugocampos.bsky.social) &
-[Max Patiiuk](https://github.com/maxpatiiuk)
+Presenters: Robin Renggli & [Thorben Westerhuys](https://github.com/twesterhuys)
 
-Presented at [Esri Developer Summit 2026](https://devtechsummit2026.esri.com/).
+Presented at
+[Esri European Developer & Technology Summit 2026](https://www.esri.com/en-us/about/events/euro-devtech/overview).
 
-[![ArcGIS Maps SDK for JavaScript: Fast Development and Build Tooling header slide](./assets/header-slide.avif)](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/build-tooling)
-
-[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026/build-tooling)
+[Slides](https://maxpatiiuk.github.io/esri-dev-summit-presentations/2026-eu/using-vite)
 
 ## Resources
 

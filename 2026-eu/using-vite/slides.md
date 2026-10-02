@@ -1,13 +1,13 @@
 ---
 titleTemplate: '%s'
-author: Hugo Campos, Max Patiiuk
+author: Robin Renggli, Thorben Westerhuys
 mdc: true
 colorSchema: light
 ---
 
 ## ArcGIS Maps SDK for JavaScript:<br>Using Vite for Building Fast, Dynamic Web Apps
 
-Hugo Campos, Max Patiiuk
+Robin Renggli, Thorben Westerhuys
 
 ---
 is: feedback
@@ -96,7 +96,7 @@ Bonus: can extend the bundler using plugins
 layout: center
 ---
 
-# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/1-javascript)
+# Demo: [Get started with Vite](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/1-javascript)
 
 <!--
 - Create a Vite starter project
@@ -121,7 +121,7 @@ layout: center
 layout: center
 ---
 
-# Demo: [Add basic React 19](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/2-react)
+# Demo: [Add basic React 19](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/2-react)
 
 ---
 
@@ -135,7 +135,7 @@ layout: center
 layout: center
 ---
 
-# Demo: [Add Calcite and JS Maps SDK components](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/3-web-components)
+# Demo: [Add Calcite and JS Maps SDK components](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/3-web-components)
 
 ---
 
@@ -160,7 +160,7 @@ project.
 layout: center
 ---
 
-# Demo: [Adopt TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/4-typescript)
+# Demo: [Adopt TypeScript](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/4-typescript)
 
 ---
 
@@ -175,7 +175,7 @@ layout: center
 layout: center
 ---
 
-# Demo: [Use ESLint](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/5-eslint)
+# Demo: [Use ESLint](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/5-eslint)
 
 ---
 
@@ -266,7 +266,7 @@ start small on a splash page, and load the “real app” only when the user goe
 layout: center
 ---
 
-# Demo: [Lazy loading & routes with React Router](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/6-routes)
+# Demo: [Lazy loading & routes with React Router](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/6-routes)
 
 <!--
 We’ll start on the splash page first.
@@ -294,7 +294,7 @@ Sometimes bundles can get big, even with lazy loading. Sonda is a great tool to 
 layout: center
 ---
 
-# Demo: [Analyze bundles with Sonda](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/7-sonda)
+# Demo: [Analyze bundles with Sonda](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/7-sonda)
 
 <!--
 All I need is to add the Sonda plugin to my Vite config.
@@ -334,7 +334,7 @@ And it all integrates directly with Vite so you can use the same config and plug
 layout: center
 ---
 
-# Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/8-testing)
+# Demo: [Add tests with Vitest](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/8-testing)
 
 <!--
 Let's look at a couple of tests that cover real user behavior.
@@ -367,7 +367,7 @@ Common use-cases:
 layout: center
 ---
 
-# Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026/build-tooling/demo/9-plugins)
+# Demo: [Add custom plugins](https://github.com/maxpatiiuk/esri-dev-summit-presentations/tree/main/2026-eu/using-vite/demo/9-plugins)
 
 <!--
 To exemplify this, we built custom plugin that makes the dev server “unreliable” on purpose.
