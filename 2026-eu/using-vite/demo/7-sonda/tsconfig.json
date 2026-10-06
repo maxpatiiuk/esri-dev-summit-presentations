@@ -17,7 +17,7 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "target": "ES2024",
+    "target": "ES2025",
     "useDefineForClassFields": true,
     "skipLibCheck": true
   }
